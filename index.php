@@ -30,15 +30,15 @@
                             include 'contents/dashboard.php';
                             break;
                         
-                        case 'Daftar Barang':
+                        case 'DaftarBarang':
                             include 'contents/daftarbarang.php';
                             break;
 
-                        case 'Tambah Barang':
+                        case 'TambahBarang':
                             include 'contents/tambahbarang.php';
                             break;
 
-                        case 'Detail Barang':
+                        case 'DetailBarang':
                             include 'contents/detailbarang.php';
                             break;
 

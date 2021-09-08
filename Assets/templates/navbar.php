@@ -6,11 +6,11 @@
                         <i class="bi bi-journal"></i>
                         Dashboard
                     </a>
-                    <a class="list-group-item text-white bg-dark p-3" href="index.php?page=Daftar Barang">
+                    <a class="list-group-item text-white bg-dark p-3" href="index.php?page=DaftarBarang">
                         <i class="bi bi-box-seam"></i>
                         Daftar Barang
                     </a>
-                    <a class="list-group-item text-white bg-dark p-3" href="index.php?page=Tambah Barang">
+                    <a class="list-group-item text-white bg-dark p-3" href="index.php?page=TambahBarang">
                         <i class="bi bi-plus-square"></i>
                         Tambah Barang
                     </a>
