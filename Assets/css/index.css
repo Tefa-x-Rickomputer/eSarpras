@@ -1,0 +1,12 @@
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+.card-info {
+	padding: 5px;
+}
+
+.card-info h1 {
+	display: inline-block;
+}
