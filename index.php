@@ -31,15 +31,23 @@
                             break;
                         
                         case 'DaftarBarang':
-                            include 'contents/daftarbarang.php';
+                            include 'contents/Barang/daftarbarang.php';
                             break;
 
                         case 'TambahBarang':
-                            include 'contents/tambahbarang.php';
+                            include 'contents/Barang/tambahbarang.php';
                             break;
 
                         case 'DetailBarang':
-                            include 'contents/detailbarang.php';
+                            include 'contents/Barang/detailbarang.php';
+                            break;
+
+                        case 'Userlist':
+                            include 'contents/User/tableuser.php';
+                            break;
+
+                        case 'UserDetail':
+                            include 'contents/User/detailuser.php';
                             break;
 
                         default:
