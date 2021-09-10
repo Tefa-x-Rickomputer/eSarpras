@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2021 at 04:43 AM
+-- Generation Time: Sep 10, 2021 at 04:58 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -29,16 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbarang` (
-  `idBarang` int(11) NOT NULL,
+  `idAset` int(11) NOT NULL,
   `namaBarang` varchar(50) NOT NULL,
+  `fotoBarang` varchar(30) NOT NULL,
   `merkBarang` varchar(30) DEFAULT NULL,
   `jenisBarang` varchar(30) DEFAULT NULL,
   `nomorRegister` varchar(30) DEFAULT NULL,
   `hargaSatuan` int(20) DEFAULT NULL,
-  `tahunBarang` int(4) DEFAULT NULL,
+  `tahunPembelian` int(4) DEFAULT NULL,
   `sumberDana` enum('BOS','BOSDA') DEFAULT NULL,
   `kondisiBarang` enum('Baik','Rusak') NOT NULL,
-  `linkRuangan` int(11) NOT NULL
+  `linkRuangan` int(11) NOT NULL,
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -50,6 +52,7 @@ CREATE TABLE `tbarang` (
 CREATE TABLE `tbuku` (
   `idBuku` int(11) NOT NULL,
   `judulBuku` varchar(50) NOT NULL,
+  `fotoBuku` varchar(30) NOT NULL,
   `nomorBuku` varchar(30) DEFAULT NULL,
   `pengarang` varchar(30) DEFAULT NULL,
   `penerbit` varchar(30) DEFAULT NULL,
@@ -60,7 +63,8 @@ CREATE TABLE `tbuku` (
   `hargaBuku` int(7) DEFAULT NULL,
   `sumberDana` enum('BOS','BOSDA') NOT NULL,
   `kondisiBuku` enum('Baik','Rusak') NOT NULL,
-  `linkRuangan` int(11) NOT NULL
+  `linkRuangan` int(11) NOT NULL,
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,6 +78,11 @@ CREATE TABLE `tinformasiuser` (
   `linkUser` int(11) NOT NULL,
   `nik` int(16) DEFAULT NULL,
   `nama` char(30) NOT NULL,
+  `fotoProfil` varchar(30) DEFAULT NULL,
+  `gender` enum('Laki-laki','Perempuan') NOT NULL,
+  `agama` enum('Budha','Hindu','Islam','Katholik','Kristen') NOT NULL,
+  `telpon` int(13) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
   `tanggalLahir` date DEFAULT NULL,
   `alamat` varchar(50) DEFAULT NULL,
   `status` varchar(50) NOT NULL
@@ -87,7 +96,8 @@ CREATE TABLE `tinformasiuser` (
 
 CREATE TABLE `truangan` (
   `idRuangan` int(11) NOT NULL,
-  `namaRuangan` varchar(30) NOT NULL
+  `namaRuangan` varchar(30) NOT NULL,
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -101,7 +111,8 @@ CREATE TABLE `tuser` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `role` enum('Super','Admin','Guest') NOT NULL,
-  `linkInfoUser` int(11) NOT NULL
+  `linkInfoUser` int(11) NOT NULL,
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -112,7 +123,7 @@ CREATE TABLE `tuser` (
 -- Indexes for table `tbarang`
 --
 ALTER TABLE `tbarang`
-  ADD PRIMARY KEY (`idBarang`),
+  ADD PRIMARY KEY (`idAset`),
   ADD KEY `linkRuangan` (`linkRuangan`);
 
 --
@@ -150,7 +161,7 @@ ALTER TABLE `tuser`
 -- AUTO_INCREMENT for table `tbarang`
 --
 ALTER TABLE `tbarang`
-  MODIFY `idBarang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAset` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbuku`
