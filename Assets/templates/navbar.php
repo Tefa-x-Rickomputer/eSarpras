@@ -8,28 +8,27 @@
                         Barang
                     </a>
                     <div class="collapse ms-4" id="collapse1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link text-white" href="index.php?page=DaftarBarang">Daftar Barang</a>
-                            <a class="nav-link text-white" href="index.php?page=TambahBarang">Tambah Barang</a>
-                        </nav>
+                        <a class="nav-link text-white" href="index.php?page=DaftarBarang">Daftar Barang</a>
+                        <a class="nav-link text-white" href="index.php?page=TambahBarang">Tambah Barang</a>
                     </div>
 
                     <a class="nav-link collapsed text-white p-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                         Buku
                     </a>
                     <div class="collapse ms-4" id="collapse2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link text-white" href="index.php?page=DaftarBuku">Daftar Buku</a>
-                            <a class="nav-link text-white" href="index.php?page=TambahBuku">Tambah Buku</a>
-                        </nav>
+                        <a class="nav-link text-white" href="index.php?page=DaftarBuku">Daftar Buku</a>
+                        <a class="nav-link text-white" href="index.php?page=TambahBuku">Tambah Buku</a>
                     </div>
 
-                </div>
-                <div class="position-absolute bottom-0 p-3">
-                    <div class="d-grid gap-3">
-                        <a href="index.php?page=UserDetail" class="btn btn-secondary">Profile</a>
-                        <a href="Authentication/login.php" class="btn btn-secondary">Logout</a>
+                    <a class="nav-link collapsed text-white mt-5 p-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        User
+                    </a>
+                    <div class="collapse ms-4" id="collapse3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <a class="nav-link text-white" href="index.php?page=UserDetail">Profile</a>
+                        <a class="nav-link text-white" href="index.php?page=Userlist">Daftar User</a>
+                        <a class="nav-link text-white" href="Authentication/login.php">Logout</a>
                     </div>
+
                 </div>
             </div>
             <!-- Sidebar Section -->

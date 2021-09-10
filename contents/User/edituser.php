@@ -44,12 +44,6 @@
             </div>
 
         </div>
-        <div class="row mb-5">
-            <div class="col">
-                <a href="index.php?page=Useredit" class="btn btn-outline-warning">Edit</a>
-                <a href="index.php?page=Userdelete" class="btn btn-outline-danger" onclick="confirm('are you sure?')" >Hapus</a>
-            </div>
-        </div>
 
 	</div>
 </main>
