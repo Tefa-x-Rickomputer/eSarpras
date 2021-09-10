@@ -30,6 +30,7 @@
                             include 'contents/dashboard.php';
                             break;
                         
+                        // Barang swithc
                         case 'DaftarBarang':
                             include 'contents/Barang/daftarbarang.php';
                             break;
@@ -41,7 +42,9 @@
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
                             break;
+                        // Barang switch end
 
+                        // User switch
                         case 'Userlist':
                             include 'contents/User/tableuser.php';
                             break;
@@ -49,6 +52,11 @@
                         case 'UserDetail':
                             include 'contents/User/detailuser.php';
                             break;
+
+                        case 'Useredit':
+                            include 'contents/User/edituser.php';
+                            break;
+                        // User switch
 
                         default:
                             echo "<center>Page not found";
