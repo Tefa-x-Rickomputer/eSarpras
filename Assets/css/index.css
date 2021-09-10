@@ -1,3 +1,7 @@
+.listgroupnav a:hover {
+	background-color: white;
+}
+
 .card-info {
 	padding: 5px;
 }

@@ -7,7 +7,7 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="../Assets/css/indexstyles.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -48,7 +48,6 @@
 
   
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-<?=date('Y')?> by. SMKN 2 BANJARMASIN</p>
 </form>
 </body>
 </html>
