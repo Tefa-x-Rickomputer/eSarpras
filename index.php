@@ -44,6 +44,21 @@
                             break;
                         // Barang switch end
 
+                        // Buku switch 
+                        case 'DaftarBuku':
+                            include 'contents/Buku/daftarbuku.php';
+                            break;
+
+                        case 'TambahBuku':
+                            include 'contents/Buku/tambahbuku.php';
+                            break;
+
+                        case 'DetailBuku':
+                            include 'contents/Buku/detailbuku.php';
+                            break;
+
+                        // Buku switch end
+
                         // User switch
                         case 'Userlist':
                             include 'contents/User/tableuser.php';
