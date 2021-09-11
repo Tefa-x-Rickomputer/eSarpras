@@ -6,45 +6,89 @@
             </div>    
         </div>
 
-		<div class="row mt-3 mb-5">
-			<div class="col-md-4 justify-content-center mt-3 shadow">
-                <div class="card">
-                    <div class="text-center">
-                        <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+		<div class="row mt-3 mb-5 card-user">
+			<div class="col-md-4 col-xs-12 mt-3">
+                <div class="shadow">
+                    <div class="card card-primary">
+                        <div class="text-center">
+                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                        </div>
+
                     </div>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item mt-2 text-center display-5 pb-3">Luthfi</li>
+                        <li class="list-group-item mt-2">
+                            <b>NIK</b>
+                            <div class="float-end">1234567890123456</div>
+                        </li>
+                        <li class="list-group-item mt-2">
+                            <b>Role</b>
+                            <div class="float-end">Admin</div>
+                        </li>
+                        <li class="list-group-item mt-2">
+                            <b>Tanggal Lahir</b>
+                            <div class="float-end">24 Juni 2004</div>
+                        </li>
+                        <li class="list-group-item mt-2">
+                            <b>Status</b>
+                            <div class="float-end">Guru</div>
+                        </li>
+                        <li class="list-group-item mt-2">
+                            <b>Email</b>
+                            <div class="float-end">iniemailexample@gmail.com</div>
+                        </li>
+                        <li class="list-group-item mt-2">
+                            <b>No. Telp</b>
+                            <div class="float-end">08126946727</div>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
 
+            <div class="col-md-8 col-xs-12 mt-3">
+                <div class="card p-3 pt-1 shadow">
+                    
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            <label for="" class="fw-bold fs-5 mt-3">Nama</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control mt-3" value="Luthfi">
+                        </div>
+                    </div>
 
-            <div class="col-md mt-3">
-                <label for="" class="fs-4 mb-2">Nama</label>
-            	<div class="card pt-3 shadow">
-                    <p class="ms-3 fs-5">Luthfi</p>
-            	</div>
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            <label for="" class="fw-bold fs-5 mt-3">Tempat Tgl. Lahir</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control mt-3" value="Banjarmasin">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control mt-3" value="2004-06-24">
+                        </div>
+                    </div>
 
-                <label for="" class="fs-4 mt-3 mb-2">NIK</label>
-                <div class="card pt-3 shadow">
-                    <p class="ms-3 fs-5">1234567890123456</p>
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            <label for="" class="fw-bold fs-5 mt-3">Tempat Tgl. Lahir</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control mt-3" value="Banjarmasin">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control mt-3" value="2004-06-24">
+                        </div>
+                    </div>
+
                 </div>
-
-                <label for="" class="fs-4 mt-3 mb-2">Role</label>
-                <div class="card pt-3 shadow">
-                    <p class="ms-3 fs-5">Admin</p>
-                </div>
-
-                <label for="" class="fs-4 mt-3 mb-2">Tanggal Lahir</label>
-                <div class="card pt-3 shadow">
-                    <p class="ms-3 fs-5">24 Juni 2004</p>
-                </div>
-
-                <label for="" class="fs-4 mt-3 mb-2">Status</label>
-                <div class="card pt-3 shadow">
-                    <p class="ms-3 fs-5">Guru</p>
-                </div>
+                    
             </div>
 
         </div>
-        <div class="row mb-5">
+
+        <div class="row mb-5 text-center">
             <div class="col">
                 <a href="index.php?page=Useredit" class="btn btn-outline-warning">Edit</a>
                 <a href="index.php?page=Userdelete" class="btn btn-outline-danger" onclick="confirm('are you sure?')" >Hapus</a>
