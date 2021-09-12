@@ -15,22 +15,22 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Aset</h1>
+        <h1 class="mt-4">Daftar Buku</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Daftar Aset</li>
+            <li class="breadcrumb-item active">Daftar Barang</li>
         </ol>
         
-<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
- <caption>Daftar Aset</caption>
+        <table id="example" class="table caption-top table-striped text-center">
+            <caption>Daftar Buku</caption>
             <thead class="table-dark">
                 <tr>
-                    <th>#</th>
-                    <th>Nama Barang</th>
-                    <th>Kode Barang</th>
-                    <th>Nomor Register</th>
-                    <th>Merk</th>
-                    <th>Jumlah</th>
+                    <th>No</th>
+                    <th>Judul Buku</th>
+                    <th>Nomor Buku</th>
+                    <th>Pengarang</th>
+                    <th>Tahun Terbit</th>
+                    <th>Jumlah Hal</th>
                     <th>Opsi</th>
                 </tr>
             </thead>
@@ -47,7 +47,7 @@
                         <td> <?= $data['jumlah']; ?> </td>
                         <td>
                             <div class="d-grid">
-                                <a href="index.php?page=DetailBarang" class="btn btn-outline-success">Detail</a>
+                                <a href="index.php?page=DetailBuku" class="btn btn-outline-success">Detail</a>
                             </div>
                         </td>
                     </tr>
