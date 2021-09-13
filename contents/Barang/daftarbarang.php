@@ -15,14 +15,14 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Barang</h1>
+        <h1 class="mt-4">Daftar Aset</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">Daftar Barang</li>
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Daftar Aset</li>
         </ol>
         
-        <table class="table caption-top table-striped text-center">
-            <caption>Daftar Barang</caption>
+<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+ <caption>Daftar Aset</caption>
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
