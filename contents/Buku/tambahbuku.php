@@ -30,7 +30,7 @@
   <div class="container-fluid px-4">
     <h1 class="mt-4">Tambah Buku</h1>
     <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
       <li class="breadcrumb-item active">Tambah Buku</li>
     </ol>
 
@@ -119,8 +119,6 @@
           <div class="form-floating">
             <select class="form-select" id="floatingSelect">
               <option value="Baru">Baru</option>
-              <option value="Bagus">Bagus</option>
-              <option value="Baik">Baik</option>
               <option value="Rusak">Rusak</option>
             </select>
             <label for="floatingSelect">Kondisi</label>
@@ -149,7 +147,7 @@
 
 
       </div>
-      <button type="button" name="bsimpan" class="btn btn-primary">Simpan</button>
+      <a href="index.php?page=DaftarBuku" class="btn btn-outline-primary" onclick="confirm('are you sure?')" >Simpan</a>
     </form>
 
 
