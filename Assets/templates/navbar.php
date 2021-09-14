@@ -26,7 +26,7 @@
                     <div class="collapse ms-4" id="collapse3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <a class="nav-link text-white" href="index.php?page=UserDetail">Profile</a>
                         <a class="nav-link text-white" href="index.php?page=Userlist">Daftar User</a>
-                        <a class="nav-link text-white" href="Authentication/login.php">Logout</a>
+                        <a class="nav-link text-white" href="Authentication/logout.php">Logout</a>
                     </div>
 
                 </div>

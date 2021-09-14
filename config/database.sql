@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2021 at 07:33 AM
+-- Generation Time: Sep 14, 2021 at 09:15 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -48,11 +48,11 @@ CREATE TABLE `tbarang` (
 --
 
 INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipeBarang`, `nomorRegister`, `hargaSatuan`, `tahunPembelian`, `sumberDana`, `kondisiBarang`, `linkRuangan`, `isDeleted`) VALUES
-(1, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', 'PC180204BS001', 8000000, 2018, 'BOS', 'Baik', 4, 0),
-(2, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', 'PC180204BS002', 8000000, 2018, 'BOS', 'Baik', 4, 0),
-(3, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD001', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
-(4, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
-(5, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0);
+(1, 'Komputer Desktop', 'Assets/img/aset/acer tc-866.jp', 'acer', 'TC-866', 'PC180204BS001', 8000000, 2018, 'BOS', 'Baik', 4, 0),
+(2, 'Komputer Desktop', 'Assets/img/aset/acer tc-866.jp', 'acer', 'TC-866', 'PC180204BS002', 8000000, 2018, 'BOS', 'Baik', 4, 0),
+(3, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD001', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
+(4, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
+(5, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -83,14 +83,14 @@ CREATE TABLE `tbuku` (
 --
 
 INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`, `penerbit`, `tahunTerbit`, `jumlahHalaman`, `nomorRegister`, `tahunPembelian`, `hargaBuku`, `sumberDana`, `kondisiBuku`, `linkRuangan`, `isDeleted`) VALUES
-(1, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS001', 2017, 363000, 'BOS', 'Baik', 6, 0),
-(2, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS002', 2017, 363000, 'BOS', 'Baik', 6, 0),
-(3, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS003', 2017, 363000, 'BOS', 'Baik', 6, 0),
-(4, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS004', 2017, 363000, 'BOS', 'Baik', 6, 0),
-(5, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS005', 2017, 363000, 'BOS', 'Rusak', 6, 0),
-(6, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD001', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
-(7, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
-(8, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0);
+(1, 'Francis of the Filth', 'Assets/img/buku/francisotfilth', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS001', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(2, 'Francis of the Filth', 'Assets/img/buku/francisotfilth', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS002', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(3, 'Francis of the Filth', 'Assets/img/buku/francisotfilth', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS003', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(4, 'Francis of the Filth', 'Assets/img/buku/francisotfilth', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS004', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(5, 'Francis of the Filth', 'Assets/img/buku/francisotfilth', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS005', 2017, 363000, 'BOS', 'Rusak', 6, 0),
+(6, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD001', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
+(7, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
+(8, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0);
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE `tuser` (
   `role` enum('super','admin','guest') NOT NULL,
   `nik` varchar(16) DEFAULT NULL,
   `nama` varchar(30) NOT NULL,
-  `fotoProfil` varchar(30) DEFAULT NULL,
+  `fotoProfil` varchar(50) DEFAULT '''Assets/img/user/person-fill.svg''',
   `gender` enum('Laki-laki','Perempuan') NOT NULL,
   `agama` enum('Budha','Hindu','Islam','Katholik','Kristen') NOT NULL,
   `telpon` varchar(13) DEFAULT NULL,
@@ -145,12 +145,12 @@ CREATE TABLE `tuser` (
 --
 
 INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
-(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'admin', NULL, 'Kuin Nerahaya', NULL, 'Perempuan', 'Budha', NULL, NULL, NULL, NULL, 'EEEEEEEEEEEEEEEEEE', 0),
-(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'super', '6371042701040003', 'Muhammad Azhim Nugroho', NULL, 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Siswa', 0),
-(3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'guest', NULL, 'Somebody that You Used to Know', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Status that You Still Know', 0),
-(4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'super', NULL, 'Reil Nathel', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Staff', 0),
-(5, 'anotheradmin', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'admin', NULL, 'Chet Cooker', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Tamu', 0),
-(6, 'anotherguest', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'guest', NULL, 'Syndrome', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Villain', 0);
+(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'admin', '637104234623446', 'Kuin Nerahaya', 'Assets/img/user/person-fill.svg', 'Perempuan', 'Budha', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'EEEEEEEEEEEEEEEEEE', 0),
+(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'super', '6371042701040003', 'Muhammad Azhim Nugroho', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Siswa', 0),
+(3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'guest', '1028357291509785', 'Somebody that You Used to Know', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'remembernot@yahoo.com', '1976-06-24', 'Familiar Street No. 4', 'Status that You Still Know', 0),
+(4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'super', '1023957609152345', 'Reil Nathel', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Staff', 0),
+(5, 'anotheradmin', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'admin', '31015704356070', 'Chet Cooker', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Tamu', 0),
+(6, 'anotherguest', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'guest', '3101823650989698', 'Syndrome', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0971234696891', 'superis@body.no', '1988-12-02', 'St. Groove', 'Villain', 0);
 
 --
 -- Indexes for dumped tables
