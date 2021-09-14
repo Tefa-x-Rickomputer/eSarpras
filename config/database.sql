@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2021 at 04:24 AM
+-- Generation Time: Sep 14, 2021 at 07:33 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -48,8 +48,11 @@ CREATE TABLE `tbarang` (
 --
 
 INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipeBarang`, `nomorRegister`, `hargaSatuan`, `tahunPembelian`, `sumberDana`, `kondisiBarang`, `linkRuangan`, `isDeleted`) VALUES
-(1, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', NULL, 8000000, 2019, 'BOS', 'Baik', 4, 0),
-(2, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', NULL, 8000000, 2019, 'BOS', 'Baik', 4, 0);
+(1, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', 'PC180204BS001', 8000000, 2018, 'BOS', 'Baik', 4, 0),
+(2, 'Komputer Desktop', '../../assets/img/barang.jpg', 'acer', 'TC-866', 'PC180204BS002', 8000000, 2018, 'BOS', 'Baik', 4, 0),
+(3, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD001', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
+(4, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
+(5, 'Laptop', '../../assets/img/barang.jpg', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -80,47 +83,14 @@ CREATE TABLE `tbuku` (
 --
 
 INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`, `penerbit`, `tahunTerbit`, `jumlahHalaman`, `nomorRegister`, `tahunPembelian`, `hargaBuku`, `sumberDana`, `kondisiBuku`, `linkRuangan`, `isDeleted`) VALUES
-(1, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', NULL, 'George Miller', 'lulu.com', 2017, 256, NULL, 2017, NULL, 'BOS', 'Baik', 6, 0),
-(2, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', NULL, 'George Miller', 'lulu.com', 2017, 256, NULL, 2017, NULL, 'BOS', 'Baik', 6, 0),
-(3, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', NULL, 'George Miller', 'lulu.com', 2017, 256, NULL, 2017, NULL, 'BOS', 'Baik', 6, 0),
-(4, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', NULL, 'George Miller', 'lulu.com', 2017, 256, NULL, 2017, NULL, 'BOS', 'Baik', 6, 0),
-(5, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', NULL, 'George Miller', 'lulu.com', 2017, 256, NULL, 2017, NULL, 'BOS', 'Rusak', 6, 0),
-(6, 'Technological Slavery', '../../assets/img/buku/buku.jpg', NULL, 'Theodore John Kaczynski', 'Feral House', 2010, 355, NULL, 2016, NULL, 'BOSDA', 'Baik', 6, 0),
-(7, 'Technological Slavery', '../../assets/img/buku/buku.jpg', NULL, 'Theodore John Kaczynski', 'Feral House', 2010, 355, NULL, 2016, NULL, 'BOSDA', 'Baik', 6, 0),
-(8, 'Technological Slavery', '../../assets/img/buku/buku.jpg', NULL, 'Theodore John Kaczynski', 'Feral House', 2010, 355, NULL, 2016, NULL, 'BOSDA', 'Baik', 6, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tinformasiuser`
---
-
-CREATE TABLE `tinformasiuser` (
-  `idInfoUser` int(11) NOT NULL,
-  `linkUser` int(11) NOT NULL,
-  `nik` int(16) DEFAULT NULL,
-  `nama` char(30) NOT NULL,
-  `fotoProfil` varchar(30) DEFAULT NULL,
-  `gender` enum('Laki-laki','Perempuan') NOT NULL,
-  `agama` enum('Budha','Hindu','Islam','Katholik','Kristen') NOT NULL,
-  `telpon` int(13) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `tanggalLahir` date DEFAULT NULL,
-  `alamat` varchar(50) DEFAULT NULL,
-  `status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tinformasiuser`
---
-
-INSERT INTO `tinformasiuser` (`idInfoUser`, `linkUser`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`) VALUES
-(1, 2, NULL, 'Kuin Nerahaya', NULL, 'Perempuan', 'Budha', NULL, NULL, NULL, NULL, 'EEEEEEEEEEEEEEEEEE'),
-(2, 1, NULL, 'Muhammad Azhim Nugroho', NULL, 'Laki-laki', 'Islam', NULL, NULL, NULL, NULL, 'Siswa'),
-(3, 3, NULL, 'Somebody that You Used to Know', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Status that You Still Know'),
-(4, 5, NULL, 'Reil Nathel', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Staff'),
-(5, 6, NULL, 'Chet Cooker', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Tamu'),
-(6, 4, NULL, 'Syndrome', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Villain');
+(1, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS001', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(2, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS002', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(3, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS003', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(4, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS004', 2017, 363000, 'BOS', 'Baik', 6, 0),
+(5, 'Francis of the Filth', '../../assets/img/buku/buku.jpg', '138715950X', 'George Miller', 'lulu.com', 2017, 256, 'FF170105BS005', 2017, 363000, 'BOS', 'Rusak', 6, 0),
+(6, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD001', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
+(7, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
+(8, 'Technological Slavery', '../../assets/img/buku/buku.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0);
 
 -- --------------------------------------------------------
 
@@ -155,8 +125,18 @@ INSERT INTO `truangan` (`idRuangan`, `namaRuangan`, `isDeleted`) VALUES
 CREATE TABLE `tuser` (
   `idUser` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `role` enum('Super','Admin','Guest') NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('super','admin','guest') NOT NULL,
+  `nik` varchar(16) DEFAULT NULL,
+  `nama` varchar(30) NOT NULL,
+  `fotoProfil` varchar(30) DEFAULT NULL,
+  `gender` enum('Laki-laki','Perempuan') NOT NULL,
+  `agama` enum('Budha','Hindu','Islam','Katholik','Kristen') NOT NULL,
+  `telpon` varchar(13) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `tanggalLahir` date DEFAULT NULL,
+  `alamat` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
   `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -164,13 +144,13 @@ CREATE TABLE `tuser` (
 -- Dumping data for table `tuser`
 --
 
-INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `isDeleted`) VALUES
-(1, 'superadmin', 'superadmin', 'Super', 0),
-(2, 'admin', 'admin', 'Admin', 0),
-(3, 'guest', 'guest', 'Guest', 0),
-(4, 'anothersuper', 'anothersuper', 'Super', 0),
-(5, 'anotheradmin', 'anotheradmin', 'Admin', 0),
-(6, 'anotherguest', 'anotherguest', 'Guest', 0);
+INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
+(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'admin', NULL, 'Kuin Nerahaya', NULL, 'Perempuan', 'Budha', NULL, NULL, NULL, NULL, 'EEEEEEEEEEEEEEEEEE', 0),
+(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'super', '6371042701040003', 'Muhammad Azhim Nugroho', NULL, 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Siswa', 0),
+(3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'guest', NULL, 'Somebody that You Used to Know', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Status that You Still Know', 0),
+(4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'super', NULL, 'Reil Nathel', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Staff', 0),
+(5, 'anotheradmin', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'admin', NULL, 'Chet Cooker', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Tamu', 0),
+(6, 'anotherguest', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'guest', NULL, 'Syndrome', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Villain', 0);
 
 --
 -- Indexes for dumped tables
@@ -189,13 +169,6 @@ ALTER TABLE `tbarang`
 ALTER TABLE `tbuku`
   ADD PRIMARY KEY (`idBuku`),
   ADD KEY `linkRuangan` (`linkRuangan`);
-
---
--- Indexes for table `tinformasiuser`
---
-ALTER TABLE `tinformasiuser`
-  ADD PRIMARY KEY (`idInfoUser`),
-  ADD KEY `linkUser` (`linkUser`);
 
 --
 -- Indexes for table `truangan`
@@ -217,19 +190,13 @@ ALTER TABLE `tuser`
 -- AUTO_INCREMENT for table `tbarang`
 --
 ALTER TABLE `tbarang`
-  MODIFY `idAset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbuku`
 --
 ALTER TABLE `tbuku`
   MODIFY `idBuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `tinformasiuser`
---
-ALTER TABLE `tinformasiuser`
-  MODIFY `idInfoUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `truangan`
@@ -258,12 +225,6 @@ ALTER TABLE `tbarang`
 --
 ALTER TABLE `tbuku`
   ADD CONSTRAINT `tbuku_ibfk_1` FOREIGN KEY (`linkRuangan`) REFERENCES `truangan` (`idRuangan`);
-
---
--- Constraints for table `tinformasiuser`
---
-ALTER TABLE `tinformasiuser`
-  ADD CONSTRAINT `tinformasiuser_ibfk_1` FOREIGN KEY (`linkUser`) REFERENCES `tuser` (`idUser`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
