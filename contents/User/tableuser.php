@@ -1,13 +1,6 @@
 <?php 
-	
-	$datatemp = [
-		['nama'=>'luthfi', 'status'=>'admin'],
-		['nama'=>'sayu', 'status'=>'admin'],
-		['nama'=>'lisa', 'status'=>'admin'],
-		['nama'=>'jean', 'status'=>'admin'],
-		['nama'=>'ei', 'status'=>'admin']
-	]
-
+    require 'config/userfunctions.php';
+    $users = query('SELECT * FROM tuser');
  ?>
 
 <main>
@@ -18,30 +11,32 @@
             <li class="breadcrumb-item active">Daftar User</li>
         </ol>
         
-        <table class="table caption-top table-striped text-center">
+        <table class="table caption-top table-striped">
             <caption>Daftar User</caption>
             <thead class="table-dark">
                 <tr>
-                    <th>#</th>
+                    <th class="text-center">#</th>
                     <th>Nama</th>
+                    <th>NIK</th>
                     <th>Status</th>
-                    <th>Opsi</th>
+                    <th class="text-center">Opsi</th>
                 </tr>
             </thead>
 
             <tbody class="">
-            	<?php $count = 1; ?>
-            	<?php foreach($datatemp as $data) : ?>
+                <?php $count = 1; ?>
+                <?php foreach($users as $user) : ?>
             		<tr>
-            			<td><?= $count; ?></td>
-            			<td><?= $data['nama']; ?></td>
-            			<td><?= $data['status']; ?></td>
-            			<td>
-            				<a href="index.php?page=UserDetail" class="btn btn-success">Detail</a>
+            			<td class="text-center"><?= $count; ?></td>
+            			<td><?= $user['nama']; ?></td>
+                        <td><?= $user['nik']; ?></td>
+            			<td><?= $user['status']; ?></td>
+            			<td class="text-center">
+            				<a href="index.php?page=UserDetail&id=<?= $user['idUser']; ?>" class="btn btn-success">Detail</a>
             			</td>
             		</tr>
-            		<?php $count++ ?>
-            	<?php endforeach; ?>
+                    <?php $count++ ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

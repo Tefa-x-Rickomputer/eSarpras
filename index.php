@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Icon Bootstrap CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <title>Inventory Barang</title>
+        <title>Inventory Management</title>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="Assets/css/indexstyles.css" rel="stylesheet" />
         <link rel="stylesheet" href="Assets/css/index.css">
@@ -30,7 +30,7 @@
                             include 'contents/dashboard.php';
                             break;
                         
-                        // Barang swithc
+                        // Barang switch
                         case 'DaftarBarang':
                             include 'contents/Barang/daftarbarang.php';
                             break;
@@ -56,6 +56,18 @@
                         case 'Useredit':
                             include 'contents/User/edituser.php';
                             break;
+
+                        case 'Userdelete':
+                            include 'contents/User/Userdelete.php';
+                            break;
+
+                        case 'adduser':
+                            include 'contents/User/adduser.php';
+                            break;
+
+                        case 'addinfo':
+                            include 'contents/User/addinformasiuser.php';
+                            break;
                         // User switch
 
                         default:
@@ -69,9 +81,6 @@
              <!-- Main Content End -->
 
                      
-
-
-        <!-- 3 div ini sambungan dari navbar, bukan div kosong -->
                 </div>
             </div>
         </div>
@@ -92,5 +101,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="Assets/js/indexscripts.js"></script>
+        <!-- JS sendiri -->
+        <script src="Assets/js/scripts.js"></script>
     </body>
 </html>
