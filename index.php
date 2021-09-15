@@ -64,6 +64,10 @@
                             include 'contents/Buku/editbuku.php';
                             break;
 
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
+                            break;
+
                         // Buku switch end
 
                         // User switch
