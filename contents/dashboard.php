@@ -8,13 +8,15 @@ $cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
 
 $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 
-if ($_SESSION["role"] = "super") {
-    $dplRole = "Superuser";
-} elseif ($_SESSION["role"] = "admin") {
-    $dplRole = "Administrator";
-} else {
-    $dplRole = "Tamu";
-}
+// if ($_SESSION["role"] = "super") {
+//     $dplRole = "Superuser";
+// } elseif ($_SESSION["role"] = "admin") {
+//     $dplRole = "Administrator";
+// } elseif ($_SESSION["role"] = "guest") {
+//     $dplRole = "Tamu";
+// } else {
+//     $dplRole = "What are you?";
+// }
 
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
@@ -23,6 +25,7 @@ if ($_SESSION["role"] = "super") {
 // var_dump($_SESSION["status"]);
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
+// var_dump($role);
 
 ?>
 
@@ -136,7 +139,7 @@ if ($_SESSION["role"] = "super") {
                     <div class="card-body bg-dark text-light pb-2">
                         <ul class="list-group list-group-unbordered mb-1 text-center fw-normal">
                             <li class="pb-2">
-                                <i class="text-muted text-center"><?= $dplRole ?></i>
+                                <i class="text-muted text-center"><?= $_SESSION["role"]; ?></i>
                             </li>
                             <li class="list-group-item border-start-0 border-end-0 border-bottom-0 bg-dark text-light">
                                 <?= $_SESSION["status"]; ?>

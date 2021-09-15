@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2021 at 09:15 AM
+-- Generation Time: Sep 15, 2021 at 04:31 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -126,7 +126,7 @@ CREATE TABLE `tuser` (
   `idUser` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('super','admin','guest') NOT NULL,
+  `role` enum('Superuser','Administrator','Guest') NOT NULL,
   `nik` varchar(16) DEFAULT NULL,
   `nama` varchar(30) NOT NULL,
   `fotoProfil` varchar(50) DEFAULT '''Assets/img/user/person-fill.svg''',
@@ -145,12 +145,12 @@ CREATE TABLE `tuser` (
 --
 
 INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
-(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'admin', '637104234623446', 'Kuin Nerahaya', 'Assets/img/user/person-fill.svg', 'Perempuan', 'Budha', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'EEEEEEEEEEEEEEEEEE', 0),
-(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'super', '6371042701040003', 'Muhammad Azhim Nugroho', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Siswa', 0),
-(3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'guest', '1028357291509785', 'Somebody that You Used to Know', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'remembernot@yahoo.com', '1976-06-24', 'Familiar Street No. 4', 'Status that You Still Know', 0),
-(4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'super', '1023957609152345', 'Reil Nathel', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Staff', 0),
-(5, 'anotheradmin', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'admin', '31015704356070', 'Chet Cooker', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Tamu', 0),
-(6, 'anotherguest', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'guest', '3101823650989698', 'Syndrome', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0971234696891', 'superis@body.no', '1988-12-02', 'St. Groove', 'Villain', 0);
+(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'Administrator', '637104234623446', 'Kuin Nerahaya', 'Assets/img/user/person-fill.svg', 'Perempuan', 'Budha', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'EEEEEEEEEEEEEEEEEE', 0),
+(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Siswa', 0),
+(3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'Guest', '1028357291509785', 'Somebody that You Used to Know', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'remembernot@yahoo.com', '1976-06-24', 'Familiar Street No. 4', 'Status that You Still Know', 0),
+(4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'Superuser', '1023957609152345', 'Reil Nathel', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Staff', 0),
+(5, 'anotherguest', '$2y$10$/DOOPOtCp7Zy/wBfPddyR.oN1RU6RddwEMqPRmWdl9Wd784X7V56m', 'Guest', '31015704356070', 'Chet Cooker', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Juru Masak', 0),
+(6, 'anotheradmin', '$2y$10$u7ZXlqraMUfLLDTBfuL9O.fcCciEe1rHT48tK1P6gQJjYG6X2B1tO', 'Administrator', '3101823650989698', 'Syndrome', 'Assets/img/user/person-fill.svg', 'Laki-laki', 'Katholik', '0971234696891', 'superis@body.no', '1988-12-02', 'St. Groove', 'Villain', 0);
 
 --
 -- Indexes for dumped tables
