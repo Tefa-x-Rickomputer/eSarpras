@@ -4,12 +4,15 @@
     $id = $_GET['id'];
     $result = mysqli_query($db, "SELECT * FROM tbarang WHERE idAset='$id'");
     $barang = mysqli_fetch_assoc($result);
+
+
  ?>
+
 <main>
 	<div class="container-fluid">
         <div class="row">
             <div class="col mt-5 text-center">
-                <h1>DetailBarang</h1>
+                <h1>Edit Aset</h1>
             </div>    
         </div>
 
@@ -18,18 +21,17 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                           <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
                         </div>
-
 
                     </div>
                     <ul class="list-group list-group-flush mb-3">
-                        <li class="list-group-item mt-3">
-                            <b>Nama Aset</b>
+                        <li class="list-group-item mt-2">
+                            <b>NamaAset</b>
                             <div class="float-end"><p><?= $barang['namaBarang'] ?></p></div>
                         </li>
-                        <li class="list-group-item mt-3">
-                            <b>Nomor Register</b>
+                        <li class="list-group-item mt-2">
+                            <b>NomorRegister</b>
                             <div class="float-end"><p><?= $barang['nomorRegister']?></p></div>
                         </li>
                     </ul>
@@ -42,29 +44,28 @@
                     
                     <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Nama Aset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">NamaAset</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['namaBarang'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['namaBarang'] ?>">
                         </div>
                     </div>
 
                       <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Merk Aset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">MerkAset</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['merkBarang'] ?>">
+                          <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['merkBarang'] ?>">
                         </div>
                     </div>
 
                       <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Tipe Aset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">TipeAset</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['tipeBarang'] ?>">
-                        </div>
+                            <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['tipeBarang'] ?>">
                     </div>
 
                       <div class="row form-group">
@@ -72,7 +73,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">NomorRegister</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['nomorRegister'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['nomorRegister'] ?>">
                         </div>
                     </div>
 
@@ -81,7 +82,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">HargaSatuan</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['hargaSatuan'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['hargaSatuan'] ?>">
                         </div>
                     </div>
 
@@ -90,16 +91,20 @@
                             <label for="" class="fw-bold fs-5 mt-3">TahunPembelian</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['tahunPembelian'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['tahunPembelian'] ?>">
                         </div>
                     </div>
 
                          <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">SumberDana</label>
+                            <label for="" class="fw-bold fs-5 mt-3">Sumber Dana</label>
                         </div>
                         <div class="col-sm-5">
-                             <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['sumberDana'] ?>">
+                            <select name="" id="" class="form-select mt-3">
+                                 <option selected disabled>sumberDana</option>
+                                <option value="BOS">BOS</option>
+                                <option value="BOSDA">BOSDA</option>
+                            </select>
                         </div>
                     </div>
 
@@ -108,7 +113,11 @@
                             <label for="" class="fw-bold fs-5 mt-3">Kondisi</label>
                         </div>
                         <div class="col-sm-5">
-                   <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['kondisiBarang'] ?>">
+                            <select name="" id="" class="form-select mt-3">
+                                <option selected disabled>Kondisi</option>
+                                <option value="Baru">Baru</option>
+                                <option value="Rusak">Rusak</option>
+                            </select>
                         </div>
                     </div>
 
@@ -117,7 +126,22 @@
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
-                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['linkRuangan'] ?>">
+                            <select name="" id="" class="form-select mt-3">
+                                <option selected disabled>Pilih Ruangan</option>
+                                <option value="RPS1">RPS 1</option>
+                                <option value="RPS2">RPS 2</option>
+                                <option value="RPS3">RPS 3</option>
+                                <option value="Perpustakaan">Perpustakaan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="" class="fw-bold fs-5 mt-3">FotoAset</label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input class="form-control mt-3" type="file" id="formFile">
                         </div>
                     </div>
 
@@ -129,8 +153,7 @@
 
         <div class="row mb-5 text-center">
             <div class="col">
-                <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-warning">Edit</a>
-                <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-danger" onclick="return confirm('are you sure?')" >Hapus</a>
+                <a href="index.php?page=DaftarBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-primary" onclick="confirm('are you sure?')" >Simpan</a>
             </div>
         </div>
 

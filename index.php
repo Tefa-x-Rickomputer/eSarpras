@@ -10,6 +10,9 @@
         <link href="Assets/css/indexstyles.css" rel="stylesheet" />
         <link rel="stylesheet" href="Assets/css/index.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- data table -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.css"/>
     </head>
     <body>
         
@@ -42,7 +45,38 @@
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
                             break;
+
+                        case 'EditBarang':
+                            include 'contents/Barang/editbarang.php';
+                            break;
+
+                        case 'Hapus':
+                            include 'contents/Barang/hapus.php';
+                            break;
                         // Barang switch end
+
+                        // Buku switch 
+                        case 'DaftarBuku':
+                            include 'contents/Buku/daftarbuku.php';
+                            break;
+
+                        case 'TambahBuku':
+                            include 'contents/Buku/tambahbuku.php';
+                            break;
+
+                        case 'DetailBuku':
+                            include 'contents/Buku/detailbuku.php';
+                            break;
+                        
+                        case 'EditBuku':
+                            include 'contents/Buku/editbuku.php';
+                            break;
+
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
+                            break;
+
+                        // Buku switch end
 
                         // User switch
                         case 'Userlist':
@@ -96,12 +130,29 @@
 
 
 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="Assets/js/indexscripts.js"></script>
-        <!-- JS sendiri -->
+
+        <!-- Data Table -->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
+       <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
         <script src="Assets/js/scripts.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+              var table = $('#example').DataTable( {
+            responsive: true
+            } );
+     
+        new $.fn.dataTable.FixedHeader( table );
+    });
+</script>
     </body>
 </html>

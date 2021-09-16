@@ -50,7 +50,7 @@
                         <a class="nav-link text-white" href="index.php?page=adduser">
                             Tambah User
                         </a>
-                        <a class="nav-link text-white" href="Authentication/login.php">Logout</a>
+                        <a class="nav-link text-white" href="Authentication/logout.php">Logout</a>
                     </div>
 
                 </div>
