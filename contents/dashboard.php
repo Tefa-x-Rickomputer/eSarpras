@@ -1,5 +1,7 @@
 <?php 
 
+require_once "config/connect.php";
+
 // $userSession = [
 //             "login" => $_SESSION["login"],
 //             "role" => $_SESSION["role"],

@@ -19,7 +19,7 @@
                     </a>
                     <div class="collapse ms-4" id="collapse1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <a class="nav-link text-white" href="index.php?page=DaftarBarang">Daftar Barang</a>
-                        <a class="nav-link text-white <?= eclGuest(); ?>" href="index.php?page=TambahBarang">Tambah Barang</a>
+                        <a class="nav-link text-white <?= eclGuest; ?>" href="index.php?page=TambahBarang">Tambah Barang</a>
                     </div>
 
                     <a class="nav-link nav-link-drop collapsed text-white pt-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
@@ -30,7 +30,7 @@
                     </a>
                     <div class="collapse ms-4" id="collapse2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <a class="nav-link text-white" href="index.php?page=DaftarBuku">Daftar Buku</a>
-                        <a class="nav-link text-white <?= eclGuest(); ?>" href="index.php?page=TambahBuku">Tambah Buku</a>
+                        <a class="nav-link text-white <?= eclGuest; ?>" href="index.php?page=TambahBuku">Tambah Buku</a>
                     </div>
 
                     <a class="nav-link nav-link-drop collapsed text-white pt-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
@@ -44,10 +44,10 @@
                         <a class="nav-link text-white" href="index.php?page=UserDetail">
                             Profile
                         </a>
-                        <a class="nav-link text-white <?= eclGuest(); ?>" href="index.php?page=Userlist">
+                        <a class="nav-link text-white <?= eclAdminGuest; ?>" href="index.php?page=Userlist">
                             Daftar User
                         </a>
-                        <a class="nav-link text-white <?= eclGuest(); ?>" href="index.php?page=adduser">
+                        <a class="nav-link text-white <?= eclAdminGuest; ?>" href="index.php?page=adduser">
                             Tambah User
                         </a>
                         <a class="nav-link text-white" href="Authentication/logout.php">Logout</a>
