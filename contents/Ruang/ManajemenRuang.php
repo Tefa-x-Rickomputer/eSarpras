@@ -24,7 +24,7 @@ if(isset($_POST['simpan'])) {
 }
 	
 
-//query hapus ruang
+//query hapus ruang (soft delete)
 if(isset($_POST['hapus'])) {
 	$id = $_POST ['idruangan'];
     $query = "UPDATE truangan SET isDeleted= '1' WHERE idRuangan =$id";
@@ -33,18 +33,33 @@ if(isset($_POST['hapus'])) {
 	
 	mysqli_query($db, $query);
 }
+
+// hard delete
+if(isset($_POST['hapus2'])) {
+	$id = $_POST ['idruangan'];
+    $query = "DELETE FROM truangan WHERE idRuangan =$id";
+	mysqli_query($db, $query);
+}
+
 //query update/edit ruang
 
 if(isset($_POST['update'])) {
 	$id = $_POST ['idruang'];
 	$namaruang =$_POST ['namaruanganbaru'];	
-	echo $id;
-	echo $namaruang;
+	
 	
 	$query = "UPDATE truangan SET namaRuangan= '$namaruang' WHERE idRuangan =$id";
 	mysqli_query($db, $query);
 }
 
+//Query show table
+
+$tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
+
+
+	mysqli_query($db, $tabel);
+	
+	
 ?>
 
 
@@ -100,6 +115,8 @@ if(isset($_POST['update'])) {
 	
 		<!--input group edit ruang-->
 	<br>
+	</br>	
+	<br>
 	</br>
 	<!--break-->
 	
@@ -125,6 +142,8 @@ if(isset($_POST['update'])) {
 		</div>
 		<br>
 		</br>
+		<br>
+		</br>
 	
 	</div>
 
@@ -146,10 +165,32 @@ if(isset($_POST['update'])) {
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit"  class="btn btn-outline-danger" name="hapus">Hapus</button>
+			<button type="submit"  class="btn btn-outline-danger" name="hapus">soft delete</button>
+			<button type="submit"  class="btn btn-outline-danger" name="hapus2">Hard delete</button>
+		
+			<br>
+		</br>
+		<br>
+		</br>
 		</div>
 	</div>
 		
+
+	
+	
+	<!-- table-->
+	
+	<table class="table table-dark table-striped">
+  
+
+
+
+	<tr>
+                    <th>ID</th>
+                    <th>Nama Ruangan</th>
+                    
+                </tr>
+	</table>
 
 
 
@@ -157,4 +198,18 @@ if(isset($_POST['update'])) {
 </form>
 
 
+<tbody class="">
+               
+                    <tr>
+                   
+                    <td><?echo= $tabel["id"]; ?></td>
+                    <td><?echo= $tabel["namaRuangan"]; ?></td>
+                   
+                    
+                        
+                    </tr>
+                    
+			
+            </tbody>
+			</table>
 </main>
