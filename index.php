@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Icon Bootstrap CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <title>Inventory Barang</title>
+        <title>Inventory Management</title>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="Assets/css/indexstyles.css" rel="stylesheet" />
         <link rel="stylesheet" href="Assets/css/index.css">
@@ -33,7 +33,7 @@
                             include 'contents/dashboard.php';
                             break;
                         
-                        // Barang swithc
+                        // Barang switch
                         case 'DaftarBarang':
                             include 'contents/Barang/daftarbarang.php';
                             break;
@@ -90,6 +90,18 @@
                         case 'Useredit':
                             include 'contents/User/edituser.php';
                             break;
+
+                        case 'Userdelete':
+                            include 'contents/User/Userdelete.php';
+                            break;
+
+                        case 'adduser':
+                            include 'contents/User/adduser.php';
+                            break;
+
+                        case 'addinfo':
+                            include 'contents/User/addinformasiuser.php';
+                            break;
                         // User switch
 
                         default:
@@ -103,9 +115,6 @@
              <!-- Main Content End -->
 
                      
-
-
-        <!-- 3 div ini sambungan dari navbar, bukan div kosong -->
                 </div>
             </div>
         </div>
@@ -121,18 +130,21 @@
 
 
 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="Assets/js/indexscripts.js"></script>
+
         <!-- Data Table -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
        <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
+        <script src="Assets/js/scripts.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function() {
               var table = $('#example').DataTable( {
