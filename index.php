@@ -1,12 +1,3 @@
-<?php 
-
-session_start();
-if (!isset($_SESSION["login"])) {
-    header("Location: Authentication/login.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,11 +10,9 @@ if (!isset($_SESSION["login"])) {
         <link href="Assets/css/indexstyles.css" rel="stylesheet" />
         <link rel="stylesheet" href="Assets/css/index.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <!-- Data Table -->
+        <!-- data table -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.css"/>
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="Assets/css/dashboard.css">
     </head>
     <body>
         
@@ -56,6 +45,14 @@ if (!isset($_SESSION["login"])) {
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
                             break;
+
+                        case 'EditBarang':
+                            include 'contents/Barang/editbarang.php';
+                            break;
+
+                        case 'Hapus':
+                            include 'contents/Barang/hapus.php';
+                            break;
                         // Barang switch end
 
                         // Buku switch 
@@ -70,7 +67,7 @@ if (!isset($_SESSION["login"])) {
                         case 'DetailBuku':
                             include 'contents/Buku/detailbuku.php';
                             break;
-
+                        
                         case 'EditBuku':
                             include 'contents/Buku/editbuku.php';
                             break;
@@ -145,6 +142,5 @@ if (!isset($_SESSION["login"])) {
         new $.fn.dataTable.FixedHeader( table );
     });
 </script>
-
     </body>
 </html>
