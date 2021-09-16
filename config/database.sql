@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2021 at 04:31 AM
+-- Generation Time: Sep 13, 2021 at 04:24 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -53,7 +53,6 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 (3, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD001', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
 (4, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
 (5, 'Laptop', 'Assets/img/aset/asus a409fj.jp', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -91,6 +90,18 @@ INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`
 (6, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD001', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
 (7, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
 (8, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0);
+
+--
+-- Dumping data for table `tinformasiuser`
+--
+
+INSERT INTO `tinformasiuser` (`idInfoUser`, `linkUser`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`) VALUES
+(1, 2, NULL, 'Kuin Nerahaya', NULL, 'Perempuan', 'Budha', NULL, NULL, NULL, NULL, 'EEEEEEEEEEEEEEEEEE'),
+(2, 1, NULL, 'Muhammad Azhim Nugroho', NULL, 'Laki-laki', 'Islam', NULL, NULL, NULL, NULL, 'Siswa'),
+(3, 3, NULL, 'Somebody that You Used to Know', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Status that You Still Know'),
+(4, 5, NULL, 'Reil Nathel', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Staff'),
+(5, 6, NULL, 'Chet Cooker', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Tamu'),
+(6, 4, NULL, 'Syndrome', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Villain');
 
 -- --------------------------------------------------------
 
