@@ -91,18 +91,6 @@ INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`
 (7, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
 (8, 'Technological Slavery', 'Assets/img/buku/technologicals', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0);
 
---
--- Dumping data for table `tinformasiuser`
---
-
-INSERT INTO `tinformasiuser` (`idInfoUser`, `linkUser`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`) VALUES
-(1, 2, NULL, 'Kuin Nerahaya', NULL, 'Perempuan', 'Budha', NULL, NULL, NULL, NULL, 'EEEEEEEEEEEEEEEEEE'),
-(2, 1, NULL, 'Muhammad Azhim Nugroho', NULL, 'Laki-laki', 'Islam', NULL, NULL, NULL, NULL, 'Siswa'),
-(3, 3, NULL, 'Somebody that You Used to Know', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Status that You Still Know'),
-(4, 5, NULL, 'Reil Nathel', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Staff'),
-(5, 6, NULL, 'Chet Cooker', NULL, 'Laki-laki', 'Kristen', NULL, NULL, NULL, NULL, 'Tamu'),
-(6, 4, NULL, 'Syndrome', NULL, 'Laki-laki', 'Katholik', NULL, NULL, NULL, NULL, 'Villain');
-
 -- --------------------------------------------------------
 
 --
