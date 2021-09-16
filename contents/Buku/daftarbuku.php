@@ -1,16 +1,7 @@
 <?php 
-    $tempdata = [
-        ["namabarang" => "Laptop", "kode" => "177013", "noreg" => "0001", "merk" => "asus", "jumlah" => "2"],
-        ["namabarang" => "Handphone", "kode" => "228922", "noreg" => "0002", "merk" => "asus", "jumlah" => "4"],
-        ["namabarang" => "Mouse", "kode" => "240604", "noreg" => "0003", "merk" => "asus", "jumlah" => "3"],
-        ["namabarang" => "Keyboard", "kode" => "300604", "noreg" => "0004", "merk" => "asus", "jumlah" => "3"],
-        ["namabarang" => "PC", "kode" => "150504", "noreg" => "0005", "merk" => "asus", "jumlah" => "3"],
-        ["namabarang" => "Monitor", "kode" => "010104", "noreg" => "0006", "merk" => "asus", "jumlah" => "3"],
-        ["namabarang" => "Kursi", "kode" => "060904", "noreg" => "0007", "merk" => "asus", "jumlah" => "15"],
-        ["namabarang" => "Meja", "kode" => "251204", "noreg" => "0008", "merk" => "asus", "jumlah" => "15"],
-        ["namabarang" => "Proyektor", "kode" => "290204", "noreg" => "0009", "merk" => "asus", "jumlah" => "2"],
-        ["namabarang" => "Slide Proyektor", "kode" => "010104", "noreg" => "0010", "merk" => "asus", "jumlah" => "1"],
-    ];
+    require 'config/bukufunctions.php';
+    $buku = querysql ("SELECT * FROM tbuku");
+
  ?>
 
 <main>
@@ -26,32 +17,33 @@
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
-                    <th>Nama Barang</th>
-                    <th>Kode Barang</th>
-                    <th>Nomor Register</th>
-                    <th>Merk</th>
-                    <th>Jumlah</th>
+                    <th>Judul Buku</th>
+                    <th>Nomor Buku</th>
+                    <th>Pengarang</th>
+                    <th>Penerbit</th>
+                    <th>Tahun Terbit</th>
                     <th>Opsi</th>
                 </tr>
             </thead>
 
             <tbody class="">
-                <?php $count = 1 ?>
-                <?php foreach($tempdata as $data) : ?>
+                <?php $i = 1;?>
+                <?php foreach($buku as $item) : ?>
                     <tr>
-                        <td> <?= $count; ?> </td>
-                        <td> <?= $data['namabarang']; ?> </td>
-                        <td> <?= $data['kode']; ?> </td>
-                        <td> <?= $data['noreg']; ?> </td>
-                        <td> <?= $data['merk']; ?> </td>
-                        <td> <?= $data['jumlah']; ?> </td>
+                    <td><?= $i; ?></td>
+                    <td><?= $item["judulBuku"]; ?></td>
+                    <td><?= $item["nomorBuku"]; ?></td>
+                    <td><?= $item["pengarang"]; ?></td>
+                    <td><?= $item["penerbit"]; ?></td>
+                    <td><?= $item["tahunTerbit"]; ?></td>
+                    
                         <td>
                             <div class="d-grid">
-                                <a href="index.php?page=DetailBuku" class="btn btn-outline-success">Detail</a>
+                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>" class="btn btn-outline-success">Detail</a>
                             </div>
                         </td>
                     </tr>
-                    <?php $count++; ?>
+                    <?php $i++ ?>
                 <?php endforeach; ?>
             </tbody>
         </table>

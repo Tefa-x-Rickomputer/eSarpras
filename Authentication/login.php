@@ -38,6 +38,13 @@ if (isset($_POST["submit"])) {
 // var_dump($password);
 // var_dump($_SESSION["role"] = $row["role"]);
 // var_dump($_SESSION["login"]);
+// var_dump($_SESSION["role"]);
+// var_dump($_SESSION["nama"]);
+// var_dump($_SESSION["email"]);
+// var_dump($_SESSION["telpon"]);
+// var_dump($_SESSION["status"]);
+// var_dump($_SESSION["login"]);
+// var_dump($_SESSION["fotoProfil"]);
 ?>
 
 <!doctype html>

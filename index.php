@@ -67,6 +67,14 @@
                         case 'DetailBuku':
                             include 'contents/Buku/detailbuku.php';
                             break;
+                        
+                        case 'EditBuku':
+                            include 'contents/Buku/editbuku.php';
+                            break;
+
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
+                            break;
 
                         // Buku switch end
 
