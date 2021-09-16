@@ -1,18 +1,18 @@
 <?php 
 
-$userSession = [
-            "login" => $_SESSION["login"],
-            "role" => $_SESSION["role"],
-            "nama" => $_SESSION["nama"],
-            "email" => $_SESSION["email"],
-            "telpon" => $_SESSION["telpon"],
-            "status" => $_SESSION["status"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"],
-            ];
+// $userSession = [
+//             "login" => $_SESSION["login"],
+//             "role" => $_SESSION["role"],
+//             "nama" => $_SESSION["nama"],
+//             "email" => $_SESSION["email"],
+//             "telpon" => $_SESSION["telpon"],
+//             "status" => $_SESSION["status"],
+//             "fotoProfil" =>  $_SESSION["fotoProfil"],
+//             ];
 
-$cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
-$cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
-$cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
+$cntRuangan = querySql("SELECT COUNT('*') FROM truangan WHERE isDeleted = 0")[0];
+$cntAset = querySql("SELECT COUNT('*') FROM tbarang WHERE isDeleted = 0")[0];
+$cntBuku = querySql("SELECT COUNT('*') FROM tbuku WHERE isDeleted = 0")[0];
 
 $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 
