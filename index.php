@@ -102,7 +102,17 @@
                         case 'addinfo':
                             include 'contents/User/addinformasiuser.php';
                             break;
+                        
                         // User switch
+
+                        // Ruang switch
+                        case 'addroom':
+                            include 'contents/Ruang/ManajemenRuang.php';
+                            break;
+                        // Ruang switch end
+
+                        
+                    
 
                         default:
                             echo "<center>Page not found";

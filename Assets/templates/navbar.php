@@ -53,6 +53,27 @@
                         <a class="nav-link text-white" href="Authentication/logout.php">Logout</a>
                     </div>
 
+                    <!--Ruang section-->
+
+                        <a class="nav-link nav-link-drop collapsed text-white pt-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            <i class="bi bi-house-fill"></i>
+                            Menu Ruang
+                            <div class="float-end">
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ms-4" id="collapse1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <a class="nav-link text-white" href="index.php?page=addroom">ManajemenRuang</a>
+                            
+                        </div>
+
+
+                    
+                   
+                  
+                    
+                    
+
                 </div>
             </div>
             <!-- Sidebar Section -->
