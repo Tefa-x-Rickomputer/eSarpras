@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+if (!isset($_SESSION["login"])) 
+{
+    header("Location: Authentication/login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,14 +15,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Icon Bootstrap CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <title>Inventory Management</title>
+        <title>Inventory Barang</title>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="Assets/css/indexstyles.css" rel="stylesheet" />
         <link rel="stylesheet" href="Assets/css/index.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <!-- data table -->
+        <!-- Data Table -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.css"/>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="Assets/css/dashboard.css">
     </head>
     <body>
         
@@ -33,7 +45,7 @@
                             include 'contents/dashboard.php';
                             break;
                         
-                        // Barang switch
+                        // Barang swithc
                         case 'DaftarBarang':
                             include 'contents/Barang/daftarbarang.php';
                             break;
@@ -44,14 +56,6 @@
 
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
-                            break;
-
-                        case 'EditBarang':
-                            include 'contents/Barang/editbarang.php';
-                            break;
-
-                        case 'Hapus':
-                            include 'contents/Barang/hapus.php';
                             break;
                         // Barang switch end
 
@@ -67,13 +71,9 @@
                         case 'DetailBuku':
                             include 'contents/Buku/detailbuku.php';
                             break;
-                        
+
                         case 'EditBuku':
                             include 'contents/Buku/editbuku.php';
-                            break;
-
-                          case 'HapusBuku':
-                            include 'contents/Buku/hapusbuku.php';
                             break;
 
                         // Buku switch end
@@ -90,29 +90,7 @@
                         case 'Useredit':
                             include 'contents/User/edituser.php';
                             break;
-
-                        case 'Userdelete':
-                            include 'contents/User/Userdelete.php';
-                            break;
-
-                        case 'adduser':
-                            include 'contents/User/adduser.php';
-                            break;
-
-                        case 'addinfo':
-                            include 'contents/User/addinformasiuser.php';
-                            break;
-                        
                         // User switch
-
-                        // Ruang switch
-                        case 'addroom':
-                            include 'contents/Ruang/ManajemenRuang.php';
-                            break;
-                        // Ruang switch end
-
-                        
-                    
 
                         default:
                             echo "<center>Page not found";
@@ -125,6 +103,9 @@
              <!-- Main Content End -->
 
                      
+
+
+        <!-- 3 div ini sambungan dari navbar, bukan div kosong -->
                 </div>
             </div>
         </div>
@@ -140,21 +121,18 @@
 
 
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="Assets/js/indexscripts.js"></script>
-
         <!-- Data Table -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
        <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
-        <script src="Assets/js/scripts.js"></script>
-
         <script type="text/javascript">
             $(document).ready(function() {
               var table = $('#example').DataTable( {
@@ -164,5 +142,6 @@
         new $.fn.dataTable.FixedHeader( table );
     });
 </script>
+
     </body>
 </html>
