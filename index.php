@@ -1,6 +1,6 @@
 <?php 
 
-require_once "config/connect.php";
+// require_once "config/connect.php";
 
 session_start();
 if (!isset($_SESSION["login"])) 
@@ -76,6 +76,10 @@ if (!isset($_SESSION["login"]))
 
                         case 'EditBuku':
                             include 'contents/Buku/editbuku.php';
+                            break;
+
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
                             break;
 
                         // Buku switch end
