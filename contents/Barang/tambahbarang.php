@@ -112,15 +112,27 @@
         <div class="col-md mt-3">
           <div class="form-floating">
             <select class="form-select" id="floatingSelect">
-              <option value="Baru">Baru</option>
-              <option value="Bagus">Bagus</option>
               <option value="Baik">Baik</option>
               <option value="Rusak">Rusak</option>
             </select>
             <label for="floatingSelect">Kondisi</label>
           </div>
         </div>
+         <div class="col-md mt-1">
+        <div class="form-group">
+          <label for="file"></label>
+          <input type="file" class="form-control" id="file" name="file" value="<?=@$vfile?>">
+        </div>
+      </div>
 
+
+      </div>
+      <button type="button" name="bsimpan" class="btn btn-primary">Simpan</button>
+    </form>
+
+
+  </div>
+</main>
       </div>
     </form>
 

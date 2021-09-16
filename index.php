@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: Authentication/login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,6 +22,8 @@
         <!-- Data Table -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.css"/>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="Assets/css/dashboard.css">
     </head>
     <body>
         

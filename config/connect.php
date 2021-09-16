@@ -3,17 +3,15 @@
     $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
     function querySql($query)
-{
-  global $db;
+        {
+        global $db;
 
-  $item = mysqli_query($db, $query);
-  $items = [];
+        $item = mysqli_query($db, $query);
+        $items = [];
 
-  while ($row = mysqli_fetch_assoc($item)) {
-    $items[] = $row;
-  }
+        while ($row = mysqli_fetch_assoc($item)) {
+            $items[] = $row;
+        }
 
-  return $items;
-}
-
-?>
+        return $items;
+        }
