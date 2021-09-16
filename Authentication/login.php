@@ -1,11 +1,7 @@
 <?php 
 
-require "../config/connect.php";
 session_start();
-
-if (isset($_SESSION["login"])) {
-    header("location:../");
-}
+require "../config/connect.php";
 
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
@@ -18,18 +14,21 @@ if (isset($_POST["submit"])) {
     if ($userCheck === 1) {
         $row = mysqli_fetch_assoc($rltLogin);
         if (password_verify($password, $row["password"])) {
-            $_SESSION["login"] = true;
-            $_SESSION["role"] = $row["role"];
-            $_SESSION["nama"] = $row["nama"];
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["telpon"] = $row["telpon"];
-            $_SESSION["status"] = $row["status"];
-            $_SESSION["fotoProfil"] = $row["fotoProfil"];
-            header("location:../");
-            exit;
+            $userSession = [
+            "login" => $_SESSION["login"] = true,
+            "role" => $_SESSION["role"] = $row["role"],
+            "nama" => $_SESSION["nama"] = $row["nama"],
+            "email" => $_SESSION["email"] = $row["email"],
+            "telpon" => $_SESSION["telpon"] = $row["telpon"],
+            "status" => $_SESSION["status"] = $row["status"],
+            "fotoProfil" =>  $_SESSION["fotoProfil"] = $row["fotoProfil"],
+            ];
         }
     } 
     $error = true;
+}
+if (isset($_SESSION["login"])) {
+    header("location:../");
 }
 
 // var_dump($username);
@@ -45,6 +44,8 @@ if (isset($_POST["submit"])) {
 // var_dump($_SESSION["status"]);
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
+// // var_dump($userSession[1]);
+// var_dump($userSession["nama"]);
 ?>
 
 <!doctype html>
