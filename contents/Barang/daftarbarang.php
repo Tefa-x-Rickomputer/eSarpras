@@ -1,6 +1,6 @@
 <?php 
     require 'config/connect.php';
-    $barang = querySql("SELECT * FROM tbarang");
+    $barang = querySql("SELECT * FROM tbarang WHERE isDeleted=0");
     ?>
 
 <main>
@@ -12,7 +12,6 @@
         </ol>
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
- <caption>Daftar Aset</caption>
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
