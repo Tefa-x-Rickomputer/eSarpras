@@ -54,10 +54,8 @@ if(isset($_POST['update'])) {
 
 //Query show table
 
-$tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
-
-
-	mysqli_query($db, $tabel);
+	/*$tabel = ("SELECT * FROM truangan WHERE isDeleted=0");
+	mysqli_query($db, $tabel)*/
 	
 	
 ?>
@@ -104,7 +102,7 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 			</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" class="btn btn-outline-warning" name="simpan">Simpan</button>
+			<button type="submit" class="btn btn-warning" name="simpan">Simpan</button>
 		</div>
  
 	
@@ -138,7 +136,7 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" name ="update" class="btn btn-outline-warning">Edit</button>
+			<button type="submit" name ="update" class="btn btn-warning">Edit</button>
 		</div>
 		<br>
 		</br>
@@ -165,8 +163,8 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit"  class="btn btn-outline-danger" name="hapus">soft delete</button>
-			<button type="submit"  class="btn btn-outline-danger" name="hapus2">Hard delete</button>
+			<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
+			<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
 		
 			<br>
 		</br>
@@ -178,38 +176,60 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 
 	
 	
-	<!-- table-->
+
 	
-	<table class="table table-dark table-striped">
-  
-
-
-
-	<tr>
-                    <th>ID</th>
-                    <th>Nama Ruangan</th>
-                    
-                </tr>
-	</table>
-
+	
 
 
 <!-- end of form-->
-</form>
+
+<?php
+
+$server 			="localhost";
+$user 				="root";
+$password 			="";
+$database			="inventorymanagement";
+
+$db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
+$tabel = 'SELECT idRuangan, namaRuangan
+		FROM truangan WHERE isDeleted=0';
+
+$query = mysqli_query($db, $tabel);
+		
 
 
-<tbody class="">
-               
-                    <tr>
-                   
-                    <td><?echo= $tabel["id"]; ?></td>
-                    <td><?echo= $tabel["namaRuangan"]; ?></td>
-                   
-                    
-                        
-                    </tr>
-                    
+
+
+echo '<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+<caption>Daftar Buku</caption>
+		   <thead class="table-dark">
+		
+			<tr>
+				<th>ID RUANGAN</th>
+				<th>NAMA RUANGAN</th>
+				
+			</tr>
+		</thead>
+		<tbody>';
+		
+while ($row = mysqli_fetch_array($query))
+{
+	echo '<tr>
+			<td>'.$row['idRuangan'].'</td>
+			<td>'.$row['namaRuangan'].'</td>
 			
-            </tbody>
-			</table>
+		</tr>';
+}
+echo '
+	</tbody>
+</table>';
+
+// Apakah kita perlu menjalankan fungsi mysqli_free_result() ini? baca bagian VII
+mysqli_free_result($query);
+
+// Apakah kita perlu menjalankan fungsi mysqli_close() ini? baca bagian VII
+mysqli_close($db);
+?>
+
+</form>
 </main>
