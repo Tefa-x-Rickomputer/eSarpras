@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-var_dump($_SESSION["role"]);
+// var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
 // var_dump($_SESSION["email"]);
 // var_dump($_SESSION["telpon"]);
