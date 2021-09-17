@@ -16,18 +16,24 @@ if (isset($_POST["submit"])) {
         if (password_verify($password, $row["password"])) {
             $userSession = [
             "login" => $_SESSION["login"] = true,
+<<<<<<< HEAD
             "id" => $_SESSION["id"] = $row["id"],
+=======
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
             "role" => $_SESSION["role"] = $row["role"],
             "nama" => $_SESSION["nama"] = $row["nama"],
             "email" => $_SESSION["email"] = $row["email"],
             "telpon" => $_SESSION["telpon"] = $row["telpon"],
             "status" => $_SESSION["status"] = $row["status"],
             "fotoProfil" =>  $_SESSION["fotoProfil"] = $row["fotoProfil"],
+<<<<<<< HEAD
             "tanggalLahir" => $_SESSION["tanggalLahir"] = $row["tanggalLahir"],
             "agama" => $_SESSION["agama"] = $row["agama"],
             "gender" => $_SESSION["gender"] = $row["gender"],
             "alamat" => $_SESSION["alamat"] = $row["alamat"],
             "nik" =>  $_SESSION["nik"] = $row["nik"]
+=======
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
             ];
         }
     } 

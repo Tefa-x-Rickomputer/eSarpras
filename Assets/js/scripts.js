@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*!
     * Start Bootstrap - SB Admin v7.0.3 (https://startbootstrap.com/template/sb-admin)
     * Copyright 2013-2021 Start Bootstrap
@@ -24,3 +25,11 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+=======
+const navLink = document.querySelectorAll('.nav-link-drop');
+
+let navLinkValue = navLink.getAttribute('aria-expanded');
+if (navLinkValue == 'true') {
+	//
+}
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a

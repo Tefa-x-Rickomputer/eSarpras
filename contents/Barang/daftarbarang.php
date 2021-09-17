@@ -1,5 +1,9 @@
 <?php 
+<<<<<<< HEAD
     require 'config/barangfunctions.php';
+=======
+    require 'config/connect.php';
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
     $barang = querySql("SELECT * FROM tbarang");
     ?>
 

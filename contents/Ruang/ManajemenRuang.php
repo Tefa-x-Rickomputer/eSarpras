@@ -24,7 +24,11 @@ if(isset($_POST['simpan'])) {
 }
 	
 
+<<<<<<< HEAD
 //query hapus ruang
+=======
+//query hapus ruang (soft delete)
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 if(isset($_POST['hapus'])) {
 	$id = $_POST ['idruangan'];
     $query = "UPDATE truangan SET isDeleted= '1' WHERE idRuangan =$id";
@@ -33,18 +37,44 @@ if(isset($_POST['hapus'])) {
 	
 	mysqli_query($db, $query);
 }
+<<<<<<< HEAD
+=======
+
+// hard delete
+if(isset($_POST['hapus2'])) {
+	$id = $_POST ['idruangan'];
+    $query = "DELETE FROM truangan WHERE idRuangan =$id";
+	mysqli_query($db, $query);
+}
+
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 //query update/edit ruang
 
 if(isset($_POST['update'])) {
 	$id = $_POST ['idruang'];
 	$namaruang =$_POST ['namaruanganbaru'];	
+<<<<<<< HEAD
 	echo $id;
 	echo $namaruang;
+=======
+	
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 	
 	$query = "UPDATE truangan SET namaRuangan= '$namaruang' WHERE idRuangan =$id";
 	mysqli_query($db, $query);
 }
 
+<<<<<<< HEAD
+=======
+//Query show table
+
+$tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
+
+
+	mysqli_query($db, $tabel);
+	
+	
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 ?>
 
 
@@ -100,6 +130,11 @@ if(isset($_POST['update'])) {
 	
 		<!--input group edit ruang-->
 	<br>
+<<<<<<< HEAD
+=======
+	</br>	
+	<br>
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 	</br>
 	<!--break-->
 	
@@ -125,6 +160,11 @@ if(isset($_POST['update'])) {
 		</div>
 		<br>
 		</br>
+<<<<<<< HEAD
+=======
+		<br>
+		</br>
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 	
 	</div>
 
@@ -146,15 +186,61 @@ if(isset($_POST['update'])) {
 		</br>
 
 		<div class="col-md-mt3">
+<<<<<<< HEAD
 			<button type="submit"  class="btn btn-outline-danger" name="hapus">Hapus</button>
+=======
+			<button type="submit"  class="btn btn-outline-danger" name="hapus">soft delete</button>
+			<button type="submit"  class="btn btn-outline-danger" name="hapus2">Hard delete</button>
+		
+			<br>
+		</br>
+		<br>
+		</br>
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 		</div>
 	</div>
 		
 
+<<<<<<< HEAD
+=======
+	
+	
+	<!-- table-->
+	
+	<table class="table table-dark table-striped">
+  
+
+
+
+	<tr>
+                    <th>ID</th>
+                    <th>Nama Ruangan</th>
+                    
+                </tr>
+	</table>
+
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 
 
 <!-- end of form-->
 </form>
 
 
+<<<<<<< HEAD
+=======
+<tbody class="">
+               
+                    <tr>
+                   
+                    <td><?echo= $tabel["id"]; ?></td>
+                    <td><?echo= $tabel["namaRuangan"]; ?></td>
+                   
+                    
+                        
+                    </tr>
+                    
+			
+            </tbody>
+			</table>
+>>>>>>> 880516bee257c0d9f3df967e3232ebe1487ca43a
 </main>
