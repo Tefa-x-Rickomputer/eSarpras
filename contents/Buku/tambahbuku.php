@@ -2,16 +2,6 @@
 
   require 'config/bukufunctions.php';
 
-  if (isset($_POST['simpan']) ) {
-    if( addbuku($_POST) > 0 ) {
-      echo"<script>
-          alert('Data berhasil di tambah');
-          </script>";
-    } else {
-      echo "data gagal ditambahkan!!!";
-    }
-  }
-
  ?>
 
 <main>
@@ -22,9 +12,35 @@
       <li class="breadcrumb-item active">Tambah Buku</li>
     </ol>
 
-    <div class="d-flex bg-dark text-white p-3"><span class="text-dark">s</span></div>
+    <?php 
+      if (isset($_POST['simpan']) ) {
+    if( addbuku($_POST) > 0 ) {
+      echo"<div class='alert alert-success' role='alert'>
+        Data berhasil ditambahkan
+        </div>
+      <script>
+          setTimeout(function(){
+            document.location.href ='index.php?page=DaftarBuku';('');
+           }, 2000)
+          alert('Data berhasil di tambah');
+          </script>";
+    } else {
+      echo"<div class='alert alert-danger' role='alert'>
+        Data gagal ditambahkan
+        </div>
+      <script>
+          setTimeout(function(){
+            document.location.href ='index.php?page=DaftarBuku';('');
+           }, 2000)
+          alert('Data berhasil di tambah');
+          </script>";
+    }
+  }
 
-    <form action="" method="post">
+
+     ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="row">
 
          <div class="col-md mt-3">
