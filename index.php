@@ -1,5 +1,10 @@
 <?php 
 
+
+
+
+
+
 session_start();
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
@@ -84,6 +89,10 @@ if (!isset($_SESSION["login"]))
 
                         case 'EditBuku':
                             include 'contents/Buku/editbuku.php';
+                            break;
+
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
                             break;
 
                         // Buku switch end
