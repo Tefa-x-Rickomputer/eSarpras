@@ -25,8 +25,9 @@ if (!isset($_SESSION["login"]))
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
+
+<head>
+    <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Icon Bootstrap CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -40,17 +41,14 @@ if (!isset($_SESSION["login"]))
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.css"/>
         <!-- Custom CSS -->
         <link rel="stylesheet" href="Assets/css/dashboard.css">
-    </head>
-    <body>
-        
-        <!-- Navbar and sidebar Section -->
-        <?php include 'Assets/templates/navbar.php' ?>
-        <!-- Navbar and sidebar End -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
 
+<body class="sb-nav-fixed">
+    
+    <?php include 'Assets/templates/navbar.php' ?>
 
-        <!-- Page content-->
-        <div class="container-fluid">
-            <!-- Main Content Section -->
+        <div id="layoutSidenav_content">
             <?php 
                 if( isset($_GET['page']) ) {
                     $page = $_GET['page'];
@@ -102,6 +100,10 @@ if (!isset($_SESSION["login"]))
                             include 'contents/User/tableuser.php';
                             break;
 
+                        case 'Profile':
+                            include 'contents/User/profile.php';
+                            break;
+
                         case 'UserDetail':
                             include 'contents/User/detailuser.php';
                             break;
@@ -109,6 +111,21 @@ if (!isset($_SESSION["login"]))
                         case 'Useredit':
                             include 'contents/User/edituser.php';
                             break;
+
+                        case 'Userdelete':
+                            include 'contents/User/Userdelete.php';
+                            break;
+
+                        case 'adduser':
+                            include 'contents/User/adduser.php';
+                            break;
+                        // User switch
+
+                        // Ruang Switch
+                        case 'addroom':
+                            include 'contents/Ruang/ManajemenRuang.php';
+                            break;
+
                         // User switch
 
                         default:
@@ -119,48 +136,33 @@ if (!isset($_SESSION["login"]))
                     include 'contents/dashboard.php';
                 }
              ?>
-             <!-- Main Content End -->
 
-                     
-
-
-        <!-- 3 div ini sambungan dari navbar, bukan div kosong -->
-                </div>
-            </div>
         </div>
-        <!-- End Website -->
+    </div>
 
+    
 
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="Assets/js/indexscripts.js"></script>
+    <!-- Data Table -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
+   <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+          var table = $('#example').DataTable( {
+        responsive: {
+            details: true
+        }
+        } );
 
+        });
+    </script>
+</body>
 
-
-
-
-
-
-
-
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="Assets/js/indexscripts.js"></script>
-        <!-- Data Table -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
-       <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
-        <script type="text/javascript">
-            $(document).ready(function() {
-              var table = $('#example').DataTable( {
-            responsive: true
-            } );
-     
-        new $.fn.dataTable.FixedHeader( table );
-    });
-</script>
-
-    </body>
 </html>

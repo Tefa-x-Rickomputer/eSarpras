@@ -1,7 +1,8 @@
+
 <?php 
     require 'config/connect.php';
     $barang = querySql("SELECT * FROM tbarang WHERE isDeleted=0");
-    ?>
+?>
 
 <main>
     <div class="container-fluid px-4">
