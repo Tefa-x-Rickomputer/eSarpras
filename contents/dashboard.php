@@ -1,22 +1,22 @@
 <?php 
 
-require "config/connect.php";
+require_once "config/connect.php";
 
-$cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
-$cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
-$cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
+// $userSession = [
+//             "login" => $_SESSION["login"],
+//             "role" => $_SESSION["role"],
+//             "nama" => $_SESSION["nama"],
+//             "email" => $_SESSION["email"],
+//             "telpon" => $_SESSION["telpon"],
+//             "status" => $_SESSION["status"],
+//             "fotoProfil" =>  $_SESSION["fotoProfil"],
+//             ];
+
+$cntRuangan = querySql("SELECT COUNT('*') FROM truangan WHERE isDeleted = 0")[0];
+$cntAset = querySql("SELECT COUNT('*') FROM tbarang WHERE isDeleted = 0")[0];
+$cntBuku = querySql("SELECT COUNT('*') FROM tbuku WHERE isDeleted = 0")[0];
 
 $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
-
-// if ($_SESSION["role"] = "super") {
-//     $dplRole = "Superuser";
-// } elseif ($_SESSION["role"] = "admin") {
-//     $dplRole = "Administrator";
-// } elseif ($_SESSION["role"] = "guest") {
-//     $dplRole = "Tamu";
-// } else {
-//     $dplRole = "What are you?";
-// }
 
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
@@ -25,7 +25,6 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 // var_dump($_SESSION["status"]);
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
-// var_dump($role);
 
 ?>
 
@@ -128,27 +127,26 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <!-- Quick User Info - Start -->
 
             <div class="col-sm">
-                <div class="card card-primary card-outline border-start-0 border-end-0 border-5 border-dark shadow">
-                    <div class="card-header box-profile">
+                <div class="card card-primary card-outline border-start-0 border-end-0 border-5 border-dark shadow bg-white">
+                    <div class="card-body box-profile">
                         <div class="text-center">
-                            <!-- <i class="bi bi-person-fill" style="font-size:6rem;"></i> -->
-                            <img class="profile-photo" src="<?= $_SESSION["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
-                            <h4><?= $_SESSION["nama"]; ?></h2>
+                            <img class="profile-photo" src="<?= $userSession["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
+                            <h4><?= $userSession["nama"] ?></h2>
                         </div>
                     </div>
                     <div class="card-body bg-dark text-light pb-2">
                         <ul class="list-group list-group-unbordered mb-1 text-center fw-normal">
                             <li class="pb-2">
-                                <i class="text-muted text-center"><?= $_SESSION["role"]; ?></i>
+                                <i class="text-muted text-center"><?= $userSession["role"]; ?></i>
                             </li>
                             <li class="list-group-item border-start-0 border-end-0 border-bottom-0 bg-dark text-light">
-                                <?= $_SESSION["status"]; ?>
+                                <?= $userSession["status"]; ?>
                             </li>
                             <li class="list-group-item border-0 bg-dark text-light">
-                                <?= $_SESSION["email"]; ?>
+                                <?= $userSession["email"]; ?>
                             </li>
                             <li class="list-group-item border-0 bg-dark text-light">
-                                <?= $_SESSION["telpon"]; ?>
+                                <?= $userSession["telpon"]; ?>
                             </li>
                         </ul>
                     </div>

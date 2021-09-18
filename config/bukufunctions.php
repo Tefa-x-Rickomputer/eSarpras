@@ -1,5 +1,6 @@
 <?php
-     require 'connect.php';
+     // require 'connect.php';
+     $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
      function query($query) {
           global $db;
@@ -13,6 +14,7 @@
 
 	// $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
+// function tambah buku
 	function addbuku($data) {
 		global $db;
 		 $judulBuku = htmlspecialchars($data['judulBuku']);
@@ -27,7 +29,13 @@
      	 $sumberDana =htmlspecialchars($data['sumberDana']); 
      	 $kondisiBuku =htmlspecialchars($data['kondisiBuku']); 
      	 $linkRuangan =htmlspecialchars($data['linkRuangan']); 
-     	 $fotoBuku =htmlspecialchars($data['fotoBuku']); 
+     	 
+
+       // upload gambar
+       $fotoBuku = upload();
+       if ( !$fotoBuku) {
+        return false;
+       }
 
      	 $query = "INSERT INTO tbuku VALUES
      	 ('', '$judulBuku', '$fotoBuku', '$nomorBuku', '$pengarang', '$penerbit', '$tahunTerbit', '$jumlahHalaman', '$nomorRegister', '$tahunPembelian', '$hargaBuku', '$sumberDana', '$kondisiBuku', '$linkRuangan', '')
@@ -37,6 +45,52 @@
 
      	 return mysqli_affected_rows($db);
 	}
+
+
+    // function upload foto
+    function upload(){
+      $namaFile = $_FILES['fotoBuku']['name'];
+      $ukuranFile = $_FILES['fotoBuku']['size'];
+      $error = $_FILES['fotoBuku']['error'];
+      $tmpName = $_FILES['fotoBuku']['tmp_name'];
+
+      // cek apakah tidak ada foto yang diupload
+     if ( $error === 4 ){
+        echo "<script>
+                alert('pilih gambar terlebih dahulu!');
+               </script> ";
+        return false;
+     }
+
+     // cek apakah yang diupload adalah foto
+     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+     $ekstensiGambar = explode('.', $namaFile);
+     $ekstensiGambar = strtolower(end($ekstensiGambarValid));
+     if( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+                alert('yang anda upload bukan foto!');
+               </script> ";
+        return false;
+     }
+
+     // cek jika ukurannya terlalu besar
+     if( $ukuranFile > 1000000 ) {
+      echo "<script>
+                alert('ukuran foto terlalu besar!');
+               </script> ";
+        return false;
+     }
+
+     // lolos pengecekan, foto siap diupload
+     // generate nama gambar baru 
+     $namaFileBaru = uniqid();
+     $namaFileBaru .= '.';
+     $namaFileBaru .= $ekstensiGambar;
+
+     move_uploaded_file($tmpName, 'Assets/img/buku/' . $namaFileBaru  );
+
+     return $namaFileBaru;
+    }
 
      function hapus($id) {
           global $db;

@@ -2,15 +2,7 @@
 
   require 'config/barangfunctions.php';
 
-  if (isset($_POST['simpan']) ) {
-    if( addbarang($_POST) > 0 ) {
-      echo"<script>
-          alert('Data berhasil di tambah');
-          </script>";
-    } else {
-      echo "data gagal ditambahkan!!!";
-    }
-  }
+ 
 
  ?>
 <main>
@@ -20,9 +12,29 @@
       <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
       <li class="breadcrumb-item active">Tambah Barang</li>
     </ol>
+    
+    <?php  
+    if (isset($_POST['simpan']) ) {
+    if( addbarang($_POST) > 0 ) {
+      echo"<div class='alert alert-success' role='alert'>
+      Data berhasil ditambahkan
+  </div>
+  <script>
+        document.location.href ='index.php?page=DaftarBarang&id=$id';
+          </script>";
+    } else {
+      echo "<div class='alert alert-danger' role='alert'>
+      Data gagal ditambahkan
+</div>
+<script>
+        document.location.href ='index.php?page=DaftarBarang&id=$id';
+          </script>";
+    }
+  }
 
-    <div class="d-flex bg-dark text-white p-3"><span class="text-dark">s</span></div>
-    <form action="" method="post">
+    ?>
+   
+  <form action="" method="post">
       <div class="row">
 
         <div class="col-md mt-3">
@@ -56,7 +68,7 @@
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>
-          <input type="text" class="form-control" name="tahunPembelian">
+           <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com">
         </div>
 
       </div>
@@ -94,7 +106,8 @@
           <input type="file" class="form-control" name="fotoBarang">      
       </div>
       <div class=" mt-3">
-          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button> 
+          <button class="btn btn-outline-danger" type="reset">Batal</button>   
       </div>
 
     </form>
