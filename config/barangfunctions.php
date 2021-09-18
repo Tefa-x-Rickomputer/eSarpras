@@ -13,7 +13,11 @@
      	 $sumberDana = $data['sumberDana'];
      	 $kondisiBarang = $data['kondisiBarang'];
      	 $linkRuangan = $data['linkRuangan'];
-     	 $fotoBarang = $data['fotoBarang'];
+     	
+      $fotoBarang = upload();
+      if ( !$fotoBarang) {
+        return false;
+      }
 
      	 $query = "INSERT INTO tbarang VALUES
      	 ('', '$namaBarang', '$fotoBarang', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan','')
@@ -24,6 +28,51 @@
      	 return mysqli_affected_rows($db);
 
      }
+      // function upload foto
+    function upload(){
+      $namaFile = $_FILES['fotoBarang']['name'];
+      $ukuranFile = $_FILES['fotoBarang']['size'];
+      $error = $_FILES['fotoBarang']['error'];
+      $tmpName = $_FILES['fotoBarang']['tmp_name'];
+
+      // cek apakah tidak ada foto yang diupload
+     if ( $error === 4 ){
+        echo "<script>
+                alert('pilih gambar terlebih dahulu!');
+               </script> ";
+        return false;
+     }
+
+     // cek apakah yang diupload adalah foto
+     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+     $ekstensiGambar = explode('.', $namaFile);
+     $ekstensiGambar = strtolower(end($ekstensiGambarValid));
+     if( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+                alert('yang anda upload bukan foto!');
+               </script> ";
+        return false;
+     }
+
+     // cek jika ukurannya terlalu besar
+     if( $ukuranFile > 1000000 ) {
+      echo "<script>
+                alert('ukuran foto terlalu besar!');
+               </script> ";
+        return false;
+     }
+
+     // lolos pengecekan, foto siap diupload
+     // generate nama gambar baru 
+     $namaFileBaru = uniqid();
+     $namaFileBaru .= '.';
+     $namaFileBaru .= $ekstensiGambar;
+
+     move_uploaded_file($tmpName, '../Assets/img/aset/' . $namaFileBaru  );
+
+     return $namaFileBaru;
+    }
+
      function edit($data) {
                global $db;
            $idAset =htmlspecialchars($data['idAset']);    
