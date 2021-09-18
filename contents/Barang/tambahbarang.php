@@ -20,21 +20,25 @@
       Data berhasil ditambahkan
   </div>
   <script>
-        document.location.href ='index.php?page=DaftarBarang&id=$id';
+       setTimeout(function(){
+        document.location.href ='index.php?page=DaftarBarang';('');
+    }, 2000)
           </script>";
     } else {
       echo "<div class='alert alert-danger' role='alert'>
       Data gagal ditambahkan
 </div>
 <script>
-        document.location.href ='index.php?page=DaftarBarang&id=$id';
+       setTimeout(function(){
+        document.location.href ='index.php?page=TambahBarang';('');
+    }, 2000)
           </script>";
     }
   }
 
     ?>
    
-  <form action="" method="post">
+  <form action="" method="post" enctype="multipart/form-data">
       <div class="row">
 
         <div class="col-md mt-3">
@@ -68,7 +72,7 @@
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>
-           <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <input type="text" class="form-control" name="tahunPembelian">
         </div>
 
       </div>
@@ -97,7 +101,8 @@
            <option value="2">RPS 2</option>
            <option value="3">RPS 3</option>
            <option value="4">RPS 4</option>
-           <option value="5">Perpustakaan</option>
+           <option value="5">RPS 5</option>
+           <option value="6">Perpustakaan</option>
         </select>
         </div>
 
