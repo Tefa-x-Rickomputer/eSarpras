@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <main>
 
 <!--php start-->
@@ -199,3 +200,5 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
             </tbody>
 			</table>
 </main>
+=======
+>>>>>>> ee7b027065ded6b8deb1b08917c1b943d7d7a532
