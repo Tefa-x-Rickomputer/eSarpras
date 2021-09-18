@@ -3,13 +3,10 @@
 <!--php start-->
 
 <?php
-$server 			="localhost";
-$user 				="root";
-$password 			="";
-$database			="inventorymanagement";
+require 'config/connect.php';
 	
 
-    $db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
+    
 	
 
 //query simpan ruang
