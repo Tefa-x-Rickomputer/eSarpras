@@ -1,8 +1,21 @@
 <?php 
 
-require_once "config/connect.php";
+
+
+
+
 
 session_start();
+// var_dump($_SESSION["role"]);
+// var_dump($_SESSION["nama"]);
+// var_dump($_SESSION["email"]);
+// var_dump($_SESSION["telpon"]);
+// var_dump($_SESSION["status"]);
+// var_dump($_SESSION["login"]);
+// var_dump($_SESSION["fotoProfil"]);
+
+require "config/sessionmanager.php";
+
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/login.php");
@@ -74,6 +87,10 @@ if (!isset($_SESSION["login"]))
 
                         case 'EditBuku':
                             include 'contents/Buku/editbuku.php';
+                            break;
+
+                          case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
                             break;
 
                         // Buku switch end

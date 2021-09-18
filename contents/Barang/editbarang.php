@@ -1,11 +1,27 @@
 <?php   
+    
 
-    require 'config/connect.php';
+    include 'config/barangfunctions.php';
+    
     $id = $_GET['id'];
     $result = mysqli_query($db, "SELECT * FROM tbarang WHERE idAset='$id'");
     $barang = mysqli_fetch_assoc($result);
 
+    $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$barang[linkRuangan]'");
+    $ruangan = (mysqli_fetch_assoc($query));
 
+    if( isset($_POST['edit']) ) {
+    if( edit($_POST) > 0 ) {
+      echo"<script>
+          alert('Data berhasil Update');
+          document.location.href = 'index.php?page=DaftarBarang';
+          </script>";
+    } else {
+      echo "<script>
+          alert('Data gagal Update');
+          </script>";
+    }
+  }
  ?>
 
 <main>
@@ -21,8 +37,10 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <i class="bi bi-box-seam" style="font-size:10rem;"></i>
                         </div>
+
+
 
                     </div>
                     <ul class="list-group list-group-flush mb-3">
@@ -40,32 +58,35 @@
             </div>
 
             <div class="col-md-8 col-xs-12 mt-3">
-                <div class="card p-3 pt-1 shadow">
-                    
+
+
+                      <form action="" method="POST">
+                    <div class="card p-3 pt-1 shadow">
                     <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">NamaAset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">Nama Aset</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['namaBarang'] ?>">
+                            <input type="hidden" name="idAset" value="<?= $barang['idAset'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"name='namaBarang' value="<?= $barang['namaBarang'] ?>">
                         </div>
                     </div>
 
                       <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">MerkAset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">Merk Aset</label>
                         </div>
                         <div class="col-sm-5">
-                          <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['merkBarang'] ?>">
+                          <input type="text" class="form-control mt-3" id="disabledInput"name='merkBarang' value="<?= $barang['merkBarang'] ?>">
                         </div>
                     </div>
 
                       <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">TipeAset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">Tipe Aset</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" value="<?= $barang['tipeBarang'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"name='tipeBarang' value="<?= $barang['tipeBarang'] ?>">
                     </div>
 
                       <div class="row form-group">
@@ -73,7 +94,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">NomorRegister</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['nomorRegister'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"name='nomorRegister'  value="<?= $barang['nomorRegister'] ?>">
                         </div>
                     </div>
 
@@ -82,7 +103,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">HargaSatuan</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['hargaSatuan'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"name='hargaSatuan'  value="<?= $barang['hargaSatuan'] ?>">
                         </div>
                     </div>
 
@@ -91,19 +112,23 @@
                             <label for="" class="fw-bold fs-5 mt-3">TahunPembelian</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput"  value="<?= $barang['tahunPembelian'] ?>">
+                            <input type="text" class="form-control mt-3" id="disabledInput"name='tahunPembelian'  value="<?= $barang['tahunPembelian'] ?>">
                         </div>
                     </div>
 
                          <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Sumber Dana</label>
+                            <label for="sumberDana" class="fw-bold fs-5 mt-3">SumberDana</label>
                         </div>
                         <div class="col-sm-5">
-                            <select name="" id="" class="form-select mt-3">
-                                 <option selected disabled>sumberDana</option>
-                                <option value="BOS">BOS</option>
+                            <select id="" name="sumberDana" class="form-select mt-3">
+                               <?php if ($barang['sumberDana'] == 'BOS') : ?>
+                                <option value="BOS" selected>BOS</option>
                                 <option value="BOSDA">BOSDA</option>
+                            <?php else : ?>
+                                <option value="BOS">BOS</option>
+                                <option value="BOSDA" selected>BOSDA</option>
+                            <?php endif; ?>
                             </select>
                         </div>
                     </div>
@@ -113,35 +138,79 @@
                             <label for="" class="fw-bold fs-5 mt-3">Kondisi</label>
                         </div>
                         <div class="col-sm-5">
-                            <select name="" id="" class="form-select mt-3">
-                                <option selected disabled>Kondisi</option>
-                                <option value="Baru">Baru</option>
+                        <select id="" name="kondisiBarang" class="form-select mt-3">
+                            <?php if ($barang['kondisiBarang'] == 'Baik') : ?>
+                                <option value="Baik" selected>Baru</option>
                                 <option value="Rusak">Rusak</option>
+                            <?php else : ?>
+                                <option value="Baik">Baru</option>
+                                <option value="Rusak" selected>Rusak</option>
+                            <?php endif; ?>
                             </select>
                         </div>
                     </div>
 
-                         <div class="row form-group">
+                        <div class="row form-group">
                         <div class="col-sm-3">
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
-                            <select name="" id="" class="form-select mt-3">
-                                <option selected disabled>Pilih Ruangan</option>
-                                <option value="RPS1">RPS 1</option>
-                                <option value="RPS2">RPS 2</option>
-                                <option value="RPS3">RPS 3</option>
-                                <option value="Perpustakaan">Perpustakaan</option>
+                            <select id="" name="linkRuangan" va class="form-select mt-3">
+
+                            <?php if ($ruangan['idRuangan'] == '1') : ?>
+                                <option value="1" selected>RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                            <?php elseif ($ruangan['idRuangan'] == '2') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2" selected>RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                            <?php elseif ($ruangan['idRuangan'] == '3') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3" selected>RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php elseif ($ruangan['idRuangan'] == '4') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4" selected>RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php elseif ($ruangan['idRuangan'] == '5') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5" selected>RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php else : ($ruangan['namaRuangan'] == '6') ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6" selected>Perpustakaan</option>
+                            <?php endif; ?>
                             </select>
+
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">FotoAset</label>
+                            <label for="" class="fw-bold fs-5 mt-3">Foto Barang</label>
                         </div>
                         <div class="col-sm-5">
-                            <input class="form-control mt-3" type="file" id="formFile">
+                            <input name="fotoBarang" class="form-control mt-3" type="file" id="formFile">
                         </div>
                     </div>
 
@@ -152,10 +221,10 @@
         </div>
 
         <div class="row mb-5 text-center">
-            <div class="col">
-                <a href="index.php?page=DaftarBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-primary" onclick="confirm('are you sure?')" >Simpan</a>
+            <div class="col mt-5">
+               <button type="submit" name="edit" class="btn btn-success">Update</button>
+             <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-danger">Batal</a>
+            </form>
             </div>
-        </div>
-
-	</div>
+    </div>
 </main>

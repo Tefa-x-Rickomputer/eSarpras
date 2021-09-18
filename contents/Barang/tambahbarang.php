@@ -2,15 +2,7 @@
 
   require 'config/barangfunctions.php';
 
-  if (isset($_POST['simpan']) ) {
-    if( addbarang($_POST) > 0 ) {
-      echo"<script>
-          alert('Data berhasil di tambah');
-          </script>";
-    } else {
-      echo "data gagal ditambahkan!!!";
-    }
-  }
+ 
 
  ?>
 <main>
@@ -20,9 +12,33 @@
       <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
       <li class="breadcrumb-item active">Tambah Barang</li>
     </ol>
+    
+    <?php  
+    if (isset($_POST['simpan']) ) {
+    if( addbarang($_POST) > 0 ) {
+      echo"<div class='alert alert-success' role='alert'>
+      Data berhasil ditambahkan
+  </div>
+  <script>
+       setTimeout(function(){
+        document.location.href ='index.php?page=DaftarBarang';('');
+    }, 2000)
+          </script>";
+    } else {
+      echo "<div class='alert alert-danger' role='alert'>
+      Data gagal ditambahkan
+</div>
+<script>
+       setTimeout(function(){
+        document.location.href ='index.php?page=TambahBarang';('');
+    }, 2000)
+          </script>";
+    }
+  }
 
-    <div class="d-flex bg-dark text-white p-3"><span class="text-dark">s</span></div>
-    <form action="" method="post">
+    ?>
+   
+  <form action="" method="post" enctype="multipart/form-data">
       <div class="row">
 
         <div class="col-md mt-3">
@@ -85,7 +101,8 @@
            <option value="2">RPS 2</option>
            <option value="3">RPS 3</option>
            <option value="4">RPS 4</option>
-           <option value="5">Perpustakaan</option>
+           <option value="5">RPS 5</option>
+           <option value="6">Perpustakaan</option>
         </select>
         </div>
 
@@ -94,7 +111,8 @@
           <input type="file" class="form-control" name="fotoBarang">      
       </div>
       <div class=" mt-3">
-          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button> 
+          <button class="btn btn-outline-danger" type="reset">Batal</button>   
       </div>
 
     </form>

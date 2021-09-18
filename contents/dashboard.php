@@ -1,18 +1,20 @@
 <?php 
 
-$userSession = [
-            "login" => $_SESSION["login"],
-            "role" => $_SESSION["role"],
-            "nama" => $_SESSION["nama"],
-            "email" => $_SESSION["email"],
-            "telpon" => $_SESSION["telpon"],
-            "status" => $_SESSION["status"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"],
-            ];
+require_once "config/connect.php";
 
-$cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
-$cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
-$cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
+// $userSession = [
+//             "login" => $_SESSION["login"],
+//             "role" => $_SESSION["role"],
+//             "nama" => $_SESSION["nama"],
+//             "email" => $_SESSION["email"],
+//             "telpon" => $_SESSION["telpon"],
+//             "status" => $_SESSION["status"],
+//             "fotoProfil" =>  $_SESSION["fotoProfil"],
+//             ];
+
+$cntRuangan = querySql("SELECT COUNT('*') FROM truangan WHERE isDeleted = 0")[0];
+$cntAset = querySql("SELECT COUNT('*') FROM tbarang WHERE isDeleted = 0")[0];
+$cntBuku = querySql("SELECT COUNT('*') FROM tbuku WHERE isDeleted = 0")[0];
 
 $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 
@@ -125,10 +127,9 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <!-- Quick User Info - Start -->
 
             <div class="col-sm">
-                <div class="card card-primary card-outline border-start-0 border-end-0 border-5 border-dark shadow">
-                    <div class="card-header box-profile">
+                <div class="card card-primary card-outline border-start-0 border-end-0 border-5 border-dark shadow bg-white">
+                    <div class="card-body box-profile">
                         <div class="text-center">
-                            <!-- <i class="bi bi-person-fill" style="font-size:6rem;"></i> -->
                             <img class="profile-photo" src="<?= $userSession["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
                             <h4><?= $userSession["nama"] ?></h2>
                         </div>
