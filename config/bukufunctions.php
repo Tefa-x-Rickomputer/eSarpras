@@ -91,6 +91,7 @@
      return $namaFileBaru;
     }
 
+    // function hapus
      function hapus($id) {
           global $db;
           mysqli_query($db, "UPDATE tbuku SET isDeleted = 1 WHERE idBuku = $id");
@@ -98,6 +99,8 @@
           return mysqli_affected_rows($db);
      }
 
+
+      // function edit
      function edit($data) {
               global $db;
            $id =$data['idBuku'];
