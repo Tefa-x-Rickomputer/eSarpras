@@ -22,7 +22,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                             <img src="<?= $barang["fotoBarang"] ?>" alt="fotoBarang" style="width: 96px;">
+                           <i class="bi bi-box-seam" style="font-size:10rem;"></i>
                         </div>
 
 
