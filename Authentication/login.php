@@ -16,12 +16,18 @@ if (isset($_POST["submit"])) {
         if (password_verify($password, $row["password"])) {
             $userSession = [
             "login" => $_SESSION["login"] = true,
+            "id" => $_SESSION["id"] = $row["id"],
             "role" => $_SESSION["role"] = $row["role"],
             "nama" => $_SESSION["nama"] = $row["nama"],
             "email" => $_SESSION["email"] = $row["email"],
             "telpon" => $_SESSION["telpon"] = $row["telpon"],
             "status" => $_SESSION["status"] = $row["status"],
             "fotoProfil" =>  $_SESSION["fotoProfil"] = $row["fotoProfil"],
+            "tanggalLahir" => $_SESSION["tanggalLahir"] = $row["tanggalLahir"],
+            "agama" => $_SESSION["agama"] = $row["agama"],
+            "gender" => $_SESSION["gender"] = $row["gender"],
+            "alamat" => $_SESSION["alamat"] = $row["alamat"],
+            "nik" =>  $_SESSION["nik"] = $row["nik"]
             ];
         }
     } 

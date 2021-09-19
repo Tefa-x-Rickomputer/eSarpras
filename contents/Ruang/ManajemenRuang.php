@@ -3,13 +3,10 @@
 <!--php start-->
 
 <?php
-$server 			="localhost";
-$user 				="root";
-$password 			="";
-$database			="inventorymanagement";
+require 'config/connect.php';
 	
 
-    $db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
+    
 	
 
 //query simpan ruang
@@ -24,7 +21,7 @@ if(isset($_POST['simpan'])) {
 }
 	
 
-//query hapus ruang
+//query hapus ruang (soft delete)
 if(isset($_POST['hapus'])) {
 	$id = $_POST ['idruangan'];
     $query = "UPDATE truangan SET isDeleted= '1' WHERE idRuangan =$id";
@@ -33,18 +30,31 @@ if(isset($_POST['hapus'])) {
 	
 	mysqli_query($db, $query);
 }
+
+// hard delete
+if(isset($_POST['hapus2'])) {
+	$id = $_POST ['idruangan'];
+    $query = "DELETE FROM truangan WHERE idRuangan =$id";
+	mysqli_query($db, $query);
+}
+
 //query update/edit ruang
 
 if(isset($_POST['update'])) {
 	$id = $_POST ['idruang'];
 	$namaruang =$_POST ['namaruanganbaru'];	
-	echo $id;
-	echo $namaruang;
+	
 	
 	$query = "UPDATE truangan SET namaRuangan= '$namaruang' WHERE idRuangan =$id";
 	mysqli_query($db, $query);
 }
 
+//Query show table
+
+	/*$tabel = ("SELECT * FROM truangan WHERE isDeleted=0");
+	mysqli_query($db, $tabel)*/
+	
+	
 ?>
 
 
@@ -89,7 +99,7 @@ if(isset($_POST['update'])) {
 			</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" class="btn btn-outline-warning" name="simpan">Simpan</button>
+			<button type="submit" class="btn btn-warning" name="simpan">Simpan</button>
 		</div>
  
 	
@@ -99,6 +109,8 @@ if(isset($_POST['update'])) {
 	
 	
 		<!--input group edit ruang-->
+	<br>
+	</br>	
 	<br>
 	</br>
 	<!--break-->
@@ -121,8 +133,10 @@ if(isset($_POST['update'])) {
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" name ="update" class="btn btn-outline-warning">Edit</button>
+			<button type="submit" name ="update" class="btn btn-warning">Edit</button>
 		</div>
+		<br>
+		</br>
 		<br>
 		</br>
 	
@@ -146,15 +160,73 @@ if(isset($_POST['update'])) {
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit"  class="btn btn-outline-danger" name="hapus">Hapus</button>
+			<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
+			<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
+		
+			<br>
+		</br>
+		<br>
+		</br>
 		</div>
 	</div>
 		
 
+	
+	
+
+	
+	
 
 
 <!-- end of form-->
+
+<?php
+
+$server 			="localhost";
+$user 				="root";
+$password 			="";
+$database			="inventorymanagement";
+
+$db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
+$tabel = 'SELECT idRuangan, namaRuangan
+		FROM truangan WHERE isDeleted=0';
+
+$query = mysqli_query($db, $tabel);
+		
+
+
+
+
+echo '<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+<caption>Daftar Buku</caption>
+		   <thead class="table-dark">
+		
+			<tr>
+				<th>ID RUANGAN</th>
+				<th>NAMA RUANGAN</th>
+				
+			</tr>
+		</thead>
+		<tbody>';
+		
+while ($row = mysqli_fetch_array($query))
+{
+	echo '<tr>
+			<td>'.$row['idRuangan'].'</td>
+			<td>'.$row['namaRuangan'].'</td>
+			
+		</tr>';
+}
+echo '
+	</tbody>
+</table>';
+
+// Apakah kita perlu menjalankan fungsi mysqli_free_result() ini? baca bagian VII
+mysqli_free_result($query);
+
+// Apakah kita perlu menjalankan fungsi mysqli_close() ini? baca bagian VII
+mysqli_close($db);
+?>
+
 </form>
-
-
 </main>

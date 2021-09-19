@@ -1,5 +1,5 @@
 <?php 
-    require 'config/bukufunctions.php';
+    require 'config/connect.php';
     $buku = querysql ("SELECT * FROM tbuku WHERE isDeleted=0");
 
  ?>

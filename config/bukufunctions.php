@@ -1,5 +1,6 @@
 <?php
-     require 'connect.php';
+     // require 'connect.php';
+     $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
      function query($query) {
           global $db;
