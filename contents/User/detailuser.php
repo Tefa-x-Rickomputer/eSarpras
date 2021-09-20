@@ -32,7 +32,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src="<?= $user['fotoProfil']; ?>" alt="">
+                            <img src="<?= $user['fotoProfil']; ?>" alt="" class="profile-photo">
                         </div>
 
                     </div>
@@ -172,7 +172,7 @@
         <div class="row mb-5 text-center">
             <div class="col">
 </form>
-                <a href="index.php?page=Useredit&id=<?= $id; ?>" class='btn btn-warning shadow'>Edit</a>
+                <a href="index.php?page=Useredit&id=<?= $id; ?>" class='btn btn-warning text-white shadow'>Edit</a>
                 <a href="index.php?page=Userdelete&id=<?= $id; ?>" id="deletebtn" class="btn btn-danger shadow" onclick="return confirm('apakah yakin akan dihapus?')">Hapus</a>
 
             </div>

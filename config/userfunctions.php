@@ -63,7 +63,7 @@
             return false;
         }
 
-        if( $sizeFile > 10000 ) {
+        if( $sizeFile > 100000 ) {
             echo "<script>
                     alert('gambar terlalu besar!');
                   </script>";
@@ -75,7 +75,7 @@
         $newfile .= '.';
         $newfile .= $namafileformat;
 
-        move_uploaded_file($tmpName, "../Assets/img/user/$newfile");
+        move_uploaded_file($tmpName, "./Assets/img/user/" . $newfile);
 
         return $newfile;
 	}
