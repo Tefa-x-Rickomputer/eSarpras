@@ -1,13 +1,9 @@
 <?php   
 
-    require 'config/connect.php';
+    require 'config/barangfunctions.php';
     $id = $_GET['id'];
     $result = mysqli_query($db, "SELECT * FROM tbarang WHERE idAset='$id'");
     $barang = mysqli_fetch_assoc($result);
-
-    $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$barang[linkRuangan]'");
-    $ruangan = (mysqli_fetch_assoc($query));
- 
  ?>
 <main>
 	<div class="container-fluid">
@@ -22,7 +18,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                           <i class="bi bi-box-seam" style="font-size:10rem;"></i>
+                           <i class="bi bi-person-fill" style="font-size:10rem;"></i>
                         </div>
 
 
@@ -121,7 +117,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
-                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $ruangan['namaRuangan'] ?>">
+                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $barang['linkRuangan'] ?>">
                         </div>
                     </div>
 
@@ -134,8 +130,7 @@
         <div class="row mb-5 text-center">
             <div class="col">
                 <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-warning">Edit</a>
-                <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-danger" onclick="return confirm('Apa Kamu yakin ingin Menghapus?')" >Hapus</a>
-                <a href="index.php?page=DaftarBarang"class="btn btn-outline-primary")>Kembali</a>
+                <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-outline-danger" onclick="return confirm('are you sure?')" >Hapus</a>
             </div>
         </div>
 

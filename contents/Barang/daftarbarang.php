@@ -1,8 +1,7 @@
-
-<?php 
-    require 'config/connect.php';
-    $barang = querySql("SELECT * FROM tbarang WHERE isDeleted=0");
-?>
+<?php
+    require 'config/barangfunctions.php';
+    $barang = querySql("SELECT * FROM tbarang");
+    ?>
 
 <main>
     <div class="container-fluid px-4">
@@ -13,6 +12,7 @@
         </ol>
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+ <caption>Daftar Aset</caption>
             <thead class="table-dark">
                 <tr>
                     <th>No</th>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     /*!
     * Start Bootstrap - SB Admin v7.0.3 (https://startbootstrap.com/template/sb-admin)
     * Copyright 2013-2021 Start Bootstrap

@@ -1,6 +1,6 @@
 <?php 
-    require 'config/connect.php';
-    $buku = querysql ("SELECT * FROM tbuku WHERE isDeleted=0");
+    require 'config/bukufunctions.php';
+    $buku = querysql ("SELECT * FROM tbuku");
 
  ?>
 
@@ -17,7 +17,6 @@
 <a href="pdf.php" class="btn btn-danger">PDF</a>
 
     </div>
-
 
             <thead class="table-dark">
                 <tr>

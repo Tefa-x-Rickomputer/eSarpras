@@ -1,12 +1,18 @@
 <?php
 $userSession = [
             "login" => $_SESSION["login"],
+            "id" => $_SESSION["id"],
             "role" => $_SESSION["role"],
             "nama" => $_SESSION["nama"],
+            "nik" =>  $_SESSION["nik"],
+            "tanggalLahir" => $_SESSION["tanggalLahir"],
             "email" => $_SESSION["email"],
+            "agama" => $_SESSION["agama"],
+            "gender" => $_SESSION["gender"],
             "telpon" => $_SESSION["telpon"],
             "status" => $_SESSION["status"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"],
+            "alamat" => $_SESSION["alamat"],
+            "fotoProfil" =>  $_SESSION["fotoProfil"]
 ];
 
 // function eclGuest() {
