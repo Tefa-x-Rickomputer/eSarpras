@@ -26,16 +26,49 @@
         $status = htmlspecialchars($data['status']);
         $agama = htmlspecialchars($data['agama']);
         $gender = htmlspecialchars($data['gender']);
-        $fotoProfil = htmlspecialchars($data['fotoProfil']);
+
+        if ( $_FILES['fotoProfil']['error'] === 4) {
+        	$fotoProfil = '';
+            echo "harus berupa gambar";
+        }else {
+        	// $fotoProfil = upload();
+        }
 
         $query = "INSERT INTO tuser VALUES
         		('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
         		";
 
-        mysqli_query($db, $query);
+        // mysqli_query($db, $query);
 
         return mysqli_affected_rows($db);
 
+	}
+
+	function upload() {
+		$namafile = $_FILES['fotoProfil']['name'];
+		$sizeFile = $_FILES['fotoProfil']['size'];
+        $check = $_FILES['fotoProfil']['error'];
+		$tmpName = $_FILES['fotoProfil']['tmp_name'];
+
+		// check yg diupload adalah gambar
+		$fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
+        $namafileformat = explode('.', $namafile);
+        $namafileformat = strtolower(end($namafileformat));
+        if( !in_array($namafileformat, $fileformat) ) {
+            echo "<script>
+                    alert('Harus berupa gambar!');
+                </script>";
+            return false;
+        }
+        
+
+        $newfile = uniqid();
+        $newfile .= '.';
+        $newfile .= $namafileformat;
+
+
+
+        return $newfile;
 	}
 
 	function isHapus($id) {

@@ -2,15 +2,26 @@
 
     require 'config/userfunctions.php';
 
+
     if ( isset($_POST['submit']) ) {
         // echo $username . $password . $role . $nama . $nik . $tanggalLahir . $email . $telpon . $alamat . $status . $agama . $gender . $fotoProfil;
-        if( adduser($_POST) > 0 ) {
+        // if( adduser($_POST) > 0 ) {
+        //     echo "<script>
+        //             alert('data berhasil di tambahkan');
+        //             //document.location.href = 'index.php?page=Userlist';
+        //         </script>";
+        // } else {
+        //     echo "data gagal ditambahkan";
+        // }
+        var_dump($_FILES['fotoProfil']);
+        $namafile = $_FILES['fotoProfil']['name'];
+        $fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
+        $namafileformat = explode('.', $namafile);
+        $namafileformat = strtolower(end($namafileformat));
+        if( !in_array($namafileformat, $fileformat) ) {
             echo "<script>
-                    alert('data berhasil di tambahkan');
-                    document.location.href = 'index.php?page=Userlist'; 
+                    alert('Harus berupa gambar!');
                 </script>";
-        } else {
-            echo "data gagal ditambahkan";
         }
     }
 
@@ -29,7 +40,7 @@
             <div class="col-md-8 mx-auto col-xs-12 mt-3">
                 <div class="card p-3 pt-1 bg-light shadow">
                         
-                        <div class="row form-group">
+                        <!-- <div class="row form-group">
                             <div class="col-sm-4">
                                 <label for="username" class="fw-bold float-xl-end fs-5 mt-3">Username</label>
                             </div>
@@ -152,7 +163,7 @@
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row form-group">
                             <div class="col-sm-4">
