@@ -136,5 +136,6 @@ require 'config/ruangconfig.php';
 
 	include 'config/showtableruang.php';
 	?>
+	<!-- end of table-->
 
 </main>
