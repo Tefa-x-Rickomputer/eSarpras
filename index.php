@@ -11,8 +11,6 @@ session_start();
 
 require "config/sessionmanager.php";
 require_once "config/connect.php";
-
-session_start();
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/login.php");

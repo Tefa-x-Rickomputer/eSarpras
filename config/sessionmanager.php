@@ -1,7 +1,7 @@
 <?php
 $userSession = [
             "login" => $_SESSION["login"],
-            "id" => $_SESSION["id"],
+            "idUser" => $_SESSION["idUser"],
             "role" => $_SESSION["role"],
             "nama" => $_SESSION["nama"],
             "nik" =>  $_SESSION["nik"],
