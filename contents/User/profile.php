@@ -1,21 +1,5 @@
 <?php 
-
-    $userSession = [
-            "login" => $_SESSION["login"],
-            "id" => $_SESSION["id"],
-            "role" => $_SESSION["role"],
-            "nama" => $_SESSION["nama"],
-            "nik" =>  $_SESSION["nik"],
-            "tanggalLahir" => $_SESSION["tanggalLahir"],
-            "email" => $_SESSION["email"],
-            "agama" => $_SESSION["agama"],
-            "gender" => $_SESSION["gender"],
-            "telpon" => $_SESSION["telpon"],
-            "status" => $_SESSION["status"],
-            "alamat" => $_SESSION["alamat"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"]
-            ];
-
+    include 'config/sessionmanager.php';
 ?>
 
 
@@ -32,7 +16,8 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <!-- <i class="bi bi-person-fill" style="font-size:10rem;"></i> -->
+                            <img class="profile-photo" src="<?= $userSession["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
                         </div>
 
                     </div>
@@ -121,55 +106,6 @@
                         </div>
                         <div class="col-sm-5">
                             <input type="text" class="form-control mt-3" disabled name="agama" value="<?= $userSession['agama']; ?>">
-                            <!-- <select name="agama" id="agama" disabled class="form-select mt-3">
-                                <?php 
-                                if ($userSession['agama'] == 'Islam') {
-                                    echo "<option value='Islam' selected>Islam</option>
-                                        <option value='Kristen'>Kristen</option>
-                                        <option value='Katholik'>Katholik</option>
-                                        <option value='Buddha'>Buddha</option>
-                                        <option value='Hindu'>Hindu</option>
-                                        ";
-                                    } else if ($userSession['agama'] == 'Kristen') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen' selected>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($userSession['agama'] == 'Katholik') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik' selected>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($userSession['agama'] == 'Buddha') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha' selected>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($userSession['agama'] == 'Hindu') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu' selected>Hindu</option>
-                                            ";
-                                    } else {
-                                ?>
-                                    <option value='Islam'>Islam</option>
-                                    <option value='Kristen'>Kristen</option>
-                                    <option value='Katholik'>Katholik</option>
-                                    <option value='Buddha'>Buddha</option>
-                                    <option value='Hindu'>Hindu</option>
-                                <?php        
-                                    }
-                                 ?>
-                                
-                            </select> -->
                         </div>
                     </div>
 
