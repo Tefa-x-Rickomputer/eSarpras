@@ -87,12 +87,12 @@ if(isset($_POST['update'])) {
 	
 	<!--input group tambah ruang-->
 
-	<h3><i class="bi bi-house-fill"></i>Tambah ruang</h3>
+	<h3><i class="bi bi-house-fill"></i>Tambah ruangan</h3>
 	
 	<!--end of title-->
 	<div class="row">
 		<div class="col-md-mt3">
-			<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruang" name="namaruangan">
+			<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruangan" name="namaruangan">
 		</div>
 		
 			<br>
@@ -153,7 +153,7 @@ if(isset($_POST['update'])) {
 
 	<div class="row">
 		<div class="col-md-mt3">
-			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruang yang ingin dihapus">
+			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruangan yang ingin dihapus">
 		</div>
 		
 		<br>
@@ -221,10 +221,10 @@ echo '
 	</tbody>
 </table>';
 
-// Apakah kita perlu menjalankan fungsi mysqli_free_result() ini? baca bagian VII
+
 mysqli_free_result($query);
 
-// Apakah kita perlu menjalankan fungsi mysqli_close() ini? baca bagian VII
+
 mysqli_close($db);
 ?>
 
