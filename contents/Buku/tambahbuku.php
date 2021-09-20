@@ -126,8 +126,8 @@
           <input type="file" class="form-control" name="fotoBuku">      
       </div>
       <div class=" mt-3">
-          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button>    
-          <button class="btn btn-outline-danger" type="reset">Batal</button>
+          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-danger" type="reset">Batal</button>
       </div>
 
     </form>
