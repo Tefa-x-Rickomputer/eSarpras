@@ -33,7 +33,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%"  >
                         </div>
 
                     </div>
@@ -54,14 +54,16 @@
 
             <div class="col-md-8 col-xs-12 mt-3">
 
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                 <div class="card p-3 pt-1 shadow">
                     <div class="row form-group">
                         <div class="col-sm-3">
                             <label for="" class="fw-bold fs-5 mt-3">Judul Buku</label>
                         </div>
                         <div class="col-sm-5">
-                            <input type="hidden" name="idBuku" value="<?= $buku['id']; ?>">
+                            <input type="hidden" name="idBuku" value="<?= $buku['idBuku']; ?>">
+                            <input type="hidden" name="fotoLama" value="<?= $buku['fotoBuku']; ?>">
+
                             <input type="text" class="form-control mt-3" name="judulBuku"  value="<?= $buku['judulBuku']; ?>"> 
                         </div>
                     </div>
@@ -188,41 +190,53 @@
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
-                            <select id="" name="linkRuangan" class="form-select mt-3">
-                            <?php 
-                             if ($buku['linkRuangan'] == 'RPS1') {
-                                   echo "<option value='RPS1'>RPS 1</option>
-                                         <option value='RPS2'>RPS 2</option>
-                                         <option value='RPS3'>RPS 3</option>
-                                         <option value='Perpustakaan'>Perpustakaan</option>
-                                        ";
-                        } elseif ($buku['linkRuangan'] == 'RPS2') {
-                                   echo "<option value='RPS1'>RPS 1</option>
-                                         <option value='RPS2'>RPS 2</option>
-                                         <option value='RPS3'>RPS 3</option>
-                                         <option value='Perpustakaan'>Perpustakaan</option>
-                                        ";
-                        } elseif ($buku['linkRuangan'] == 'RPS3') {
-                                   echo "<option value='RPS1'>RPS 1</option>
-                                         <option value='RPS2'>RPS 2</option>
-                                         <option value='RPS3'>RPS 3</option>
-                                         <option value='Perpustakaan'>Perpustakaan</option>
-                                        ";
-                        } elseif ($buku['linkRuangan'] == 'Perpustakaan') {
-                                   echo "<option value='RPS1'>RPS 1</option>
-                                         <option value='RPS2'>RPS 2</option>
-                                         <option value='RPS3'>RPS 3</option>
-                                         <option value='Perpustakaan'>Perpustakaan</option>
-                                        ";
-                            }else{
-                             ?>
-                                <option value="RPS1">RPS 1</option>
-                                <option value="RPS2">RPS 2</option>
-                                <option value="RPS3">RPS 3</option>
-                                <option value="Perpustakaan">Perpustakaan</option>
-                             <?php 
-                                }
-                              ?>
+
+                            <select id="" name="linkRuangan" va class="form-select mt-3">
+
+                            <?php if ($ruangan['idRuangan'] == '1') : ?>
+                                <option value="1" selected>RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                            <?php elseif ($ruangan['idRuangan'] == '2') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2" selected>RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                            <?php elseif ($ruangan['idRuangan'] == '3') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3" selected>RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php elseif ($ruangan['idRuangan'] == '4') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4" selected>RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php elseif ($ruangan['idRuangan'] == '5') : ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5" selected>RPS 5</option>
+                                <option value="6">Perpustakaan</option>
+                          <?php else : ($ruangan['idRuangan'] == '6') ?>
+                                 <option value="1">RPS 1</option>
+                                <option value="2">RPS 2</option>
+                                <option value="3">RPS 3</option>
+                                <option value="4">RPS 4</option>
+                                <option value="5">RPS 5</option>
+                                <option value="6" selected>Perpustakaan</option>
+                            <?php endif; ?>
+
                             </select>
                         </div>
                     </div>
@@ -232,7 +246,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Foto Buku</label>
                         </div>
                         <div class="col-sm-5">
-                            <input name="fotoBuku" class="form-control mt-3" type="file" id="formFile">
+                            <input type="file" name="fotoBuku" class="form-control mt-3"  id="formFile">
                         </div>
                     </div>
 
