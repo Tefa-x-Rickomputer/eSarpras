@@ -22,187 +22,123 @@
 
 <main>
     <div class="container-fluid">
+        <h1 class="mt-4">Edit User</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="idUser" value="<?= $user['idUser']; ?>">
+        <input type="hidden" name="fotoProfil" value="<?= $user['fotoProfil']; ?>">
         <div class="row">
-            <div class="col mt-5 text-center">
-                <h1>Edit user</h1>
-            </div>    
+            <div class="col-md mt-3">
+                <label for="">Nama</label>
+                <input type="text" class="form-control" name="nama" value="<?= $user['nama']; ?>">
+            </div>
+            <div class="col-md mt-3">
+                <label for="">NIK</label>
+                <input type="text" class="form-control" name="nik" value="<?= $user['nik']; ?>">
+            </div>
+
+              <div class="col-md mt-3">
+                <label for="">Tanggal Lahir</label>
+                <input type="date" class="form-control" name="tanggalLahir" value="<?= $user['tanggalLahir']; ?>">
+            </div>
         </div>
 
-    <form action="" method="POST">
-        <div class="row mt-3 mb-5 card-user">
-            <div class="col-md-8 mx-auto col-xs-12 mt-3">
-                <div class="card p-3 pt-1 bg-light shadow">
-                        <input type="hidden" name="idUser" value="<?= $user['idUser']; ?>">
-                        <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Nama</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" name="nama" value="<?= $user['nama']; ?>">
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-md mt-3">
+                <label for="">Email</label>
+                <input type="email" class="form-control" name="email" value="<?= $user['email']; ?>">
+            </div>
 
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">NIK</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" name="nik" value="<?= $user['nik']; ?>">
-                        </div>
-                    </div>
+            <div class="col-md mt-3">
+                <label for="">No. Telp</label>
+                <input type="text" class="form-control" name="telpon" value="<?= $user['telpon']; ?>">
+            </div>
 
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Tanggal Lahir</label>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="date" class="form-control mt-3" name="tanggalLahir" value="<?= $user['tanggalLahir']; ?>">
-                        </div>
-                    </div>
+            <div class="col-md mt-3">
+                <label for="">Alamat</label>
+                <input type="text" class="form-control" name="alamat" value="<?= $user['alamat']; ?>">
+            </div>
+        </div> 
 
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Email</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="email" class="form-control mt-3" name="email" value="<?= $user['email']; ?>">
-                        </div>
-                    </div>
 
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">No. Telp</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" name="telpon" value="<?= $user['telpon']; ?>">
-                        </div>
-                    </div>
+        <div class="row mb-3">
+            <div class="col-md mt-3">
+                <label for="">Status</label>
+                <input type="text" class="form-control" name="status" value="<?= $user['status']; ?>">
+           </div>
 
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Alamat</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" name="alamat" value="<?= $user['alamat']; ?>">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="agama" class="fw-bold float-xl-end fs-5 mt-3">Agama</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <select name="agama" id="agama" class="form-select mt-3">
-                                <?php 
-                                if ($user['agama'] == 'Islam') {
-                                    echo "<option value='Islam' selected>Islam</option>
-                                        <option value='Kristen'>Kristen</option>
-                                        <option value='Katholik'>Katholik</option>
-                                        <option value='Buddha'>Buddha</option>
-                                        <option value='Hindu'>Hindu</option>
-                                        ";
-                                    } else if ($user['agama'] == 'Kristen') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen' selected>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($user['agama'] == 'Katholik') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik' selected>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($user['agama'] == 'Buddha') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha' selected>Buddha</option>
-                                            <option value='Hindu'>Hindu</option>
-                                            ";
-                                    } else if ($user['agama'] == 'Hindu') {
-                                        echo "<option value='Islam'>Islam</option>
-                                            <option value='Kristen'>Kristen</option>
-                                            <option value='Katholik'>Katholik</option>
-                                            <option value='Buddha'>Buddha</option>
-                                            <option value='Hindu' selected>Hindu</option>
-                                            ";
-                                    } else {
-                                ?>
-                                    <option value='Islam'>Islam</option>
-                                    <option value='Kristen'>Kristen</option>
-                                    <option value='Katholik'>Katholik</option>
-                                    <option value='Buddha'>Buddha</option>
-                                    <option value='Hindu'>Hindu</option>
-                                <?php        
-                                    }
-                                 ?>
-                                
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Jenis Kelamin</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <?php 
-                                $kelamin = $user['gender'];
-                                if ($kelamin == 'Perempuan') {
-                                    echo '
-                                    <div class="form-check form-check-inline mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Laki-laki">
-                                        <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-                                    </div>
-                                    ';
-                                    echo '
-                                    <div class="form-check form-check-inline mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Perempuan" checked>
-                                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                                    </div>
-                                    ';
-                                } else if ($kelamin == 'Laki-laki') {
-                                    echo '
-                                    <div class="form-check form-check-inline mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Laki-laki" checked>
-                                        <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-                                    </div>
-                                    ';
-                                    echo '
-                                    <div class="form-check form-check-inline mt-3">
-                                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Perempuan" >
-                                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                                    </div>
-                                    ';
-                                }
-                             ?>
-                            
-                            
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-                            <label for="" class="fw-bold float-xl-end fs-5 mt-3">Foto Profile</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input class="form-control mt-3" type="file" name="fotoProfil" id="formFile">
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md mt-3">
+                <label for="kondisiBuku">Agama</label>
+                <select name="agama" id="" class="form-select">
+                    <?php if($user['agama'] == 'Islam') { ?>
+                        <option value='Islam' selected>Islam</option>
+                        <option value='Kristen'>Kristen</option>
+                        <option value='Katholik'>Katholik</option>
+                        <option value='Buddha'>Buddha</option>
+                        <option value='Hindu'>Hindu</option>
+                    <?php }elseif($user['agama'] == 'Kristen') { ?>
+                        <option value='Islam' >Islam</option>
+                        <option value='Kristen' selected>Kristen</option>
+                        <option value='Katholik'>Katholik</option>
+                        <option value='Buddha'>Buddha</option>
+                        <option value='Hindu'>Hindu</option>
+                    <?php }elseif($user['agama'] == 'Katholik') { ?>
+                        <option value='Islam' >Islam</option>
+                        <option value='Kristen'>Kristen</option>
+                        <option value='Katholik' selected>Katholik</option>
+                        <option value='Buddha'>Buddha</option>
+                        <option value='Hindu'>Hindu</option>
+                    <?php }elseif($user['agama'] == 'Buddha') { ?>
+                        <option value='Islam' >Islam</option>
+                        <option value='Kristen'>Kristen</option>
+                        <option value='Katholik'>Katholik</option>
+                        <option value='Buddha' selected>Buddha</option>
+                        <option value='Hindu'>Hindu</option>
+                    <?php }elseif($user['agama'] == 'Hindu') { ?>
+                        <option value='Islam' >Islam</option>
+                        <option value='Kristen'>Kristen</option>
+                        <option value='Katholik'>Katholik</option>
+                        <option value='Buddha'>Buddha</option>
+                        <option value='Hindu' selected>Hindu</option>
+                    <?php }else { ?>
+                        <option value='Islam' >Islam</option>
+                        <option value='Kristen'>Kristen</option>
+                        <option value='Katholik'>Katholik</option>
+                        <option value='Buddha'>Buddha</option>
+                        <option value='Hindu'>Hindu</option>
+                    <?php } ?>
                     
+                </select>
             </div>
 
+            <div class="col-md mt-3">
+                <label for="">Jenis Kelamin</label>
+                <select name="gender" id="" class="form-select">
+                    <?php if($user['gender'] == 'Laki-laki') : ?>
+                        <option value="Laki-laki" selected>Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    <?php if($user['gender'] == 'Perempuan') : ?>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan" selected>Perempuan</option>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                </select>
+            </div>
+
+            <div class="col-md mt-3">
+                <label for="">Gambar</label>
+                <input type="file" class="form-control" name="fotoProfil">      
+            </div> 
         </div>
-        <div class="row mt-3 mb-5 ">
-            <div class="col-md-2 mx-auto">
-                <button type="submit" name="edit" class="btn btn-success">Edit</button>
-                <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="btn btn-primary">Kembali</a>
+
+        <div class="row">
+            <div class="col-md-2 mt-3 mb-3">
+                <button class="shadow btn btn-success" type="submit" name="edit">Simpan</button>
+                <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="shadow btn btn-primary">Kembali</a>
             </div>
         </div>
+
     </form>
+
     </div>
 </main>
