@@ -28,7 +28,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 ?>
 
 <main>
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4 mb-3">
         <h1 class="my-4">Dashboard</h1>
 
         <!-- Contents -->
