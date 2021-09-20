@@ -154,12 +154,15 @@
             </div>
 
         </div>
-        <div class="row mb-5 text-center">
-            <div class="col">
-</form>
-            <a href="index.php?page=Useredit&id=<?= $userSession['idUser']; ?>" class='btn btn-warning'>Edit</a>
+        <div class="row mb-5">
+            <div class="col-md-2 mx-auto">
+                <div class="d-grid">
+                <a href="index.php?page=Useredit&id=<?= $userSession['idUser']; ?>" class='btn btn-warning text-white shadow'>Edit</a>
+                    
+                </div>
             </div>
         </div>
+</form>
 
     </div>
 </main>

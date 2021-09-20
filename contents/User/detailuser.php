@@ -43,7 +43,7 @@
                             <div class="float-end"><?= $user['nik']; ?></div>
                         </li>
                         <li class="list-group-item mt-2">
-                            <b>Status</b>
+                            <b>Jabatan</b>
                             <div class="float-end"><?= $user['status']; ?></div>
                         </li>
                         <li class="list-group-item mt-2">
@@ -172,8 +172,8 @@
         <div class="row mb-5 text-center">
             <div class="col">
 </form>
-                <a href="index.php?page=Useredit&id=<?= $id; ?>" class='btn btn-warning'>Edit</a>
-                <a href="index.php?page=Userdelete&id=<?= $id; ?>" id="deletebtn" class="btn btn-danger" onclick="return confirm('apakah yakin akan dihapus?')">Hapus</a>
+                <a href="index.php?page=Useredit&id=<?= $id; ?>" class='btn btn-warning shadow'>Edit</a>
+                <a href="index.php?page=Userdelete&id=<?= $id; ?>" id="deletebtn" class="btn btn-danger shadow" onclick="return confirm('apakah yakin akan dihapus?')">Hapus</a>
 
             </div>
         </div>
