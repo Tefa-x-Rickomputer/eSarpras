@@ -24,7 +24,7 @@
             </div>    
         </div>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
 		<div class="row mt-3 mb-5 card-user">
             <div class="col-md-8 mx-auto col-xs-12 mt-3">
                 <div class="card p-3 pt-1 bg-light shadow">

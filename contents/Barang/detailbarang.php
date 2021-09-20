@@ -1,6 +1,6 @@
 <?php   
 
-    require 'config/connect.php';
+    require 'config/barangfunctions.php';
     $id = $_GET['id'];
     $result = mysqli_query($db, "SELECT * FROM tbarang WHERE idAset='$id'");
     $barang = mysqli_fetch_assoc($result);
