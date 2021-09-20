@@ -1,61 +1,10 @@
-<<<<<<< HEAD
 <main>
 
 <!--php start-->
 
 <?php
-$server 			="localhost";
-$user 				="root";
-$password 			="";
-$database			="inventorymanagement";
-	
+require 'config/ruangconfig.php';
 
-    $db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
-	
-
-//query simpan ruang
-if(isset($_POST['simpan'])) {
-	$nama = $_POST['namaruangan'];
-	
-	
-	$query = "INSERT INTO truangan VALUES
-						( '', '$nama', ''  )
-						";
-	mysqli_query($db, $query);
-}
-	
-
-//query hapus ruang (soft delete)
-if(isset($_POST['hapus'])) {
-	$id = $_POST ['idruangan'];
-    $query = "UPDATE truangan SET isDeleted= '1' WHERE idRuangan =$id";
-	
-	
-	
-	mysqli_query($db, $query);
-}
-// hard delete
-if(isset($_POST['hapus2'])) {
-	$id = $_POST ['idruangan'];
-    $query = "DELETE FROM truangan WHERE idRuangan =$id";
-	mysqli_query($db, $query);
-}
-
-//query update/edit ruang
-
-if(isset($_POST['update'])) {
-	$id = $_POST ['idruang'];
-	$namaruang =$_POST ['namaruanganbaru'];	
-	
-	$query = "UPDATE truangan SET namaRuangan= '$namaruang' WHERE idRuangan =$id";
-	mysqli_query($db, $query);
-}
-
-//Query show table
-
-$tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
-
-	mysqli_query($db, $tabel);
 ?>
 
 
@@ -88,19 +37,19 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 	
 	<!--input group tambah ruang-->
 
-	<h3><i class="bi bi-house-fill"></i>Tambah ruang</h3>
+	<h3><i class="bi bi-house-fill"></i>Tambah ruangan</h3>
 	
 	<!--end of title-->
 	<div class="row">
 		<div class="col-md-mt3">
-			<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruang" name="namaruangan">
+			<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruangan" name="namaruangan">
 		</div>
 		
 			<br>
 			</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" class="btn btn-outline-warning" name="simpan">Simpan</button>
+			<button type="submit" class="btn btn-warning" name="simpan">Simpan</button>
 		</div>
  
 	
@@ -110,6 +59,10 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 	
 	
 		<!--input group edit ruang-->
+	<br>
+
+
+	</br>	
 	<br>
 	</br>
 	<!--break-->
@@ -132,10 +85,15 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit" name ="update" class="btn btn-outline-warning">Edit</button>
+			<button type="submit" name ="update" class="btn btn-warning">Edit</button>
 		</div>
 		<br>
 		</br>
+
+
+		<br>
+		</br>
+
 	
 	</div>
 
@@ -150,55 +108,33 @@ $tabel = ("SELECT idRuangan,namaRuangan FROM truangan");
 
 	<div class="row">
 		<div class="col-md-mt3">
-			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruang yang ingin dihapus">
+			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruangan yang ingin dihapus">
 		</div>
 		
 		<br>
 		</br>
 
 		<div class="col-md-mt3">
-			<button type="submit"  class="btn btn-outline-danger" name="hapus">soft delete</button>
-			<button type="submit"  class="btn btn-outline-danger" name="hapus2">Hard delete</button>
+
+			<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
+			<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
 		
 			<br>
 		</br>
 		<br>
 		</br>
+
 		</div>
 	</div>
+		
+
+	
 	
 	<!-- table-->
 	
-	<table class="table table-dark table-striped">
-  
+	<?php
 
+	include 'config/showtableruang.php';
+	?>
 
-
-	<tr>
-                    <th>ID</th>
-                    <th>Nama Ruangan</th>
-                    
-                </tr>
-	</table>
-
-
-<!-- end of form-->
-</form>
-
-<tbody class="">
-               
-                    <tr>
-                   
-                    <td><?echo= $tabel["id"]; ?></td>
-                    <td><?echo= $tabel["namaRuangan"]; ?></td>
-                   
-                    
-                        
-                    </tr>
-                    
-			
-            </tbody>
-			</table>
 </main>
-=======
->>>>>>> ee7b027065ded6b8deb1b08917c1b943d7d7a532

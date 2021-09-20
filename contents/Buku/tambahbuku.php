@@ -22,7 +22,6 @@
           setTimeout(function(){
             document.location.href ='index.php?page=DaftarBuku';('');
            }, 2000)
-          alert('Data berhasil di tambah');
           </script>";
     } else {
       echo"<div class='alert alert-danger' role='alert'>
@@ -30,9 +29,8 @@
         </div>
       <script>
           setTimeout(function(){
-            document.location.href ='index.php?page=DaftarBuku';('');
+            document.location.href ='index.php?page=TambahBuku';('');
            }, 2000)
-          alert('Data berhasil di tambah');
           </script>";
     }
   }
@@ -129,6 +127,7 @@
       </div>
       <div class=" mt-3">
           <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-outline-danger" type="reset">Batal</button>
       </div>
 
     </form>
