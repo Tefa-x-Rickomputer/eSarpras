@@ -1,6 +1,6 @@
 <?php 
-    require 'config/bukufunctions.php';
-    $buku = querysql ("SELECT * FROM tbuku");
+    require 'config/connect.php';
+    $buku = querysql ("SELECT * FROM tbuku WHERE isDeleted=0");
 
  ?>
 
@@ -13,7 +13,13 @@
         </ol>
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
- <caption>Daftar Buku</caption>
+    <div class="mt-4">   
+<button  type="button" class="btn btn-success">Excel</button>
+<a href="index.php?page=Pdf" class="btn btn-danger">PDF</a>
+
+    </div>
+
+
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
