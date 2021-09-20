@@ -16,7 +16,7 @@ $query = mysqli_query($db, $tabel);
 
 
 echo '<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
-<caption>Daftar Buku</caption>
+<caption>Daftar Ruangan</caption>
 		   <thead class="table-dark">
 		
 			<tr>
