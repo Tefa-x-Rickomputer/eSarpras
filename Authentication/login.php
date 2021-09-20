@@ -16,7 +16,7 @@ if (isset($_POST["submit"])) {
         if (password_verify($password, $row["password"])) {
             $userSession = [
             "login" => $_SESSION["login"] = true,
-            "id" => $_SESSION["id"] = $row["id"],
+            "idUser" => $_SESSION["idUser"] = $row["idUser"],
             "role" => $_SESSION["role"] = $row["role"],
             "nama" => $_SESSION["nama"] = $row["nama"],
             "email" => $_SESSION["email"] = $row["email"],
