@@ -32,7 +32,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <img src="<?= $user['fotoProfil']; ?>" alt="">
                         </div>
 
                     </div>
