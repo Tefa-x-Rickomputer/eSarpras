@@ -199,7 +199,7 @@
         </div>
         <div class="row mt-3 mb-5 ">
             <div class="col-md-2 mx-auto">
-                <button type="submit" name="edit" class="btn btn-success">Edit</button>
+                <button type="submit" name="edit" class="btn btn-success">Simpan</button>
                 <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="btn btn-primary">Kembali</a>
             </div>
         </div>

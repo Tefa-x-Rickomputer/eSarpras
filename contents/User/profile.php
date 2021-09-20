@@ -45,7 +45,7 @@
 
 <form action="" method="POST">
                 <div class="card p-3 pt-1 shadow">
-                    
+
                     <div class="row form-group">
                         <div class="col-sm-2">
                             <label for="" class="fw-bold fs-5 mt-3">Nama</label>
@@ -157,7 +157,7 @@
         <div class="row mb-5 text-center">
             <div class="col">
 </form>
-            <a href="index.php?page=Useredit&id=<?= $userSession['id']; ?>" class='btn btn-warning'>Edit</a>
+            <a href="index.php?page=Useredit&id=<?= $userSession['idUser']; ?>" class='btn btn-warning'>Edit</a>
             </div>
         </div>
 
