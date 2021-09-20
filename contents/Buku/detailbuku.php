@@ -4,8 +4,6 @@
     $result = mysqli_query($db, "SELECT * FROM tbuku WHERE idbuku='$id'");
     $buku = mysqli_fetch_assoc($result);
 
-    $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$buku[linkRuangan]'"); 
-    $ruangan = (mysqli_fetch_assoc($query));
 
  ?>
 <main>
@@ -21,12 +19,11 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src="francisotfilth.jpg" alt="Foto Buku" >
-
+                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
                         </div>
 
                     </div>
-                    <ul class="list-group list-group-flush mb-3" >
+                    <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item mt-3">
                             <b>Judul Buku</b>
                             <div class="float-end"><p><?= $buku['judulBuku'] ?>  </p></div>
@@ -147,8 +144,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
-                    
-                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $ruangan['namaRuangan'] ?>">
+                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['linkRuangan'] ?>">
                         </div>
                     </div>
 

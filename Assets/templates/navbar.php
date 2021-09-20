@@ -55,22 +55,7 @@
                                     <a class="nav-link" href="index.php?page=TambahBuku">Tambah Buku</a>
                                 </nav>
                             </div>
-<div class="d-flex" id="wrapper">
-            <!-- Sidebar Section -->
-            <div class="bg-dark text-white" id="sidebar-wrapper">
-                
-                    <div class="collapse ms-4" id="collapse3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <a class="nav-link text-white" href="index.php?page=UserDetail">
-                            Profile
-                        </a>
-                        <a class="nav-link text-white <?= eclAdminGuest; ?>" href="index.php?page=Userlist">
-                            Daftar User
-                        </a>
-                        <a class="nav-link text-white <?= eclAdminGuest; ?>" href="index.php?page=adduser">
-                            Tambah User
-                        </a>
-                        <a class="nav-link text-white" href="Authentication/logout.php">Logout</a>
-                    </div>
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="bi bi-house-fill"></i></div>
                                 Menu Ruang

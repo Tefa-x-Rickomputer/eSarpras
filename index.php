@@ -1,21 +1,8 @@
 <?php 
 
-
-
-
-
+require_once "config/connect.php";
 
 session_start();
-// var_dump($_SESSION["role"]);
-// var_dump($_SESSION["nama"]);
-// var_dump($_SESSION["email"]);
-// var_dump($_SESSION["telpon"]);
-// var_dump($_SESSION["status"]);
-// var_dump($_SESSION["login"]);
-// var_dump($_SESSION["fotoProfil"]);
-
-require "config/sessionmanager.php";
-
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/login.php");
@@ -89,14 +76,6 @@ if (!isset($_SESSION["login"]))
                             include 'contents/Buku/editbuku.php';
                             break;
 
-                          case 'HapusBuku':
-                            include 'contents/Buku/hapusbuku.php';
-                            break;
-
-                            case 'Pdf':
-                            include 'contents/Buku/pdf.php';
-                            break;
-
                         // Buku switch end
 
                         // User switch
@@ -142,28 +121,31 @@ if (!isset($_SESSION["login"]))
              ?>
 
         </div>
-        <!-- End Website -->
+    </div>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="Assets/js/indexscripts.js"></script>
-        <!-- Data Table -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
-      <!-- pdf -->
-      <script src ="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-              var table = $('#example').DataTable( {
-            responsive: true
-            } );
-     
-        new $.fn.dataTable.FixedHeader( table );
-    });
-</script>
+    
 
-    </body>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="Assets/js/indexscripts.js"></script>
+    <!-- Data Table -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.2/r-2.2.9/datatables.min.js"></script>
+   <!--  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+          var table = $('#example').DataTable( {
+        responsive: {
+            details: true
+        }
+        } );
+
+        });
+    </script>
+</body>
+
 </html>
