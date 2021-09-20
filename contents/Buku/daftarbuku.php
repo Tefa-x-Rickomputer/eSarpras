@@ -14,8 +14,7 @@
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
     <div class="mt-4">   
-<button  type="button" class="btn btn-success">Excel</button>
-<a href="index.php?page=Pdf" class="btn btn-danger">PDF</a>
+<a href="pdf.php" class="btn btn-danger">PDF</a>
 
     </div>
 

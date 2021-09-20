@@ -116,8 +116,15 @@
            $hargaBuku =htmlspecialchars($data['hargaBuku']); 
            $sumberDana =htmlspecialchars($data['sumberDana']); 
            $kondisiBuku =htmlspecialchars($data['kondisiBuku']); 
-           $linkRuangan =htmlspecialchars($data['linkRuangan']); 
-           $fotoBuku =htmlspecialchars($data['fotoBuku']); 
+           $linkRuangan =htmlspecialchars($data['linkRuangan']);
+           $fotoLama =htmlspecialchars($data['fotoLama']);
+
+           // cek apakah user menambahkan foto baru atau tidak
+           if($_FILES['fotoBuku']['error'] === 4 ) {
+              $fotoBuku = $fotoLama;
+           } else {
+              $fotoBuku = upload();
+           }
 
             $query = "UPDATE tbuku SET
                                    judulBuku   = '$judulBuku',

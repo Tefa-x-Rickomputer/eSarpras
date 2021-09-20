@@ -21,7 +21,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src="francisotfilth.jpg" alt="Foto Buku" >
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%" >
 
                         </div>
 

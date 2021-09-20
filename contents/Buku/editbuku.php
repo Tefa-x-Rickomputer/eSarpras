@@ -36,7 +36,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%"  >
                         </div>
 
                     </div>
@@ -57,7 +57,7 @@
 
             <div class="col-md-8 col-xs-12 mt-3">
 
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                 <div class="card p-3 pt-1 shadow">
                     <div class="row form-group">
                         <div class="col-sm-3">
@@ -65,6 +65,7 @@
                         </div>
                         <div class="col-sm-5">
                             <input type="hidden" name="idBuku" value="<?= $buku['idBuku']; ?>">
+                            <input type="hidden" name="fotoLama" value="<?= $buku['fotoBuku']; ?>">
                             <input type="text" class="form-control mt-3" name="judulBuku"  value="<?= $buku['judulBuku']; ?>"> 
                         </div>
                     </div>
@@ -217,7 +218,7 @@
                                 <option value="4">RPS 4</option>
                                 <option value="5" selected>RPS 5</option>
                                 <option value="6">Perpustakaan</option>
-                          <?php else : ($ruangan['namaRuangan'] == '6') ?>
+                          <?php else : ($ruangan['idRuangan'] == '6') ?>
                                  <option value="1">RPS 1</option>
                                 <option value="2">RPS 2</option>
                                 <option value="3">RPS 3</option>
@@ -235,7 +236,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Foto Buku</label>
                         </div>
                         <div class="col-sm-5">
-                            <input name="fotoBuku" class="form-control mt-3" type="file" id="formFile">
+                            <input type="file" name="fotoBuku" class="form-control mt-3"  id="formFile">
                         </div>
                     </div>
 
