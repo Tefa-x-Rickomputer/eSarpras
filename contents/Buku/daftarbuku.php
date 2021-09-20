@@ -13,7 +13,13 @@
         </ol>
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
- <caption><button type="button" class="btn btn-danger">PDF</button></caption>
+    <div class="mt-4">   
+<button  type="button" class="btn btn-success">Excel</button>
+<a href="index.php?page=Pdf" class="btn btn-danger">PDF</a>
+
+    </div>
+
+
             <thead class="table-dark">
                 <tr>
                     <th>No</th>

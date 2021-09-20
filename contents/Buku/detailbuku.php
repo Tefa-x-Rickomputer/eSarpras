@@ -21,7 +21,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src="<?= $buku["fotoBuku"] ?>" alt="Foto Buku" >
+                            <img src="francisotfilth.jpg" alt="Foto Buku" >
 
                         </div>
 
