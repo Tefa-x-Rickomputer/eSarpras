@@ -21,7 +21,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%" >
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="50%" >
 
                         </div>
 
@@ -160,8 +160,9 @@
 
         <div class="row mb-5 text-center">
             <div class="col">
-                <a href="index.php?page=EditBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-outline-warning">Edit</a>
-                <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-outline-danger" onclick="confirm('are you sure?')" >Hapus</a>
+                <a href="index.php?page=EditBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-warning  <?= eclGuest ?>">Edit</a>
+                <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="confirm('are you sure?')" >Hapus</a>
+                <a href="index.php?page=DaftarBuku"class="btn btn-primary")>Kembali</a>
 
             </div>
         </div>

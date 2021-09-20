@@ -36,7 +36,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%"  >
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="50%"  >
                         </div>
 
                     </div>
@@ -249,6 +249,7 @@
         <div class="row mb-5 text-center">
             <div class="col">
               <button type="submit" name="edit" class="btn btn-success">Update</button>
+              
               </form>
         </div>
     
