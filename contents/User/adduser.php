@@ -5,24 +5,24 @@
 
     if ( isset($_POST['submit']) ) {
         // echo $username . $password . $role . $nama . $nik . $tanggalLahir . $email . $telpon . $alamat . $status . $agama . $gender . $fotoProfil;
-        // if( adduser($_POST) > 0 ) {
-        //     echo "<script>
-        //             alert('data berhasil di tambahkan');
-        //             //document.location.href = 'index.php?page=Userlist';
-        //         </script>";
-        // } else {
-        //     echo "data gagal ditambahkan";
-        // }
-        var_dump($_FILES['fotoProfil']);
-        $namafile = $_FILES['fotoProfil']['name'];
-        $fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
-        $namafileformat = explode('.', $namafile);
-        $namafileformat = strtolower(end($namafileformat));
-        if( !in_array($namafileformat, $fileformat) ) {
+        if( adduser($_POST) > 0 ) {
             echo "<script>
-                    alert('Harus berupa gambar!');
+                    alert('data berhasil di tambahkan');
+                    //document.location.href = 'index.php?page=Userlist';
                 </script>";
+        } else {
+            echo "data gagal ditambahkan";
         }
+        
+        // $namafile = $_FILES['fotoProfil']['name'];
+        // $fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
+        // $namafileformat = explode('.', $namafile);
+        // $namafileformat = strtolower(end($namafileformat));
+        // if( !in_array($namafileformat, $fileformat) ) {
+        //     echo "<script>
+        //             alert('Harus berupa gambar!');
+        //         </script>";
+        // }
     }
 
  ?> 

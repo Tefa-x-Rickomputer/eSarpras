@@ -29,16 +29,21 @@
 
         if ( $_FILES['fotoProfil']['error'] === 4) {
         	$fotoProfil = '';
-            echo "harus berupa gambar";
+            $query = "INSERT INTO tuser VALUES
+                    ('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
+                    ";
+
+            mysqli_query($db, $query);
         }else {
-        	// $fotoProfil = upload();
+        	$fotoProfil = upload();
+            echo "$fotoProfil";
+
+            // $query = "INSERT INTO tuser VALUES
+            // 		('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
+            // 		";
+
+            // mysqli_query($db, $query);
         }
-
-        $query = "INSERT INTO tuser VALUES
-        		('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
-        		";
-
-        // mysqli_query($db, $query);
 
         return mysqli_affected_rows($db);
 
@@ -65,8 +70,6 @@
         $newfile = uniqid();
         $newfile .= '.';
         $newfile .= $namafileformat;
-
-
 
         return $newfile;
 	}
