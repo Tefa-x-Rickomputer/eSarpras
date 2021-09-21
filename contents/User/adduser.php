@@ -1,28 +1,22 @@
-<?php 
 
-    require 'config/userfunctions.php';
-
-
-    if ( isset($_POST['submit']) ) {
-        // echo $username . $password . $role . $nama . $nik . $tanggalLahir . $email . $telpon . $alamat . $status . $agama . $gender . $fotoProfil;
-        if( adduser($_POST) > 0 ) {
-            echo "<script>
-                    alert('data berhasil di tambahkan');
-                    document.location.href = 'index.php?page=Userlist';
-                </script>";
-        } else {
-            echo "<script>
-                    alert('data gagal di tambahkan');
-                    document.location.href = 'index.php?page=Userlist';
-                </script>";
-        }
-    }
-
- ?> 
 
 <main>
 	<div class="container-fluid">
         <h1 class="mt-4">Tambah User</h1>
+
+        <div class="notif">
+            <?php 
+                require 'config/userfunctions.php';
+                if ( isset($_POST['submit']) ) {
+                    // echo $username . $password . $role . $nama . $nik . $tanggalLahir . $email . $telpon . $alamat . $status . $agama . $gender . $fotoProfil;
+                    if( adduser($_POST) > 0 ) {
+                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Data Berhasil ditambahkan!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                    } else {
+                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Data Gagal ditambahkan!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                    }
+                }
+             ?> 
+        </div>
 
 
     <form action="" method="post" enctype="multipart/form-data">
@@ -30,18 +24,18 @@
 
             <div class="col-md mt-3">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" required>
+                <input type="text" class="form-control shadow" name="username" required>
             </div>
 
 
            <div class="col-md mt-3">
                 <label for="">Password</label>
-                <input type="password" class="form-control" name="password" required>
+                <input type="password" class="form-control shadow" name="password" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Role</label>
-                <select name="role" class="form-select" id="" required>
+                <select name="role" class="form-select shadow" required>
                     <option value="super">Super</option>
                     <option value="admin">Admin</option>
                     <option value="guest">Guest</option>
@@ -54,33 +48,33 @@
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Nama</label>
-                <input type="text" class="form-control" name="nama" required>
+                <input type="text" class="form-control shadow" name="nama" required>
             </div>
             <div class="col-md mt-3">
                 <label for="">NIK</label>
-                <input type="text" class="form-control" name="nik" required>
+                <input type="text" class="form-control shadow" name="nik" required>
             </div>
 
               <div class="col-md mt-3">
                 <label for="">Tanggal Lahir</label>
-                <input type="date" class="form-control" name="tanggalLahir" required>
+                <input type="date" class="form-control shadow" name="tanggalLahir" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Email</label>
-                <input type="email" class="form-control" name="email" required>
+                <input type="email" class="form-control shadow" name="email" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">No. Telp</label>
-                <input type="text" class="form-control" name="telpon" required>
+                <input type="text" class="form-control shadow" name="telpon" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Alamat</label>
-                <input type="text" class="form-control" name="alamat" required>
+                <input type="text" class="form-control shadow" name="alamat" required>
             </div>
         </div> 
 
@@ -88,7 +82,7 @@
         <div class="row mb-3">
             <div class="col-md mt-3">
                 <label for="">Jabatan</label>
-                <select name="status" id="" class="form-select" required>
+                <select name="status" class="form-select shadow" required>
                     <option value="Kepala Sekolah">Kepala Sekolah</option>
                     <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
                     <option value="Kepala Lab">Kepala Lab</option>
@@ -100,7 +94,7 @@
 
             <div class="col-md mt-3">
                 <label for="kondisiBuku">Agama</label>
-                <select name="agama" id="" class="form-select" required>
+                <select name="agama" class="form-select shadow" required>
                     <option value="Islam">Islam</option>
                     <option value="Kristen">Kristen</option>
                     <option value="Katholik">Katholik</option>
@@ -111,7 +105,7 @@
 
             <div class="col-md mt-3">
                 <label for="">Jenis Kelamin</label>
-                <select name="gender" id="" class="form-select" required>
+                <select name="gender" class="form-select shadow" required>
                     <option value="Laki-laki">Laki-Laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -119,14 +113,14 @@
 
             <div class="col-md mt-3">
                 <label for="">Gambar</label>
-                <input type="file" class="form-control" name="fotoProfil">      
+                <input type="file" class="form-control shadow" name="fotoProfil">      
             </div> 
         </div>
 
         <div class="row">
-            <div class="col-md-2 mb-3">
+            <div class="col-md-2 mb-3 mt-3">
                 <div class="d-grid">
-                    <button class="btn btn-success" type="submit" name="submit">Simpan</button>
+                    <button class="btn btn-success shadow" type="submit" name="submit">Simpan</button>
                 </div>
             </div>
         </div>

@@ -1,28 +1,23 @@
-<?php 
-    include 'config/userfunctions.php';
-    $id = $_GET['id'];
-
-    $user = query("SELECT * FROM tuser WHERE idUser = $id")[0];
-
-    if( isset($_POST['edit']) ) { 
-        if( edit($_POST) > 0 ) {
-            echo "<script>
-                    alert('data berhasil di update');
-                    document.location.href = 'index.php?page=UserDetail&id=$id';
-                </script>";
-        } else {
-            echo "<script>
-                    alert('data gagal di update');
-                    document.location.href = 'index.php?page=UserDetail&id=$id';
-                </script>";
-        }
-    }
-?>
-
 
 <main>
     <div class="container-fluid">
         <h1 class="mt-4">Edit User</h1>
+        <div class="notif" id="notification">
+            <?php 
+                include 'config/userfunctions.php';
+                $id = $_GET['id'];
+
+                $user = query("SELECT * FROM tuser WHERE idUser = $id")[0];
+
+                if( isset($_POST['edit']) ) { 
+                    if( edit($_POST) > 0 ) {
+                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Data Berhasil diubah!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                    } else {
+                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Data Gagal diubah!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                    }
+                }
+            ?>
+        </div>
 
     <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="idUser" value="<?= $user['idUser']; ?>">
@@ -30,33 +25,33 @@
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Nama</label>
-                <input type="text" class="form-control" name="nama" value="<?= $user['nama']; ?>">
+                <input type="text" class="form-control shadow" name="nama" value="<?= $user['nama']; ?>">
             </div>
             <div class="col-md mt-3">
                 <label for="">NIK</label>
-                <input type="text" class="form-control" name="nik" value="<?= $user['nik']; ?>">
+                <input type="text" class="form-control shadow" name="nik" value="<?= $user['nik']; ?>">
             </div>
 
               <div class="col-md mt-3">
                 <label for="">Tanggal Lahir</label>
-                <input type="date" class="form-control" name="tanggalLahir" value="<?= $user['tanggalLahir']; ?>">
+                <input type="date" class="form-control shadow" name="tanggalLahir" value="<?= $user['tanggalLahir']; ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Email</label>
-                <input type="email" class="form-control" name="email" value="<?= $user['email']; ?>">
+                <input type="email" class="form-control shadow" name="email" value="<?= $user['email']; ?>">
             </div>
 
             <div class="col-md mt-3">
                 <label for="">No. Telp</label>
-                <input type="text" class="form-control" name="telpon" value="<?= $user['telpon']; ?>">
+                <input type="text" class="form-control shadow" name="telpon" value="<?= $user['telpon']; ?>">
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Alamat</label>
-                <input type="text" class="form-control" name="alamat" value="<?= $user['alamat']; ?>">
+                <input type="text" class="form-control shadow" name="alamat" value="<?= $user['alamat']; ?>">
             </div>
         </div> 
 
@@ -64,12 +59,12 @@
         <div class="row mb-3">
             <div class="col-md mt-3">
                 <label for="">Status</label>
-                <input type="text" class="form-control" name="status" value="<?= $user['status']; ?>">
+                <input type="text" class="form-control shadow" name="status" value="<?= $user['status']; ?>">
            </div>
 
             <div class="col-md mt-3">
                 <label for="kondisiBuku">Agama</label>
-                <select name="agama" id="" class="form-select">
+                <select name="agama" id="" class="form-select shadow">
                     <?php if($user['agama'] == 'Islam') { ?>
                         <option value='Islam' selected>Islam</option>
                         <option value='Kristen'>Kristen</option>
@@ -113,21 +108,20 @@
 
             <div class="col-md mt-3">
                 <label for="">Jenis Kelamin</label>
-                <select name="gender" id="" class="form-select">
-                    <?php if($user['gender'] == 'Laki-laki') : ?>
+                <select name="gender" id="" class="form-select shadow">
+                    <?php if($user['gender'] == 'Laki-laki') { ?>
                         <option value="Laki-laki" selected>Laki-laki</option>
                         <option value="Perempuan">Perempuan</option>
-                    <?php if($user['gender'] == 'Perempuan') : ?>
+                    <?php }elseif($user['gender'] == 'Perempuan') { ?>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Perempuan" selected>Perempuan</option>
-                    <?php endif; ?>
-                    <?php endif; ?>
+                    <?php } ?>
                 </select>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Gambar</label>
-                <input type="file" class="form-control" name="fotoProfil">      
+                <input type="file" class="form-control shadow" name="fotoProfil">      
             </div> 
         </div>
 
