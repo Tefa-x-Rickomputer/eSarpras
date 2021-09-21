@@ -1,10 +1,2 @@
 # Mengabaikan gambar
 Assets/img/
-Assets/js/
-
-# Mengabaikan connect.php
-config/connect.php
-
-# Mengabaikan semua file index.php kecuali di root folder
-**/index.php
-!index.php
