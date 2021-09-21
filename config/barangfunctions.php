@@ -1,6 +1,6 @@
 <?php
 
-	require 'connect.php';
+	$db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
 	function addbarang($data) {
 		global $db;
@@ -25,8 +25,6 @@
 
      }
      function edit($data) {
-               global $db;
-           $idAset =htmlspecialchars($data['idAset']);    
            $namaBarang =htmlspecialchars($data['namaBarang']);
            $merkBarang =htmlspecialchars($data['merkBarang']);
            $tipeBarang =htmlspecialchars ($data['tipeBarang']);
@@ -38,22 +36,9 @@
            $linkRuangan =htmlspecialchars ($data['linkRuangan']);
            $fotoBarang =htmlspecialchars ($data['fotoBarang']);
 
-           $query = "UPDATE tbarang SET
-                                   namaBarang = '$namaBarang',
-                                   merkBarang = '$merkBarang',
-                                   tipeBarang = '$tipeBarang',
-                                   nomorRegister = '$nomorRegister',
-                                   hargaSatuan = '$hargaSatuan',
-                                   tahunPembelian = '$tahunPembelian',
-                                   sumberDana = '$sumberDana',
-                                   kondisiBarang = '$kondisiBarang',
-                                   linkRuangan = '$linkRuangan',
-                                   fotoBarang = '$fotoBarang'
-                                   where idAset = $idAset 
-                                   ";
-          mysqli_query($db, $query);
-          
-          return mysqli_affected_rows($db);                              
+           $query = "INSERT INTO tbarang VALUES
+           ('', '$namaBarang', '$fotoBarang', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan','')
+           ";
      }
 
      function hapus($id) {

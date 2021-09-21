@@ -4,9 +4,6 @@
 
     $buku = query("SELECT * FROM tbuku WHERE idBuku = $id")[0];
 
-    $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$buku[linkRuangan]'"); 
-    $ruangan = (mysqli_fetch_assoc($query));
-
     if( isset($_POST['edit']) ) { 
         if( edit($_POST) > 0 ) {
             echo "<script>
@@ -16,7 +13,7 @@
         } else {
             echo "<script>
                     alert('data gagal di update');
-                   
+                    document.location.href = 'index.php?page=EditBuku&id=$id';
                 </script>";
         }
     }
@@ -36,7 +33,7 @@
                 <div class="shadow">
                     <div class="card card-primary">
                         <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
+                            <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="100%"  >
                         </div>
 
                     </div>
@@ -57,7 +54,7 @@
 
             <div class="col-md-8 col-xs-12 mt-3">
 
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                 <div class="card p-3 pt-1 shadow">
                     <div class="row form-group">
                         <div class="col-sm-3">
@@ -65,6 +62,8 @@
                         </div>
                         <div class="col-sm-5">
                             <input type="hidden" name="idBuku" value="<?= $buku['idBuku']; ?>">
+                            <input type="hidden" name="fotoLama" value="<?= $buku['fotoBuku']; ?>">
+
                             <input type="text" class="form-control mt-3" name="judulBuku"  value="<?= $buku['judulBuku']; ?>"> 
                         </div>
                     </div>
@@ -114,15 +113,6 @@
                         </div>
                     </div>
 
-                     <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Nomor Register</label>
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control mt-3" name="nomorRegister" value="<?= $buku['nomorRegister']; ?>">
-                        </div>
-                    </div>
-
                     <div class="row form-group">
                         <div class="col-sm-3">
                             <label for="" class="fw-bold fs-5 mt-3">Tahun Pembelian</label>
@@ -146,14 +136,24 @@
                             <label for="sumberDana" class="fw-bold fs-5 mt-3">Sumber Dana</label>
                         </div>
                         <div class="col-sm-5">
-                             <select id="" name="sumberDana" class="form-select mt-3">
-                               <?php if ($buku['sumberDana'] == 'BOS') : ?>
-                                <option value="BOS" selected>BOS</option>
+                            <select id="" name="sumberDana" class="form-select mt-3">
+                                <?php 
+                                if ($buku['sumberDana'] == 'BOS') {
+                                    echo "<option value='BOS'>BOS</option>
+                                          <option value='BOSDA'>BOSDA</option>
+                                        ";
+                                } else if ($buku['sumberDana'] == 'BOSDA') {
+                                    echo "<option value='BOS'>BOS</option>
+                                          <option value='BOSDA'>BOSDA</option>
+                                        ";
+                                    } else{
+
+                                 ?>
+                                 <option value="BOS">BOS</option>
                                 <option value="BOSDA">BOSDA</option>
-                            <?php else : ?>
-                                <option value="BOS">BOS</option>
-                                <option value="BOSDA" selected>BOSDA</option>
-                            <?php endif; ?>
+                                <?php 
+                                    }
+                                 ?>
                             </select>
                         </div>
                     </div>
@@ -163,14 +163,24 @@
                             <label for="" class="fw-bold fs-5 mt-3">Kondisi</label>
                         </div>
                         <div class="col-sm-5">
-                        <select id="" name="kondisiBuku" class="form-select mt-3">
-                            <?php if ($ruangan['kondisiBuku'] == 'Baik') : ?>
-                                <option value="Baik" selected>Baru</option>
+                        <select id="" name="linkRuangan" class="form-select mt-3">
+                            <?php 
+                            if ($buku['kondisiBuku'] == 'Baru') {
+                                    echo "<option value='Baru'>Baru</option>
+                                          <option value='Rusak'>Rusak</option>
+                                        ";
+                         } elseif ($buku['kondisiBuku'] == 'Rusak') {
+                                    echo "<option value='Baru'>Baru</option>
+                                          <option value='Rusak'>Rusak</option>
+                                        ";
+                                } else {
+
+                             ?>
+                                <option value="Baru">Baru</option>
                                 <option value="Rusak">Rusak</option>
-                            <?php else : ?>
-                                <option value="Baik">Baru</option>
-                                <option value="Rusak" selected>Rusak</option>
-                            <?php endif; ?>
+                                <?php 
+                                    }
+                                 ?>
                             </select>
                         </div>
                     </div>
@@ -180,6 +190,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
                         </div>
                         <div class="col-sm-5">
+
                             <select id="" name="linkRuangan" va class="form-select mt-3">
 
                             <?php if ($ruangan['idRuangan'] == '1') : ?>
@@ -217,7 +228,7 @@
                                 <option value="4">RPS 4</option>
                                 <option value="5" selected>RPS 5</option>
                                 <option value="6">Perpustakaan</option>
-                          <?php else : ($ruangan['namaRuangan'] == '6') ?>
+                          <?php else : ($ruangan['idRuangan'] == '6') ?>
                                  <option value="1">RPS 1</option>
                                 <option value="2">RPS 2</option>
                                 <option value="3">RPS 3</option>
@@ -225,8 +236,8 @@
                                 <option value="5">RPS 5</option>
                                 <option value="6" selected>Perpustakaan</option>
                             <?php endif; ?>
-                            </select>
 
+                            </select>
                         </div>
                     </div>
 
@@ -235,7 +246,7 @@
                             <label for="" class="fw-bold fs-5 mt-3">Foto Buku</label>
                         </div>
                         <div class="col-sm-5">
-                            <input name="fotoBuku" class="form-control mt-3" type="file" id="formFile">
+                            <input type="file" name="fotoBuku" class="form-control mt-3"  id="formFile">
                         </div>
                     </div>
 
