@@ -26,16 +26,58 @@
         $status = htmlspecialchars($data['status']);
         $agama = htmlspecialchars($data['agama']);
         $gender = htmlspecialchars($data['gender']);
-        $fotoProfil = htmlspecialchars($data['fotoProfil']);
 
-        $query = "INSERT INTO tuser VALUES
-        		('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
-        		";
+        // mencek apakah ada file poto yg di upload
+        if ($_FILES['fotoProfil']['error'] === 4) {
+            $query = "INSERT INTO tuser VALUES
+                    ('', '$username', '$password', '$role', '$nik', '$nama', NULL, '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
+                    ";
+        }else{
+            $fotoProfil = upload();
+            $query = "INSERT INTO tuser VALUES
+                    ('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
+                    ";
+        }
 
-        mysqli_query($db, $query);
+        
+
+            mysqli_query($db, $query);
 
         return mysqli_affected_rows($db);
 
+	}
+
+	function upload() {
+		$namafile = $_FILES['fotoProfil']['name'];
+		$sizeFile = $_FILES['fotoProfil']['size'];
+		$tmpName = $_FILES['fotoProfil']['tmp_name'];
+
+		// check yg diupload adalah gambar
+		$fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
+        $namafileformat = explode('.', $namafile);
+        $namafileformat = strtolower(end($namafileformat));
+        if( !in_array($namafileformat, $fileformat) ) {
+            echo "<script>
+                    alert('Harus berupa gambar!');
+                </script>";
+            return false;
+        }
+
+        if( $sizeFile > 100000 ) {
+            echo "<script>
+                    alert('gambar terlalu besar!');
+                  </script>";
+            return false;
+        }
+        
+
+        $newfile = uniqid();
+        $newfile .= '.';
+        $newfile .= $namafileformat;
+
+        move_uploaded_file($tmpName, "./Assets/img/user/" . $newfile);
+
+        return $newfile;
 	}
 
 	function isHapus($id) {
@@ -56,7 +98,14 @@
         $alamat = htmlspecialchars($data['alamat']);
         $agama = htmlspecialchars($data['agama']);
         $gender = htmlspecialchars($data['gender']);
-        $fotoProfil = htmlspecialchars($data['fotoProfil']);
+        $fotoProfilold = htmlspecialchars($data['fotoProfil']);
+
+        // mencek apakah ada file poto yg di upload
+        if ($_FILES['fotoProfil']['error'] == 4) {
+            $fotoProfil = $fotoProfilold;
+        }else{
+            $fotoProfil = upload();
+        }
 
         $query = "UPDATE tuser SET  
         			nik = '$nik', 

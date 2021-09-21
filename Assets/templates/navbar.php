@@ -1,11 +1,11 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark ps-3">
         <!-- Sidebar Toggle-->
         
-        <a class="navbar-brand ps-3 me-1" href="./">
+        <a class="navbar-brand me-1" href="./">
             <img src="Assets/img/logosmkn2.png" alt="" class="img img-responsive shadow me-2" width="40">
             e-Sarpras
         </a>
-        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Brand-->
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
