@@ -69,13 +69,13 @@
                   </script>";
             return false;
         }
-        
+            
 
         $newfile = uniqid();
         $newfile .= '.';
         $newfile .= $namafileformat;
 
-        move_uploaded_file($tmpName, "./Assets/img/user/" . $newfile);
+        move_uploaded_file($tmpName, "Assets/img/user/" . $newfile);
 
         return $newfile;
 	}
