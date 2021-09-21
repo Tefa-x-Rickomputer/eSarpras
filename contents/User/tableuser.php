@@ -31,6 +31,7 @@
                             <td><?= $user['role']; ?></td>
                 			<td class="text-center">
                 				<a href="index.php?page=UserDetail&id=<?= $user['idUser']; ?>" class="btn btn-success">Detail</a>
+                                <a href="index.php?page=Userdelete&id=<?= $user['idUser']; ?>" class="btn btn-danger shadow" onclick="return confirm('apakah yakin akan dihapus?')">Hapus</a>
                 			</td>
                 		</tr>
                         <?php $count++ ?>
