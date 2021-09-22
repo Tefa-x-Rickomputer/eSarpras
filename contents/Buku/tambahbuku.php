@@ -1,30 +1,41 @@
 <?php
 
   require 'config/bukufunctions.php';
-
-  if (isset($_POST['simpan']) ) {
-    if( addbuku($_POST) > 0 ) {
-      echo"<script>
-          alert('Data berhasil di tambah');
-          </script>";
-    } else {
-      echo "data gagal ditambahkan!!!";
-    }
-  }
-
+  
  ?>
+
 
 <main>
   <div class="container-fluid px-4">
     <h1 class="mt-4">Tambah Buku</h1>
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-      <li class="breadcrumb-item active">Tambah Buku</li>
-    </ol>
+    
+    <?php 
+      if (isset($_POST['simpan']) ) {
+    if( addbuku($_POST) > 0 ) {
+      echo"<div class='alert alert-success' role='alert'>
+        Data berhasil ditambahkan
+        </div>
+      <script>
+          setTimeout(function(){
+            document.location.href ='index.php?page=DaftarBuku';('');
+           }, 2000)
+          </script>";
+    } else {
+      echo"<div class='alert alert-danger' role='alert'>
+        Data gagal ditambahkan
+        </div>
+      <script>
+          setTimeout(function(){
+            document.location.href ='index.php?page=TambahBuku';('');
+           }, 100000)
+          </script>";
+    }
+  }
 
-    <div class="d-flex bg-dark text-white p-3"><span class="text-dark">s</span></div>
 
-    <form action="" method="post">
+     ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="row">
 
          <div class="col-md mt-3">
@@ -92,18 +103,21 @@
         <div class="col-md mt-3">
             <label for="kondisiBuku">Kondisi</label>
        <select class="form-select" aria-label="Default select example" name="kondisiBuku">
-         <option value="1">Baru</option>
-         <option value="2">Rusak</option>
+         <option value="Baru">Baik</option>
+         <option value="Rusak">Rusak</option>
        </select>
      </div>
 
         <div class="col-md mt-3">
-            <label for="">Ruangan</label>
+        <label for="">Ruangan</label>
         <select class="form-select" aria-label="Default select example" name="linkRuangan">
           <option value="1">RPS 1</option>
            <option value="2">RPS 2</option>
            <option value="3">RPS 3</option>
            <option value="4">RPS 4</option>
+           <option value="5">RPS 5</option>
+           <option value="6">Perpustakaan</option>
+
         </select>
         </div>
 
@@ -112,7 +126,8 @@
           <input type="file" class="form-control" name="fotoBuku">      
       </div>
       <div class=" mt-3">
-          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>    
+          <button class="btn btn-danger" type="reset">Batal</button>
       </div>
 
     </form>

@@ -2,10 +2,7 @@
 
 <!--php start-->
 
-<?php
-require 'config/ruangconfig.php';
 
-?>
 
 
 
@@ -27,32 +24,25 @@ require 'config/ruangconfig.php';
 
 
 
-	<!--form tag start-->
-	<form method="post" action="">
-	
-	</br>
-
-	
-	
-	
-	<!--input group tambah ruang-->
+	<!--form tambah ruangan start-->
+	<form method="post" action=" config/simpan.php">
 
 	<h3><i class="bi bi-house-fill"></i>Tambah ruangan</h3>
 	
 	<!--end of title-->
-	<div class="row">
-		<div class="col-md-mt3">
-			<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruangan" name="namaruangan">
-		</div>
-		
+		<div class="row">
+			<div class="col-md-mt3">
+				<input type="text" class="form-control" id="namaRuangan" placeholder="Nama ruangan" name="namaruangan">
+			</div>
+
 			<br>
 			</br>
 
-		<div class="col-md-mt3">
-			<button type="submit" class="btn btn-warning" name="simpan">Simpan</button>
+			<div class="col-md-mt3">
+				<button type="submit" class="btn btn-warning" name="simpan">Simpan</button>
+			</div>
 		</div>
- 
-	
+	</form>
 	
 	
 	
@@ -60,25 +50,25 @@ require 'config/ruangconfig.php';
 	
 		<!--input group edit ruang-->
 	<br>
-
-
 	</br>	
-	<br>
-	</br>
-	<!--break-->
+	
+ 
+	<!--Start of edit ruangan form-->
+
+	<form method ="post" action ="config/edit.php">
 	
 	<h3><i class="bi bi-pencil-square"></i>Edit nama ruang</h3>
 	</br>
 	<div class="row">
 		<div class="col-md-mt3">
-			<input type="number" class="form-control" name="idruang" id="exampleFormControlInput1" placeholder="ID Ruangan">
+			<input type="number" class="form-control" name="idRuangan" id="exampleFormControlInput1" placeholder="ID Ruangan">
 		</div>
 
 		<br>
 		</br>
 
 		<div class="col-md-mt3">
-			<input type="text" class="form-control" name ="namaruanganbaru" id="exampleFormControlInput1" placeholder="Nama baru ruangan">
+			<input type="text" class="form-control" name ="namaRuangan" id="exampleFormControlInput1" placeholder="Nama baru ruangan">
 		</div>
 		
 		<br>
@@ -96,6 +86,7 @@ require 'config/ruangconfig.php';
 
 	
 	</div>
+	</form>
 
 
 
@@ -103,40 +94,39 @@ require 'config/ruangconfig.php';
 
 
 
-	<!--input group hapus ruang-->
-	<h3><i class="bi bi-trash-fill"></i>Hapus ruang</h3>
+	<!--form hapus ruang-->
 
-	<div class="row">
-		<div class="col-md-mt3">
-			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruangan yang ingin dihapus">
-		</div>
-		
-		<br>
-		</br>
+	<form method ="post" action ="config/hapus.php">
 
-		<div class="col-md-mt3">
+		<h3><i class="bi bi-trash-fill"></i>Hapus ruang</h3>
 
-			<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
-			<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
-		
+		<div class="row">
+			<div class="col-md mt-3">
+				<input type="number" class="form-control" id="exampleFormControlInput1" name="idRuangan" placeholder="Masukan ID ruangan yang ingin dihapus">
+			</div>
+			
 			<br>
-		</br>
-		<br>
-		</br>
+			</br>
 
+			<div class="col-md mt-3">
+
+				<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
+				<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
+			
+				<br>
+			</br>
+			<br>
+			</br>
+
+			</div>
 		</div>
-	</div>
+
+	</form>
 		
 
-	
-	
-	<!-- table-->
 	
 	<?php
-
-	include 'config/showtableruang.php';
+	include 'config/showtableruang.php'
 	?>
-	<!-- end of table-->
-
 
 </main>
