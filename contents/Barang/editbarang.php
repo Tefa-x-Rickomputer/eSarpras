@@ -151,7 +151,7 @@
             </div>
             <div class="col-md-2">
                 <div class="d-grid">
-                    <a href="index.php?page=DetailBarang"class="btn btn-danger")>Batal</a>
+                   <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-danger">Batal</a>
                 </div>
             </form>
             </div>

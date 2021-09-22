@@ -8,10 +8,6 @@
 <main>
   <div class="container-fluid px-4">
     <h1 class="mt-4">Tambah Barang</h1>
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-      <li class="breadcrumb-item active">Tambah Barang</li>
-    </ol>
     
     <?php  
     if (isset($_POST['simpan']) ) {
@@ -111,8 +107,8 @@
           <input type="file" class="form-control" name="fotoBarang">      
       </div>
       <div class=" mt-3">
-          <button class="btn btn-outline-primary" type="submit" name="simpan">Simpan</button> 
-          <button class="btn btn-outline-danger" type="reset">Batal</button>   
+          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button> 
+          <button class="btn btn-danger" type="reset">Batal</button>   
       </div>
 
     </form>
