@@ -58,7 +58,7 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-2 mx-auto">
+            <div class="col-md-2">
                 <div class="d-grid">
                     <a href="index.php?page=Useredit&id=<?= $userSession['idUser']; ?>" class='btn btn-warning text-white shadow-sm'>Edit</a>
                 </div>
