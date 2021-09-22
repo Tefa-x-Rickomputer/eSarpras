@@ -7,10 +7,13 @@
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Daftar Buku</h1> 
+          <div style="margin-bottom: 10px">
         <a href="pdf.php" class="btn btn-danger">PDF</a>
+    </div>
+          <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
 
-    </div>
+    
 
             <thead class="table-dark">
                 <tr>
@@ -37,7 +40,7 @@
                     
                         <td>
                             <div class="d-grid">
-                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>" class="btn btn-success">Detail</a>
+                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>"class="btn btn-success"><i class="fas fa-pen"></i> Detail</a>
                             </div>
                         </td>
                     </tr>
@@ -45,5 +48,6 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
     </div>
 </main>

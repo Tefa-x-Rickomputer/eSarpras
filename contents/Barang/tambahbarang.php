@@ -27,7 +27,7 @@
 <script>
        setTimeout(function(){
         document.location.href ='index.php?page=TambahBarang';('');
-    }, 2000)
+    }, 20000000)
           </script>";
     }
   }
