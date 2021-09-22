@@ -1,31 +1,15 @@
 <?php 
 
-// require "config/sessionmanager.php";
-// $userSession = [
-//             "login" => $_SESSION["login"],
-//             "role" => $_SESSION["role"],
-//             "nama" => $_SESSION["nama"],
-//             "email" => $_SESSION["email"],
-//             "telpon" => $_SESSION["telpon"],
-//             "status" => $_SESSION["status"],
-//             "fotoProfil" =>  $_SESSION["fotoProfil"],
-//             ];
-
 include 'config/connect.php';
 
-$cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
-$cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
-$cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
+$id = $userSession['idUser'];
+$user = querySql("SELECT * FROM tuser WHERE idUser = $id")[0];
+
+$cntRuangan = querySql("SELECT COUNT('*') FROM truangan WHERE isDeleted = 0")[0];
+$cntAset = querySql("SELECT COUNT('*') FROM tbarang WHERE isDeleted = 0")[0];
+$cntBuku = querySql("SELECT COUNT('*') FROM tbuku WHERE isDeleted = 0")[0];
 
 $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
-
-// var_dump($_SESSION["role"]);
-// var_dump($_SESSION["nama"]);
-// var_dump($_SESSION["email"]);
-// var_dump($_SESSION["telpon"]);
-// var_dump($_SESSION["status"]);
-// var_dump($_SESSION["login"]);
-// var_dump($_SESSION["fotoProfil"]);
 
 ?>
 
@@ -41,7 +25,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                     <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-box"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-house"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntRuangan["COUNT('*')"] ?></span>
@@ -132,23 +116,23 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                     <div class="card-header box-profile">
                         <div class="text-center">
                             <!-- <i class="bi bi-person-fill" style="font-size:6rem;"></i> -->
-                            <img class="profile-photo" src="Assets/img/user/<?= $userSession["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
-                            <h4><?= $userSession["nama"] ?></h2>
+                            <img class="profile-photo" src="Assets/img/user/<?= $user["fotoProfil"] ?>" alt="Foto Profil" style="width: 96px;">
+                            <h4><?= $user["nama"] ?></h2>
                         </div>
                     </div>
                     <div class="card-body bg-dark text-light pb-2">
                         <ul class="list-group list-group-unbordered mb-1 text-center fw-normal">
                             <li class="pb-2">
-                                <i class="text-muted text-center"><?= $userSession["role"]; ?></i>
+                                <i class="text-muted text-center"><?= $user["role"]; ?></i>
                             </li>
                             <li class="list-group-item border-start-0 border-end-0 border-bottom-0 bg-dark text-light">
-                                <?= $userSession["status"]; ?>
+                                <?= $user["status"]; ?>
                             </li>
                             <li class="list-group-item border-0 bg-dark text-light">
-                                <?= $userSession["email"]; ?>
+                                <?= $user["email"]; ?>
                             </li>
                             <li class="list-group-item border-0 bg-dark text-light">
-                                <?= $userSession["telpon"]; ?>
+                                <?= $user["telpon"]; ?>
                             </li>
                         </ul>
                     </div>

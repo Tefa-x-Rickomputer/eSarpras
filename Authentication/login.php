@@ -17,17 +17,7 @@ if (isset($_POST["submit"])) {
             $userSession = [
             "login" => $_SESSION["login"] = true,
             "idUser" => $_SESSION["idUser"] = $row["idUser"],
-            "role" => $_SESSION["role"] = $row["role"],
-            "nama" => $_SESSION["nama"] = $row["nama"],
-            "email" => $_SESSION["email"] = $row["email"],
-            "telpon" => $_SESSION["telpon"] = $row["telpon"],
-            "status" => $_SESSION["status"] = $row["status"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"] = $row["fotoProfil"],
-            "tanggalLahir" => $_SESSION["tanggalLahir"] = $row["tanggalLahir"],
-            "agama" => $_SESSION["agama"] = $row["agama"],
-            "gender" => $_SESSION["gender"] = $row["gender"],
-            "alamat" => $_SESSION["alamat"] = $row["alamat"],
-            "nik" =>  $_SESSION["nik"] = $row["nik"]
+            "role" => $_SESSION["role"] = $row["role"]
             ];
         }
     } 
@@ -36,22 +26,6 @@ if (isset($_POST["submit"])) {
 if (isset($_SESSION["login"])) {
     header("location:../");
 }
-
-// var_dump($username);
-// var_dump($password);
-// $password = password_hash($password, PASSWORD_DEFAULT);
-// var_dump($password);
-// var_dump($_SESSION["role"] = $row["role"]);
-// var_dump($_SESSION["login"]);
-// var_dump($_SESSION["role"]);
-// var_dump($_SESSION["nama"]);
-// var_dump($_SESSION["email"]);
-// var_dump($_SESSION["telpon"]);
-// var_dump($_SESSION["status"]);
-// var_dump($_SESSION["login"]);
-// var_dump($_SESSION["fotoProfil"]);
-// // var_dump($userSession[1]);
-// var_dump($userSession["nama"]);
 ?>
 
 <!doctype html>
