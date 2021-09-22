@@ -58,10 +58,27 @@
             <div class="col-md mt-3">
                 <label for="">Jabatan</label>
                 <select name="status" class="form-select shadow-sm">
-                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                <?php if($user['status'] == 'Kepala Sekolah') { ?>
+                    <option value="Kepala Sekolah" selected>Kepala Sekolah</option>
                     <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
                     <option value="Kepala Lab">Kepala Lab</option>
                     <option value="Guru">Guru</option>
+                <?php }elseif ($user['status'] == 'Wakil Kepala Sekolah') { ?>
+                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                    <option value="Wakil Kepala Sekolah" selected>Wakil Kepala Sekolah</option>
+                    <option value="Kepala Lab">Kepala Lab</option>
+                    <option value="Guru">Guru</option>
+                <?php }elseif ($user['status'] == 'Kepala Lab') { ?>
+                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                    <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
+                    <option value="Kepala Lab" selected>Kepala Lab</option>
+                    <option value="Guru">Guru</option>
+                <?php }elseif ($user['status'] == 'Guru') { ?>
+                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                    <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
+                    <option value="Kepala Lab">Kepala Lab</option>
+                    <option value="Guru" selected>Guru</option>
+                <?php } ?>
                 </select>
            </div>
 
