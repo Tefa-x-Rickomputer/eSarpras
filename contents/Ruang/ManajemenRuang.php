@@ -98,28 +98,28 @@
 
 	<form method ="post" action ="config/hapus.php">
 
-	<h3><i class="bi bi-trash-fill"></i>Hapus ruang</h3>
+		<h3><i class="bi bi-trash-fill"></i>Hapus ruang</h3>
 
-	<div class="row">
-		<div class="col-md-mt3">
-			<input type="number" class="form-control" id="exampleFormControlInput1" name ="idruangan" placeholder="Masukan ID ruangan yang ingin dihapus">
-		</div>
-		
-		<br>
-		</br>
-
-		<div class="col-md-mt3">
-
-			<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
-			<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
-		
+		<div class="row">
+			<div class="col-md mt-3">
+				<input type="number" class="form-control" id="exampleFormControlInput1" name="idRuangan" placeholder="Masukan ID ruangan yang ingin dihapus">
+			</div>
+			
 			<br>
-		</br>
-		<br>
-		</br>
+			</br>
 
+			<div class="col-md mt-3">
+
+				<button type="submit"  class="btn btn-danger" name="hapus">soft delete</button>
+				<button type="submit"  class="btn btn-danger" name="hapus2">Hard delete</button>
+			
+				<br>
+			</br>
+			<br>
+			</br>
+
+			</div>
 		</div>
-	</div>
 
 	</form>
 		
@@ -128,6 +128,9 @@
 	<?php
 	include 'config/showtableruang.php'
 	?>
+
+	
+	
 	
 	
 	

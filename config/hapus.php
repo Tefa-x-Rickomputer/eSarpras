@@ -7,9 +7,6 @@ include 'connect.php';
 if(isset($_POST['hapus'])) {
     $idRuangan =$_POST['idRuangan'];
     $query = "UPDATE truangan SET isDeleted= '1' WHERE idRuangan =$idRuangan";
-	
-	
-	
 	mysqli_query($db, $query);
 }
 
