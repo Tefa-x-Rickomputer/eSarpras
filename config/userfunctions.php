@@ -57,16 +57,12 @@
         $namafileformat = explode('.', $namafile);
         $namafileformat = strtolower(end($namafileformat));
         if( !in_array($namafileformat, $fileformat) ) {
-            echo "<script>
-                    alert('Harus berupa gambar!');
-                </script>";
+            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Harus berupa gambar!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
             return false;
         }
 
-        if( $sizeFile > 100000 ) {
-            echo "<script>
-                    alert('gambar terlalu besar!');
-                  </script>";
+        if( $sizeFile >= 1000000 ) {
+            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Gambar terlalu besar!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
             return false;
         }
             
