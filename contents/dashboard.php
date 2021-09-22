@@ -2,6 +2,9 @@
 
 include 'config/connect.php';
 
+$id = $userSession['idUser'];
+$user = querySql("SELECT * FROM tuser WHERE idUser = $id")[0];
+
 $cntRuangan = querySql("SELECT COUNT('*') FROM truangan WHERE isDeleted = 0")[0];
 $cntAset = querySql("SELECT COUNT('*') FROM tbarang WHERE isDeleted = 0")[0];
 $cntBuku = querySql("SELECT COUNT('*') FROM tbuku WHERE isDeleted = 0")[0];
