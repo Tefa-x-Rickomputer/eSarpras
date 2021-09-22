@@ -70,6 +70,14 @@ if (!isset($_SESSION["login"]))
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
                             break;
+
+                         case 'EditBarang':
+                            include 'contents/Barang/EditBarang.php';
+                            break;
+
+                        case 'Hapus':
+                            include 'contents/Barang/hapus.php';
+                            break;
                         // Barang switch end
 
                         // Buku switch 
