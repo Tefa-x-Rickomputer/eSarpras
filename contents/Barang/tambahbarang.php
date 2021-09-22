@@ -26,18 +26,18 @@
       <div class="row">
 
         <div class="col-md mt-3">
-          <label for="judulBuku">NamaBarang</label>
+          <label for="judulBuku">Nama Barang</label>
           <input type="text" class="form-control" name="namaBarang">
         </div>
 
 
        <div class="col-md mt-3">
-           <label for="">MerkBarang</label>
+           <label for="">Merk Barang</label>
           <input type="text" class="form-control" name="merkBarang">
         </div>
 
         <div class="col-md mt-3">
-            <label for="">TipeBarang</label>
+            <label for="">Tipe Barang</label>
           <input type="text" class="form-control" name="tipeBarang">
         </div>
 
@@ -46,7 +46,7 @@
 
       <div class="row">
                <div class="col-md mt-3">
-            <label for="">NomorRegister</label>
+            <label for="">Nomor Register</label>
           <input type="text" class="form-control" name="nomorRegister">
         </div>
         <div class="col-md mt-3">
