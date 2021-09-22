@@ -1,7 +1,3 @@
-<?php 
-    include 'config/sessionmanager.php';
-?>
-
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4 mb-4">Profile</h1>
