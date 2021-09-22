@@ -1,6 +1,6 @@
 <?php
-
-	$db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
+     include 'connect.php';
+	// $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
 	function addbarang($data) {
 		global $db;

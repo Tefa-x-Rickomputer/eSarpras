@@ -1,5 +1,5 @@
 <?php 
-	$db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
+	include 'connect.php';
 
 	function query($query) {
 		global $db;
