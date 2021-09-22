@@ -10,7 +10,7 @@ session_start();
 // var_dump($_SESSION["fotoProfil"]);
 
 require "config/sessionmanager.php";
-require_once "config/connect.php";
+
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/login.php");
