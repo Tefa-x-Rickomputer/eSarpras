@@ -72,7 +72,7 @@ if (!isset($_SESSION["login"]))
                             break;
 
                          case 'EditBarang':
-                            include 'contents/Barang/EditBarang.php';
+                            include 'contents/Barang/editbarang.php';
                             break;
 
                         case 'Hapus':
