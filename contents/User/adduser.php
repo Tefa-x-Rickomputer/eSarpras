@@ -24,18 +24,18 @@
 
             <div class="col-md mt-3">
                 <label for="username">Username</label>
-                <input type="text" class="form-control shadow" name="username" required>
+                <input type="text" class="form-control shadow-sm" name="username" required>
             </div>
 
 
            <div class="col-md mt-3">
                 <label for="">Password</label>
-                <input type="password" class="form-control shadow" name="password" required>
+                <input type="password" class="form-control shadow-sm" name="password" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Role</label>
-                <select name="role" class="form-select shadow" required>
+                <select name="role" class="form-select shadow-sm" required>
                     <option value="super">Super</option>
                     <option value="admin">Admin</option>
                     <option value="guest">Guest</option>
@@ -48,33 +48,33 @@
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Nama</label>
-                <input type="text" class="form-control shadow" name="nama" required>
+                <input type="text" class="form-control shadow-sm" name="nama" required>
             </div>
             <div class="col-md mt-3">
                 <label for="">NIK</label>
-                <input type="text" class="form-control shadow" name="nik" required>
+                <input type="text" class="form-control shadow-sm" name="nik" required>
             </div>
 
               <div class="col-md mt-3">
                 <label for="">Tanggal Lahir</label>
-                <input type="date" class="form-control shadow" name="tanggalLahir" required>
+                <input type="date" class="form-control shadow-sm" name="tanggalLahir" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Email</label>
-                <input type="email" class="form-control shadow" name="email" required>
+                <input type="email" class="form-control shadow-sm" name="email" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">No. Telp</label>
-                <input type="text" class="form-control shadow" name="telpon" required>
+                <input type="text" class="form-control shadow-sm" name="telpon" required>
             </div>
 
             <div class="col-md mt-3">
                 <label for="">Alamat</label>
-                <input type="text" class="form-control shadow" name="alamat" required>
+                <input type="text" class="form-control shadow-sm" name="alamat" required>
             </div>
         </div> 
 
@@ -82,7 +82,7 @@
         <div class="row mb-3">
             <div class="col-md mt-3">
                 <label for="">Jabatan</label>
-                <select name="status" class="form-select shadow" required>
+                <select name="status" class="form-select shadow-sm" required>
                     <option value="Kepala Sekolah">Kepala Sekolah</option>
                     <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
                     <option value="Kepala Lab">Kepala Lab</option>
@@ -94,7 +94,7 @@
 
             <div class="col-md mt-3">
                 <label for="kondisiBuku">Agama</label>
-                <select name="agama" class="form-select shadow" required>
+                <select name="agama" class="form-select shadow-sm" required>
                     <option value="Islam">Islam</option>
                     <option value="Kristen">Kristen</option>
                     <option value="Katholik">Katholik</option>
@@ -105,7 +105,7 @@
 
             <div class="col-md mt-3">
                 <label for="">Jenis Kelamin</label>
-                <select name="gender" class="form-select shadow" required>
+                <select name="gender" class="form-select shadow-sm" required>
                     <option value="Laki-laki">Laki-Laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -113,14 +113,14 @@
 
             <div class="col-md mt-3">
                 <label for="">Gambar</label>
-                <input type="file" class="form-control shadow" name="fotoProfil">      
+                <input type="file" class="form-control shadow-sm" name="fotoProfil">      
             </div> 
         </div>
 
         <div class="row">
             <div class="col-md-2 mb-3 mt-3">
                 <div class="d-grid">
-                    <button class="btn btn-success shadow" type="submit" name="submit">Simpan</button>
+                    <button class="btn btn-success shadow-sm" type="submit" name="submit">Simpan</button>
                 </div>
             </div>
         </div>
