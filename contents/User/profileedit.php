@@ -1,14 +1,12 @@
-
 <main>
     <div class="container-fluid">
-        <h1 class="mt-4">Edit User</h1>
+        <h1 class="mt-4">Edit Profile</h1>
         <div class="notif" id="notification">
-            <?php 
+            <?php
                 include 'config/userfunctions.php';
-                $id = $_GET['id'];
-
+                $id = $userSession['idUser'];
                 $user = query("SELECT * FROM tuser WHERE idUser = $id")[0];
-
+                
                 if( isset($_POST['edit']) ) { 
                     if( edit($_POST) > 0 ) {
                         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Data Berhasil diubah!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
@@ -133,7 +131,7 @@
         <div class="row">
             <div class="col-md-2 mt-3 mb-3">
                 <button class="shadow-sm btn btn-success" type="submit" name="edit">Simpan</button>
-                <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="shadow-sm btn btn-primary">Kembali</a>
+                <a href="index.php?page=Profile" class="shadow-sm btn btn-primary">Kembali</a>
             </div>
         </div>
 

@@ -86,9 +86,7 @@
                     <option value="Kepala Sekolah">Kepala Sekolah</option>
                     <option value="Wakil Kepala Sekolah">Wakil Kepala Sekolah</option>
                     <option value="Kepala Lab">Kepala Lab</option>
-                    <option value="Staff">Staff</option>
                     <option value="Guru">Guru</option>
-                    <option value="Siswa">Siswa</option>
                 </select>
            </div>
 
