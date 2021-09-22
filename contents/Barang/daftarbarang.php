@@ -1,18 +1,16 @@
-<?php
-    require 'config/barangfunctions.php';
-    $barang = querySql("SELECT * FROM tbarang");
+<?php 
+    require 'config/connect.php';
+    $barang = querySql("SELECT * FROM tbarang WHERE isDeleted=0");
     ?>
 
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Daftar Aset</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">Daftar Aset</li>
-        </ol>
+        <a href="pdfBarang.php" class="btn btn-danger">PDF</a>
+<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+        
         
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
- <caption>Daftar Aset</caption>
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
@@ -38,7 +36,7 @@
 
                         <td>
                             <div class="d-grid">
-                                <a href="index.php?page=DetailBarang&id=<?= $item ['idAset']; ?>"class="btn btn-outline-success">Detail</a>
+                                <a href="index.php?page=DetailBarang&id=<?= $item ['idAset']; ?>"class="btn btn-success">Detail</a>
                             </div>
                         </td>
                     </tr>
