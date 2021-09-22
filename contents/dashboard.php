@@ -11,6 +11,8 @@
 //             "fotoProfil" =>  $_SESSION["fotoProfil"],
 //             ];
 
+include 'config/connect.php';
+
 $cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
 $cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
 $cntBuku = querySql("SELECT COUNT('*') FROM tbuku")[0];
