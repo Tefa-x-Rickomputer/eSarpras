@@ -85,7 +85,7 @@
            $sumberDana =htmlspecialchars ($data['sumberDana']);
            $kondisiBarang =htmlspecialchars ($data['kondisiBarang']);
            $linkRuangan =htmlspecialchars ($data['linkRuangan']);
-           $fotolama =htmlspecialchars ($data['fotolama']);
+           $fotoLama =htmlspecialchars ($data['fotoLama']);
 
             // cek apakah user menambahkan foto baru atau tidak
            if($_FILES['fotoBarang']['error'] === 4 ) {

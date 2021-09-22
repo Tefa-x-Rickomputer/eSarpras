@@ -9,6 +9,7 @@
     $ruangan = (mysqli_fetch_assoc($query));
  
  ?>
+
 <main>
   <div class="container-fluid px-4">
     <h1 class="mt-4">Data Barang</h1>
@@ -57,20 +58,10 @@
              <input type="text" class="form-control mt-1" id="disabledInput" name="namaRuangan" disabled value="<?= $ruangan['namaRuangan'] ?>">
         </div>
 </div>
-
-        <div class="row mt-4">
-            <div class="col-md-2">
-                <div class="d-grid">
+      
+            <div class=" mt-3">
                     <a href="index.php?page=DaftarBarang"class="btn btn-primary")>Kembali</a>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="d-grid">
                     <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-warning  <?= eclGuest ?>">Edit</a>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="d-grid">
                     <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="confirm('Apa Kamu Yakin Mau Hapus?')" >Hapus</a>
                 </div>
             </div>

@@ -27,20 +27,22 @@
     <h1 class="mt-4">Edit Buku</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="text-center border rounded" style="">
-                 <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="75%" >
-            </div>
         </div>
-        <div class="col-md-8">
              <form action="" method="POST" enctype="multipart/form-data">
+         <div class="row mt-3">
+        <div class="col-md">
             <label for="judulBuku">Judul</label>
             <input type="hidden" name="idBuku" value="<?= $buku['idBuku']; ?>">
              <input type="hidden" name="fotoLama" value="<?= $buku['fotoBuku']; ?>">
-            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="judulBuku" value="<?= $buku['judulBuku'] ?>">
+            <input type="text" class="form-control mt-1" id="disabledInput" name="judulBuku" value="<?= $buku['judulBuku'] ?>">
+        </div>
+            <div class="col-md">
             <label for="nomorBuku">Nomor Buku</label>
-            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorBuku" value="<?= $buku['nomorBuku'] ?>">
+            <input type="text" class="form-control  mt-1" id="disabledInput" name="nomorBuku" value="<?= $buku['nomorBuku'] ?>">
+        </div>
+            <div class="col-md">
             <label for="nomorRegister">Nomor Register</label>
-            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorRegister" value="<?= $buku['nomorRegister'] ?>">
+            <input type="text" class="form-control  mt-1" id="disabledInput" name="nomorRegister" value="<?= $buku['nomorRegister'] ?>">
         </div>
     </div>
 
@@ -158,15 +160,10 @@
         </div>
     </div>
 
-        <div class="row mt-4">
-            <div class="col-md-2">
-                <div class="d-grid">
+        <div class="mt-4">
+
                        <button type="submit" name="edit" class="btn btn-success">Update</button>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="d-grid">
-                    <a href="index.php?page=DaftarBuku"class="btn btn-danger")>Batal</a>
+                   <a href="index.php?page=DetailBuku&id=<?php echo $buku['idBuku']; ?>"class="btn btn-danger">Batal</a>
                 </div>
                 </form>
             </div>
