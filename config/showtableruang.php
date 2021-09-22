@@ -1,11 +1,6 @@
 <?php
 
-$server 			="localhost";
-$user 				="root";
-$password 			="";
-$database			="inventorymanagement";
-
-$db = mysqli_connect($server, $user  , $password, $database) or die(mysqli_error($db));
+include 'connect.php';
 $tabel = 'SELECT idRuangan, namaRuangan
 		FROM truangan WHERE isDeleted=0';
 
