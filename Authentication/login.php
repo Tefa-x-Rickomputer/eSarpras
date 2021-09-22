@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $rltLogin = mysqli_query($db, "SELECT * FROM tuser WHERE username = '$username'");
+    $rltLogin = mysqli_query($db, "SELECT * FROM tuser WHERE username = '$username' AND isDeleted = 0");
     
     $userCheck = mysqli_num_rows($rltLogin);
 
