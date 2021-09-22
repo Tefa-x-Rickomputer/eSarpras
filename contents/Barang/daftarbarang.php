@@ -10,7 +10,6 @@
 <table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
         
         
-<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
