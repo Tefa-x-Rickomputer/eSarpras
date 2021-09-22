@@ -4,163 +4,93 @@
     $result = mysqli_query($db, "SELECT * FROM tbuku WHERE idbuku='$id'");
     $buku = mysqli_fetch_assoc($result);
 
+    $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$buku[linkRuangan]'"); 
+    $ruangan = (mysqli_fetch_assoc($query));
 
  ?>
+
 <main>
-	<div class="container-fluid">
-        <div class="row">
-            <div class="col mt-5 text-center">
-                <h1>Detail Buku</h1>
-            </div>    
+  <div class="container-fluid px-4">
+    <h1 class="mt-4">Data Buku</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="text-center border rounded" style="background-color:rgb(233,236,239)">
+                 <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" width="75%" >
+            </div>
         </div>
+        <div class="col-md-8">
+            <label for="judulBuku">Judul</label>
+            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="judulBuku" disabled value="<?= $buku['judulBuku'] ?>">
+            <label for="nomorBuku">Nomor Buku</label>
+            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorBuku" disabled value="<?= $buku['nomorBuku'] ?>">
+            <label for="nomorRegister">Nomor Register</label>
+            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="role" disabled value="<?= $buku['nomorRegister'] ?>">
+        </div>
+    </div>
 
-		<div class="row mt-3 mb-5 card-user">
-			<div class="col-md-4 col-xs-12 mt-3">
-                <div class="shadow">
-                    <div class="card card-primary">
-                        <div class="text-center">
-                            <i class="bi bi-person-fill" style="font-size:10rem;"></i>
-                        </div>
+    <div class="row mt-3">
+        <div class="col-md">
+            <label for="">Pengarang</label>
+            <input type="text" class="form-control mt-1" id="disabledInput" name="Pengarang" disabled value="<?= $buku['pengarang'] ?>">
+        </div>
+        <div class="col-md">
+            <label for="">Penerbit</label>
+            <input type="text" class="form-control mt-1" id="disabledInput" name="Penerbit" disabled value="<?= $buku['penerbit'] ?>">
+        </div>
+        <div class="col-md ">
+            <label for="">Tahun Terbit</label>
+            <input type="text" class="form-control mt-1" id="disabledInput" name="tahunTerbit" disabled value="<?= $buku['tahunTerbit'] ?>">
+        </div>
+    </div>
 
-                    </div>
-                    <ul class="list-group list-group-flush mb-3">
-                        <li class="list-group-item mt-3">
-                            <b>Judul Buku</b>
-                            <div class="float-end"><p><?= $buku['judulBuku'] ?>  </p></div>
-                        </li>
-                        <li class="list-group-item mt-3">
-                            <b>Nomor Buku</b>
-                            <div class="float-end"><p><?= $buku['nomorBuku'] ?>  </p></div>
-                        </li>
-                    </ul>
+      
+    <div class="row ">
+           <div class="col-md mt-3">
+             <label for="">Tahun Pembelian</label>
+             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" disabled value="<?= $buku['tahunPembelian'] ?>">
+        </div>
+        <div class="col-md mt-3">
+            <label for="">Jumlah Halaman</label>
+            <input type="text" class="form-control mt-1" id="disabledInput" name="jumlahHalaman" disabled value="<?= $buku['jumlahHalaman'] ?>">
+        </div>
+        
+        <div class="col-md mt-3">
+            <label for="">Harga Buku</label>
+            <input type="text" class="form-control mt-1" id="disabledInput" name="hargaBuku" disabled value="<?= $buku['hargaBuku'] ?>">
+        </div>
+    </div>
+
+        <div class="row mb-3">
+           <div class="col-md mt-3">
+             <label for="">Sumber Dana</label>
+             <input type="text" class="form-control mt-1" id="disabledInput" name="sumberDana" disabled value="<?= $buku['sumberDana'] ?>">
+        </div>
+         <div class="col-md mt-3">
+             <label for="">Kondisi Buku</label>
+             <input type="text" class="form-control mt-1" id="disabledInput" name="kondisiBuku" disabled value="<?= $buku['kondisiBuku'] ?>">
+        </div>
+         <div class="col-md mt-3">
+             <label for="">Ruangan</label>
+             <input type="text" class="form-control mt-1" id="disabledInput" name="namaRuangan" disabled value="<?= $ruangan['namaRuangan'] ?>">
+        </div>
+</div>
+
+        <div class="row mt-4">
+            <div class="col-md-2">
+                <div class="d-grid">
+                    <a href="index.php?page=DaftarBuku"class="btn btn-primary")>Kembali</a>
                 </div>
-
             </div>
-
-            <div class="col-md-8 col-xs-12 mt-3">
-                <div class="card p-3 pt-1 shadow">
-                    
-                    <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Judul Buku</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['judulBuku'] ?>">
-                        </div>
-                    </div>
-
-                      <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Nomor Buku</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['nomorBuku'] ?>">
-                        </div>
-                    </div>
-
-                      <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Pengarang</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['pengarang'] ?>">
-                        </div>
-                    </div>
-
-                      <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Penerbit</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['penerbit'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Tahun Terbit</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['tahunTerbit'] ?>">
-                        </div>
-                    </div>
-
-                      <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Jumlah Halaman</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['jumlahHalaman'] ?>">
-                        </div>
-                    </div>
-
-                      <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Nomor Register</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['nomorRegister'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Tahun Pembelian</label>
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['tahunPembelian'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Harga Buku</label>
-                        </div>
-                        <div class="col-sm-5">
-                             <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['hargaBuku'] ?>">
-                        </div>
-                    </div>
-
-                         <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Sumber Dana</label>
-                        </div>
-                        <div class="col-sm-5">
-                             <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['sumberDana'] ?>">
-                        </div>
-                    </div>
-
-                         <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Kondisi</label>
-                        </div>
-                        <div class="col-sm-5">
-                   <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['kondisiBuku'] ?>">
-                        </div>
-                    </div>
-
-                         <div class="row form-group">
-                        <div class="col-sm-3">
-                            <label for="" class="fw-bold fs-5 mt-3">Ruangan</label>
-                        </div>
-                        <div class="col-sm-5">
-                       <input type="text" class="form-control mt-3" id="disabledInput" disabled value="<?= $buku['linkRuangan'] ?>">
-                        </div>
-                    </div>
-
+            <div class="col-md-2">
+                <div class="d-grid">
+                    <a href="index.php?page=EditBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-warning  <?= eclGuest ?>">Edit</a>
                 </div>
-                    
             </div>
-
-        </div>
-
-        <div class="row mb-5 text-center">
-            <div class="col">
-                <a href="index.php?page=EditBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-outline-warning">Edit</a>
-                <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-outline-danger" onclick="confirm('are you sure?')" >Hapus</a>
-
+            <div class="col-md-2">
+                <div class="d-grid">
+                    <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="confirm('Apa Kamu Yakin Mau Hapus?')" >Hapus</a>
+                </div>
             </div>
         </div>
-
-	</div>
+  </div>
 </main>

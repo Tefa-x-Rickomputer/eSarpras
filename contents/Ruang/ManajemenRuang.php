@@ -129,9 +129,4 @@
 	include 'config/showtableruang.php'
 	?>
 
-	
-	
-	
-	
-	
 </main>

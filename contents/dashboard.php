@@ -1,14 +1,15 @@
 <?php 
 
-$userSession = [
-            "login" => $_SESSION["login"],
-            "role" => $_SESSION["role"],
-            "nama" => $_SESSION["nama"],
-            "email" => $_SESSION["email"],
-            "telpon" => $_SESSION["telpon"],
-            "status" => $_SESSION["status"],
-            "fotoProfil" =>  $_SESSION["fotoProfil"],
-            ];
+// require "config/sessionmanager.php";
+// $userSession = [
+//             "login" => $_SESSION["login"],
+//             "role" => $_SESSION["role"],
+//             "nama" => $_SESSION["nama"],
+//             "email" => $_SESSION["email"],
+//             "telpon" => $_SESSION["telpon"],
+//             "status" => $_SESSION["status"],
+//             "fotoProfil" =>  $_SESSION["fotoProfil"],
+//             ];
 
 $cntRuangan = querySql("SELECT COUNT('*') FROM truangan")[0];
 $cntAset = querySql("SELECT COUNT('*') FROM tbarang")[0];
@@ -27,7 +28,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 ?>
 
 <main>
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4 mb-3">
         <h1 class="my-4">Dashboard</h1>
 
         <!-- Contents -->
