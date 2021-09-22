@@ -24,18 +24,18 @@
             <label for="nomorBuku">Nomor Buku</label>
             <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorBuku" disabled value="<?= $buku['nomorBuku'] ?>">
             <label for="nomorRegister">Nomor Register</label>
-            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="role" disabled value="<?= $buku['nomorRegister'] ?>">
+            <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorRegister" disabled value="<?= $buku['nomorRegister'] ?>">
         </div>
     </div>
 
     <div class="row mt-3">
         <div class="col-md">
             <label for="">Pengarang</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="Pengarang" disabled value="<?= $buku['pengarang'] ?>">
+            <input type="text" class="form-control mt-1" id="disabledInput" name="pengarang" disabled value="<?= $buku['pengarang'] ?>">
         </div>
         <div class="col-md">
             <label for="">Penerbit</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="Penerbit" disabled value="<?= $buku['penerbit'] ?>">
+            <input type="text" class="form-control mt-1" id="disabledInput" name="penerbit" disabled value="<?= $buku['penerbit'] ?>">
         </div>
         <div class="col-md ">
             <label for="">Tahun Terbit</label>
