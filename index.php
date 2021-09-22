@@ -104,6 +104,10 @@ if (!isset($_SESSION["login"]))
                             include 'contents/User/profile.php';
                             break;
 
+                        case 'Profileedit':
+                            include 'contents/User/profileedit.php';
+                            break;
+
                         case 'UserDetail':
                             include 'contents/User/detailuser.php';
                             break;
