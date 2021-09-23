@@ -93,6 +93,7 @@
         $telpon = htmlspecialchars($data['telpon']);
         $alamat = htmlspecialchars($data['alamat']);
         $agama = htmlspecialchars($data['agama']);
+        $status = htmlspecialchars($data['status']);
         $gender = htmlspecialchars($data['gender']);
         $fotoProfilold = htmlspecialchars($data['fotoProfil']);
 
@@ -110,7 +111,8 @@
         			gender = '$gender', 
         			agama = '$agama', 
         			telpon = '$telpon', 
-        			email = '$email', 
+        			email = '$email',
+                    status = '$status', 
         			tanggalLahir = '$tanggalLahir', 
         			alamat = '$alamat'
         			WHERE idUser = $id
