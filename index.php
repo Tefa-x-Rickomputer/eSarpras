@@ -13,7 +13,7 @@ require "config/sessionmanager.php";
 
 if (!isset($_SESSION["login"])) 
 {
-    header("Location: Authentication/login.php");
+    header("Location: Authentication/logout.php");
 }
 
 ?>
@@ -63,20 +63,8 @@ if (!isset($_SESSION["login"]))
                             include 'contents/Barang/daftarbarang.php';
                             break;
 
-                        case 'TambahBarang':
-                            include 'contents/Barang/tambahbarang.php';
-                            break;
-
                         case 'DetailBarang':
                             include 'contents/Barang/detailbarang.php';
-                            break;
-
-                         case 'EditBarang':
-                            include 'contents/Barang/editbarang.php';
-                            break;
-
-                        case 'Hapus':
-                            include 'contents/Barang/hapus.php';
                             break;
                         // Barang switch end
 
@@ -85,29 +73,12 @@ if (!isset($_SESSION["login"]))
                             include 'contents/Buku/daftarbuku.php';
                             break;
 
-                        case 'TambahBuku':
-                            include 'contents/Buku/tambahbuku.php';
-                            break;
-
                         case 'DetailBuku':
                             include 'contents/Buku/detailbuku.php';
                             break;
-
-                        case 'EditBuku':
-                            include 'contents/Buku/editbuku.php';
-                            break;
-
-                          case 'HapusBuku':
-                            include 'contents/Buku/hapusbuku.php';
-                            break;
-
                         // Buku switch end
 
                         // User switch
-                        case 'Userlist':
-                            include 'contents/User/tableuser.php';
-                            break;
-
                         case 'Profile':
                             include 'contents/User/profile.php';
                             break;
@@ -115,31 +86,17 @@ if (!isset($_SESSION["login"]))
                         case 'Profileedit':
                             include 'contents/User/profileedit.php';
                             break;
-
-                        case 'UserDetail':
-                            include 'contents/User/detailuser.php';
-                            break;
-
-                        case 'Useredit':
-                            include 'contents/User/edituser.php';
-                            break;
-
-                        case 'Userdelete':
-                            include 'contents/User/Userdelete.php';
-                            break;
-
-                        case 'adduser':
-                            include 'contents/User/adduser.php';
-                            break;
                         // User switch
-
+                        
                         // Ruang Switch
                         case 'addroom':
                             include 'contents/Ruang/ManajemenRuang.php';
                             break;
 
                         // User switch
-
+                        
+                        getout();
+                        
                         default:
                             echo "<center>Page not found";
                             break;
