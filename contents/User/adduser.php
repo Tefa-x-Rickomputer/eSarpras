@@ -36,9 +36,9 @@
             <div class="col-md mt-3">
                 <label for="">Role</label>
                 <select name="role" class="form-select shadow-sm" required>
-                    <option value="super">Super</option>
-                    <option value="admin">Admin</option>
-                    <option value="guest">Guest</option>
+                    <option value="Superuser">Superuser</option>
+                    <option value="Administrator">Administrator</option>
+                    <option value="Guest">Guest</option>
                 </select>
             </div>
 
