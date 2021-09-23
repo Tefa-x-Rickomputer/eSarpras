@@ -16,86 +16,28 @@ if ($userSession["role"] == "Guest") {
     header("Location:Authentication/logout.php");
 }
 
-function getout() {
+function outAdminGuest() {
     global $userSession;
-    global $kick;
     if ($userSession["role"] == "Guest") {
-
+        header("Location: index.php?page=Dashboard");
     } elseif($userSession["role"] == "Administrator") {
-                                $page = $_GET['page'];
-                        switch ($page) {
-                        case 'TambahBarang':
-                            include 'contents/Barang/tambahbarang.php';
-                            break;
-
-                        case 'EditBarang':
-                            include 'contents/Barang/editbarang.php';
-                            break;
-
-                        case 'Hapus':
-                            include 'contents/Barang/hapus.php';
-                            break;
-                        
-                        case 'EditBuku':
-                            include 'contents/Buku/editbuku.php';
-                            break;
-
-                        case 'TambahBuku':
-                            include 'contents/Buku/tambahbuku.php';
-                            break;
-
-                        case 'HapusBuku':
-                            include 'contents/Buku/hapusbuku.php';
-                            break;
-                        }
+        header("Location: index.php?page=Dashboard");
     } elseif($userSession["role"] == "Superuser") {
-                        $page = $_GET['page'];
-                        switch ($page) {
-                        case 'TambahBarang':
-                            include 'contents/Barang/tambahbarang.php';
-                            break;
 
-                        case 'EditBarang':
-                            include 'contents/Barang/editbarang.php';
-                            break;
-
-                        case 'Hapus':
-                            include 'contents/Barang/hapus.php';
-                            break;
-                        
-                        case 'EditBuku':
-                            include 'contents/Buku/editbuku.php';
-                            break;
-
-                        case 'TambahBuku':
-                            include 'contents/Buku/tambahbuku.php';
-                            break;
-
-                        case 'HapusBuku':
-                            include 'contents/Buku/hapusbuku.php';
-                            break;
-                            
-                        case 'Userlist':
-                            include 'contents/User/tableuser.php';
-                            break;
-
-                        case 'UserDetail':
-                            include 'contents/User/detailuser.php';
-                            break;
-
-                        case 'Useredit':
-                            include 'contents/User/edituser.php';
-                            break;
-
-                        case 'Userdelete':
-                            include 'contents/User/Userdelete.php';
-                            break;
-
-                        case 'adduser':
-                            include 'contents/User/adduser.php';
-                            break;                        
-                        }
     } else {
-        header("Location:Authentication/logout.php");
+        header("Location: index.php?page=Dashboard");
+    }
+}
+
+function outGuest() {
+    global $userSession;
+    if ($userSession["role"] == "Guest") {
+        header("Location: index.php?page=Dashboard");
+    } elseif($userSession["role"] == "Administrator") {
+        
+    } elseif($userSession["role"] == "Superuser") {
+
+    } else {
+        header("Location: Authentication/logout.php");
     }
 }

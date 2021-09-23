@@ -1,4 +1,7 @@
 <?php 
+
+    outAdminGuest();
+    
     include 'config/userfunctions.php';
     $id = $_GET['id'];
     $user = query("SELECT * FROM tuser WHERE idUser = $id")[0];
