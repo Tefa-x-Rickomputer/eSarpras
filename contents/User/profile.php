@@ -9,10 +9,12 @@
         <h1 class="mt-4 mb-4">Profile</h1>
 
         <div class="row">
-            <div class="col-md-4 mt-3 shadow-sm">
-                <div class="text-center">
-                    <!-- <i class="bi bi-person-fill" style="font-size:10rem;"></i> -->
-                    <img class="profile-photo" src="Assets/img/user/<?= $user['fotoProfil'] ?>" alt="Foto Profil" style="width: 96px;">
+
+            <div class="col-md-4 mt-3">
+                <div class="text-center border rounded shadow-sm position-relative" style="height: 13.5rem; background-color:rgb(233,236,239);">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <img class="profile-photo" src="Assets/img/user/<?= $user['fotoProfil'] ?>" alt="Foto Profil" style="margin:auto;">
+                    </div>
                 </div>
             </div>
 
@@ -46,7 +48,7 @@
 
         <div class="row mb-4">
             <div class="col-md">
-                <label for="" class="mt-3">Nik</label>
+                <label for="" class="mt-3">NIK</label>
                 <input type="text" class="form-control shadow-sm" disabled name="nik" value="<?= $user['nik']; ?>">
             </div>
             <div class="col-md">
@@ -60,9 +62,9 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-2">
+            <div class="col-md-1 mt-2">
                 <div class="d-grid">
-                    <a href="index.php?page=Profileedit" class='btn btn-warning text-white shadow-sm'>Edit</a>
+                    <a href="index.php?page=Profileedit" class='btn btn-success text-white shadow-sm'>Edit</a>
                 </div>
             </div>
         </div>
