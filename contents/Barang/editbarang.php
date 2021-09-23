@@ -56,12 +56,12 @@
         </div>
         <div class="col-md">
             <label for="">Harga Satuan</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="hargaSatuan"  value="<?= $barang['hargaSatuan'] ?>">
+            <input type="text" class="form-control mt-1" id="disabledInput" name="hargaSatuan" value="<?= $barang['hargaSatuan'] ?>">
         </div>
       
            <div class="col-md">
              <label for="">Tahun Pembelian</label>
-             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian"  value="<?= $barang['tahunPembelian'] ?>">
+             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" maxlength="4" value="<?= $barang['tahunPembelian'] ?>">
         </div>
     </div>
         <div class="row mb-3">

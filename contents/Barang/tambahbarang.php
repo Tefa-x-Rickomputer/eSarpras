@@ -68,7 +68,7 @@
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>
-          <input type="text" class="form-control" name="tahunPembelian">
+          <input type="text" class="form-control" name="tahunPembelian" maxlength="4">
         </div>
 
       </div>
