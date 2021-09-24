@@ -1,4 +1,5 @@
 <?php 
+    require 'config/fpdf.php';
     require 'config/bukufunctions.php';
     $buku = querySql ("SELECT * FROM tbuku WHERE isDeleted=0");
 
@@ -6,7 +7,6 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Buku</h1> 
           <div style="margin-bottom: 10px">
         <a href="pdf.php" class="btn btn-danger">PDF</a>
     </div>
