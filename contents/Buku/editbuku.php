@@ -60,7 +60,7 @@
         </div>
         <div class="col-md ">
             <label for="">Tahun Terbit</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="tahunTerbit" value="<?= $buku['tahunTerbit'] ?>">
+            <input type="text" class="form-control mt-1" id="disabledInput" name="tahunTerbit" maxlength="4" value="<?= $buku['tahunTerbit'] ?>">
         </div>
     </div>
 
@@ -68,7 +68,7 @@
     <div class="row ">
            <div class="col-md mt-3">
              <label for="">Tahun Pembelian</label>
-             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" value="<?= $buku['tahunPembelian'] ?>">
+             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" maxlength="4" value="<?= $buku['tahunPembelian'] ?>">
         </div>
         <div class="col-md mt-3">
             <label for="">Jumlah Halaman</label>
