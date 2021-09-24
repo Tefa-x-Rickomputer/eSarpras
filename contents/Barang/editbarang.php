@@ -6,6 +6,7 @@
     <div class="row">
         <?php   
     
+    outGuest();
 
     include 'config/barangfunctions.php';
     $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted = 0");
@@ -20,13 +21,13 @@
     if( isset($_POST['edit']) ) {
     if( edit($_POST) > 0 ) {
       echo"<div class='alert alert-success' role='alert'>
-      <i class='bi bi-check-circle'></i> Data berhasil ditambahkan
-  </div>
-  <script>
-       setTimeout(function(){
-        document.location.href ='index.php?page=DetailBarang&id=$id';('');
-    }, 1500)
-          </script>";
+      <i class='bi bi-check-circle'></i> Data berhasil diubah!
+          </div>
+          <script>
+               setTimeout(function(){
+                document.location.href ='index.php?page=DetailBarang&id=$id';('');
+            }, 1500)
+                  </script>";
     } else {
       echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i> Data Gagal diubah!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
 
@@ -34,9 +35,6 @@
     }
   }
 
-    // $ruangs = foreach ($queryruangan as $ruang) {
-    //         [$ruangs["namaRuangan"]],
-    //     }
 
  ?>
     </div>
@@ -68,13 +66,13 @@
             <label for="">Harga Satuan</label>
             <div class="input-group">
             <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="hargaSatuan" value="<?= $barang['hargaSatuan'] ?>">
+            <input type="number" class="form-control mt-1" id="disabledInput" name="hargaSatuan" value="<?= $barang['hargaSatuan'] ?>">
             </div>
         </div>
       
            <div class="col-md">
              <label for="">Tahun Pembelian</label>
-             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" maxlength="4" value="<?= $barang['tahunPembelian'] ?>">
+             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunPembelian" maxlength="4" value="<?= $barang['tahunPembelian'] ?>">
         </div>
     </div>
         <div class="row mb-3">

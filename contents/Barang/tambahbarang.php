@@ -1,7 +1,9 @@
 <?php
 
+outGuest();
     require 'config/barangfunctions.php';
     $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted = 0");
+  
 
  ?>
 <main>
@@ -12,7 +14,7 @@
     if (isset($_POST['simpan']) ) {
     if( addbarang($_POST) > 0 ) {
       echo"<div class='alert alert-success' role='alert'><i class='bi bi-check-circle'></i> 
-      Data berhasil ditambahkan
+      Data berhasil ditambahkan!
   </div>
   <script>
        setTimeout(function(){
@@ -20,7 +22,7 @@
     }, 1500)
           </script>";
     } else {
-      echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i> Data Gagal diubah!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+      echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i> Data Gagal ditambahkan!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
     }
   }
 

@@ -1,5 +1,7 @@
 <?php
 
+  outGuest();
+
   require 'config/bukufunctions.php';
   
  ?>
