@@ -11,19 +11,19 @@
         <a href="pdf.php" class="btn btn-danger">PDF</a>
     </div>
           <div style="margin-bottom: 20px">
-<table id="example" class="table caption-top table-striped text-center" class="display nowrap table-striped table-bordered table" style="width:100%">
+<table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">
 
     
 
             <thead class="table-dark">
                 <tr>
-                    <th>No</th>
-                    <th>Judul Buku</th>
-                    <th>Nomor Buku</th>
-                    <th>Pengarang</th>
-                    <th>Penerbit</th>
-                    <th>Tahun Terbit</th>
-                    <th>Opsi</th>
+                    <th class="text-md-center align-middle">No</th>
+                    <th class="text-md-center align-middle">Judul Buku</th>
+                    <th class="text-md-center align-middle">Nomor Buku</th>
+                    <th class="text-md-center align-middle">Pengarang</th>
+                    <th class="text-md-center align-middle">Penerbit</th>
+                    <th class="text-md-center align-middle">Tahun Terbit</th>
+                    <th class="text-md-center align-middle">Opsi</th>
                 </tr>
             </thead>
 
@@ -31,17 +31,15 @@
                 <?php $i = 1;?>
                 <?php foreach($buku as $item) : ?>
                     <tr>
-                    <td><?= $i; ?></td>
-                    <td><?= $item["judulBuku"]; ?></td>
-                    <td><?= $item["nomorBuku"]; ?></td>
-                    <td><?= $item["pengarang"]; ?></td>
-                    <td><?= $item["penerbit"]; ?></td>
-                    <td><?= $item["tahunTerbit"]; ?></td>
+                    <td class="text-md-center"><?= $i; ?></td>
+                    <td class="text-md-center"><?= $item["judulBuku"]; ?></td>
+                    <td class="text-md-center"><?= $item["nomorBuku"]; ?></td>
+                    <td class="text-md-center"><?= $item["pengarang"]; ?></td>
+                    <td class="text-md-center"><?= $item["penerbit"]; ?></td>
+                    <td class="text-md-center"><?= $item["tahunTerbit"]; ?></td>
                     
                         <td>
-                            <div class="d-grid">
-                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>"class="btn btn-success"><i class="fas fa-pen"></i> Detail</a>
-                            </div>
+                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>"class="btn btn-success"><i class="bi bi-three-dots"></i></a>
                         </td>
                     </tr>
                     <?php $i++ ?>

@@ -1,7 +1,7 @@
 <?php
 
   require 'config/bukufunctions.php';
-  
+  $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0")
  ?>
 
 
@@ -18,7 +18,7 @@
       <script>
           setTimeout(function(){
             document.location.href ='index.php?page=DaftarBuku';('');
-           }, 2000)
+           }, 1500)
           </script>";
     } else {
       echo"<div class='alert alert-danger' role='alert'>
@@ -35,23 +35,23 @@
 
      ?>
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
       <div class="row">
 
          <div class="col-md mt-3">
           <label for="judulBuku">Judul Buku</label>
-          <input type="text" class="form-control" name="judulBuku">
+          <input type="text" class="form-control" name="judulBuku" required>
         </div>
 
 
        <div class="col-md mt-3">
-           <label for="">Nomor Buku</label>
-          <input type="text" class="form-control" name="nomorBuku">
+           <label for="">Nomor ISBN / ISSN</label>
+          <input type="text" class="form-control" name="nomorBuku" required>
         </div>
 
         <div class="col-md mt-3">
             <label for="">Pengarang</label>
-          <input type="text" class="form-control" name="pengarang">
+          <input type="text" class="form-control" name="pengarang" required>
         </div>
 
       </div>
@@ -60,16 +60,16 @@
       <div class="row">
                <div class="col-md mt-3">
             <label for="">Penerbit</label>
-          <input type="text" class="form-control" name="penerbit">
+          <input type="text" class="form-control" name="penerbit" required>
         </div>
         <div class="col-md mt-3">
             <label for="">Tahun Terbit</label>
-          <input type="text" class="form-control" name="tahunTerbit">
+          <input type="number" class="form-control" name="tahunTerbit" maxlength="4" required >
         </div>
 
           <div class="col-md mt-3">
            <label for="">Jumlah Halaman</label>
-          <input type="text" class="form-control" name="jumlahHalaman">
+          <input type="number" class="form-control" name="jumlahHalaman" required>
         </div>
 
       </div>
@@ -82,14 +82,14 @@
 
           <div class="col-md mt-3">
             <label for="">Tahun Pembelian</label>
-          <input type="text" class="form-control" name="tahunPembelian">
+          <input type="text" class="form-control" name="tahunPembelian" maxlength="4" required>
         </div>
 
         <div class="col-md mt-3">
             <label for="">Harga Buku</label>
-          <input type="text" class="form-control" name="hargaBuku">
+          <input type="text" class="form-control" name="hargaBuku" required>
         </div>
-
+          </div>
 
       <div class="row mb-3">
            <div class="col-md mt-3">
@@ -111,13 +111,9 @@
         <div class="col-md mt-3">
         <label for="">Ruangan</label>
         <select class="form-select" aria-label="Default select example" name="linkRuangan">
-          <option value="1">RPS 1</option>
-           <option value="2">RPS 2</option>
-           <option value="3">RPS 3</option>
-           <option value="4">RPS 4</option>
-           <option value="5">RPS 5</option>
-           <option value="6">Perpustakaan</option>
-
+          <?php foreach($queryruangan as $ruangan) : ?>
+          <option value="<?= $ruangan['idRuangan']; ?>"><?= $ruangan['namaRuangan']; ?></option>
+        <?php endforeach; ?>
         </select>
         </div>
 
@@ -125,9 +121,19 @@
             <label for="">Upload File</label>
           <input type="file" class="form-control" name="fotoBuku">      
       </div>
-      <div class=" mt-3">
-          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>    
-          <button class="btn btn-danger" type="reset">Batal</button>
+    </div>
+
+          <div class="row">   
+            <div class="col-md-2 mt-3">  
+                <div class="d-grid">   
+                         <button class="btn btn-primary" type="submit" name="simpan">Simpan</button> 
+                </div>
+            </div> 
+             <div class="col-md-2 mt-3 mb-3">  
+                <div class="d-grid">   
+                      <a href="index.php?page=DaftarBuku"class="btn btn-danger")>Batal</a>
+                </div>
+            </div>  
       </div>
 
     </form>
