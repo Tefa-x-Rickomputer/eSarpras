@@ -1,4 +1,7 @@
 <?php 
+    
+    outAdminGuest();
+
     require 'config/userfunctions.php';
     $users = query('SELECT * FROM tuser WHERE isDeleted = 0');
  ?>

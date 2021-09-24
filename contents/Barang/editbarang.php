@@ -1,5 +1,6 @@
 <?php   
     
+    outGuest();
 
     include 'config/barangfunctions.php';
     
