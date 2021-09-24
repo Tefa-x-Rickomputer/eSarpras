@@ -15,9 +15,11 @@
   <div class="container-fluid px-4">
     <h1 class="mt-4">Detail Buku</h1>
     <div class="row">
-        <div class="col-md-4">
-            <div class="text-center border rounded" style="background-color:rgb(233,236,239)">
-                 <img src=Assets/img/buku/<?= $buku['fotoBuku'] ?> alt="Foto Buku" style="height:14.3rem;" >
+           <div class="col-md-4 mt-3">
+            <div class="text-center border rounded position-relative" style="background-color:rgb(233,236,239);height:14.3rem; max-width:22rem;">
+                <div class="position-absolute start-50 top-50 translate-middle">
+                 <img class="" src="Assets/img/buku/<?= $buku['fotoBuku']?>" alt="Foto bukufunctions" style="height:13.3rem; max-width:21rem;">
+                </div>
             </div>
         </div>
         <div class="col-md-8">
@@ -86,17 +88,32 @@
                           <a href="index.php?page=EditBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-success  <?= eclGuest ?>">Edit</a>
                 </div>
             </div> 
-               <div class="col-md-2 mt-3">  
-                <div class="d-grid">   
-                        <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="return confirm('Apa Kamu Yakin Mau Hapus?')" >Hapus</a>
+               <div class="col-md-2 mt-3 ">
+            <div class="d-grid">
+                    <button type="button" class="btn btn-danger shadow <?= eclGuest ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</button>
                 </div>
-            </div> 
-             <div class="col-md-2 mt-3 mb-3">  
-                <div class="d-grid">   
-               <a href="index.php?page=DaftarBuku"class="btn btn-secondary")>Kembali</a>
+            </div>
+            <div class="col-md-2 mt-3 mb-3">
+            <div class="d-grid">
+                     <a href="index.php?page=DaftarBuku"class="btn btn-secondary")>Kembali</a>
                 </div>
-            </div>   
-                   
+            </div>
+        </div>
+
+        <!-- Modal untuk hapus -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?= $buku['judulBuku']; ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Apakah yakin ingin Buku ini dihapus?</h5>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                       <a href="index.php?page=HapusBuku&id=<?php echo $buku['idBuku']; ?>" class="btn btn-primary">Yakin</a>
                     </div>
                 </div>
             </div>

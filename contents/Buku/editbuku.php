@@ -21,24 +21,14 @@
     <?php 
         if( isset($_POST['edit']) ) { 
         if( edit($_POST) > 0 ) {
-            echo"<div class='alert alert-success' role='alert'>
-        Data berhasil di ubah
-        </div>
-      <script>
-          setTimeout(function(){
-            document.location.href ='index.php?page=DetailBuku&id=$id';('');
-           }, 1500)
-          </script>";
+            echo"<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil di ubah!</div>
+                            <script>
+                                //setTimeout(function() {
+                                        document.location.href = 'index.php?page=DetailBuku&id=$id';('');
+                                    }, 1500)
+                            </script>";
         } else {
-            echo"<div class='alert alert-danger' role='alert'>
-        Data gagal di ubah
-        </div>
-      <script>
-          setTimeout(function(){
-            document.location.href ='index.php?page=TambahBuku';('');
-           }, 100000)
-          </script>";
-        }
+            echo"<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Data Gagal di ubah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>"; }
     }
 
      ?>
@@ -74,7 +64,7 @@
         </div>
         <div class="col-md ">
             <label for="">Tahun Terbit</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="tahunTerbit" value="<?= $buku['tahunTerbit'] ?>">
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunTerbit" value="<?= $buku['tahunTerbit'] ?>">
         </div>
     </div>
 
@@ -82,7 +72,7 @@
     <div class="row ">
            <div class="col-md mt-3">
              <label for="">Tahun Pembelian</label>
-             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" value="<?= $buku['tahunPembelian'] ?>">
+             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunPembelian" value="<?= $buku['tahunPembelian'] ?>">
         </div>
         <div class="col-md mt-3">
             <label for="">Jumlah Halaman</label>
