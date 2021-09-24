@@ -34,13 +34,13 @@
                             <div class="sb-sidenav-menu-heading">Menu Utama</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBarang" aria-expanded="false" aria-controls="collapseBarang">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                                Menu Barang
+                                Menu Aset
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseBarang" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="index.php?page=DaftarBarang">Daftar Barang</a>
-                                    <a class="nav-link <?= eclGuest; ?>" href="index.php?page=TambahBarang">Tambah Barang</a>
+                                    <a class="nav-link" href="index.php?page=DaftarBarang">Daftar Aset</a>
+                                    <a class="nav-link <?= eclGuest; ?>" href="index.php?page=TambahBarang">Tambah Aset</a>
                                 </nav>
                             </div>
 
