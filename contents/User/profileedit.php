@@ -9,10 +9,27 @@
                 
                 if( isset($_POST['edit']) ) { 
                     if( edit($_POST) > 0 ) {
-                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Data Berhasil diubah!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil diubah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>
+                            <script>
+                                setTimeout(function() {
+                                        document.location.href = 'index.php?page=Profile';
+                                    }, 1500)
+                            </script>";
                     } else {
-                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Data Gagal diubah!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Data Gagal diubah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
                     }
+
+                    // if ($_POST['passlama']) {
+                    //     if (password_verify($_POST['passlama'], $_POST['currentpass'])) {
+                    //         if ($_POST['passbaru1'] === $_POST['passbaru2'] ) {
+                    //             echo "ganti password berhasil";
+                    //         } else {
+                    //             echo "Password yg dimasukkan tidak sama!";
+                    //         }
+                    //     } else {
+                    //         echo "password yang lama salah!";
+                    //     }
+                    // }
                 }
             ?>
         </div>
@@ -20,6 +37,7 @@
     <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="idUser" value="<?= $user['idUser']; ?>">
         <input type="hidden" name="fotoProfil" value="<?= $user['fotoProfil']; ?>">
+        <input type="hidden" name="currentpass" value="<?= $user['password']; ?>">
         <div class="row">
             <div class="col-md mt-3">
                 <label for="">Nama</label>
@@ -27,7 +45,7 @@
             </div>
             <div class="col-md mt-3">
                 <label for="">NIK</label>
-                <input type="text" class="form-control shadow-sm" name="nik" value="<?= $user['nik']; ?>">
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" class="form-control shadow-sm" name="nik" value="<?= $user['nik']; ?>">
             </div>
 
               <div class="col-md mt-3">
@@ -44,7 +62,7 @@
 
             <div class="col-md mt-3">
                 <label for="">No. Telp</label>
-                <input type="text" class="form-control shadow-sm" name="telpon" value="<?= $user['telpon']; ?>">
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="13" class="form-control shadow-sm" name="telpon" value="<?= $user['telpon']; ?>">
             </div>
 
             <div class="col-md mt-3">
@@ -84,42 +102,42 @@
 
             <div class="col-md mt-3">
                 <label for="kondisiBuku">Agama</label>
-                <select name="agama" id="" class="form-select shadow-sm">
+                <select name="agama" class="form-select shadow-sm">
                     <?php if($user['agama'] == 'Islam') { ?>
                         <option value='Islam' selected>Islam</option>
                         <option value='Kristen'>Kristen</option>
                         <option value='Katholik'>Katholik</option>
-                        <option value='Buddha'>Buddha</option>
+                        <option value='Budha'>Budha</option>
                         <option value='Hindu'>Hindu</option>
                     <?php }elseif($user['agama'] == 'Kristen') { ?>
                         <option value='Islam' >Islam</option>
                         <option value='Kristen' selected>Kristen</option>
                         <option value='Katholik'>Katholik</option>
-                        <option value='Buddha'>Buddha</option>
+                        <option value='Budha'>Budha</option>
                         <option value='Hindu'>Hindu</option>
                     <?php }elseif($user['agama'] == 'Katholik') { ?>
                         <option value='Islam' >Islam</option>
                         <option value='Kristen'>Kristen</option>
                         <option value='Katholik' selected>Katholik</option>
-                        <option value='Buddha'>Buddha</option>
+                        <option value='Budha'>Budha</option>
                         <option value='Hindu'>Hindu</option>
-                    <?php }elseif($user['agama'] == 'Buddha') { ?>
+                    <?php }elseif($user['agama'] == 'Budha') { ?>
                         <option value='Islam' >Islam</option>
                         <option value='Kristen'>Kristen</option>
                         <option value='Katholik'>Katholik</option>
-                        <option value='Buddha' selected>Buddha</option>
+                        <option value='Budha' selected>Budha</option>
                         <option value='Hindu'>Hindu</option>
                     <?php }elseif($user['agama'] == 'Hindu') { ?>
                         <option value='Islam' >Islam</option>
                         <option value='Kristen'>Kristen</option>
                         <option value='Katholik'>Katholik</option>
-                        <option value='Buddha'>Buddha</option>
+                        <option value='Budha'>Budha</option>
                         <option value='Hindu' selected>Hindu</option>
                     <?php }else { ?>
                         <option value='Islam' >Islam</option>
                         <option value='Kristen'>Kristen</option>
                         <option value='Katholik'>Katholik</option>
-                        <option value='Buddha'>Buddha</option>
+                        <option value='Budha'>Budha</option>
                         <option value='Hindu'>Hindu</option>
                     <?php } ?>
                     
@@ -127,8 +145,8 @@
             </div>
 
             <div class="col-md mt-3">
-                <label for="">Jenis Kelamin</label>
-                <select name="gender" id="" class="form-select shadow-sm">
+                <label>Jenis Kelamin</label>
+                <select name="gender" class="form-select shadow-sm">
                     <?php if($user['gender'] == 'Laki-laki') { ?>
                         <option value="Laki-laki" selected>Laki-laki</option>
                         <option value="Perempuan">Perempuan</option>
@@ -145,10 +163,39 @@
             </div> 
         </div>
 
+        <div class="row mt-4">
+            <div class="col-md">
+                <h4>Ubah Kata Sandi</h4>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md mt-1">
+                <label>Sandi lama</label>
+                <input type="password" class="form-control shadow-sm" name="passlama">
+            </div>
+
+            <div class="col-md mt-1">
+                <label>Sandi baru</label>
+                <input type="password" class="form-control shadow-sm" name="passbaru1">
+            </div>
+
+            <div class="col-md mt-1">
+                <label>Konfirmasi sandi baru</label>
+                <input type="password" class="form-control shadow-sm" name="passbaru2">
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-md-2 mt-3 mb-3">
-                <button class="shadow-sm btn btn-success" type="submit" name="edit">Simpan</button>
-                <a href="index.php?page=Profile" class="shadow-sm btn btn-primary">Kembali</a>
+            <div class="col-md-2 mb-3">
+                <div class="d-grid">
+                    <button class="shadow-sm btn btn-primary" type="submit" name="edit">Simpan</button>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="d-grid">
+                    <a href="index.php?page=Profile" class="shadow-sm btn btn-secondary">Kembali</a>
+                </div>
             </div>
         </div>
 
