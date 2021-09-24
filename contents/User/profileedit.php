@@ -163,33 +163,39 @@
             </div> 
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-4">
             <div class="col-md">
-                <h3>Ubah Kata Sandi</h3>
+                <h4>Ubah Kata Sandi</h4>
             </div>
         </div>
 
         <div class="row mb-5">
-            <div class="col-md mt-3">
+            <div class="col-md mt-1">
                 <label>Sandi lama</label>
                 <input type="password" class="form-control shadow-sm" name="passlama">
             </div>
 
-            <div class="col-md mt-3">
+            <div class="col-md mt-1">
                 <label>Sandi baru</label>
                 <input type="password" class="form-control shadow-sm" name="passbaru1">
             </div>
 
-            <div class="col-md mt-3">
+            <div class="col-md mt-1">
                 <label>Konfirmasi sandi baru</label>
                 <input type="password" class="form-control shadow-sm" name="passbaru2">
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-2 mt-3 mb-3">
-                <button class="shadow-sm btn btn-primary" type="submit" name="edit">Simpan</button>
-                <a href="index.php?page=Profile" class="shadow-sm btn btn-secondary">Kembali</a>
+            <div class="col-md-2 mb-3">
+                <div class="d-grid">
+                    <button class="shadow-sm btn btn-primary" type="submit" name="edit">Simpan</button>
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="d-grid">
+                    <a href="index.php?page=Profile" class="shadow-sm btn btn-secondary">Kembali</a>
+                </div>
             </div>
         </div>
 

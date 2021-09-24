@@ -62,7 +62,7 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-1 mt-2">
+            <div class="col-md-2 mt-2">
                 <div class="d-grid">
                     <a href="index.php?page=Profileedit" class='btn btn-success text-white shadow-sm'>Edit</a>
                 </div>

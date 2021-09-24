@@ -61,17 +61,17 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-1 mt-2">
+            <div class="col-md-2 mt-2">
                 <div class="d-grid">
                     <a href="index.php?page=Useredit&id=<?= $id; ?>" class='btn btn-success text-white shadow-sm'>Edit</a>
                 </div>
             </div>
-            <div class="col-md-1 mt-2">
+            <div class="col-md-2 mt-2">
                 <div class="d-grid">
                     <button type="button" class="btn btn-danger shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</button>
                 </div>
             </div>
-            <div class="col-md-1 mt-2">
+            <div class="col-md-2 mt-2">
                 <div class="d-grid">
                     <a href="index.php?page=Userlist" class='btn btn-secondary text-white shadow-sm'>Kembali</a>
                 </div>

@@ -154,9 +154,15 @@
         </div>
 
         <div class="row">
+            <div class="col-md-2 mt-3">
+                <div class="d-grid">
+                    <button class="shadow-sm btn btn-primary" type="submit" name="edit">Simpan</button>
+                </div>
+            </div>
             <div class="col-md-2 mt-3 mb-3">
-                <button class="shadow-sm btn btn-primary" type="submit" name="edit">Simpan</button>
-                <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="shadow-sm btn btn-secondary">Kembali</a>
+                <div class="d-grid">
+                    <a href="index.php?page=UserDetail&id=<?= $id; ?>" class="shadow-sm btn btn-secondary">Kembali</a>
+                </div>
             </div>
         </div>
 
