@@ -10,9 +10,14 @@
                 if ( isset($_POST['submit']) ) {
                     // echo $username . $password . $role . $nama . $nik . $tanggalLahir . $email . $telpon . $alamat . $status . $agama . $gender . $fotoProfil;
                     if( adduser($_POST) > 0 ) {
-                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Data Berhasil ditambahkan!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil ditambahkan!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>
+                            <script>
+                                setTimeout(function() {
+                                        document.location.href = 'index.php?page=Userlist';
+                                    }, 1500)
+                            </script>";
                     } else {
-                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Data Gagal ditambahkan!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Data Gagal ditambahkan!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
                     }
                 }
              ?> 
@@ -36,9 +41,9 @@
             <div class="col-md mt-3">
                 <label for="">Role</label>
                 <select name="role" class="form-select shadow-sm" required>
-                    <option value="super">Super</option>
-                    <option value="admin">Admin</option>
-                    <option value="guest">Guest</option>
+                    <option value="Superuser">Superuser</option>
+                    <option value="Administrator">Administrator</option>
+                    <option value="Guest">Guest</option>
                 </select>
             </div>
 
@@ -52,7 +57,7 @@
             </div>
             <div class="col-md mt-3">
                 <label for="">NIK</label>
-                <input type="text" class="form-control shadow-sm" name="nik" required>
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" class="form-control shadow-sm" name="nik" required>
             </div>
 
               <div class="col-md mt-3">
@@ -69,7 +74,7 @@
 
             <div class="col-md mt-3">
                 <label for="">No. Telp</label>
-                <input type="text" class="form-control shadow-sm" name="telpon" required>
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="13" class="form-control shadow-sm" name="telpon" required>
             </div>
 
             <div class="col-md mt-3">
@@ -96,7 +101,7 @@
                     <option value="Islam">Islam</option>
                     <option value="Kristen">Kristen</option>
                     <option value="Katholik">Katholik</option>
-                    <option value="Buddha">Buddha</option>
+                    <option value="Budha">Budha</option>
                     <option value="Hindu">Hindu</option>
                 </select>
             </div>
@@ -116,10 +121,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-2 mb-3 mt-3">
-                <div class="d-grid">
-                    <button class="btn btn-success shadow-sm" type="submit" name="submit">Simpan</button>
-                </div>
+            <div class="col-md mb-3 mt-3">
+                <button class="btn btn-primary shadow-sm" type="submit" name="submit">Simpan</button>
+                <a href="index.php?page=Userlist" class='btn btn-danger text-white shadow-sm'>Batal</a>
             </div>
         </div>
 
