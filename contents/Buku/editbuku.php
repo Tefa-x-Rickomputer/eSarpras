@@ -1,4 +1,7 @@
 <?php 
+
+    outGuest();
+
     include 'config/bukufunctions.php';
     $id = $_GET['id'];
 

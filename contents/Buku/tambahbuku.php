@@ -1,5 +1,7 @@
 <?php
 
+  outGuest();
+
   require 'config/bukufunctions.php';
   $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0")
  ?>

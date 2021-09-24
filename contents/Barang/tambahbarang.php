@@ -1,8 +1,8 @@
 <?php
 
-  require 'config/barangfunctions.php';
+  outGuest();
 
- 
+  require 'config/barangfunctions.php';
 
  ?>
 <main>

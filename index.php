@@ -1,5 +1,6 @@
 <?php 
 
+ob_start();
 session_start();
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
@@ -89,15 +90,54 @@ if (!isset($_SESSION["login"]))
                             break;
                         // User switch
                         
+                                                case 'TambahBarang':
+                            include 'contents/Barang/tambahbarang.php';
+                            break;
+
+                        case 'EditBarang':
+                            include 'contents/Barang/editbarang.php';
+                            break;
+
+                        case 'Hapus':
+                            include 'contents/Barang/hapus.php';
+                            break;
+                        
+                        case 'EditBuku':
+                            include 'contents/Buku/editbuku.php';
+                            break;
+
+                        case 'TambahBuku':
+                            include 'contents/Buku/tambahbuku.php';
+                            break;
+
+                        case 'HapusBuku':
+                            include 'contents/Buku/hapusbuku.php';
+                            break;
+                            
+                        case 'Userlist':
+                            include 'contents/User/tableuser.php';
+                            break;
+
+                        case 'UserDetail':
+                            include 'contents/User/detailuser.php';
+                            break;
+
+                        case 'Useredit':
+                            include 'contents/User/edituser.php';
+                            break;
+
+                        case 'Userdelete':
+                            include 'contents/User/Userdelete.php';
+                            break;
+
+                        case 'adduser':
+                            include 'contents/User/adduser.php';
+                            break;           
+
                         // Ruang Switch
                         case 'addroom':
                             include 'contents/Ruang/ManajemenRuang.php';
                             break;
-
-                        // User switch
-                        
-                        getout();
-                        
                         default:
                             echo "<center>Page not found";
                             break;
