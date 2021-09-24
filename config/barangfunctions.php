@@ -36,12 +36,12 @@
       $tmpName = $_FILES['fotoBarang']['tmp_name'];
 
       // cek apakah tidak ada foto yang diupload
-     if ( $error === 4 ){
-        echo "<script>
-                alert('pilih gambar terlebih dahulu!');
-               </script> ";
-        return false;
-     }
+     // if ( $error === 4 ){
+     //    echo "<script>
+     //            alert('pilih gambar terlebih dahulu!');
+     //           </script> ";
+     //    return false;
+     // }
 
      // cek apakah yang diupload adalah foto
      $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];

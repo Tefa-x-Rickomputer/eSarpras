@@ -7,22 +7,27 @@
 
     $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$barang[linkRuangan]'");
     $ruangan = (mysqli_fetch_assoc($query));
- 
+    
+    $nilai = $barang['hargaSatuan'];
+    $harga = number_format($nilai,0,',','.');
+
  ?>
 
 <main>
   <div class="container-fluid px-4">
-    <h1 class="mt-4">Data Barang</h1>
+    <h1 class="mt-4">Detail Aset</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="text-center border rounded" style="background-color:rgb(233,236,239)">
-                 <img src=Assets/img/aset/<?= $barang['fotoBarang'] ?> alt="Foto Barang" width="75%" >
+            <div class="text-center border rounded position-relative" style="background-color:rgb(233,236,239);height:14.3rem; max-width:22rem;">
+                <div class="position-absolute start-50 top-50 translate-middle">
+                 <img class="" src="Assets/img/aset/<?=$barang['fotoBarang']?>" alt="Foto Aset"style="height:13.3rem; max-width:21rem;">
+                </div>
             </div>
         </div>
         <div class="col-md-8">
             <label for="namaBarang">Nama Aset</label>
             <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="namaBarang" disabled value="<?= $barang['namaBarang'] ?>">
-            <label for="merkBarang">Merk Barang</label>
+            <label for="merkBarang">Merk Aset</label>
             <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="merkBarang" disabled value="<?= $barang['merkBarang'] ?>">
             <label for="nomorRegister">Nomor Register</label>
             <input type="text" class="form-control mb-3 mt-1" id="disabledInput" name="nomorRegister" disabled value="<?= $barang['nomorRegister'] ?>">
@@ -36,12 +41,15 @@
         </div>
         <div class="col-md">
             <label for="">Harga Satuan</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="hargaSatuan" disabled value="<?= $barang['hargaSatuan'] ?>">
+            <div class="input-group">
+            <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
+            <input type="text" class="form-control mt-1 text-end" id="disabledInput" name="hargaSatuan" disabled value="<?= $harga ?>">
+        </div>
         </div>
       
            <div class="col-md">
              <label for="">Tahun Pembelian</label>
-             <input type="text" class="form-control mt-1" id="disabledInput" name="tahunPembelian" disabled value="<?= $barang['tahunPembelian'] ?>">
+             <input type="text"class="form-control mt-1" id="disabledInput" name="tahunPembelian" disabled value="<?= $barang['tahunPembelian'] ?>">
         </div>
     </div>
         <div class="row mb-3">
@@ -59,10 +67,21 @@
         </div>
 </div>
       
-            <div class=" mt-3">
-                    <a href="index.php?page=DaftarBarang"class="btn btn-primary")>Kembali</a>
-                    <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-warning  <?= eclGuest ?>">Edit</a>
-                    <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="confirm('Apa Kamu Yakin Mau Hapus?')" >Hapus</a>
+            <div class="row">
+        <div class="col-md-2 mt-3 ">
+            <div class="d-grid">
+                    <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-success  <?= eclGuest ?>">Edit</a>
+                </div>
+            </div>
+
+            <div class="col-md-2 mt-3 ">
+            <div class="d-grid">
+                    <a href="index.php?page=Hapus&id=<?php echo $barang['idAset']; ?>" class="btn btn-danger <?= eclGuest ?>" onclick="return confirm('Apa Kamu Yakin Mau Hapus?')" >Hapus</a>
+                </div>
+            </div>
+            <div class="col-md-2 mt-3 mb-3">
+            <div class="d-grid">
+                     <a href="index.php?page=DaftarBarang"class="btn btn-secondary")>Kembali</a>
                 </div>
             </div>
         </div>

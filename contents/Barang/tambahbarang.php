@@ -1,8 +1,7 @@
 <?php
 
-  require 'config/barangfunctions.php';
-
- 
+    require 'config/barangfunctions.php';
+    $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted = 0");
 
  ?>
 <main>
@@ -12,23 +11,16 @@
     <?php  
     if (isset($_POST['simpan']) ) {
     if( addbarang($_POST) > 0 ) {
-      echo"<div class='alert alert-success' role='alert'>
+      echo"<div class='alert alert-success' role='alert'><i class='bi bi-check-circle'></i> 
       Data berhasil ditambahkan
   </div>
   <script>
        setTimeout(function(){
         document.location.href ='index.php?page=DaftarBarang';('');
-    }, 2000)
+    }, 1500)
           </script>";
     } else {
-      echo "<div class='alert alert-danger' role='alert'>
-      Data gagal ditambahkan
-</div>
-<script>
-       setTimeout(function(){
-        document.location.href ='index.php?page=TambahBarang';('');
-    }, 20000000)
-          </script>";
+      echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i> Data Gagal diubah!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
     }
   }
 
@@ -38,19 +30,19 @@
       <div class="row">
 
         <div class="col-md mt-3">
-          <label for="judulBuku">Nama Barang</label>
-          <input type="text" class="form-control" name="namaBarang">
+          <label for="judulBuku">Nama Aset</label>
+          <input type="text" class="form-control" name="namaBarang" required>
         </div>
 
 
        <div class="col-md mt-3">
-           <label for="">Merk Barang</label>
-          <input type="text" class="form-control" name="merkBarang">
+           <label for="">Merk Aset</label>
+          <input type="text" class="form-control" name="merkBarang" required>
         </div>
 
         <div class="col-md mt-3">
-            <label for="">Tipe Barang</label>
-          <input type="text" class="form-control" name="tipeBarang">
+            <label for="">Tipe Aset</label>
+          <input type="text" class="form-control" name="tipeBarang" required>
         </div>
 
       </div>
@@ -63,12 +55,12 @@
         </div>
         <div class="col-md mt-3">
             <label for="">Harga Satuan</label>
-          <input type="text" class="form-control" name="hargaSatuan">
+          <input type="number" class="form-control" name="hargaSatuan" required>
         </div>
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>
-          <input type="text" class="form-control" name="tahunPembelian" maxlength="4">
+          <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="tahunPembelian" maxlength="4" required>
         </div>
 
       </div>
@@ -85,7 +77,7 @@
         <div class="col-md mt-3">
             <label for="kondisiBuku">Kondisi</label>
        <select class="form-select" aria-label="Default select example" name="kondisiBarang">
-         <option value="1">Baru</option>
+         <option value="1">Baik</option>
          <option value="2">Rusak</option>
        </select>
      </div>
@@ -93,12 +85,9 @@
         <div class="col-md mt-3">
             <label for="">Ruangan</label>
         <select class="form-select" aria-label="Default select example" name="linkRuangan">
-          <option value="1">RPS 1</option>
-           <option value="2">RPS 2</option>
-           <option value="3">RPS 3</option>
-           <option value="4">RPS 4</option>
-           <option value="5">RPS 5</option>
-           <option value="6">Perpustakaan</option>
+            <?php foreach($queryruangan as $ruangan) : ?>
+              <option value="<?= $ruangan['idRuangan']; ?>"><?= $ruangan['namaRuangan']; ?></option>
+            <?php endforeach; ?>
         </select>
         </div>
 
@@ -106,10 +95,18 @@
             <label for="">Upload File</label>
           <input type="file" class="form-control" name="fotoBarang">      
       </div>
-      <div class=" mt-3">
-          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button> 
-          <button class="btn btn-danger" type="reset">Batal</button>   
+       <div class="row">
+        <div class="col-md-2 mt-3">
+            <div class="d-grid">
+          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>
+          </div>
+          </div>
+
+        <div class="col-md-2 mt-3 mb-3">
+            <div class="d-grid"> 
+          <a href="index.php?page=DaftarBarang" class="btn btn-danger">Batal</a>
       </div>
+    </div>
 
     </form>
 
