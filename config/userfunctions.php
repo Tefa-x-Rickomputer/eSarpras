@@ -29,17 +29,11 @@
 
         // mencek apakah ada file poto yg di upload
         if ($_FILES['fotoProfil']['error'] === 4) {
-            $query = "INSERT INTO tuser VALUES
-                    ('', '$username', '$password', '$role', '$nik', '$nama', NULL, '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
-                    ";
+            $query = "INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES (NULL, '$username', '$password', '$role', '$nik', '$nama', 'person-fill.svg', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', 0)";
         }else{
             $fotoProfil = upload();
-            $query = "INSERT INTO tuser VALUES
-                    ('', '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', '')
-                    ";
+            $query = "INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES (NULL, '$username', '$password', '$role', '$nik', '$nama', '$fotoProfil', '$gender', '$agama', '$telpon', '$email', '$tanggalLahir', '$alamat', '$status', 0)";
         }
-
-        
 
             mysqli_query($db, $query);
 
