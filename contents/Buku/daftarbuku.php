@@ -8,7 +8,7 @@
 <main>
     <div class="container-fluid px-4">
           <div style="margin-bottom: 10px">
-        <a href="pdf.php" class="btn btn-danger">PDF</a>
+        <a href="config/pdfbuku.php" class="btn btn-danger">PDF</a>
     </div>
           <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">

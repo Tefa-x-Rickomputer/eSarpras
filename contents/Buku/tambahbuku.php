@@ -62,7 +62,7 @@
 
           <div class="col-md mt-3">
            <label for="">Jumlah Halaman</label>
-          <input type="number" class="form-control" name="jumlahHalaman" required>
+          <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength="4" class="form-control" name="jumlahHalaman" required>
         </div>
 
       </div>

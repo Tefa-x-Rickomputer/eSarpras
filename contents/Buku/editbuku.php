@@ -76,14 +76,14 @@
         </div>
         <div class="col-md mt-3">
             <label for="">Jumlah Halaman</label>
-            <input type="text" class="form-control mt-1" id="disabledInput" name="jumlahHalaman" value="<?= $buku['jumlahHalaman'] ?>">
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength="4" class="form-control" name="jumlahHalaman">
         </div>
         
       <div class="col-md mt-3">
             <label for="">Harga Buku</label>
             <div class="input-group">
               <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
-              <input type="text" class="form-control mt-1" id="disabledInput" name="hargaBuku" value="<?= $buku['hargaBuku'] ?>">
+              <input type="number" class="form-control mt-1" id="disabledInput" name="hargaBuku" value="<?= $buku['hargaBuku'] ?>">
             </div>
         </div>
     </div>

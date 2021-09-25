@@ -33,9 +33,7 @@
            <th>Sumber Dana</th>
            <th>Kondisi Buku</th>
            <th>Ruangan</th>
-       </tr>
-
-       <footer>znjcjshsjdsdssdddssgsg</footer>';
+       </tr>';
 
        $count = 1;
        foreach ($buku as $item) {
