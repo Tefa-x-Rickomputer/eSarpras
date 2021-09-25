@@ -110,32 +110,38 @@
             $passlama = htmlspecialchars($data['passlama']);
             $passbaru1 = htmlspecialchars($data['passbaru1']);
             $passbaru2 = htmlspecialchars($data['passbaru2']);
+
             if (password_verify($_POST['passlama'], $_POST['currentpass'])) {
-                if ($_POST['passbaru1'] === $_POST['passbaru2'] ) {
-                    echo "<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Password Berhasil diubah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
-                    $passbaru2 = password_hash($passbaru2, PASSWORD_DEFAULT);
-                    $query = "UPDATE tuser SET  
-                                nik = '$nik', 
-                                nama = '$nama', 
-                                password = '$passbaru2', 
-                                fotoProfil = '$fotoProfil', 
-                                gender = '$gender', 
-                                agama = '$agama', 
-                                telpon = '$telpon', 
-                                email = '$email',
-                                status = '$status', 
-                                tanggalLahir = '$tanggalLahir', 
-                                alamat = '$alamat'
-                                WHERE idUser = $id
-                                ";
-
-                    mysqli_query($db, $query);
-
-                    return mysqli_affected_rows($db);
-                } else {
-                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Password yang dimasukkan tidak sama!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                if($_POST['passbaru1'] == '' && $_POST['passbaru2'] == '') {
+                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Password yang baru tidak kosong!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
                     return false;
-                }
+                } else {
+                    if ($_POST['passbaru1'] === $_POST['passbaru2'] ) {
+                        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Password Berhasil diubah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        $passbaru2 = password_hash($passbaru2, PASSWORD_DEFAULT);
+                        $query = "UPDATE tuser SET  
+                                    nik = '$nik', 
+                                    nama = '$nama', 
+                                    password = '$passbaru2', 
+                                    fotoProfil = '$fotoProfil', 
+                                    gender = '$gender', 
+                                    agama = '$agama', 
+                                    telpon = '$telpon', 
+                                    email = '$email',
+                                    status = '$status', 
+                                    tanggalLahir = '$tanggalLahir', 
+                                    alamat = '$alamat'
+                                    WHERE idUser = $id
+                                    ";
+
+                        mysqli_query($db, $query);
+
+                        return mysqli_affected_rows($db);
+                    } else {
+                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Password yang dimasukkan tidak sama!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                        return false;
+                    }
+                }    
             } else {
                 echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Password yang lama salah!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
                 return false;
