@@ -19,9 +19,8 @@
         return false;
       }
 
-       $query = "INSERT INTO tbarang VALUES
-       ('', '$namaBarang', '$fotoBarang', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan','')
-       ";
+       $query = "INSERT INTO `tbarang` (`idAset`, `namaBarang`,`fotoBarang`, `merkBarang`, `tipeBarang`, `nomorRegister`, `hargaSatuan`, `tahunPembelian`, `sumberDana`, `kondisiBarang`, `linkRuangan`, `isDeleted`) VALUES (NULL, '$namaBarang', '$fotoBarang', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan', 0)";
+
 
        mysqli_query($db, $query);
 
