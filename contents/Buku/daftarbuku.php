@@ -8,7 +8,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Daftar Buku</h1> 
           <div style="margin-bottom: 10px">
-        <a href="pdf.php" class="btn btn-danger">PDF</a>
+        <a href="config/bukupdf/pdf.php" class="btn btn-danger">PDF</a>
     </div>
           <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">
@@ -19,7 +19,7 @@
                 <tr>
                     <th class="text-md-center align-middle">No</th>
                     <th class="text-md-center align-middle">Judul Buku</th>
-                    <th class="text-md-center align-middle">Nomor Buku</th>
+                    <th class="text-md-center align-middle">Nomor ISBN/ISSN</th>
                     <th class="text-md-center align-middle">Pengarang</th>
                     <th class="text-md-center align-middle">Penerbit</th>
                     <th class="text-md-center align-middle">Tahun Terbit</th>
