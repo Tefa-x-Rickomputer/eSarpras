@@ -138,6 +138,9 @@ if (!isset($_SESSION["login"]))
                         case 'addroom':
                             include 'contents/Ruang/ManajemenRuang.php';
                             break;
+                        case 'edit':
+                                include 'config/edit.php';
+                                break;
                         default:
                             echo "<center>Page not found";
                             break;
