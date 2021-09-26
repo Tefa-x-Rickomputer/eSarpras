@@ -5,11 +5,11 @@ include 'connect.php';
 
 
 if(isset($_POST['simpan'])) {
-	$nama = $_POST['namaruangan'];
+	$namaRuangan= $_POST['namaRuangan'];
 	
 	
 	$query = "INSERT INTO truangan VALUES
-						( '', '$nama', ''  )
+						( '', '$namaRuangan', ''  )
 						";
 	echo"
 	<script>
