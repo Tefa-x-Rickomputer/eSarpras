@@ -29,15 +29,12 @@
        $linkRuangan =htmlspecialchars($data['linkRuangan']); 
        
 
-       // upload gambar
-       $fotoBuku = upload();
-       if ( !$fotoBuku) {
-        return false;
-       }
-
+        if ($_FILES['fotoBuku']['error'] === 4) {
        $query = "INSERT INTO `tbuku` (`idBuku`, `judulBuku`,`fotoBuku`, `nomorBuku`, `pengarang`, `penerbit`, `tahunTerbit`, `jumlahHalaman`, `nomorRegister`, `tahunPembelian`, `hargaBuku`, `sumberDana`, `kondisiBuku`, `linkRuangan`, `isDeleted`) VALUES (NULL, '$judulBuku', '$fotoBuku', '$nomorBuku', '$pengarang', '$penerbit', '$tahunTerbit', '$jumlahHalaman', '$nomorRegister', '$tahunPembelian', '$hargaBuku', '$sumberDana', '$kondisiBuku', '$linkRuangan', 0)";
-        
-       
+       }else{
+            $fotoBuku = upload();
+        $query = "INSERT INTO `tbuku` (`idBuku`, `judulBuku`,`fotoBuku`, `nomorBuku`, `pengarang`, `penerbit`, `tahunTerbit`, `jumlahHalaman`, `nomorRegister`, `tahunPembelian`, `hargaBuku`, `sumberDana`, `kondisiBuku`, `linkRuangan`, `isDeleted`) VALUES (NULL, '$judulBuku', '', '$nomorBuku', '$pengarang', '$penerbit', '$tahunTerbit', '$jumlahHalaman', '$nomorRegister', '$tahunPembelian', '$hargaBuku', '$sumberDana', '$kondisiBuku', '$linkRuangan', 0)";
+       }
 
        mysqli_query($db, $query);
 
