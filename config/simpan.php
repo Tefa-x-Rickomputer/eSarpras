@@ -5,7 +5,7 @@ include 'connect.php';
 
 
 if(isset($_POST['simpan'])) {
-	$namaRuangan= $_POST['namaRuangan'];
+	$namaRuangan=$_POST['namaRuangan'];
 	
 	
 	$query = "INSERT INTO truangan VALUES

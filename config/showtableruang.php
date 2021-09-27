@@ -42,16 +42,18 @@
         </div>
     </div>
 	<div class="mt-5 ms-5">
+	<div class="mt-5">
 	<form method ="post" action ="config/simpan.php" >
   <div class="col-auto">
    
   </div>
   <div class="col-auto">
     <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="text" name ="namaRuangan" class="form-control" id="" placeholder="Tambah Ruangan">
+    <input type="text" name ="namaRuangan" class="form-control" id="" placeholder="">
   </div>
-  <div class="col-auto mt-2">
-    <button type="submit" name ="simpan" class="btn btn-primary mb-3">Confirm identity</button>
+  <div class="col-auto" mt-5>
+    <button type="submit" name ="simpan" class="btn btn-primary mb-3">Simpan</button>
   </div>
 </div>
+</form>
 </main>
