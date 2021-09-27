@@ -14,12 +14,14 @@
        $kondisiBarang = $data['kondisiBarang'];
        $linkRuangan = $data['linkRuangan'];
       
-      $fotoBarang = upload();
-      if ( !$fotoBarang) {
-        return false;
-      }
-
+      
+      // mencek apakah ada file poto yg di upload
+      if ($_FILES['fotoBarang']['error'] === 4) {
+            $query = "INSERT INTO `tbarang` (`idAset`, `namaBarang`,`fotoBarang`, `merkBarang`, `tipeBarang`, `nomorRegister`, `hargaSatuan`, `tahunPembelian`, `sumberDana`, `kondisiBarang`, `linkRuangan`, `isDeleted`) VALUES (NULL, '$namaBarang', '', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan', 0)";
+        }else{
+             $fotoBarang = upload();
        $query = "INSERT INTO `tbarang` (`idAset`, `namaBarang`,`fotoBarang`, `merkBarang`, `tipeBarang`, `nomorRegister`, `hargaSatuan`, `tahunPembelian`, `sumberDana`, `kondisiBarang`, `linkRuangan`, `isDeleted`) VALUES (NULL, '$namaBarang', '$fotoBarang', '$merkBarang', '$tipeBarang', '$nomorRegister', '$hargaSatuan', '$tahunPembelian', '$sumberDana', '$kondisiBarang', '$linkRuangan', 0)";
+     }
 
 
        mysqli_query($db, $query);
@@ -33,14 +35,6 @@
       $ukuranFile = $_FILES['fotoBarang']['size'];
       $error = $_FILES['fotoBarang']['error'];
       $tmpName = $_FILES['fotoBarang']['tmp_name'];
-
-      // cek apakah tidak ada foto yang diupload
-     // if ( $error === 4 ){
-     //    echo "<script>
-     //            alert('pilih gambar terlebih dahulu!');
-     //           </script> ";
-     //    return false;
-     // }
 
      // cek apakah yang diupload adalah foto
      $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
