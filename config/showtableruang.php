@@ -39,6 +39,7 @@
             </table>
         </div>
     </div>
+
 	
 
     <form method ="post" action ="config/simpan.php" >
@@ -60,5 +61,6 @@
             </div>
         </div>
     </form>
+
 
 </main>
