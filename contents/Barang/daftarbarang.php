@@ -15,13 +15,13 @@
         
             <thead class="table-dark">
                 <tr>
-                    <th>No</th>
-                    <th>Nama Aset</th>
-                    <th>Merk Aset</th>
-                    <th>Jenis Aset</th>
-                    <th>Nomor Register</th>
-                    <th>Kondisi</th>
-                    <th>Opsi</th>
+                    <th class="text-md-center align-middle">No</th>
+                    <th class="text-md-center align-middle">Nama Aset</th>
+                    <th class="text-md-center align-middle">Merk Aset</th>
+                    <th class="text-md-center align-middle">Jenis Aset</th>
+                    <th class="text-md-center align-middle">Nomor Register</th>
+                    <th class="text-md-center align-middle">Kondisi</th>
+                    <th class="text-md-center align-middle">Opsi</th>
                 </tr>
             </thead>
 
@@ -29,12 +29,12 @@
                 <?php $i = 1;?>
                 <?php foreach($barang as $item) : ?>
                     <tr>
-                        <td><?= $i ?></td>
-                        <td><?= $item["namaBarang"]; ?></td>
-                        <td><?= $item["merkBarang"]; ?></td>
-                        <td><?= $item["tipeBarang"]; ?></td>
-                        <td><?= $item["nomorRegister"]; ?></td>
-                        <td><?= $item["kondisiBarang"]; ?></td>
+                        <td class="text-md-center"><?= $i ?></td>
+                        <td class="text-md-center"><?= $item["namaBarang"]; ?></td>
+                        <td class="text-md-center"><?= $item["merkBarang"]; ?></td>
+                        <td class="text-md-center"><?= $item["tipeBarang"]; ?></td>
+                        <td class="text-md-center"><?= $item["nomorRegister"]; ?></td>
+                        <td class="text-md-center"><?= $item["kondisiBarang"]; ?></td>
 
                         <td>
                                 <a href="index.php?page=DetailBarang&id=<?= $item ['idAset']; ?>"class="btn btn-success" ><i class='bi bi-three-dots'></i></a>

@@ -23,7 +23,7 @@
         if( edit($_POST) > 0 ) {
             echo"<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil di ubah!</div>
                             <script>
-                                //setTimeout(function() {
+                                setTimeout(function() {
                                         document.location.href = 'index.php?page=DetailBuku&id=$id';('');
                                     }, 1500)
                             </script>";
