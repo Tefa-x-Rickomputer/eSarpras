@@ -11,11 +11,9 @@
             <table id="example" class="display nowrap table-striped table" style="width:100%">
                 <thead class="table-dark">
                     <tr>
-                        <th class="text-center">#</th>
-                        <th>ID RUANGAN</th>
+                        <th class="text-center">ID RUANGAN</th>
                         <th>NAMA RUANGAN</th>
-                        
-    
+                        <th>OPSI</th>
                     </tr>
                 </thead>
 
@@ -41,19 +39,28 @@
             </table>
         </div>
     </div>
-	<div class="mt-5 ms-5">
-	<div class="mt-5">
-	<form method ="post" action ="config/simpan.php" >
-  <div class="col-auto">
-   
-  </div>
-  <div class="col-auto">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="text" name ="namaRuangan" class="form-control" id="" placeholder="">
-  </div>
-  <div class=" mt-5">
-    <button type="submit" name ="simpan" class="btn btn-primary mb-3">Simpan</button>
-  </div>
-</div>
-</form>
+
+	
+
+    <form method ="post" action ="config/simpan.php" >
+        <div class="container overflow-hidden">
+            <div class="row gx-5 ms-5">
+                <div class="col">
+                    <div class="p-3 border bg-light">
+                        <div class="input-group">
+                            <span class="input-group-text">Tambah Ruangan</span>
+                            <input type="text" aria-label="Last name" name ="namaRuangan" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 border bg-light">
+                         <button type="submit" name ="simpan" class="btn btn-primary mb-3">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
 </main>
