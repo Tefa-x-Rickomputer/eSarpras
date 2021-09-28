@@ -18,10 +18,10 @@
             <thead class="table-dark">
                 <tr>
                     <th class="text-md-center align-middle">No</th>
-                    <th class="text-md-center align-middle">Judul Buku</th>
-                    <th class="text-md-center align-middle">Nomor ISBN/ISSN</th>
-                    <th class="text-md-center align-middle">Pengarang</th>
-                    <th class="text-md-center align-middle">Penerbit</th>
+                    <th class="align-middle">Judul Buku</th>
+                    <th class="align-middle">Nomor ISBN/ISSN</th>
+                    <th class="align-middle">Pengarang</th>
+                    <th class="align-middle">Penerbit</th>
                     <th class="text-md-center align-middle">Tahun Terbit</th>
                     <th class="text-md-center align-middle">Opsi</th>
                 </tr>
@@ -32,10 +32,10 @@
                 <?php foreach($buku as $item) : ?>
                     <tr>
                     <td class="text-md-center"><?= $i; ?></td>
-                    <td class="text-md-center"><?= $item["judulBuku"]; ?></td>
-                    <td class="text-md-center"><?= $item["nomorBuku"]; ?></td>
-                    <td class="text-md-center"><?= $item["pengarang"]; ?></td>
-                    <td class="text-md-center"><?= $item["penerbit"]; ?></td>
+                    <td class=""><?= $item["judulBuku"]; ?></td>
+                    <td class=""><?= $item["nomorBuku"]; ?></td>
+                    <td class=""><?= $item["pengarang"]; ?></td>
+                    <td class=""><?= $item["penerbit"]; ?></td>
                     <td class="text-md-center"><?= $item["tahunTerbit"]; ?></td>
                     
                         <td>
