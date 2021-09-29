@@ -91,6 +91,10 @@
                                     <a class="nav-link" href="Authentication/logout.php">Logout</a>
                                 </nav>
                             </div>
+                            <a class="nav-link <?= eclAdminGuest; ?>" href="index.php?page=DaftarPemberitahuan">
+                                <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill"></i></div>
+                                Pemberitahuan
+                            </a>
 
                             <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>

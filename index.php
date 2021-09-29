@@ -141,6 +141,17 @@ if (!isset($_SESSION["login"]))
                         case 'edit':
                                 include 'config/edit.php';
                                 break;
+
+                        // Notice switch
+                        case 'DaftarPemberitahuan':
+                            include 'contents/Pemberitahuan/daftarpemberitahuan.php';
+                            break;
+
+                        case 'HapusPemberitahuan':
+                            include 'contents/Pemberitahuan/hapuspemberitahuan.php';
+                            break;
+                        // Notice switch end
+                            
                         default:
                             echo "<center>Page not found";
                             break;
