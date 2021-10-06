@@ -8,7 +8,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Daftar Buku</h1> 
           <div style="margin-bottom: 10px">
-        <a href="config/bukupdf/pdf.php" class="btn btn-danger">PDF</a>
+        <a href="config/bukupdf/pdf.php" class="btn btn-danger bi bi-file-earmark-pdf"> PDF</a>
     </div>
           <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">
@@ -39,7 +39,7 @@
                     <td class="text-md-center"><?= $item["tahunTerbit"]; ?></td>
                     
                         <td>
-                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>"class="btn btn-success"><i class="bi bi-three-dots"></i></a>
+                                <a href="index.php?page=DetailBuku&id=<?php echo $item['idBuku']; ?>"class="btn btn-success"><i class="bi bi-eye"></i> Detail</a>
                         </td>
                     </tr>
                     <?php $i++ ?>

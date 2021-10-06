@@ -15,7 +15,7 @@
 
 <main>
   <div class="container-fluid px-4">
-    <h1 class="mt-4">Detail Aset</h1>
+    <h1 class="mt-4">Detail Sarpras</h1>
     <div class="row">
         <div class="col-md-4 mt-3">
             <div class="text-center border rounded position-relative" style="background-color:rgb(233,236,239);height:14.3rem; max-width:22rem;">
@@ -25,10 +25,10 @@
             </div>
         </div>
         <div class="col-md-8">
-            <label for="namaBarang" class="mt-3">Nama Aset</label>
+            <label for="namaBarang" class="mt-3">Nama Sarpras</label>
             <input type="text" class="form-control mt-1" id="disabledInput" name="namaBarang" disabled value="<?= $barang['namaBarang'] ?>">
 
-            <label for="merkBarang" class="mt-3">Merk Aset</label>
+            <label for="merkBarang" class="mt-3">Merk Sarpras</label>
             <input type="text" class="form-control mt-1" id="disabledInput" name="merkBarang" disabled value="<?= $barang['merkBarang'] ?>">
 
             <label for="nomorRegister" class="mt-3">Nomor Register</label>
@@ -38,7 +38,7 @@
 
     <div class="row">
         <div class="col-md mt-3">
-            <label for="">Tipe Aset</label>
+            <label for="">Tipe Sarpras</label>
             <input type="text" class="form-control mt-1" id="disabledInput" name="tipeBarang" disabled value="<?= $barang['tipeBarang'] ?>">
         </div>
         <div class="col-md mt-3">
