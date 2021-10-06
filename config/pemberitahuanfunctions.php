@@ -24,7 +24,7 @@
         $linkUser = $userSession["idUser"];
         $isiPemberitahuan = htmlspecialchars($data['isiPemberitahuan']);
 
-        $query = "INSERT INTO `tpemberitahuan` (`idPemberitahuan`, `linkUser`, `isiPemberitahuan`, `waktuPemberitahuan`, `isDeleted`) VALUES ('', '$linkUser', '$isiPemberitahuan', now(), '') ";
+        $query = "INSERT INTO `tpemberitahuan` (`idPemberitahuan`, `linkUser`, `isiPemberitahuan`, `waktuPemberitahuan`, `isDeleted`) VALUES (NULL, '$linkUser', '$isiPemberitahuan', now(), 0) ";
 
         mysqli_query($db, $query);
 
