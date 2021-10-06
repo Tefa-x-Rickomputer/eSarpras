@@ -34,7 +34,7 @@
                 			<td><?= $user['status']; ?></td>
                             <td><?= $user['role']; ?></td>
                 			<td class="text-center">
-                				<a href="index.php?page=UserDetail&id=<?= $user['idUser']; ?>" class="btn btn-success"><i class="bi bi-three-dots"></i></a>
+                				<a href="index.php?page=UserDetail&id=<?= $user['idUser']; ?>" class="btn btn-success"><i class="bi bi-eye"></i> Detail</a>
                 			</td>
                 		</tr>
                         <?php $count++ ?>
