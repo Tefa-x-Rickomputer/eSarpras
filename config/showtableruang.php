@@ -26,8 +26,8 @@
                 			
                 			<td class="text-center">
                 				
-                                <a href="config/edit.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-success shadow bi bi-three-dots"></a>
-                                <a href="config/hapus.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-danger shadow bi bi-trash-fill" onclick="return confirm('apakah yakin akan dihapus?')"></a>
+                                <a href="config/edit.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-success <?= eclGuest ?>">Edit</a>
+                                <a href="config/hapus.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-danger shadow bi bi-trash-fill" onclick="return confirm('apakah yakin akan dihapus?')">Hapus</a>
                 			
                 			</td>
                 		</tr>

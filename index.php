@@ -183,7 +183,7 @@ if (!isset($_SESSION["login"]))
             responsive: true
             } );
     });
-</script>
-
+    </script>
+    
     </body>
 </html>

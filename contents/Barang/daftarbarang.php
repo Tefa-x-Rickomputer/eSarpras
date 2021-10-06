@@ -5,9 +5,9 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Aset</h1>
+        <h1 class="mt-4">Daftar Sarpras</h1>
          <div style="margin-bottom: 10px">
-        <a href="config/barangpdf/pdf.php" class="btn btn-danger">PDF</a>
+        <a href="config/barangpdf/pdf.php" class="btn btn-danger bi bi-file-earmark-pdf"> PDF</a>
     </div>
           <div class="mb-2">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">
@@ -16,9 +16,9 @@
             <thead class="table-dark">
                 <tr>
                     <th class="text-md-center align-middle">No</th>
-                    <th class=" align-middle">Nama Aset</th>
-                    <th class=" align-middle">Merk Aset</th>
-                    <th class=" align-middle">Jenis Aset</th>
+                    <th class=" align-middle">Nama Sarpras</th>
+                    <th class=" align-middle">Merk Sarpras</th>
+                    <th class=" align-middle">Jenis Sarpras</th>
                     <th class=" align-middle">Nomor Register</th>
                     <th class=" align-middle">Kondisi</th>
                     <th class="text-md-center align-middle">Opsi</th>
@@ -37,7 +37,7 @@
                         <td class=""><?= $item["kondisiBarang"]; ?></td>
 
                         <td>
-                                <a href="index.php?page=DetailBarang&id=<?= $item ['idAset']; ?>"class="btn btn-success" ><i class='bi bi-three-dots'></i></a>
+                                <a href="index.php?page=DetailBarang&id=<?= $item ['idAset']; ?>"class="btn btn-success" ><i class='bi bi-eye'></i>Detail</a>
                         </td>
                     </tr>
                     <?php $i++ ?>

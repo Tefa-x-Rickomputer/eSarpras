@@ -10,6 +10,8 @@
     $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$buku[linkRuangan]'"); 
     $ruangan = (mysqli_fetch_assoc($query));
     $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0")
+    $nilai = $buku['hargaBuku'];
+    $harga = number_format($nilai,0,',','.');
 
    
 
