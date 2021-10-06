@@ -23,17 +23,17 @@
     </nav> 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-dark shadow" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                         <div class="nav">
                             <a class="nav-link mt-3" href="./">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt text-success"></i></div>
                                 Dashboard
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Menu Utama</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBarang" aria-expanded="false" aria-controls="collapseBarang">
-                                <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-boxes text-warning"></i></div>
                                 Sarpras
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -45,7 +45,7 @@
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBuku" aria-expanded="false" aria-controls="collapseBuku">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-book text-success"></i></div>
                                 Buku
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -56,13 +56,8 @@
                                 </nav>
                             </div>
 
-                            <a class="nav-link" href="index.php?page=addroom">
-                                <div class="sb-nav-link-icon"><i class="bi bi-house-fill"></i></div>
-                                Ruangan
-                            </a>
-
                             <a class="nav-link collapsed <?= eclAdminGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
-                                <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill"></i></div>
+                                <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill text-warning"></i></div>
                                 Manajemen User
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -73,9 +68,14 @@
                                 </nav>
                             </div>
 
+                            <a class="nav-link" href="index.php?page=addroom">
+                                <div class="sb-nav-link-icon"><i class="bi bi-house-fill text-success"></i></div>
+                                Ruangan
+                            </a>
+
                             <div class="sb-sidenav-menu-heading">Pengaturan</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAkun" aria-expanded="false" aria-controls="collapseAkun">
-                                <div class="sb-nav-link-icon"><i class="bi bi-person-circle"></i></div>
+                                <div class="sb-nav-link-icon"><i class="bi bi-person-circle text-primary"></i></div>
                                 Akun
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -86,7 +86,7 @@
                                 </nav>
                             </div>
                             <a class="nav-link <?= eclAdminGuest; ?>" href="index.php?page=DaftarPemberitahuan">
-                                <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill"></i></div>
+                                <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill text-primary"></i></div>
                                 Pemberitahuan
                             </a>
 
