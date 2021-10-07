@@ -3,6 +3,13 @@
 session_start();
 require "../config/connect.php";
 
+if (isset($_SESSION["login"])) {
+    // header("location:../");
+    unset($_SESSION["login"]);
+} else {
+    
+}
+
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -19,13 +26,13 @@ if (isset($_POST["submit"])) {
             "idUser" => $_SESSION["idUser"] = $row["idUser"],
             "role" => $_SESSION["role"] = $row["role"]
             ];
+            header("location:../");
         }
     } 
     $error = true;
 }
-if (isset($_SESSION["login"])) {
-    header("location:../");
-}
+
+// var_dump($_SESSION["login"]);
 ?>
 
 <!doctype html>
