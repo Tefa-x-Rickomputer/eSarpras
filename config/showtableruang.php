@@ -5,15 +5,15 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4 mb-4">Daftar Ruangan</h1>
+        <h1 class="col mx-auto">Daftar Ruangan</h1>
         
-        <div class="mb-5">
+        <div class="mb-5 mt-3">
             <table id="example" class="display nowrap table-striped table text-center" style="width:100%">
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
                         <th>Nama Ruangan</th>
-                        <th>Opsi</th>
+                        <th class="<?=eclGuest?>">Opsi</th>
                     </tr>
                 </thead>
 
@@ -24,11 +24,11 @@
                 			<td><?= $count; ?></td>
                             <td><?= $user['namaRuangan']; ?></td>
                 			
-                			<td class="text-center">
+                			<td class="text-center <?=eclGuest?>">
                 				
-                                <a href="config/edit.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-success shadow bi bi-three-dots"></a>
-                                <a href="config/hapus.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-danger shadow bi bi-trash-fill" onclick="return confirm('apakah yakin akan dihapus?')"></a>
-                			
+                                    <a href="config/edit.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-success shadow">Edit</a>
+                                    <a href="config/hapus.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-danger shadow bi bi-trash-fill" onclick="return confirm('apakah yakin akan dihapus?')"></a>
+                               
                 			</td>
                 		</tr>
             <?php $count++; ?>
@@ -57,8 +57,8 @@
                     </div>
                 </div>
             </div> -->
-            <div class="row">
-                <div class="col-md-6 mx-auto">
+            <div class="row <?=eclGuest?>">
+                <div class="col-md-5 mx-auto">
                     <div class="input-group mb-5 shadow">
                         <span class="input-group-text">Tambah Ruangan</span>
                         <input type="text" aria-label="Last name" name ="namaRuangan" class="form-control">
