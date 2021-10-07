@@ -184,6 +184,7 @@ if (!isset($_SESSION["login"]))
             } );
     });
     </script>
-    
+    <!-- format titik otomatis -->
+    <script type="text/javascript" src="Assets/js/my.js"></script>
     </body>
 </html>

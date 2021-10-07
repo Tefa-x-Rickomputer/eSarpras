@@ -9,7 +9,10 @@
 
     $query = mysqli_query($db, "SELECT * FROM truangan WHERE idRuangan = '$buku[linkRuangan]'"); 
     $ruangan = (mysqli_fetch_assoc($query));
-    $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0")
+    $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0");
+
+
+
     $nilai = $buku['hargaBuku'];
     $harga = number_format($nilai,0,',','.');
 
@@ -85,7 +88,7 @@
             <label for="">Harga Buku</label>
             <div class="input-group">
               <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
-              <input type="text" class="form-control mt-1" id="disabledInput" name="hargaBuku" value="<?= $buku['hargaBuku'] ?>">
+              <input type="text" id="inputku" class="form-control" name="hargaBuku" value="<?= $harga ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" >
             </div>
         </div>
     </div>

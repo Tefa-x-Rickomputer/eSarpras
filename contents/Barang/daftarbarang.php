@@ -18,7 +18,7 @@
                     <th class="text-md-center align-middle">No</th>
                     <th class=" align-middle">Nama Sarpras</th>
                     <th class=" align-middle">Merk Sarpras</th>
-                    <th class=" align-middle">Jenis Sarpras</th>
+                    <th class=" align-middle">Tipe Sarpras</th>
                     <th class=" align-middle">Nomor Register</th>
                     <th class=" align-middle">Kondisi</th>
                     <th class="text-md-center align-middle">Opsi</th>

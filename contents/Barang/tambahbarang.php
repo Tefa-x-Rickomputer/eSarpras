@@ -8,7 +8,7 @@ outGuest();
  ?>
 <main>
   <div class="container-fluid px-4">
-    <h1 class="mt-4">Tambah Barang</h1>
+    <h1 class="mt-4">Tambah Sarpras</h1>
     
     <?php  
     if (isset($_POST['simpan']) ) {
@@ -32,18 +32,18 @@ outGuest();
       <div class="row">
 
         <div class="col-md mt-3">
-          <label for="judulBuku">Nama Aset</label>
+          <label for="judulBuku">Nama Sarpras</label>
           <input type="text" class="form-control" name="namaBarang" required>
         </div>
 
 
        <div class="col-md mt-3">
-           <label for="">Merk Aset</label>
+           <label for="">Merk Sarpras</label>
           <input type="text" class="form-control" name="merkBarang" required>
         </div>
 
         <div class="col-md mt-3">
-            <label for="">Tipe Aset</label>
+            <label for="">Tipe Sarpras</label>
           <input type="text" class="form-control" name="tipeBarang" required>
         </div>
 
@@ -57,8 +57,12 @@ outGuest();
         </div>
         <div class="col-md mt-3">
             <label for="">Harga Satuan</label>
-          <input type="number" class="form-control" name="hargaSatuan" required>
+          <div class="input-group">
+            <div class="input-group-text" style="background-color:lightgrey;">Rp</div>
+            <input type="text" id="inputku" class="form-control" name="hargaSatuan" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required>
         </div>
+      </div>
+
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>

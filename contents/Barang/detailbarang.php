@@ -72,7 +72,7 @@
             <div class="row">
         <div class="col-md-2 mt-3 ">
             <div class="d-grid">
-                    <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-success  <?= eclGuest ?>">Edit</a>
+                    <a href="index.php?page=EditBarang&id=<?php echo $barang['idAset']; ?>" class="btn btn-success shadow <?= eclGuest ?>">Edit</a>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-2 mt-3 mb-3">
             <div class="d-grid">
-                     <a href="index.php?page=DaftarBarang"class="btn btn-secondary")>Kembali</a>
+                     <a href="index.php?page=DaftarBarang"class="btn btn-secondary shadow")>Kembali</a>
                 </div>
             </div>
         </div>
