@@ -80,7 +80,9 @@
 
         <div class="col-md mt-3">
             <label for="">Harga Buku</label>
-          <input type="text" class="form-control" name="hargaBuku" required>
+          <div class="input-group">
+            <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
+            <input type="text" id="inputku" class="form-control" name="hargaBuku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required>
         </div>
           </div>
 

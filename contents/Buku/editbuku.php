@@ -11,6 +11,8 @@
     $ruangan = (mysqli_fetch_assoc($query));
     $queryruangan = querySql("SELECT * FROM truangan WHERE isDeleted =0")
 
+
+
    
 
 ?>
@@ -23,7 +25,7 @@
         if( edit($_POST) > 0 ) {
             echo"<div class='alert alert-success alert-dismissible fade show' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil di ubah!</div>
                             <script>
-                                //setTimeout(function() {
+                                setTimeout(function() {
                                         document.location.href = 'index.php?page=DetailBuku&id=$id';('');
                                     }, 1500)
                             </script>";
@@ -64,7 +66,7 @@
         </div>
         <div class="col-md ">
             <label for="">Tahun Terbit</label>
-            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunTerbit" value="<?= $buku['tahunTerbit'] ?>">
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunTerbit" maxlength="4" value="<?= $buku['tahunTerbit'] ?>">
         </div>
     </div>
 
@@ -72,7 +74,7 @@
     <div class="row ">
            <div class="col-md mt-3">
              <label for="">Tahun Pembelian</label>
-             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunPembelian" value="<?= $buku['tahunPembelian'] ?>">
+             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control mt-1" id="disabledInput" name="tahunPembelian" maxlength="4" value="<?= $buku['tahunPembelian'] ?>">
         </div>
         <div class="col-md mt-3">
             <label for="">Jumlah Halaman</label>
@@ -83,6 +85,7 @@
             <label for="">Harga Buku</label>
             <div class="input-group">
               <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
+              <input type="text" id="inputku" class="form-control" name="hargaBuku" value="<?= $buku['hargaBuku'] ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
               <input type="text" class="form-control mt-1" id="disabledInput" name="hargaBuku" value="<?= $buku['hargaBuku'] ?>">
             </div>
         </div>

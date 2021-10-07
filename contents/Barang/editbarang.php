@@ -2,7 +2,7 @@
 
 <main>
   <div class="container-fluid px-4">
-    <h1 class="mt-4">Edit Aset</h1>
+    <h1 class="mt-4">Edit Sarpras</h1>
     <div class="row">
         <?php   
     
@@ -34,7 +34,8 @@
 
     }
   }
-
+    $nilai = $barang['hargaSatuan'];
+      $harga = number_format($nilai,0,',','.');
 
  ?>
     </div>
@@ -42,13 +43,13 @@
              <form action="" method="POST" enctype="multipart/form-data">
              <div class="row mt-3">
         <div class="col-md">
-            <label for="namaBarang">Nama Aset</label>
+            <label for="namaBarang">Nama Sarpras</label>
             <input type="text" class="form-control mb-1 mt-1" id="disabledInput" name="namaBarang"  value="<?= $barang['namaBarang'] ?>">
             <input type="hidden" name="idAset" value="<?= $barang['idAset']; ?>">
              <input type="hidden" name="fotoLama" value="<?= $barang['fotoBarang']; ?>">
           </div>
         <div class="col-md">
-            <label for="merkBarang">Merk Aset</label>
+            <label for="merkBarang">Merk Sarpras</label>
             <input type="text" class="form-control mb-1 mt-1" id="disabledInput" name="merkBarang"  value="<?= $barang['merkBarang'] ?>">
           </div>
         <div class="col-md">
@@ -59,14 +60,15 @@
 
     <div class="row mt-3">
         <div class="col-md">
-            <label for="">Tipe Aset</label>
+            <label for="">Tipe Sarpras</label>
             <input type="text" class="form-control mt-1" id="disabledInput" name="tipeBarang"  value="<?= $barang['tipeBarang'] ?>">
         </div>
         <div class="col-md">
             <label for="">Harga Satuan</label>
             <div class="input-group">
-            <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
-            <input type="number" class="form-control mt-1" id="disabledInput" name="hargaSatuan" value="<?= $barang['hargaSatuan'] ?>">
+            <div class="input-group-text" style="background-color:lightgrey;">Rp</div>
+            <input type="text" id="inputku" class="form-control" name="hargaSatuan" value="<?= $harga ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+            
             </div>
         </div>
       
@@ -127,13 +129,13 @@
         <div class="row">
         <div class="col-md-2 mt-3 ">
             <div class="d-grid">
-                       <button type="submit" name="edit" class="btn btn-primary">Simpan</button>
+                       <button type="submit" name="edit" class="btn btn-primary shadow">Simpan</button>
                     </div>
                 </div>
 
                        <div class="col-md-2 mt-3 mb-3">
             <div class="d-grid">
-                   <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-secondary">Kembali</a>
+                   <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-secondary shadow">Kembali</a>
                 </div>
                 </div>
             </form>

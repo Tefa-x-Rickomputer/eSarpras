@@ -5,12 +5,11 @@ include 'connect.php';
 
 
 if(isset($_POST['simpan'])) {
-	$nama = $_POST['namaruangan'];
+	$namaRuangan=$_POST['namaRuangan'];
 	
 	
-	$query = "INSERT INTO truangan VALUES
-						( '', '$nama', ''  )
-						";
+	$query = "INSERT INTO truangan (idRuangan, namaRuangan, isDeleted)VALUES(NULL,'$namaRuangan',0)";
+					
 	echo"
 	<script>
           alert('Data berhasil di Simpan');

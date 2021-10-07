@@ -1,6 +1,7 @@
 <?php 
 
-include 'config/connect.php';
+// include 'config/connect.php';
+include 'config/pemberitahuanfunctions.php';
 
 $id = $userSession['idUser'];
 $user = querySql("SELECT * FROM tuser WHERE idUser = $id")[0];
@@ -98,10 +99,20 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                     </h5>
                         <div class="card-body overflow-auto">
                             <div class="card-text">
-                                <p>
+                                <!-- <p>
                                     <i class="bi bi-caret-right-fill"></i>
                                     This is a notice, just a notice, self explanitory.
-                                </p>
+                                </p> -->
+                                <?php foreach($notices as $notice) : ?>
+                                    <div class="row">
+                                        <div class="col-1" style="width:1%;">
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </div>
+                                        <div class="col">
+                                            <p><?= $notice['isiPemberitahuan']; ?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

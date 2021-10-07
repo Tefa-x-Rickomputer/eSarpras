@@ -57,8 +57,11 @@ outGuest();
         </div>
         <div class="col-md mt-3">
             <label for="">Harga Satuan</label>
-          <input type="number" class="form-control" name="hargaSatuan" required>
+            <div class="input-group">
+            <div class="input-group-text" style="background-color:lightgrey;">Rp</div>
+            <input type="text" id="inputku" class="form-control" name="hargaSatuan" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required>
         </div>
+      </div>
 
           <div class="col-md mt-3">
            <label for="">Tahun Pembelian</label>
@@ -100,13 +103,13 @@ outGuest();
        <div class="row">
         <div class="col-md-2 mt-3">
             <div class="d-grid">
-          <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>
+          <button class="btn btn-primary shadow" type="submit" name="simpan">Simpan</button>
           </div>
           </div>
 
         <div class="col-md-2 mt-3 mb-3">
             <div class="d-grid"> 
-          <a href="index.php?page=DaftarBarang" class="btn btn-danger">Batal</a>
+          <a href="index.php?page=DaftarBarang" class="btn btn-danger shadow">Batal</a>
       </div>
     </div>
 

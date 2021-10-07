@@ -30,14 +30,14 @@
     
     $pdf->Row(Array(
             'No',
-            'Nama Barang', 
-            'Merk Barang',
+            'Nama Sapras', 
+            'Merk Sapras',
             'Nomor Register', 
-            'Tipe Barang', 
+            'Tipe Sapras', 
             'Harga Satuan', 
             'Tahun Pembelian', 
             'Sumber Dana', 
-            'Kondisi Barang', 
+            'Kondisi Sapras', 
             'Nama Ruangan'
         ));
 
