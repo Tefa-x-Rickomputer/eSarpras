@@ -6,15 +6,15 @@ $userSession = [
 
 if ($userSession["role"] == "Guest") {
     define("eclGuest","d-none");
-    define("eclAdminGuest","d-none");
+    define("eclAdmin","");
     define("eclSuper", "");
 } elseif($userSession["role"] == "Administrator") {
     define("eclGuest","");
-    define("eclAdminGuest","d-none");
+    define("eclAdmin","d-none");
     define("eclSuper", "");
 } elseif($userSession["role"] == "Superuser") {
     define("eclGuest","");
-    define("eclAdminGuest","");
+    define("eclAdmin","");
     define("eclSuper", "d-none");
 } else {
     header("Location:Authentication/logout.php");

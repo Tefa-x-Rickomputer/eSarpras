@@ -41,13 +41,13 @@
                             </a>
                             <div class="collapse" id="collapseBarang" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="index.php?page=DaftarBarang">Daftar Aset</a>
-                                    <a class="nav-link <?= eclGuest; ?>" href="index.php?page=TambahBarang">Tambah Aset</a>
+                                    <a class="nav-link" href="index.php?page=DaftarBarang">Daftar Sarpras</a>
+                                    <a class="nav-link <?= eclGuest; ?>" href="index.php?page=TambahBarang">Tambah Sarpras</a>
                                 </nav>
                             </div>
 
                             <!-- sarpras menu for guest -->
-                            <a class="nav-link <?= eclSuper; ?>" href="index.php?page=DaftarBarang">
+                            <a class="nav-link <?= eclSuper; ?> <?= eclAdmin; ?>" href="index.php?page=DaftarBarang">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes text-success"></i></div>
                                 Sarpras
                             </a>
@@ -66,20 +66,20 @@
                             </div>
 
                             <!-- buku menu for guest -->
-                            <a class="nav-link <?= eclSuper; ?>" href="index.php?page=DaftarBuku">
+                            <a class="nav-link <?= eclSuper; ?> <?= eclAdmin; ?>" href="index.php?page=DaftarBuku">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book text-success"></i></div>
                                 Buku
                             </a>
 
-                            <a class="nav-link collapsed <?= eclAdminGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
+                            <a class="nav-link collapsed <?= eclAdmin; ?> <?= eclGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
                                 <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill text-success"></i></div>
                                 Manajemen User
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link <?= eclAdminGuest; ?>" href="index.php?page=Userlist">Daftar User</a>
-                                    <a class="nav-link <?= eclAdminGuest; ?>" href="index.php?page=adduser">Tambah User</a>
+                                    <a class="nav-link <?= eclAdmin; ?>" href="index.php?page=Userlist">Daftar User</a>
+                                    <a class="nav-link <?= eclAdmin; ?>" href="index.php?page=adduser">Tambah User</a>
                                 </nav>
                             </div>
 
@@ -100,7 +100,7 @@
                                     <a class="nav-link" href="Authentication/logout.php">Logout</a>
                                 </nav>
                             </div>
-                            <a class="nav-link <?= eclAdminGuest; ?>" href="index.php?page=DaftarPemberitahuan">
+                            <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=DaftarPemberitahuan">
                                 <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill text-primary"></i></div>
                                 Pemberitahuan
                             </a>
