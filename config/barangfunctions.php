@@ -9,6 +9,7 @@
        $tipeBarang = $data['tipeBarang'];
        $nomorRegister = $data['nomorRegister'];
        $hargaSatuan = $data['hargaSatuan'];
+       $hargaSatuan = str_replace('.', '', $hargaSatuan);
        $tahunPembelian = $data['tahunPembelian'];
        $sumberDana = $data['sumberDana'];
        $kondisiBarang = $data['kondisiBarang'];
@@ -74,6 +75,7 @@
            $tipeBarang =htmlspecialchars ($data['tipeBarang']);
            $nomorRegister =htmlspecialchars ($data['nomorRegister']);
            $hargaSatuan =htmlspecialchars ($data['hargaSatuan']);
+           $hargaSatuan = str_replace('.', '', $hargaSatuan);
            $tahunPembelian =htmlspecialchars ($data['tahunPembelian']);
            $sumberDana =htmlspecialchars ($data['sumberDana']);
            $kondisiBarang =htmlspecialchars ($data['kondisiBarang']);

@@ -35,6 +35,8 @@
     }
   }
 
+      $nilai = $barang['hargaSatuan'];
+    $harga = number_format($nilai,0,',','.');
 
  ?>
     </div>
@@ -65,8 +67,8 @@
         <div class="col-md">
             <label for="">Harga Satuan</label>
             <div class="input-group">
-            <div class="input-group-text mt-1" style="background-color:lightgrey;">Rp</div>
-            <input type="number" class="form-control mt-1" id="disabledInput" name="hargaSatuan" value="<?= $barang['hargaSatuan'] ?>">
+            <div class="input-group-text" style="background-color:lightgrey;">Rp</div>
+            <input type="text" id="inputku" class="form-control" name="hargaSatuan" value="<?= $harga ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" >
             </div>
         </div>
       

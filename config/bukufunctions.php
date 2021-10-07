@@ -23,7 +23,8 @@
        $jumlahHalaman = htmlspecialchars($data['jumlahHalaman']);
        $nomorRegister = htmlspecialchars($data['nomorRegister']);
        $tahunPembelian = htmlspecialchars($data['tahunPembelian']); 
-       $hargaBuku =htmlspecialchars($data['hargaBuku']); 
+       $hargaBuku =htmlspecialchars($data['hargaBuku']);
+       $hargaBuku = str_replace('.', '', $hargaBuku); 
        $sumberDana =htmlspecialchars($data['sumberDana']); 
        $kondisiBuku =htmlspecialchars($data['kondisiBuku']); 
        $linkRuangan =htmlspecialchars($data['linkRuangan']); 
@@ -108,7 +109,8 @@
            $jumlahHalaman =htmlspecialchars($data['jumlahHalaman']);
            $nomorRegister =htmlspecialchars($data['nomorRegister']);
            $tahunPembelian =htmlspecialchars($data['tahunPembelian']); 
-           $hargaBuku =htmlspecialchars($data['hargaBuku']); 
+           $hargaBuku =htmlspecialchars($data['hargaBuku']);
+           $hargaBuku = str_replace('.', '', $hargaBuku); 
            $sumberDana =htmlspecialchars($data['sumberDana']); 
            $kondisiBuku =htmlspecialchars($data['kondisiBuku']); 
            $linkRuangan =htmlspecialchars($data['linkRuangan']);
