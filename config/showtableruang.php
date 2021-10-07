@@ -26,9 +26,11 @@
                 			
                 			<td class="text-center <?=eclGuest?>">
                 				
+
                                     <a href="config/edit.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-success shadow">Edit</a>
                                     <a href="config/hapus.php?idRuangan=<?= $user['idRuangan']; ?>" class="btn btn-danger shadow bi bi-trash-fill" onclick="return confirm('apakah yakin akan dihapus?')"></a>
                                
+
                 			</td>
                 		</tr>
             <?php $count++; ?>
