@@ -26,7 +26,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                     <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-house"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-house text-info"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntRuangan["COUNT('*')"] ?></span>
@@ -41,7 +41,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                     <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-box-seam"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-box-seam text-info"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntAset["COUNT('*')"] ?></span>
@@ -56,7 +56,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                 <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-book"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-book text-info"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntBuku["COUNT('*')"] ?></span>
@@ -71,7 +71,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                 <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-archive"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-archive text-info"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntBarang ?></span>
@@ -93,16 +93,12 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <!-- Notice - Start -->
             <div class="col col-lg-8">
                 <div class="card card-perubahan shadow h-100">
-                    <h5 class="card-header p-3 bg-dark text-light  border-0 border-bottom border-5 border-primary">
-                        <i class="bi bi-info-circle-fill me-2"></i>
+                    <h5 class="card-header p-3 bg-dark text-light border-0 border-bottom border-5 border-primary">
+                        <i class="bi bi-info-circle-fill me-2 text-info"></i>
                         <span class="title-perubahan">Pemberitahuan</span>
                     </h5>
                         <div class="card-body overflow-auto">
                             <div class="card-text">
-                                <!-- <p>
-                                    <i class="bi bi-caret-right-fill"></i>
-                                    This is a notice, just a notice, self explanitory.
-                                </p> -->
                                 <?php foreach($notices as $notice) : ?>
                                     <div class="row">
                                         <div class="col-1" style="width:1%;">

@@ -23,7 +23,7 @@
     </nav> 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark shadow" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-dark shadow sidebar" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                         <div class="nav">
                             <a class="nav-link mt-3" href="./">
@@ -32,8 +32,10 @@
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Menu Utama</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBarang" aria-expanded="false" aria-controls="collapseBarang">
-                                <div class="sb-nav-link-icon"><i class="fas fa-boxes text-warning"></i></div>
+
+                            <!-- sarpras menu for admin and super -->
+                            <a class="nav-link collapsed <?= eclGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBarang" aria-expanded="false" aria-controls="collapseBarang">
+                                <div class="sb-nav-link-icon"><i class="fas fa-boxes text-success"></i></div>
                                 Sarpras
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -44,7 +46,14 @@
                                 </nav>
                             </div>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBuku" aria-expanded="false" aria-controls="collapseBuku">
+                            <!-- sarpras menu for guest -->
+                            <a class="nav-link <?= eclSuper; ?>" href="index.php?page=DaftarBarang">
+                                <div class="sb-nav-link-icon"><i class="fas fa-boxes text-success"></i></div>
+                                Sarpras
+                            </a>
+
+                            <!-- buku menu for admin and super -->
+                            <a class="nav-link collapsed <?= eclGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBuku" aria-expanded="false" aria-controls="collapseBuku">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book text-success"></i></div>
                                 Buku
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -52,12 +61,18 @@
                             <div class="collapse" id="collapseBuku" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="index.php?page=DaftarBuku">Daftar Buku</a>
-                                    <a class="nav-link <?= eclGuest; ?>" href="index.php?page=TambahBuku">Tambah Buku</a>
+                                    <a class="nav-link" href="index.php?page=TambahBuku">Tambah Buku</a>
                                 </nav>
                             </div>
 
+                            <!-- buku menu for guest -->
+                            <a class="nav-link <?= eclSuper; ?>" href="index.php?page=DaftarBuku">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book text-success"></i></div>
+                                Buku
+                            </a>
+
                             <a class="nav-link collapsed <?= eclAdminGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser">
-                                <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill text-warning"></i></div>
+                                <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill text-success"></i></div>
                                 Manajemen User
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
