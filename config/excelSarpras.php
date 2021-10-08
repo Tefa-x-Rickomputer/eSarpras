@@ -1,6 +1,6 @@
 <?php
 
-	$db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
+	require 'connect.php';
 	header("Content-type: application/vnd-ms-excel");
 	header("Content-Disposition: attachment; filename=Data Sarpras.xls");
 	?>
@@ -22,7 +22,7 @@
 		</tr>
 		<?php 
 		// koneksi database
-		$db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
+		
 
 		// menampilkan data pegawai
 		$item = mysqli_query($db, "SELECT tbarang.*, truangan.namaRuangan FROM tbarang LEFT JOIN truangan ON truangan.idRuangan = tbarang.linkRuangan  WHERE tbarang.isDeleted=0");
