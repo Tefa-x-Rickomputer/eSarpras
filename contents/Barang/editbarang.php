@@ -129,13 +129,13 @@
         <div class="row">
         <div class="col-md-2 mt-3 ">
             <div class="d-grid">
-                       <button type="submit" name="edit" class="btn btn-primary">Simpan</button>
+                       <button type="submit" name="edit" class="btn btn-primary shadow">Simpan</button>
                     </div>
                 </div>
 
                        <div class="col-md-2 mt-3 mb-3">
             <div class="d-grid">
-                   <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-secondary">Kembali</a>
+                   <a href="index.php?page=DetailBarang&id=<?php echo $barang['idAset']; ?>"class="btn btn-secondary shadow">Kembali</a>
                 </div>
                 </div>
             </form>
