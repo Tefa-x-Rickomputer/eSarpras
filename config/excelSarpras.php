@@ -15,8 +15,8 @@
                     <th width="200" class=" align-middle">Nomor Register</th>
                     <th width="200" class=" align-middle">Tipe Sarpras</th>
                     <th width="200" class=" align-middle">Harga Satuan</th>
-                    <th width="200" class=" align-middle">Tahun Pembelian</th>
-                    <th width="200" class=" align-middle">Sumber Dana</th>
+                    <th width="100" class=" align-middle">Tahun Pembelian</th>
+                    <th width="100" class=" align-middle">Sumber Dana</th>
                     <th width="100" class=" align-middle">Kondisi</th>
                     <th width="150" class=" align-middle">Ruangan</th>
 		</tr>
@@ -35,7 +35,7 @@
 			<td><?php echo $d['merkBarang']; ?></td>
 			<td><?php echo $d['nomorRegister']; ?></td>
             <td><?php echo $d['tipeBarang']; ?></td>
-            <td><?php echo $d['hargaSatuan']; ?></td>
+            <td>Rp. <?php echo $d['hargaSatuan']; ?></td>
             <td><?php echo $d['tahunPembelian']; ?></td>
             <td><?php echo $d['sumberDana']; ?></td>
             <td><?php echo $d['kondisiBarang']; ?></td>
