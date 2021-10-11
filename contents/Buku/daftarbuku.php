@@ -9,6 +9,7 @@
         <h1 class="mt-4">Daftar Buku</h1> 
           <div style="margin-bottom: 10px">
         <a href="config/bukupdf/pdf.php" class="btn btn-danger bi bi-file-earmark-pdf"> PDF</a>
+        <a href="config/excelSarpras.php" class="btn btn-success bi bi-file-earmark-excel">Excel</a>
     </div>
           <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">
