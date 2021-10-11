@@ -21,7 +21,7 @@
 
     // Kolom Tabel
     $pdf->SetFillColor(180);
-    $pdf->SetWidths(Array(10, 30, 30, 30, 30, 30, 30, 30, 30, 30));
+    $pdf->SetWidths(Array(10, 40, 30, 30, 30, 34, 30, 23, 23, 30));
     $pdf->SetAligns(Array("C","C","C","C","C","C","C","C","C","C","C","C"));
     $pdf->SetLineHeight(7);
 
@@ -46,14 +46,17 @@
     $pdf->SetAligns(Array("C","","","","","","","","","","",""));
     $count = 1;
  
-    foreach($barang as $item) :
+    foreach($barang as $item) {
+        $nilai = $item['hargaSatuan'];
+        $harga = number_format($nilai,0,',','.');
+        $hargaNew = "Rp. $harga";
         $pdf->Row(Array(
             $count,
             $item['namaBarang'], 
             $item['merkBarang'], 
             $item['nomorRegister'], 
             $item['tipeBarang'], 
-            $item['hargaSatuan'], 
+            $hargaNew, 
             $item['tahunPembelian'], 
             $item['sumberDana'], 
             $item['kondisiBarang'], 
@@ -62,7 +65,7 @@
             
         ));
         $count++;
-    endforeach;
+    }
     
     $pdf->Output(); 
 
