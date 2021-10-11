@@ -2,7 +2,7 @@
 
 	require 'connect.php';
 	header("Content-type: application/vnd-ms-excel");
-	header("Content-Disposition: attachment; filename=Data Sarpras.xls");
+	header("Content-Disposition: attachment; filename=Laporan Buku.xls");
 	?>
 
 	
@@ -15,11 +15,11 @@
                     <th width="200" class=" align-middle">Nomor Register</th>
                     <th width="200" class=" align-middle">Pengarang</th>
                     <th width="200" class=" align-middle">Penerbit</th>
-                    <th width="200" class=" align-middle">Tahun Terbit</th>
-                    <th width="200" class=" align-middle">Tahun Pembelian</th>
-                    <th width="200" class=" align-middle">Jumlah Halaman</th>
+                    <th width="100" class=" align-middle">Tahun Terbit</th>
+                    <th width="100" class=" align-middle">Tahun Pembelian</th>
+                    <th width="100" class=" align-middle">Jumlah Halaman</th>
                     <th width="200" class=" align-middle">Harga Buku</th>
-                    <th width="200" class=" align-middle">Sumber Dana</th>
+                    <th width="150" class=" align-middle">Sumber Dana</th>
                     <th width="100" class=" align-middle">Kondisi</th>
                     <th width="150" class=" align-middle">Ruangan</th>
 		</tr>
@@ -33,7 +33,7 @@
 		while($d = mysqli_fetch_array($item)){
 		?>
 		<tr>
-			<td class="text-center"><?php echo $no++; ?></td>
+			<td class="text-center"><?php echo $no++; ?></td>p
 			<td><?php echo $d['judulBuku']; ?></td>
 			<td><?php echo $d['nomorBuku']; ?></td>
 			<td><?php echo $d['nomorRegister']; ?></td>
@@ -42,9 +42,9 @@
             <td><?php echo $d['tahunTerbit']; ?></td>
             <td><?php echo $d['tahunPembelian']; ?></td>
             <td><?php echo $d['jumlahHalaman']; ?></td>
-            <td><?php echo $d['hargaBuku']; ?></td>
+            <td>Rp. <?php echo $d['hargaBuku']; ?></td>
             <td><?php echo $d['sumberDana']; ?></td>
-            <td><?php echo $d['kondisiBarang']; ?></td>
+            <td><?php echo $d['kondisiBuku']; ?></td>
             <td><?php echo $d['namaRuangan']; ?></td>
 		</tr>
 		<?php 

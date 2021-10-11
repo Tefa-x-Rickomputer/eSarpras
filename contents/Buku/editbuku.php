@@ -49,7 +49,7 @@
             <input type="text" class="form-control mt-1" id="disabledInput" name="judulBuku" value="<?= $buku['judulBuku'] ?>">
         </div>
             <div class="col-md">
-            <label for="nomorBuku">Nomor Buku</label>
+            <label for="nomorBuku">Nomor ISBN / ISSN</label>
             <input type="text" class="form-control  mt-1" id="disabledInput" name="nomorBuku" value="<?= $buku['nomorBuku'] ?>">
         </div>
             <div class="col-md">
