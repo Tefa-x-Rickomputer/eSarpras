@@ -13,7 +13,7 @@
                     <th width="500" class=" align-middle">Nama Sarpras</th>
                     <th width="200" class=" align-middle">Merk Sarpras</th>
                     <th width="200" class=" align-middle">Nomor Register</th>
-                    <th width="200" class=" align-middle">Tipe Sasrpras</th>
+                    <th width="200" class=" align-middle">Tipe Sarpras</th>
                     <th width="200" class=" align-middle">Harga Satuan</th>
                     <th width="100" class=" align-middle">Tahun Pembelian</th>
                     <th width="100" class=" align-middle">Sumber Dana</th>
