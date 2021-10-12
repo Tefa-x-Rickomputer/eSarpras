@@ -33,7 +33,7 @@
 		while($d = mysqli_fetch_array($item)){
 		?>
 		<tr>
-			<td class="text-center"><?php echo $no++; ?></td>p
+			<td class="text-center"><?php echo $no++; ?></td>
 			<td><?php echo $d['judulBuku']; ?></td>
 			<td><?php echo $d['nomorBuku']; ?></td>
 			<td><?php echo $d['nomorRegister']; ?></td>

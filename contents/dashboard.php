@@ -71,13 +71,13 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <div class="col-sm">
                 <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
                 <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-archive text-info"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-file-earmark-pdf text-info"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
-                                <span class="fs-5"><?= $cntBarang ?></span>
+                                <span class="">Buku Manual</span>
                             </div>
                             <div class="row"> 
-                                <span>Total Barang</span>
+                                <a href="Assets/documents/Petunjuk Penggunaan e-Sarpras.pdf" class="bi bi-download"><span class="fs-6 mt-1 ms-2">Unduh</span></a>
                             </div>
                         </div>
                     </div>
