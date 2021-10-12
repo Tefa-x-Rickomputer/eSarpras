@@ -42,7 +42,7 @@
             <td><?php echo $d['tahunTerbit']; ?></td>
             <td><?php echo $d['tahunPembelian']; ?></td>
             <td><?php echo $d['jumlahHalaman']; ?></td>
-            <td>Rp. <?php echo $d['hargaBuku']; ?></td>
+            <td><?php echo $d['hargaBuku']; ?></td>
             <td><?php echo $d['sumberDana']; ?></td>
             <td><?php echo $d['kondisiBuku']; ?></td>
             <td><?php echo $d['namaRuangan']; ?></td>
