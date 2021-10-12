@@ -49,6 +49,9 @@
     $count = 1;
  
     foreach($buku as $item) :
+        $nilai = $item['hargaBuku'];
+        $harga = number_format($nilai,0,',','.');
+        $hargaNew = "Rp. $harga";
         $pdf->Row(Array(
             $count,
             $item['judulBuku'], 
@@ -59,7 +62,7 @@
             $item['tahunTerbit'], 
             $item['tahunPembelian'], 
             $item['jumlahHalaman'], 
-            $item['hargaBuku'],
+            $hargaNew,
             $item['sumberDana'],
             $item['kondisiBuku'],
             $item['namaRuangan']
