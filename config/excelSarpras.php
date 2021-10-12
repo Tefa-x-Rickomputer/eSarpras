@@ -37,7 +37,7 @@
             <td><?php echo $d['tipeBarang']; ?></td>
             <?php $nilai = $d['hargaSatuan']; ?>
             <?php $harga = number_format($nilai,0,',','.'); ?>
-            <td>Rp. <?php echo $harga ?></td>
+            <td><?php echo $harga ?></td>
             <td><?php echo $d['tahunPembelian']; ?></td>
             <td><?php echo $d['sumberDana']; ?></td>
             <td><?php echo $d['kondisiBarang']; ?></td>
