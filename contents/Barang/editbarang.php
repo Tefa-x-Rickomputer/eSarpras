@@ -68,7 +68,7 @@
             <label for="">Harga Satuan</label>
             <div class="input-group">
             <div class="input-group-text" style="background-color:lightgrey;">Rp</div>
-            <input type="text" id="inputku" class="form-control" name="hargaSatuan" value="<?= $harga ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" >
+            <input type="text" id="rupiah" class="form-control" name="hargaSatuan" value="<?= $harga ?>" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" >
             </div>
         </div>
       
