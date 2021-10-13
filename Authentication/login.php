@@ -27,6 +27,17 @@ if (isset($_POST["submit"])) {
             "role" => $_SESSION["role"] = $row["role"]
             ];
 
+            $agenUser = $_SERVER['HTTP_USER_AGENT'];
+            $ipUser = $_SERVER['REMOTE_ADDR'];
+            $idUser = $userSession['idUser'];
+
+            // var_dump($idUser);
+
+            $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`) 
+            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
+
+            mysqli_query($db, $query);
+
             header("location:../");
         }
     } 

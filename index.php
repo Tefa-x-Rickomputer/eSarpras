@@ -21,22 +21,14 @@ if (!isset($_SESSION["login"]))
     header("Location: Authentication/logout.php");
 }
 
-if (isset($_SESSION["login"])) {
-    $agenUser = $_SERVER['HTTP_USER_AGENT'];
-    $ipUser = $_SERVER['REMOTE_ADDR'];
-    $idUser = $userSession['idUser'];
-
-    // var_dump($idUser);
-
-    $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`) 
-    VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
-
-    mysqli_query($db, $query);
-
-    $errorcheck = mysqli_affected_rows($db);
-    var_dump($errorcheck);
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
+    // last request was more than 30 minutes ago
+    session_unset();     // unset $_SESSION variable for the run-time 
+    session_destroy();   // destroy session data in storage
 }
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
+var_dump($_SESSION['LAST_ACTIVITY']);
 ?>
 
 <!DOCTYPE html>
