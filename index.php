@@ -22,13 +22,21 @@ if (!isset($_SESSION["login"]))
 }
 
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
-    // last request was more than 30 minutes ago
-    session_unset();     // unset $_SESSION variable for the run-time 
-    session_destroy();   // destroy session data in storage
+    $agenUser = $_SERVER['HTTP_USER_AGENT'];
+            $ipUser = $_SERVER['REMOTE_ADDR'];
+            $idUser = $userSession['idUser'];
+
+    $query = "INSERT INTO `tlogoutlog` (`idLogoutLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogout`) 
+            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
+            mysqli_query($db, $query);
+
+    session_unset();
+    session_destroy();
 }
 $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
-var_dump($_SESSION['LAST_ACTIVITY']);
+
+// var_dump($_SESSION['LAST_ACTIVITY']);
 ?>
 
 <!DOCTYPE html>

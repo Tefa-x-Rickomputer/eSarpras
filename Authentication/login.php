@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
             // var_dump($idUser);
 
             $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`) 
-            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
+            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now()";
 
             mysqli_query($db, $query);
 
