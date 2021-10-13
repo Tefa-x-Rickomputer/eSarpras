@@ -1,7 +1,7 @@
 
 <?php
 
-include 'connect.php';
+include_once 'connect.php';
 
 
 if(isset($_POST['simpan'])) {

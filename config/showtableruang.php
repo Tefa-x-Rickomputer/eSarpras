@@ -1,5 +1,5 @@
 <?php 
-    require 'config/userfunctions.php';
+    include_once 'config/userfunctions.php';
     $users = query('SELECT * FROM truangan WHERE isDeleted = 0');
  ?>
 

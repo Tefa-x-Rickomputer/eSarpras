@@ -2,6 +2,7 @@
 
 ob_start();
 session_start();
+
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
 // var_dump($_SESSION["email"]);
@@ -10,11 +11,30 @@ session_start();
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
 
+// require "config/connect.php";
+require 'config/connect.php';
 require "config/sessionmanager.php";
+// include "config/loginlog.php";
 
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/logout.php");
+}
+
+if (isset($_SESSION["login"])) {
+    $agenUser = $_SERVER['HTTP_USER_AGENT'];
+    $ipUser = $_SERVER['REMOTE_ADDR'];
+    $idUser = $userSession['idUser'];
+
+    // var_dump($idUser);
+
+    $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`) 
+    VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
+
+    mysqli_query($db, $query);
+
+    $errorcheck = mysqli_affected_rows($db);
+    var_dump($errorcheck);
 }
 
 ?>
@@ -188,3 +208,4 @@ if (!isset($_SESSION["login"]))
     <script type="text/javascript" src="Assets/js/my.js"></script>
     </body>
 </html>
+

@@ -1,5 +1,5 @@
 <?php 
-	include 'connect.php';
+	include_once 'connect.php';
     // require 'sessionmanager.php';
     
 	$notices = mysqli_query($db, "SELECT * FROM tpemberitahuan WHERE isDeleted = 0");

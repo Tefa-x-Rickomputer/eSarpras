@@ -26,6 +26,7 @@ if (isset($_POST["submit"])) {
             "idUser" => $_SESSION["idUser"] = $row["idUser"],
             "role" => $_SESSION["role"] = $row["role"]
             ];
+
             header("location:../");
         }
     } 
