@@ -10,22 +10,26 @@
 
     // $pdf = new FPDF();
     $pdf->AliasNbPages();
-    $pdf->SetLeftMargin(8);
-    $pdf->SetRightMargin(9);
-    $pdf->SetTopMargin(50);
-    $pdf->SetAutoPageBreak(false);
+    $pdf->SetLeftMargin(10);
+    $pdf->SetRightMargin(10);
+    $pdf->SetTopMargin(10);
+    // $pdf->SetBottomMargin(10);
+    $pdf->SetAutoPageBreak(true, 7);
     $pdf->AddPage(["L"]);
-    $pdf->Image('../../Assets/img/kopsuratsmk2n.png',2,5,0,40);
-    $pdf->SetFont('Arial','B',13);
+
+    $pdf->SetFont('Arial','B',18);
+    $pdf->Cell(279, 40, $pdf->Image('../../Assets/img/kopsuratsmk2n.png',2,5,0,40), 0, 1, 'L', false);
+     $pdf->Cell(265, 13, 'Laporan Buku', 0, 1, 'C', false);
+     $pdf->Cell(265, 5, '', 0, 1, 'C', false);
 
     // Kolom Tabel
     $pdf->SetFillColor(180);
-    $pdf->SetWidths(Array(10, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5, 22.5,22.5, 22.5, 22.5));
+    $pdf->SetWidths(Array(10, 30, 23, 23, 23, 23, 20, 20, 20, 23,20, 20, 24));
     $pdf->SetAligns(Array("C","C","C","C","C","C","C","C","C","C","C","C","C"));
     $pdf->SetLineHeight(7);
 
     
-    $pdf->SetFont('Arial','B',14);
+    $pdf->SetFont('Arial','B',9);
     
     $pdf->Row(Array(
             'No',
@@ -43,7 +47,7 @@
             'Nama Ruangan'
         ));
 
-    $pdf->SetFont('Arial','',12);
+    $pdf->SetFont('Arial','',9 );
     $pdf->SetLineHeight(6);
     $pdf->SetAligns(Array("C","","","","","","","","","","","",""));
     $count = 1;
@@ -69,6 +73,7 @@
         ));
         $count++;
     endforeach;
+        
     
     $pdf->Output(); 
 
