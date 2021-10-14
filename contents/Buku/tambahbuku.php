@@ -98,7 +98,7 @@
         <div class="col-md mt-3">
             <label for="kondisiBuku">Kondisi</label>
        <select class="form-select" aria-label="Default select example" name="kondisiBuku">
-         <option value="Baru">Baik</option>
+         <option value="Baik">Baik</option>
          <option value="Rusak">Rusak</option>
        </select>
      </div>
