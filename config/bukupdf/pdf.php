@@ -2,8 +2,7 @@
     require "../connect.php";
     require "pdf_mc_table.php";
 
-    
-    // $buku = querySql("SELECT tbuku.*, truangan.namaRuangan FROM tbuku LEFT JOIN truangan ON truangan.idRuangan = tbarang.linkRuangan  WHERE tbarang.isDeleted=0");
+
     $buku = querySql("SELECT tbuku.*, truangan.namaRuangan FROM tbuku LEFT JOIN truangan ON truangan.idRuangan = tbuku.linkRuangan  WHERE tbuku.isDeleted=0");
 
     $pdf = new PDF_MC_Table();
@@ -74,7 +73,7 @@
         $count++;
     endforeach;
         
-    
+    $pdf->Cell(260, 20, '21 oktober 2021', 0, 1, 'R', false);
     $pdf->Output(); 
 
 ?>

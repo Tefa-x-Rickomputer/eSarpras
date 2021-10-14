@@ -1,6 +1,6 @@
 <?php
 
-    $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
+    $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement_b');
 
     function querySql($query)
         {
