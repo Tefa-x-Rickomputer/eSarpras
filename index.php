@@ -153,6 +153,12 @@ if (!isset($_SESSION["login"]))
                             include 'contents/Pemberitahuan/hapuspemberitahuan.php';
                             break;
                         // Notice switch end
+
+                        // Settingan PDF
+                        case 'PengaturanPDF':
+                            include 'contents/pengaturanpdf.php';
+                            break;
+                        // Settingan PDF end
                             
                         default:
                             echo "<center>Page not found";
