@@ -6,8 +6,22 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
-$sheet->setCellValue('A1', 'No');
-$sheet->setCellValue('B1', 'Judul Buku');
+// $sheet->setCellValue()->getColumnDimension('A1', 'No')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('B1', 'Judul Buku')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('C1', 'Nomor ISBN/ISSN')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('D1', 'Nomor Register')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('E1', 'Pengarang')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('F1', 'Penerbit')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('G1', 'Tahun Terbit')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('H1', 'Tahun Pembelian')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('I1', 'Jumlah Halaman')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('J1', 'Harga Buku')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('K1', 'Sumber Dana')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('L1', 'Kondisi')->setWidth(12);
+// $spreadsheet->getActiveSheet()->getColumnDimension('M1', 'Ruangan')->setWidth(12);
+
+$sheet->setCellValue ('A1', 'No');
+$sheet->setCellValue ('B1', 'Judul Buku');
 $sheet->setCellValue('C1', 'Nomor ISBN/ISSN');
 $sheet->setCellValue('D1', 'Nomor Register');
 $sheet->setCellValue('E1', 'Pengarang');
