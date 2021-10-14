@@ -22,10 +22,11 @@ if (!isset($_SESSION["login"]))
 }
 
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10)) {
-    $timeOut = 1;
-    // header("Refresh:0");
+    $timeOut = true;
     // header("Location: Authentication/logout.php");
 }
+
+// $timeIn = true;
 $_SESSION['LAST_ACTIVITY'] = time();
 
 
@@ -219,7 +220,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <script type="text/javascript" src="Assets/js/my.js"></script>
     <!-- script session timeout -->
     <script type="text/javascript">
-        var timeOutCounter = <?php echo $timeOut; ?>;
+        var timeOutCounter = <?php echo json_encode($timeOu); ?>;
 
         var timeOutModal = new bootstrap.Modal(document.getElementById('timeOutModal'), {
             keyboard: false
@@ -228,7 +229,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
         if (timeOutCounter == 1) {
         timeOutModal.show()
         }
-
 
     </script>
     </body>
