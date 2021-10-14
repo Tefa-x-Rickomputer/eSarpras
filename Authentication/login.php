@@ -33,10 +33,13 @@ if (isset($_POST["submit"])) {
 
             // var_dump($idUser);
 
-            $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`) 
-            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now()";
+            $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) 
+            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now(), NULL)";
 
             mysqli_query($db, $query);
+
+            $_SESSION["loginLog"] = $db->insert_id;
+            var_dump($_SESSION["loginLog"]);
 
             header("location:../");
         }

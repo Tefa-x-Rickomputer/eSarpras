@@ -21,19 +21,12 @@ if (!isset($_SESSION["login"]))
     header("Location: Authentication/logout.php");
 }
 
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
-    $agenUser = $_SERVER['HTTP_USER_AGENT'];
-            $ipUser = $_SERVER['REMOTE_ADDR'];
-            $idUser = $userSession['idUser'];
-
-    $query = "INSERT INTO `tlogoutlog` (`idLogoutLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogout`) 
-            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
-            mysqli_query($db, $query);
-
-    session_unset();
-    session_destroy();
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10)) {
+    $timeOut = 1;
+    // header("Refresh:0");
+    // header("Location: Authentication/logout.php");
 }
-$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+$_SESSION['LAST_ACTIVITY'] = time();
 
 
 // var_dump($_SESSION['LAST_ACTIVITY']);
@@ -70,6 +63,24 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
 <body class="sb-nav-fixed">
     
+
+<div class="modal fade" id="timeOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered text-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pemberitahuan</h5>
+            </div>
+            <div class="modal-body">
+                Anda tidak memiliki aktivitas selama 10 menit kebelakang.<br>Anda akan dikeluarkan secara otomatis.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Perpanjang Sesi</button>
+                <a type="button" class="btn btn-secondary" href="Authentication/logout.php">Tutup</a>
+            </div>
+        </div>
+  </div>
+</div>
+
     <?php include 'Assets/templates/navbar.php' ?>
 
         <div id="layoutSidenav_content">
@@ -182,7 +193,7 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
                     include 'contents/dashboard.php';
                 }
              ?>
-
+            <p><?= var_dump($timeOut); ?></p>
         </div>
     </div>
 
@@ -206,6 +217,20 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
     </script>
     <!-- format titik otomatis -->
     <script type="text/javascript" src="Assets/js/my.js"></script>
+    <!-- script session timeout -->
+    <script type="text/javascript">
+        var timeOutCounter = <?php echo $timeOut; ?>;
+
+        var timeOutModal = new bootstrap.Modal(document.getElementById('timeOutModal'), {
+            keyboard: false
+        })
+
+        if (timeOutCounter == 1) {
+        timeOutModal.show()
+        }
+
+
+    </script>
     </body>
 </html>
 

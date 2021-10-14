@@ -1,15 +1,20 @@
 <?php
 
 session_start();
-
+require '../config/connect.php';
 require_once '../config/sessionmanager.php';
 
 $agenUser = $_SERVER['HTTP_USER_AGENT'];
 $ipUser = $_SERVER['REMOTE_ADDR'];
 $idUser = $userSession['idUser'];
+$loginLog = $_SESSION['loginLog'];
 
-$query = "INSERT INTO `tlogoutlog` (`idLogoutLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogout`) 
-VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now())";
+// var_dump($loginLog);
+
+$query = "UPDATE tloginlog SET  
+                                waktuLogout = now()
+                                WHERE idLoginLog = $loginLog
+                                ";
 mysqli_query($db, $query);
 
 $_SESSION = [];
