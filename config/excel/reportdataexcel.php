@@ -11,17 +11,17 @@ $spreadsheet->getActiveSheet()->getStyle('J')->getNumberFormat()
 ->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_USD);
 
 $spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(5, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(50, 'px');
 $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(20, 'px');
 $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(40, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(40, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(18, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(18, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(18, 'px');
 $spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(20, 'px');
-$spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(18, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(18, 'px');
 $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(20, 'px');
 
 
