@@ -143,9 +143,9 @@
               $fotoBuku = $fotoLama;
            } else {
                 if ($fotoLama == '') {
-                $fotoBarang = upload();
+                $fotoBuku = upload();
               }else{
-                $fotoBarang = upload();
+                $fotoBuku = upload();
                 $foto = "Assets/img/buku/$fotoLama";
                 unlink($foto);
               }
