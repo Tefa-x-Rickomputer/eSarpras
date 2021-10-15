@@ -6,8 +6,27 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
-$sheet->setCellValue('A1', 'No');
-$sheet->setCellValue('B1', 'Judul Buku');
+
+$spreadsheet->getActiveSheet()->getStyle('J')->getNumberFormat()
+->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_USD);
+
+$spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(5, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(20, 'px');
+
+
+$sheet->setCellValue ('A1', 'No');
+$sheet->setCellValue ('B1', 'Judul Buku');
 $sheet->setCellValue('C1', 'Nomor ISBN/ISSN');
 $sheet->setCellValue('D1', 'Nomor Register');
 $sheet->setCellValue('E1', 'Pengarang');
@@ -51,7 +70,11 @@ $styleArray = [
 $i = $i - 1;
 $sheet->getStyle('A1:M'.$i)->applyFromArray($styleArray);
   
- 
+$file = "Laporan Data Buku.xlsx";
 $writer = new Xlsx($spreadsheet);
-$writer->save('Laporan Data Buku.xlsx');
+
+ 
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="'.$file.'"');
+$writer->save("php://output");
 ?>
