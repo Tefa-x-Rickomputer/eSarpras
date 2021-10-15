@@ -6,19 +6,24 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
-// $sheet->setCellValue()->getColumnDimension('A1', 'No')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('B1', 'Judul Buku')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('C1', 'Nomor ISBN/ISSN')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('D1', 'Nomor Register')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('E1', 'Pengarang')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('F1', 'Penerbit')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('G1', 'Tahun Terbit')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('H1', 'Tahun Pembelian')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('I1', 'Jumlah Halaman')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('J1', 'Harga Buku')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('K1', 'Sumber Dana')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('L1', 'Kondisi')->setWidth(12);
-// $spreadsheet->getActiveSheet()->getColumnDimension('M1', 'Ruangan')->setWidth(12);
+
+$spreadsheet->getActiveSheet()->getStyle('J')->getNumberFormat()
+->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_USD);
+
+$spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(5, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(20, 'px');
+
 
 $sheet->setCellValue ('A1', 'No');
 $sheet->setCellValue ('B1', 'Judul Buku');
@@ -65,7 +70,11 @@ $styleArray = [
 $i = $i - 1;
 $sheet->getStyle('A1:M'.$i)->applyFromArray($styleArray);
   
- 
+$file = "Laporan Data Buku.xlsx";
 $writer = new Xlsx($spreadsheet);
-$writer->save('Laporan Data Buku.xlsx');
+
+ 
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="'.$file.'"');
+$writer->save("php://output");
 ?>

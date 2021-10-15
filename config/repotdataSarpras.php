@@ -6,6 +6,21 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
+
+$spreadsheet->getActiveSheet()->getStyle('F')->getNumberFormat()
+->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_USD);
+
+$spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(5, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(20, 'px');
+$spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(20, 'px');
+
 $sheet->setCellValue('A1', 'No');
 $sheet->setCellValue('B1', 'Nama Sarpras');
 $sheet->setCellValue('C1', 'Merk Sarpras');
@@ -43,13 +58,13 @@ $styleArray = [
 			],
 		];
 $i = $i - 1;
-$sheet->getStyle('A1:M'.$i)->applyFromArray($styleArray);
+$sheet->getStyle('A1:J'.$i)->applyFromArray($styleArray);
   
  
  
 $file = "Laporan Data Sarpras.xlsx";
 $writer = new Xlsx($spreadsheet);
-$writer->save($file);
+// $writer->save($file);
  
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment; filename="'.$file.'"');
