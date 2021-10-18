@@ -4,7 +4,20 @@
 
     $barang = querySql("SELECT tbarang.*, truangan.namaRuangan FROM tbarang LEFT JOIN truangan ON truangan.idRuangan = tbarang.linkRuangan  WHERE tbarang.isDeleted=0");
 
+
     $users = querySql('SELECT * FROM tuser WHERE isDeleted = 0');
+    
+    $ttd = querySql("SELECT * FROM tpdf WHERE used = '1' ")[0];
+    $ttd2 = querySql("SELECT * FROM tpdf WHERE used = '2' ")[0];
+    
+
+    $nama1 = $ttd['nama'];
+    $jabatan1 = $ttd['jabatan'];
+    $nip1 = $ttd['nip'];
+
+    $nama2 = $ttd2['nama'];
+    $jabatan2 = $ttd2['jabatan'];
+    $nip2 = $ttd2['nip'];
 
     $pdf = new PDF_MC_Table();
 
@@ -69,9 +82,30 @@
         ));
         $count++;
     }
-    $pdf->Cell(240, 40, '11 Oktober 2022', 0, 1, 'R', false);
-    $pdf->Cell(250, 30, 'Arya Suryana Lasmana Putri', 0, 1, 'R', false);
-    $pdf->Cell(250, 0, 'Arya Suryana Lasmana Putri', 0, 0, 'R', false);
+    
+
+       
+    //menampilkan fungsi format tanggal Indonesia
+    $bulan = array ("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+    $waktu[1]=date("d",time());
+    $waktu[2]=date("m",time());
+    $waktu[3]=date("Y",time());
+    $tanggalini="$waktu[1] ".$bulan[$waktu[2]-1]." $waktu[3]";
+        //mencetak tanggal
+    $pdf->Cell(140, 30, 'Banjarmasin, '.$tanggalini, 0, 0, 'L', false);
+    $pdf->Cell(140, 30, 'Banjarmasin, '.$tanggalini, 0, 1, 'R', false);
+    
+
+    $pdf->Cell(140, -21, "$jabatan1", 0, 0, 'L', false);
+    $pdf->Cell(140, -21, "$jabatan2", 0, 1, 'R', false);
+    
+    $pdf->Cell(140, 60, "$nama1", 0, 0, 'L', false);
+    $pdf->Cell(140, 60, "$nama2", 0, 1, 'R', false);
+    
+    $pdf->Cell(140, -50, "$nip1", 0, 0, 'L', false);
+    $pdf->Cell(140, -50, "$nip2", 0, 1, 'R', false);
+
+
     $pdf->Output(); 
 
 ?>
