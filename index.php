@@ -21,9 +21,9 @@ if (!isset($_SESSION["login"]))
     header("Location: Authentication/logout.php");
 }
 
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10)) {
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
     $timeOut = true;
-    // header("Location: Authentication/logout.php");
+    header("Location: Authentication/logout.php");
 }
 
 // $timeIn = true;
@@ -185,6 +185,12 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             include 'contents/Pemberitahuan/hapuspemberitahuan.php';
                             break;
                         // Notice switch end
+
+                        // Login log switch start
+                        case 'LoginLog':
+                            include 'contents/loginlog.php';
+                            break;
+                        // Login log switch end
                             
                         default:
                             echo "<center>Page not found";
@@ -194,7 +200,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                     include 'contents/dashboard.php';
                 }
              ?>
-            <p><?= var_dump($timeOut); ?></p>
+            <!-- <p></p> -->
         </div>
     </div>
 

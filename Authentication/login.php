@@ -42,6 +42,8 @@ if (isset($_POST["submit"])) {
             var_dump($_SESSION["loginLog"]);
 
             header("location:../");
+            // mysqli_affected_rows($db);
+            // var_dump($query);
         }
     } 
     $error = true;
@@ -58,7 +60,8 @@ if (isset($_POST["submit"])) {
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.1.1">
-        <title>Login</title>
+        <link rel="shortcut icon" href="../Assets/img/logosmkn2.png" type="image/png">
+        <title>Login | e-Sarpras</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../Assets/css/indexstyles.css" rel="stylesheet">

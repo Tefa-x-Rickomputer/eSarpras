@@ -1,0 +1,21 @@
+<?php 
+	include_once 'connect.php';
+    // require 'sessionmanager.php';
+    
+	$loginlog = mysqli_query($db, "SELECT * FROM tloginlog");
+    $userlog = mysqli_fetch_assoc($notices);
+
+    $query = mysqli_query($db, "SELECT * FROM tuser WHERE iduser = '$userlog[linkUser]'"); 
+    $namelog = mysqli_fetch_assoc($query);
+
+    function query($query) {
+		global $db;
+		$result = mysqli_query($db, $query);
+		$rows = [];
+		while( $row = mysqli_fetch_assoc($result) ) {
+			$rows[] = $row;
+		}
+		return $rows;
+	}
+
+ ?>
