@@ -27,7 +27,7 @@
 					$first = $_POST['first'];
 					$second = $_POST['second'];
 					$query1 = "UPDATE tpdf SET used = '0' WHERE nama = '$first' ";
-					$query2 = "UPDATE tpdf SET used = '0' WHERE nama = '$second' ";
+					$query2 = "UPDATE tpdf SET used = '0' WHERE nama = '$second' ";  
 					mysqli_query($db, $query1);
 					mysqli_query($db, $query2);
 	        		
