@@ -27,20 +27,20 @@ ul {
     background-color: #fd7e14;
 }
 
-a:link {
-  color: green;
+.manua-download:link {
+  color: cyan;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:visited {
-  color: pink;
+.manua-download:visited {
+  color: cyan;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:hover {
-  color: blue;
+.manua-download:hover {
+  color: cyan;
   background-color: transparent;
   text-decoration: underline;
 }

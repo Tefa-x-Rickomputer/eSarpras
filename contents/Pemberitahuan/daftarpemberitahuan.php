@@ -18,7 +18,6 @@
                 </script>";
         }        
     }
-
 ?>
 
 <main>
@@ -54,9 +53,15 @@
                 <tbody class="">
                     <?php $count = 1; ?>
                     <?php foreach($notices as $notice) : ?>
+                      
                 		<tr>
                 			<td class="text-center"><?= $count; ?></td>
                             <td><?= $notice['isiPemberitahuan']; ?></td>
+                            <?php
+                            $linkUser = $notice['linkUser'];
+                            $query = mysqli_query($db, "SELECT * FROM tuser WHERE idUser = $linkUser"); 
+                            $pembuat = mysqli_fetch_assoc($query);
+                            ?>
                             <td><?= $pembuat['nama'];?></td>
                 			<td><?= $notice['waktuPemberitahuan']; ?></td>
                 			<td class="text-center">

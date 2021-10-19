@@ -77,7 +77,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                                 <span class="">Buku Manual</span>
                             </div>
                             <div class="row"> 
-                                <a href="Assets/documents/Petunjuk Penggunaan e-Sarpras.pdf" class="bi bi-download"><span class="fs-6 mt-1 ms-2">Unduh</span></a>
+                                <a href="Assets/documents/Petunjuk Penggunaan e-Sarpras.pdf" class="bi bi-download manual-download"><span class="fs-6 mt-1 ms-2">Unduh</span></a>
                             </div>
                         </div>
                     </div>
