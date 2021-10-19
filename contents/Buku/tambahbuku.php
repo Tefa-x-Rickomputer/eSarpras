@@ -85,7 +85,7 @@
             <input type="text" id="rupiah" class="form-control" name="hargaBuku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required>
         </div>
           </div>
-
+<div>
       <div class="row mb-3">
            <div class="col-md mt-3">
              <label for="">Sumber Dana</label>
@@ -98,7 +98,7 @@
         <div class="col-md mt-3">
             <label for="kondisiBuku">Kondisi</label>
        <select class="form-select" aria-label="Default select example" name="kondisiBuku">
-         <option value="Baru">Baik</option>
+         <option value="Baik">Baik</option>
          <option value="Rusak">Rusak</option>
        </select>
      </div>

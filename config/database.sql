@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2021 at 06:01 AM
+-- Generation Time: Sep 22, 2021 at 05:45 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -31,11 +31,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbarang` (
   `idAset` int(11) NOT NULL,
   `namaBarang` varchar(50) NOT NULL,
-  `fotoBarang` varchar(255) DEFAULT 'box-seam.svg',
+  `fotoBarang` varchar(255) NOT NULL,
   `merkBarang` varchar(30) DEFAULT NULL,
-  `tipeBarang` varchar(30) NOT NULL,
+  `tipeBarang` varchar(30) DEFAULT NULL,
   `nomorRegister` varchar(30) DEFAULT NULL,
-  `hargaSatuan` int(20) DEFAULT '0',
+  `hargaSatuan` int(20) DEFAULT NULL,
   `tahunPembelian` int(4) DEFAULT NULL,
   `sumberDana` enum('BOS','BOSDA') DEFAULT NULL,
   `kondisiBarang` enum('Baik','Rusak') NOT NULL,
@@ -54,7 +54,7 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 (4, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
 (5, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
 (6, 'Handphone', '', 'ASUS', 'Max Pro M1', 'HP170203BS001', 1800000, 0, 'BOS', 'Baik', 3, 0),
-(7, '', '', '', '', '', 0, 0, 'BOS', 'Baik', 1, 1);
+(7, '', '', '', '', '', 0, 0, 'BOS', 'Baik', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -65,15 +65,15 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 CREATE TABLE `tbuku` (
   `idBuku` int(11) NOT NULL,
   `judulBuku` varchar(50) NOT NULL,
-  `fotoBuku` varchar(255) DEFAULT 'book.svg',
+  `fotoBuku` varchar(255) NOT NULL,
   `nomorBuku` varchar(30) DEFAULT NULL,
-  `pengarang` varchar(30) NOT NULL,
-  `penerbit` varchar(30) NOT NULL,
-  `tahunTerbit` int(4) NOT NULL,
+  `pengarang` varchar(30) DEFAULT NULL,
+  `penerbit` varchar(30) DEFAULT NULL,
+  `tahunTerbit` int(4) DEFAULT NULL,
   `jumlahHalaman` int(4) DEFAULT NULL,
   `nomorRegister` varchar(30) DEFAULT NULL,
   `tahunPembelian` int(4) DEFAULT NULL,
-  `hargaBuku` int(7) DEFAULT '0',
+  `hargaBuku` int(7) DEFAULT NULL,
   `sumberDana` enum('BOS','BOSDA') NOT NULL,
   `kondisiBuku` enum('Baik','Rusak') NOT NULL,
   `linkRuangan` int(11) NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE `tuser` (
 
 INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
 (1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'Administrator', '637104234623446', 'Kuin Nerahaya', 'person-fill.svg', 'Perempuan', 'Budha', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'Kepala Lab', 0),
-(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', '614abe5991564.png', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', '', 1),
+(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', 'person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', '', 0),
 (3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'Guest', '1028357291509785', 'Cahaya Dhananjaya', 'person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'caydhanan3@yahoo.co.id', '1976-06-24', 'Familiar Street No. 4', 'Guru', 0),
 (4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'Superuser', '1023957609152345', 'Reil Nathel', 'person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Wakil Kepala Sekolah', 0),
 (5, 'anotherguest', '$2y$10$/DOOPOtCp7Zy/wBfPddyR.oN1RU6RddwEMqPRmWdl9Wd784X7V56m', 'Guest', '31015704356070', 'Chet Cooker', 'person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Kepala Sekolah', 0),

@@ -41,33 +41,67 @@
 
 	}
 
+    function compressImage($source, $quality) { 
+        // mendapatkan info image
+        $imgInfo = getimagesize($source); 
+        $mime = $imgInfo['mime'];
+        // membuat image baru
+        switch($mime){ 
+        // proses kode memilih tipe tipe image 
+            case 'image/jpeg': 
+                $image = imagecreatefromjpeg($source); 
+                break; 
+            case 'image/png': 
+                $image = imagecreatefrompng($source); 
+                break; 
+            case 'image/gif': 
+                $image = imagecreatefromgif($source); 
+                break; 
+            default: 
+                $image = imagecreatefromjpeg($source); 
+        }
+        $namafile = $_FILES['fotoProfil']['name'];
+
+        $fileformat = ['png', 'jpeg', 'jpg', 'jfif', 'gif'];
+        $namafileformat = explode('.', $namafile);
+        $namafileformat = strtolower(end($namafileformat));
+
+        $newfile = uniqid();
+        $newfile .= '.';
+        $newfile .= $namafileformat;
+        $destination = "Assets/img/user/$newfile";
+         
+        // Menyimpan image dengan ukuran yang baru
+        imagejpeg($image, $destination, $quality); 
+        
+        // Return image
+        return $newfile;
+    }
+
 	function upload() {
 		$namafile = $_FILES['fotoProfil']['name'];
 		$sizeFile = $_FILES['fotoProfil']['size'];
 		$tmpName = $_FILES['fotoProfil']['tmp_name'];
 
 		// check yg diupload adalah gambar
-		$fileformat = ['png', 'jpeg', 'jpg', 'jfif'];
+		$fileformat = ['png', 'jpeg', 'jpg', 'jfif', 'gif'];
         $namafileformat = explode('.', $namafile);
         $namafileformat = strtolower(end($namafileformat));
         if( !in_array($namafileformat, $fileformat) ) {
-            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Harus berupa gambar!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Harus berupa gambar!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
             return false;
         }
 
-        if( $sizeFile >= 1000000 ) {
-            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Gambar terlalu besar!.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
-            return false;
-        }
-            
+        $compressedImage = compressImage($tmpName, 10);
 
-        $newfile = uniqid();
-        $newfile .= '.';
-        $newfile .= $namafileformat;
+        // move_uploaded_file($tmpName, "Assets/img/user/" . $newfile);
+        
+        // if( $sizeFile >= 1000000 ) {
+        //     echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>Gambar terlalu besar!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+        //     return false;
+        // }
 
-        move_uploaded_file($tmpName, "Assets/img/user/" . $newfile);
-
-        return $newfile;
+        return $compressedImage;
 	}
 
 	function isHapus($id) {
@@ -95,7 +129,13 @@
         if ($_FILES['fotoProfil']['error'] == 4) {
             $fotoProfil = $fotoProfilold;
         }else{
-            $fotoProfil = upload();
+            if ($fotoProfilold == '') {
+                $fotoProfil = upload();
+              }else{
+                $fotoProfil = upload();
+                $foto = "Assets/img/user/$fotoProfilold";
+                unlink($foto);
+              }
         }
         
         // cek jika user mengganti password

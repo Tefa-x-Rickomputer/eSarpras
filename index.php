@@ -186,11 +186,18 @@ $_SESSION['LAST_ACTIVITY'] = time();
                             break;
                         // Notice switch end
 
+
                         // Login log switch start
                         case 'LoginLog':
                             include 'contents/loginlog.php';
                             break;
                         // Login log switch end
+
+                        // Settingan PDF
+                        case 'PengaturanPDF':
+                            include 'contents/pengaturanpdf.php';
+                            break;
+                        // Settingan PDF end
                             
                         default:
                             echo "<center>Page not found";
