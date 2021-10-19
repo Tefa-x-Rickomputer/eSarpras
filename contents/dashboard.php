@@ -24,9 +24,9 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
 
         <div class="row">
             <div class="col-sm">
-                <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
+                <div class="card text-light card-info mb-3 border-0 border-start border-5 border-success shadow bg-orange" style="background-color: #2ab273;">
                     <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-house text-info"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-house"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntRuangan["COUNT('*')"] ?></span>
@@ -39,9 +39,9 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
+                <div class="card text-light card-info mb-3 border-0 border-start border-5 border-success shadow" style="background-color: #2ab273;">
                     <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-box-seam text-info"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-box-seam"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntAset["COUNT('*')"] ?></span>
@@ -54,9 +54,9 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
+                <div class="card text-light card-info mb-3 border-0 border-start border-5 border-success shadow" style="background-color: #2ab273;">
                 <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-book text-info"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-book"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="fs-5"><?= $cntBuku["COUNT('*')"] ?></span>
@@ -69,9 +69,9 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card text-light card-info mb-3 bg-dark border-0 border-start border-5 border-primary shadow">
+                <div class="card text-light card-info mb-3 border-0 border-start border-5 border-success shadow" style="background-color: #2ab273;">
                 <div class="row gy-0">
-                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-file-earmark-pdf text-info"></h5>
+                        <h5 class="col-2 fs-1 m-1 mt-1 mx-2 bi bi-file-earmark-pdf"></h5>
                         <div class="col-9 ps-3 text-break">
                             <div class="row">
                                 <span class="">Buku Manual</span>
@@ -93,8 +93,8 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
             <!-- Notice - Start -->
             <div class="col col-lg-8">
                 <div class="card card-perubahan shadow h-100">
-                    <h5 class="card-header p-3 bg-dark text-light border-0 border-bottom border-5 border-primary">
-                        <i class="bi bi-info-circle-fill me-2 text-info"></i>
+                    <h5 class="card-header p-3 bg-primary text-light border-0 border-bottom border-5 border-info">
+                        <i class="bi bi-info-circle-fill me-2"></i>
                         <span class="title-perubahan">Pemberitahuan</span>
                     </h5>
                         <div class="card-body overflow-auto">
@@ -127,7 +127,7 @@ $cntBarang = intval($cntBuku["COUNT('*')"]) + intval($cntAset["COUNT('*')"]);
                             <h4><?= $user["nama"] ?></h2>
                         </div>
                     </div>
-                    <div class="card-body bg-dark text-light pb-2">
+                    <div class="card-body bg-dark text-light pb-2" style="background-color: #fd7e14;">
                         <ul class="list-group list-group-unbordered mb-1 text-center fw-normal">
                             <li class="pb-2">
                                 <i class="text-muted text-center"><?= $user["role"]; ?></i>

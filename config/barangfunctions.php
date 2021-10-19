@@ -1,6 +1,6 @@
 <?php
 
-  require 'connect.php';
+  require_once 'connect.php';
 
   function addbarang($data) {
     global $db;

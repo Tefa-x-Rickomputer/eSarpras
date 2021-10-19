@@ -2,6 +2,7 @@
 
 ob_start();
 session_start();
+
 // var_dump($_SESSION["role"]);
 // var_dump($_SESSION["nama"]);
 // var_dump($_SESSION["email"]);
@@ -10,13 +11,26 @@ session_start();
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
 
+// require "config/connect.php";
+require 'config/connect.php';
 require "config/sessionmanager.php";
+// include "config/loginlog.php";
 
 if (!isset($_SESSION["login"])) 
 {
     header("Location: Authentication/logout.php");
 }
 
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
+    $timeOut = true;
+    header("Location: Authentication/logout.php");
+}
+
+// $timeIn = true;
+$_SESSION['LAST_ACTIVITY'] = time();
+
+
+// var_dump($_SESSION['LAST_ACTIVITY']);
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +64,24 @@ if (!isset($_SESSION["login"]))
 
 <body class="sb-nav-fixed">
     
+
+<div class="modal fade" id="timeOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered text-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pemberitahuan</h5>
+            </div>
+            <div class="modal-body">
+                Anda tidak memiliki aktivitas selama 10 menit kebelakang.<br>Anda akan dikeluarkan secara otomatis.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Perpanjang Sesi</button>
+                <a type="button" class="btn btn-secondary" href="Authentication/logout.php">Tutup</a>
+            </div>
+        </div>
+  </div>
+</div>
+
     <?php include 'Assets/templates/navbar.php' ?>
 
         <div id="layoutSidenav_content">
@@ -154,6 +186,13 @@ if (!isset($_SESSION["login"]))
                             break;
                         // Notice switch end
 
+
+                        // Login log switch start
+                        case 'LoginLog':
+                            include 'contents/loginlog.php';
+                            break;
+                        // Login log switch end
+
                         // Settingan PDF
                         case 'PengaturanPDF':
                             include 'contents/pengaturanpdf.php';
@@ -168,7 +207,7 @@ if (!isset($_SESSION["login"]))
                     include 'contents/dashboard.php';
                 }
              ?>
-
+            <!-- <p></p> -->
         </div>
     </div>
 
@@ -192,5 +231,19 @@ if (!isset($_SESSION["login"]))
     </script>
     <!-- format titik otomatis -->
     <script type="text/javascript" src="Assets/js/my.js"></script>
+    <!-- script session timeout -->
+    <script type="text/javascript">
+        var timeOutCounter = <?php echo json_encode($timeOu); ?>;
+
+        var timeOutModal = new bootstrap.Modal(document.getElementById('timeOutModal'), {
+            keyboard: false
+        })
+
+        if (timeOutCounter == 1) {
+        timeOutModal.show()
+        }
+
+    </script>
     </body>
 </html>
+

@@ -1,5 +1,5 @@
 <?php 
-    require 'config/connect.php';
+    require_once 'config/connect.php';
     $barang = querySql("SELECT * FROM tbarang WHERE isDeleted=0");
     ?>
 

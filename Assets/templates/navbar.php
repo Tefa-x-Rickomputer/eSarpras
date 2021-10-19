@@ -104,6 +104,10 @@
                                 <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill text-primary"></i></div>
                                 Pemberitahuan
                             </a>
+                            <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=LoginLog">
+                                <div class="sb-nav-link-icon"><i class="bi bi-clock-fill text-primary"></i></div>
+                                Riwayat Login
+                            </a>
 
                             <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=PengaturanPDF">
                                 <div class="sb-nav-link-icon"><i class="bi bi-gear-fill text-primary"></i></div>

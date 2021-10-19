@@ -26,7 +26,24 @@ if (isset($_POST["submit"])) {
             "idUser" => $_SESSION["idUser"] = $row["idUser"],
             "role" => $_SESSION["role"] = $row["role"]
             ];
+
+            $agenUser = $_SERVER['HTTP_USER_AGENT'];
+            $ipUser = $_SERVER['REMOTE_ADDR'];
+            $idUser = $userSession['idUser'];
+
+            // var_dump($idUser);
+
+            $query = "INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) 
+            VALUES (NULL, '$idUser', '$ipUser', '$agenUser', now(), NULL)";
+
+            mysqli_query($db, $query);
+
+            $_SESSION["loginLog"] = $db->insert_id;
+            var_dump($_SESSION["loginLog"]);
+
             header("location:../");
+            // mysqli_affected_rows($db);
+            // var_dump($query);
         }
     } 
     $error = true;
@@ -43,7 +60,8 @@ if (isset($_POST["submit"])) {
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.1.1">
-        <title>Login</title>
+        <link rel="shortcut icon" href="../Assets/img/logosmkn2.png" type="image/png">
+        <title>Login | e-Sarpras</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../Assets/css/indexstyles.css" rel="stylesheet">
