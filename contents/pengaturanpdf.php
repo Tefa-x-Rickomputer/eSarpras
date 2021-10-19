@@ -52,7 +52,7 @@
 		 	</div>
 		 	<div class="row">
 		 		<div class="col-md">
-		 			<button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
+		 			<button type="submit" class="btn btn-sm btn-primary" name="submit">Tambah</button>
 		 		</div>
 		 	</div>
 		 </form>
@@ -67,14 +67,28 @@
 					<input type="hidden" name="used1" value="<?= $value['used']; ?>">
 					<input type="hidden" name="first" value="<?= $value['nama']; ?>">
 					<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['nama']; ?>" disabled>
-					<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['jabatan']; ?>" disabled>
+					<div class="row">
+						<div class="col-6">
+							<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['jabatan']; ?>" disabled>
+						</div>
+						<div class="col-6">
+							<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['nip']; ?>" disabled>
+						</div>
+					</div>
 				<?php endforeach; ?>
 				<label for="">Kedua</label>
 				<?php foreach($values2 as $value) : ?>
 					<input type="hidden" name="used2" value="<?= $value['used']; ?>">
 					<input type="hidden" name="second" value="<?= $value['nama']; ?>">
 					<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['nama']; ?>" disabled>
-					<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['jabatan']; ?>" disabled>
+					<div class="row">
+						<div class="col-6">
+							<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['jabatan']; ?>" disabled>
+						</div>
+						<div class="col-6">
+							<input type="text" class="form-control shadow-sm mb-3" value="<?= $value['nip']; ?>" disabled>
+						</div>
+					</div>
 				<?php endforeach; ?>
 			<?php else: ?>
 				<p>Tidak ada data yang disimpan</p>
@@ -97,7 +111,7 @@
 						<option value="<?= $value['nama']; ?>"><?= $value['nama']; ?></option>
 					<?php endforeach; ?>
 				</select>
-				<button type="submit" name="update" class="btn btn-sm btn-primary">Update</button>
+				<button type="submit" name="update" class="btn btn-sm btn-primary">Perbarui</button>
 			</div>
 		</div>
 		</form>
