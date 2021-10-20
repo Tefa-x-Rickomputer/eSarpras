@@ -11,8 +11,6 @@ session_start();
 // var_dump($_SESSION["login"]);
 // var_dump($_SESSION["fotoProfil"]);
 
-// require "config/connect.php";
-require 'config/connect.php';
 require "config/sessionmanager.php";
 // include "config/loginlog.php";
 
