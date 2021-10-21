@@ -100,19 +100,26 @@
                                     <a class="nav-link" href="Authentication/logout.php">Logout</a>
                                 </nav>
                             </div>
-                            <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=DaftarPemberitahuan">
-                                <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill text-primary"></i></div>
-                                Pemberitahuan
-                            </a>
-                            <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=LoginLog">
-                                <div class="sb-nav-link-icon"><i class="bi bi-clock-fill text-primary"></i></div>
-                                Riwayat Login
-                            </a>
 
-                            <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=PengaturanPDF">
+                            <a class="nav-link collapsed <?= eclAdmin; ?> <?= eclGuest; ?>" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWeb" aria-expanded="false" aria-controls="collapseWeb">
                                 <div class="sb-nav-link-icon"><i class="bi bi-gear-fill text-primary"></i></div>
-                                Pengaturan PDF
+                                Website
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+                                <div class="collapse" id="collapseWeb" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=DaftarPemberitahuan">
+                                    Pemberitahuan
+                                </a>
+                                <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=LoginLog">
+                                    Riwayat Login
+                                </a>
+                                <a class="nav-link <?= eclAdmin; ?> <?= eclGuest; ?>" href="index.php?page=PengaturanPDF">
+                                    Pengaturan PDF
+                                </a>
+                                    </nav>
+                                </div>
+                            
 
                             <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>

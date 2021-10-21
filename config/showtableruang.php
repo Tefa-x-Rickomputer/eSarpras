@@ -62,7 +62,7 @@
             <div class="row <?=eclGuest?>">
                 <div class="col-md-5 mx-auto">
                     <div class="input-group mb-5 shadow">
-                        <span class="input-group-text">Tambah Ruangan</span>
+                        <span class="input-group-text" id="disabledInput" disabled>Tambah Ruangan</span>
                         <input type="text" aria-label="Last name" name ="namaRuangan" class="form-control">
                         <button type="submit" name ="simpan" class="btn btn-primary">Simpan</button>                        
                     </div>
