@@ -3,8 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 02:32 PM
--- Server version: 10.5.12-MariaDB
+<<<<<<< HEAD
+-- Generation Time: Nov 09, 2021 at 03:11 PM
+=======
+-- Generation Time: Nov 09, 2021 at 02:56 PM
+>>>>>>> 19fc1d19f5aa6b5720c2db78607d64bb9095daf1
+-- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +22,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `inventorymanagement`
+-- Database: `inventorymanagement_b`
 --
 
 -- --------------------------------------------------------
@@ -111,6 +115,30 @@ INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`
 (10, 'Matematika UBSN', '616658c237427.png', 'asd', 'qwd', 'qwd', 123, 123, '123', 123, 123123, 'BOS', 'Baik', 1, 0),
 (11, 'asd', '61665d719672e.jpeg', 'asd', 'asd', 'asd', 2123, 123, '123', 1232, 123, 'BOS', 'Baik', 1, 0),
 (12, 'Gaktay', '6168ef284cc38.jpg', '1038sj', 'Saya', 'Dia', 2020, 100, '9192922', 2090, 100387, 'BOS', 'Rusak', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tloginlog`
+--
+
+CREATE TABLE `tloginlog` (
+  `idLoginLog` int(11) NOT NULL,
+  `linkUser` int(11) NOT NULL,
+  `ipUser` varchar(255) NOT NULL,
+  `agenUser` varchar(255) NOT NULL,
+  `waktuLogin` datetime NOT NULL,
+  `waktuLogout` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tloginlog`
+--
+
+INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) VALUES
+(1, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:27', '2021-11-09 22:10:35'),
+(2, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:38', '2021-11-09 22:10:44'),
+(3, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -240,6 +268,13 @@ ALTER TABLE `tbuku`
   ADD KEY `linkRuangan` (`linkRuangan`);
 
 --
+-- Indexes for table `tloginlog`
+--
+ALTER TABLE `tloginlog`
+  ADD PRIMARY KEY (`idLoginLog`),
+  ADD KEY `tloginlog_ibfk_1` (`linkUser`);
+
+--
 -- Indexes for table `tpdf`
 --
 ALTER TABLE `tpdf`
@@ -281,6 +316,12 @@ ALTER TABLE `tbuku`
   MODIFY `idBuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `tloginlog`
+--
+ALTER TABLE `tloginlog`
+  MODIFY `idLoginLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tpdf`
 --
 ALTER TABLE `tpdf`
@@ -319,6 +360,12 @@ ALTER TABLE `tbarang`
 --
 ALTER TABLE `tbuku`
   ADD CONSTRAINT `tbuku_ibfk_1` FOREIGN KEY (`linkRuangan`) REFERENCES `truangan` (`idRuangan`);
+
+--
+-- Constraints for table `tloginlog`
+--
+ALTER TABLE `tloginlog`
+  ADD CONSTRAINT `tloginlog_ibfk_1` FOREIGN KEY (`linkUser`) REFERENCES `tuser` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `tpemberitahuan`
