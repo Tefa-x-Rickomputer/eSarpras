@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 02:56 PM
+-- Generation Time: Nov 09, 2021 at 03:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbarang` (
   `idAset` int(11) NOT NULL,
   `namaBarang` varchar(50) NOT NULL,
-  `fotoBarang` varchar(255) NOT NULL,
+  `fotoBarang` varchar(255) DEFAULT 'box-seam.svg',
   `merkBarang` varchar(30) DEFAULT NULL,
-  `tipeBarang` varchar(30) DEFAULT NULL,
+  `tipeBarang` varchar(30) NOT NULL,
   `nomorRegister` varchar(30) DEFAULT NULL,
-  `hargaSatuan` int(20) DEFAULT NULL,
+  `hargaSatuan` int(20) DEFAULT 0,
   `tahunPembelian` int(4) DEFAULT NULL,
   `sumberDana` enum('BOS','BOSDA') DEFAULT NULL,
   `kondisiBarang` enum('Baik','Rusak') NOT NULL,
@@ -52,8 +52,23 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 (3, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD001', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
 (4, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD002', 8500000, 2019, 'BOSDA', 'Rusak', 2, 0),
 (5, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
-(6, 'Handphone', '', 'ASUS', 'Max Pro M1', 'HP170203BS001', 1800000, 0, 'BOS', 'Baik', 3, 0),
-(7, '', '', '', '', '', 0, 0, 'BOS', 'Baik', 1, 0);
+(6, 'Handphone', '61665c5505536.png', 'ASUS', 'Max Pro M1', 'HP170203BS001', 1800000, 0, 'BOS', 'Baik', 3, 0),
+(7, '', '', '', '', '', 0, 0, 'BOS', 'Baik', 1, 1),
+(8, 'D', '6166592fd91cc.png', 'F', 'G', '345d', 33333333, 2075, 'BOS', 'Baik', 1, 0),
+(9, 't', '6166371fd261b.png', 't', 't', 'gg77', 76000, 2006, 'BOS', 'Baik', 1, 0),
+(10, 'keyboard', '616638494fca2.jpg', 'rexus', 'mx 3.2', 'KB202132', 350000, 2021, 'BOS', 'Baik', 4, 0),
+(11, 'laptop', '6166391ee237b.jpg', 'asus', 'a409fj', 'LP2019FJ', 8500000, 2019, 'BOSDA', 'Baik', 4, 0),
+(12, 'asd', '61665da0354d9.jpeg', 'asd', 'asd', '1wd', 123, 123, 'BOS', 'Baik', 1, 0),
+(13, 'Laptop', '6168ec8b5e7da.jpg', 'Pc', 'Acer', '098752', 100000, 2021, 'BOS', 'Rusak', 1, 0),
+(14, 'monitor', '', 'asus', 'monitor', '124op', 500000, 2015, 'BOS', 'Baik', 1, 0),
+(15, 'hp', '', 'vivo', 'vivo 1718', 'shout1324', 3500000, 2018, 'BOS', 'Baik', 1, 0),
+(16, 'asdd', '', 'lqwkdn', 'aslkndn', '124on', 900000, 2014, 'BOS', 'Baik', 1, 0),
+(17, 'knasfnkl', '', 'na1fw', 'ansf12', '01r290j', 80000, 2019, 'BOS', 'Baik', 1, 0),
+(18, 'asdkln', '', 'asldknk', '12dkn', '10d2on', 20000, 2012, 'BOS', 'Baik', 1, 0),
+(19, 'asjf1lkk1', '', 'lknsfknn', 'alskkfn', '12kfn', 90000, 2000, 'BOS', 'Baik', 1, 0),
+(20, 'inasfon', '', 'oaosnflk', 'askfnn', '10f2', 12000, 2001, 'BOS', 'Baik', 1, 0),
+(21, 'asflknn', '', 'aslkfkn', 'laknsnf', '1024', 200000, 2019, 'BOS', 'Baik', 1, 0),
+(22, 'alksnflkasf', '', 'lkaksnflk', 'lkaksnf', '1209', 80000, 2018, 'BOS', 'Baik', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -64,15 +79,15 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 CREATE TABLE `tbuku` (
   `idBuku` int(11) NOT NULL,
   `judulBuku` varchar(50) NOT NULL,
-  `fotoBuku` varchar(255) NOT NULL,
+  `fotoBuku` varchar(255) DEFAULT 'book.svg',
   `nomorBuku` varchar(30) DEFAULT NULL,
-  `pengarang` varchar(30) DEFAULT NULL,
-  `penerbit` varchar(30) DEFAULT NULL,
-  `tahunTerbit` int(4) DEFAULT NULL,
+  `pengarang` varchar(30) NOT NULL,
+  `penerbit` varchar(30) NOT NULL,
+  `tahunTerbit` int(4) NOT NULL,
   `jumlahHalaman` int(4) DEFAULT NULL,
   `nomorRegister` varchar(30) DEFAULT NULL,
   `tahunPembelian` int(4) DEFAULT NULL,
-  `hargaBuku` int(7) DEFAULT NULL,
+  `hargaBuku` int(7) DEFAULT 0,
   `sumberDana` enum('BOS','BOSDA') NOT NULL,
   `kondisiBuku` enum('Baik','Rusak') NOT NULL,
   `linkRuangan` int(11) NOT NULL,
@@ -109,7 +124,7 @@ CREATE TABLE `tloginlog` (
   `ipUser` varchar(255) NOT NULL,
   `agenUser` varchar(255) NOT NULL,
   `waktuLogin` datetime NOT NULL,
-  `waktuLogout` datetime NOT NULL
+  `waktuLogout` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -117,7 +132,9 @@ CREATE TABLE `tloginlog` (
 --
 
 INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) VALUES
-(1, 1, '23q45345', 'fasdfasdfaerg', '2021-10-18 15:58:35', '2021-10-18 15:58:35');
+(1, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:27', '2021-11-09 22:10:35'),
+(2, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:38', '2021-11-09 22:10:44'),
+(3, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -217,8 +234,8 @@ CREATE TABLE `tuser` (
 --
 
 INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
-(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'Administrator', '637104234623446', 'Kuin Nerahaya', 'person-fill.svg', 'Perempuan', 'Budha', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'Kepala Lab', 0),
-(2, 'azhim', '$2y$10$TAhsdw9f5DHuN5p0zzXET.B.GcJ5LKaKvbBSZJNxkwPtcnbnApUnu', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', 'person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', '', 0),
+(1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'Administrator', '637104234623446', 'Kuin Nerahaya', '6168d8043d578.jpg', 'Laki-laki', 'Kristen', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'Kepala Lab', 0),
+(2, 'azhim', '$2y$10$bmBoP1Ml1yx178dxw6Ov5OIUmeD4aBy2gp7C6o2wr8fMh/4E1jauO', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', '61652f126f058.png', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Guru', 0),
 (3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'Guest', '1028357291509785', 'Cahaya Dhananjaya', 'person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'caydhanan3@yahoo.co.id', '1976-06-24', 'Familiar Street No. 4', 'Guru', 0),
 (4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'Superuser', '1023957609152345', 'Reil Nathel', 'person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Wakil Kepala Sekolah', 0),
 (5, 'anotherguest', '$2y$10$/DOOPOtCp7Zy/wBfPddyR.oN1RU6RddwEMqPRmWdl9Wd784X7V56m', 'Guest', '31015704356070', 'Chet Cooker', 'person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Kepala Sekolah', 0),
@@ -298,7 +315,7 @@ ALTER TABLE `tbuku`
 -- AUTO_INCREMENT for table `tloginlog`
 --
 ALTER TABLE `tloginlog`
-  MODIFY `idLoginLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idLoginLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tpdf`
