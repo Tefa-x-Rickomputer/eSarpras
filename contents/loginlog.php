@@ -6,10 +6,7 @@
     
 	$loginlogs = mysqli_query($db, "SELECT * FROM tloginlog");
     $userlog = mysqli_fetch_assoc($loginlogs);
-
-    $query = mysqli_query($db, "SELECT * FROM tuser WHERE iduser = '$userlog[linkUser]'"); 
-    $namelog = mysqli_fetch_assoc($query);
-
+    
     function query($query) {
 		global $db;
 		$result = mysqli_query($db, $query);
@@ -43,6 +40,11 @@
                     <?php foreach($loginlogs as $loginlog) : ?>
                 		<tr>
                 			<td class="text-center"><?= $count; ?></td>
+                            <?php
+                            $linkUser = $loginlog['linkUser'];
+                            $query = mysqli_query($db, "SELECT * FROM tuser WHERE idUser = $linkUser"); 
+                            $namelog = mysqli_fetch_assoc($query);
+                            ?>
                             <td><?= $namelog['nama'];?></td>
                             <td><?= $loginlog['ipUser']; ?></td>
                 			<td><?= $loginlog['agenUser']; ?></td>

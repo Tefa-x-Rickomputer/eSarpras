@@ -1,5 +1,6 @@
 <?php 
-
+    
+    outAdminGuest();
 	require 'config/pemberitahuanfunctions.php';
 	$id = $_GET['id'];
 

@@ -30,6 +30,44 @@
        return mysqli_affected_rows($db);
 
      }
+
+    function compressImage($source, $quality) { 
+        // mendapatkan info image
+        $imgInfo = getimagesize($source); 
+        $mime = $imgInfo['mime'];
+        // membuat image baru
+        switch($mime){ 
+        // proses kode memilih tipe tipe image 
+            case 'image/jpeg': 
+                $image = imagecreatefromjpeg($source); 
+                break; 
+            case 'image/png': 
+                $image = imagecreatefrompng($source); 
+                break; 
+            case 'image/gif': 
+                $image = imagecreatefromgif($source); 
+                break; 
+            default: 
+                $image = imagecreatefromjpeg($source); 
+        }
+        $namafile = $_FILES['fotoBarang']['name'];
+
+        $fileformat = ['png', 'jpeg', 'jpg', 'jfif', 'gif'];
+        $namafileformat = explode('.', $namafile);
+        $namafileformat = strtolower(end($namafileformat));
+
+        $newfile = uniqid();
+        $newfile .= '.';
+        $newfile .= $namafileformat;
+        $destination = "Assets/img/aset/$newfile";
+         
+        // Menyimpan image dengan ukuran yang baru
+        imagejpeg($image, $destination, $quality); 
+        
+        // Return image
+        return $newfile;
+    }
+
       // function upload foto
     function upload(){
       $namaFile = $_FILES['fotoBarang']['name'];
@@ -48,23 +86,12 @@
         return false;
      }
 
-     // cek jika ukurannya terlalu besar
-     if( $ukuranFile > 1000000 ) {
-      echo "<script>
-                alert('ukuran foto terlalu besar!');
-               </script> ";
-        return false;
-     }
+     $compressedImage = compressImage($tmpName, 7);
 
      // lolos pengecekan, foto siap diupload
      // generate nama gambar baru 
-     $namaFileBaru = uniqid();
-     $namaFileBaru .= '.';
-     $namaFileBaru .= $ekstensiGambar;
 
-     move_uploaded_file($tmpName, 'Assets/img/aset/' . $namaFileBaru  );
-
-     return $namaFileBaru;
+     return $compressedImage;
     }
 
      function edit($data) {
@@ -86,7 +113,13 @@
            if($_FILES['fotoBarang']['error'] === 4 ) {
               $fotoBarang = $fotoLama;
            } else {
-              $fotoBarang = upload();
+              if ($fotoLama == '') {
+                $fotoBarang = upload();
+              }else{
+                $fotoBarang = upload();
+                $foto = "Assets/img/aset/$fotoLama";
+                unlink($foto);
+              }
            }
 
            $query = "UPDATE tbarang SET

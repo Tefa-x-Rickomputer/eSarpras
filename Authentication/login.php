@@ -3,6 +3,20 @@
 session_start();
 require "../config/connect.php";
 
+
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //ip from share internet
+        $ipUser = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //ip pass from proxy
+        $ipUser = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ipUser = $_SERVER['REMOTE_ADDR'];
+    }
+
+
+// var_dump(getUserIpAddr());
+
 if (isset($_SESSION["login"])) {
     // header("location:../");
     unset($_SESSION["login"]);
@@ -28,7 +42,7 @@ if (isset($_POST["submit"])) {
             ];
 
             $agenUser = $_SERVER['HTTP_USER_AGENT'];
-            $ipUser = $_SERVER['REMOTE_ADDR'];
+            // $ipUser = $_SERVER['REMOTE_ADDR'];
             $idUser = $userSession['idUser'];
 
             // var_dump($idUser);

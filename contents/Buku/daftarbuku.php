@@ -8,8 +8,8 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Daftar Buku</h1> 
           <div style="margin-bottom: 10px">
-        <a href="config/bukupdf/pdf.php" class="btn btn-danger bi bi-file-earmark-pdf"> PDF</a>
-        <a href="config/excelbuku.php" class="btn btn-success bi bi-file-earmark-excel">Excel</a>
+        <a href="config/bukupdf/pdf.php" class="btn btn-danger bi bi-file-earmark-pdf" target="_blank"> PDF</a>
+        <a href="config/excel/reportdataexcel.php" class="btn btn-success bi bi-file-earmark-excel" target="_blank">Excel</a>
     </div>
           <div style="margin-bottom: 20px">
 <table id="example" class="table caption-top table-striped" class="display nowrap table-striped table-bordered table" style="width:100%">

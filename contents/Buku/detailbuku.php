@@ -18,7 +18,7 @@
            <div class="col-md-4 mt-3">
             <div class="text-center border rounded position-relative" style="background-color:rgb(233,236,239);height:14.3rem; max-width:22rem;">
                 <div class="position-absolute start-50 top-50 translate-middle">
-                 <img class="" src="Assets/img/buku/<?= $buku['fotoBuku']?>" alt="Foto bukufunctions" style="height:13.3rem; max-width:21rem;">
+                 <img class="" src="Assets/img/buku/<?= $buku['fotoBuku']?>" alt="Foto buku" style="height:13.3rem; max-width:21rem;">
                 </div>
             </div>
         </div>
