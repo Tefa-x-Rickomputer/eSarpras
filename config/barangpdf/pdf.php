@@ -32,7 +32,7 @@
 
     $pdf->SetFont('Arial','B',18);
     $pdf->Cell(279, 40, $pdf->Image('../../Assets/img/kopsuratsmk2n.png',2,5,0,40), 0, 1, 'L', false);
-    $pdf->Cell(265, 13, 'Laporan Sarpras', 0, 1, 'C', false);
+    $pdf->Cell(265, 13, 'Laporan Data Sarana Prasarana', 0, 1, 'C', false);
     $pdf->Cell(265, 5, '', 0, 1, 'C', false);
 
     // Kolom Tabel
