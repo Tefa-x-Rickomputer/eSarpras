@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
 -- Generation Time: Nov 09, 2021 at 03:11 PM
-=======
--- Generation Time: Nov 09, 2021 at 02:56 PM
->>>>>>> 19fc1d19f5aa6b5720c2db78607d64bb9095daf1
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -138,7 +134,8 @@ CREATE TABLE `tloginlog` (
 INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) VALUES
 (1, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:27', '2021-11-09 22:10:35'),
 (2, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:38', '2021-11-09 22:10:44'),
-(3, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:49', NULL);
+(3, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:49', NULL),
+(4, 3, '192.168.100.5', 'Mozilla/5.0 (Linux; Android 7.1.2; Redmi Note 5A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36', '2021-11-09 22:27:34', '2021-11-09 22:27:41');
 
 -- --------------------------------------------------------
 
@@ -182,8 +179,7 @@ CREATE TABLE `tpemberitahuan` (
 --
 
 INSERT INTO `tpemberitahuan` (`idPemberitahuan`, `linkUser`, `isiPemberitahuan`, `waktuPemberitahuan`, `isDeleted`) VALUES
-(1, 9, 'asd', '2021-10-06 10:38:55', 0),
-(2, 4, 'testtestASD', '2021-10-12 10:34:11', 0);
+(1, 9, 'Selamat datang di website e-Sarpras!', '2021-10-06 10:38:55', 0),
 
 -- --------------------------------------------------------
 
