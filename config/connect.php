@@ -1,6 +1,6 @@
 <?php
 
-    $db = mysqli_connect('localhost', 'root', 'alredia', 'inventorymanagement');
+    $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
 
     function querySql($query)
         {
