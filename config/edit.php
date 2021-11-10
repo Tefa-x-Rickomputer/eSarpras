@@ -21,7 +21,8 @@
 <?php
 
 include 'connect.php';
-
+$idget = $_GET['idRuangan'];
+$namaruangan = querySql("SELECT * FROM truangan WHERE idRuangan = $idget ")[0];
 
 if(isset($_POST['edit'])) {
     $idRuangan=$_GET['idRuangan'];
@@ -40,19 +41,25 @@ if(isset($_POST['edit'])) {
 	<div class="position-absolute top-50 start-50 translate-middle">
 		<div class="container overflow-hidden">
 			<div class="row gx-5">
-				<div class="col">
+				<div class="col-md">
 					<div class="p-3 border bg-light">
 						<div class="input-group">
+							<span class="input-group-text">Nama Ruangan</span>
+							<input type="text" aria-label="Last name" name ="namaRuangan" class="form-control" disabled value="<?= $namaruangan['namaRuangan']; ?>">
+						</div>
+						<div class="input-group mt-3">
 							<span class="input-group-text">Nama Ruangan Baru</span>
 							<input type="text" aria-label="Last name" name ="namaRuangan" class="form-control">
-						</div> 	 
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<div class="p-3 border bg-light">
-					<div class=" mt-3">
-						<button type="submit" name ="edit" class="btn btn-primary mb-3">Simpan Perubahan</button>
+			<div class="row">
+				<div class="col-md">
+					<div class="p-3 border bg-light">
+						<div class=" mt-3">
+							<button type="submit" name ="edit" class="btn btn-primary mb-3">Simpan Perubahan</button>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -129,7 +129,7 @@
         if ($_FILES['fotoProfil']['error'] == 4) {
             $fotoProfil = $fotoProfilold;
         }else{
-            if ($fotoProfilold == '') {
+            if ($fotoProfilold == "person-fill.svg") {
                 $fotoProfil = upload();
               }else{
                 $fotoProfil = upload();
