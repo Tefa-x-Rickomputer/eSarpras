@@ -13,9 +13,9 @@
 
         <div class="row">
             <div class="col-md-4 mt-3">
-                <div class="text-center border rounded shadow-sm position-relative" style="height: 13.5rem; background-color:rgb(233,236,239);">
+                <div class="text-center border rounded position-relative" style="height: 13.5rem; background-color:rgb(233,236,239);">
                     <div class="position-absolute top-50 start-50 translate-middle">
-                        <img class="img img-thumbnail" src="Assets/img/user/<?= $user['fotoProfil'] ?>" alt="Foto Profil" style="margin:auto;">
+                        <img class="img img-thumbnail" src="Assets/img/user/<?= $user['fotoProfil'] ?>" alt="Foto Profil" style="margin:auto; height:13.3rem; max-width:21rem;">
                     </div>
                 </div>
             </div>

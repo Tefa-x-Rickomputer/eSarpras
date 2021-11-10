@@ -32,6 +32,20 @@
 					}
 				}
 
+			if ( isset($_POST['delete']) ) {
+				$idhapus = $_POST['hapusId'];
+				if ( hapuspeople($idhapus) > 0 ) {
+					echo "<div class='alert alert-success alert-dismissible fade show mt-3' role='alert'><i class='bi bi-check-circle'></i><span class='ms-3'>Data Berhasil di dihapus!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>
+						<script>
+		                    setTimeout(function() {
+		                            document.location.href = 'index.php?page=PengaturanPDF';
+		                        }, 1500)
+		                </script>";
+                    } else {
+                        echo "<div class='alert alert-danger alert-dismissible fade show mt-3' role='alert'><i class='bi bi-exclamation-triangle'></i><span class='ms-3'>Data Gagal di hapus!</span><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+					}
+			}
+
 		 ?>
 		 <form action="" method="post">
 		 	<div class="row mt-3 mb-3">
@@ -115,5 +129,18 @@
 			</div>
 		</div>
 		</form>
+		<div class="row my-3">
+			<div class="col-md-6">
+				<h3>Hapus Data</h3>
+				<form action="" method="post">
+					<select name="hapusId" class="form-select shadow-sm mb-3">
+						<?php foreach($values as $value) : ?>
+							<option value="<?= $value['id']; ?>"><?= $value['nama']; ?></option>
+						<?php endforeach; ?>
+					</select>
+					<button type="submit" name="delete" class="btn btn-sm btn-danger">Hapus</button>
+				</form>
+			</div>
+		</div>
 	</div>
 </main>

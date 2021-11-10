@@ -20,7 +20,11 @@
         <div class="col-md-4 mt-3">
             <div class="text-center border rounded position-relative" style="background-color:rgb(233,236,239);height:14.3rem; max-width:22rem;">
                 <div class="position-absolute start-50 top-50 translate-middle">
-                 <img class="" src="Assets/img/aset/<?= $barang['fotoBarang']?>" alt="Foto Aset" style="height:13.3rem; max-width:21rem;">
+                    <?php if($barang['fotoBarang'] == '') { ?>
+                        <img class="" src="Assets/img/aset/boxes-solid.svg" alt="Foto Aset" style="height:13.3rem; max-width:21rem;">
+                    <?php }else{ ?>
+                        <img class="" src="Assets/img/aset/<?= $barang['fotoBarang']; ?>" alt="Foto Aset" style="height:13.3rem; max-width:21rem;">
+                    <?php } ?>
                 </div>
             </div>
         </div>
