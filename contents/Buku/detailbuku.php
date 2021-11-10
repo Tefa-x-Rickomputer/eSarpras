@@ -20,6 +20,13 @@
                 <div class="position-absolute start-50 top-50 translate-middle">
                  <img class="" src="Assets/img/buku/<?= $buku['fotoBuku']?>" alt="Foto buku" style="height:13.3rem; max-width:21rem;">
                 </div>
+                <div class="position-absolute start-50 top-50 translate-middle">
+                    <?php if($buku['fotoBuku'] == '') { ?>
+                        <img class="" src="Assets/img/buku/book-solid.svg" alt="Foto Aset" style="height:13.3rem; max-width:21rem;">
+                    <?php }else{ ?>
+                        <img class="" src="Assets/img/buku/<?= $buku['fotoBuku']; ?>" alt="Foto Aset" style="height:13.3rem; max-width:21rem;">
+                    <?php } ?>
+                </div>
             </div>
         </div>
         <div class="col-md-8">

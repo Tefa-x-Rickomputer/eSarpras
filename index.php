@@ -230,18 +230,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <!-- format titik otomatis -->
     <script type="text/javascript" src="Assets/js/my.js"></script>
     <!-- script session timeout -->
-    <script type="text/javascript">
-        var timeOutCounter = <?php echo json_encode($timeOu); ?>;
-
-        var timeOutModal = new bootstrap.Modal(document.getElementById('timeOutModal'), {
-            keyboard: false
-        })
-
-        if (timeOutCounter == 1) {
-        timeOutModal.show()
-        }
-
-    </script>
     </body>
 </html>
 

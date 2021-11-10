@@ -51,4 +51,11 @@
 		return mysqli_affected_rows($db);
 	}
 
+	function hapuspeople($id) {
+		global $db;
+		mysqli_query($db, "DELETE FROM tpdf WHERE id = $id ");
+
+		return mysqli_affected_rows($db);
+	}
+
  ?>
