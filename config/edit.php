@@ -15,7 +15,11 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="Assets/css/dashboard.css">
    		 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-
+		<style>
+			body {
+			background-color: rgb(237, 240, 243);
+			}
+		</style>
 	</head>
 	<body>
 <?php

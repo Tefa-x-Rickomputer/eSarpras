@@ -1,3 +1,13 @@
 # Mengabaikan gambar
-Assets/img/
-config/connect.php
+Assets/img/user/*
+Assets/img/aset/*
+Assets/img/buku/*
+!Assets/img/user/person-fill.svg
+
+!Assets/img/aset/box-seam.svg
+!Assets/img/aset/asus a409fj.jpg
+!Assets/img/aset/acer tc-866.jpg
+
+!Assets/img/buku/book.svg
+!Assets/img/buku/francisoffilth.jpg
+!Assets/img/buku/technologicalslavery.jpg
