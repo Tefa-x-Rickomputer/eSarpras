@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 03:11 PM
+-- Generation Time: Nov 10, 2021 at 02:58 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `inventorymanagement_b`
+-- Database: `inventorymanagement`
 --
 
 -- --------------------------------------------------------
@@ -54,11 +54,11 @@ INSERT INTO `tbarang` (`idAset`, `namaBarang`, `fotoBarang`, `merkBarang`, `tipe
 (5, 'Laptop', 'asus a409fj.jpg', 'ASUS', 'A409FJ', 'LP190202BD003', 8500000, 2019, 'BOSDA', 'Baik', 2, 0),
 (6, 'Handphone', '61665c5505536.png', 'ASUS', 'Max Pro M1', 'HP170203BS001', 1800000, 0, 'BOS', 'Baik', 3, 0),
 (7, '', '', '', '', '', 0, 0, 'BOS', 'Baik', 1, 1),
-(8, 'D', '6166592fd91cc.png', 'F', 'G', '345d', 33333333, 2075, 'BOS', 'Baik', 1, 0),
-(9, 't', '6166371fd261b.png', 't', 't', 'gg77', 76000, 2006, 'BOS', 'Baik', 1, 0),
+(8, 'D', '6166592fd91cc.png', 'F', 'G', '345d', 33333333, 2075, 'BOS', 'Baik', 1, 1),
+(9, 't', '6166371fd261b.png', 't', 't', 'gg77', 76000, 2006, 'BOS', 'Baik', 1, 1),
 (10, 'keyboard', '616638494fca2.jpg', 'rexus', 'mx 3.2', 'KB202132', 350000, 2021, 'BOS', 'Baik', 4, 0),
 (11, 'laptop', '6166391ee237b.jpg', 'asus', 'a409fj', 'LP2019FJ', 8500000, 2019, 'BOSDA', 'Baik', 4, 0),
-(12, 'asd', '61665da0354d9.jpeg', 'asd', 'asd', '1wd', 123, 123, 'BOS', 'Baik', 1, 0),
+(12, 'asd', '61665da0354d9.jpeg', 'asd', 'asd', '1wd', 123, 123, 'BOS', 'Baik', 1, 1),
 (13, 'Laptop', '6168ec8b5e7da.jpg', 'Pc', 'Acer', '098752', 100000, 2021, 'BOS', 'Rusak', 1, 0),
 (14, 'monitor', '', 'asus', 'monitor', '124op', 500000, 2015, 'BOS', 'Baik', 1, 0),
 (15, 'hp', '', 'vivo', 'vivo 1718', 'shout1324', 3500000, 2018, 'BOS', 'Baik', 1, 0),
@@ -108,8 +108,8 @@ INSERT INTO `tbuku` (`idBuku`, `judulBuku`, `fotoBuku`, `nomorBuku`, `pengarang`
 (7, 'Technological Slavery', 'technologicalslavery.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD002', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
 (8, 'Technological Slavery', 'technologicalslavery.jpg', '1944228012', 'Theodore John Kaczynski', 'Feral House', 2010, 355, 'TS160103BD003', 2016, 349500, 'BOSDA', 'Baik', 6, 0),
 (9, 'e', '61663de96b794.png', 'e', 'e', 'e', 123, 12, '12e', 1241, 124121, 'BOS', 'Baik', 1, 1),
-(10, 'Matematika UBSN', '616658c237427.png', 'asd', 'qwd', 'qwd', 123, 123, '123', 123, 123123, 'BOS', 'Baik', 1, 0),
-(11, 'asd', '61665d719672e.jpeg', 'asd', 'asd', 'asd', 2123, 123, '123', 1232, 123, 'BOS', 'Baik', 1, 0),
+(10, 'Matematika UBSN', '616658c237427.png', 'asd', 'qwd', 'qwd', 123, 123, '123', 123, 123123, 'BOS', 'Baik', 1, 1),
+(11, 'asd', '61665d719672e.jpeg', 'asd', 'asd', 'asd', 2123, 123, '123', 1232, 123, 'BOS', 'Baik', 1, 1),
 (12, 'Gaktay', '6168ef284cc38.jpg', '1038sj', 'Saya', 'Dia', 2020, 100, '9192922', 2090, 100387, 'BOS', 'Rusak', 1, 0);
 
 -- --------------------------------------------------------
@@ -134,8 +134,8 @@ CREATE TABLE `tloginlog` (
 INSERT INTO `tloginlog` (`idLoginLog`, `linkUser`, `ipUser`, `agenUser`, `waktuLogin`, `waktuLogout`) VALUES
 (1, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:27', '2021-11-09 22:10:35'),
 (2, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:38', '2021-11-09 22:10:44'),
-(3, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-09 22:10:49', NULL),
-(4, 3, '192.168.100.5', 'Mozilla/5.0 (Linux; Android 7.1.2; Redmi Note 5A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36', '2021-11-09 22:27:34', '2021-11-09 22:27:41');
+(4, 3, '192.168.100.5', 'Mozilla/5.0 (Linux; Android 7.1.2; Redmi Note 5A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36', '2021-11-09 22:27:34', '2021-11-09 22:27:41'),
+(5, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36', '2021-11-10 21:35:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -156,9 +156,11 @@ CREATE TABLE `tpdf` (
 --
 
 INSERT INTO `tpdf` (`id`, `nama`, `jabatan`, `nip`, `used`) VALUES
-(1, 'luthfi', 'Kepala Sekolah', '123', '2'),
+(1, 'luthfi', 'Kepala Sekolah', '123', '0'),
 (2, 'piki', 'Wakil Kepala Sekolah', '123124', '0'),
-(3, 'azhim', 'Guru', '120479', '1');
+(3, 'azhim', 'Guru', '120479', '0'),
+(4, 'John Doe', 'Kepala Sekolah', '198705042003121002', '2'),
+(5, 'Mitchell Phillips', 'Wakil Kepala Sekolah', '198503302003121002', '1');
 
 -- --------------------------------------------------------
 
@@ -179,7 +181,7 @@ CREATE TABLE `tpemberitahuan` (
 --
 
 INSERT INTO `tpemberitahuan` (`idPemberitahuan`, `linkUser`, `isiPemberitahuan`, `waktuPemberitahuan`, `isDeleted`) VALUES
-(1, 9, 'Selamat datang di website e-Sarpras!', '2021-10-06 10:38:55', 0),
+(1, 2, 'Selamat datang di website e-Sarpras!', '2021-11-09 22:23:02', 0);
 
 -- --------------------------------------------------------
 
@@ -235,7 +237,7 @@ CREATE TABLE `tuser` (
 
 INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `fotoProfil`, `gender`, `agama`, `telpon`, `email`, `tanggalLahir`, `alamat`, `status`, `isDeleted`) VALUES
 (1, 'admin', '$2y$10$CDOQ0IdL6rgXvLaYGfoCHeWziDB7QfSyLIJLfWNcUga3RQp5JpL3m', 'Administrator', '637104234623446', 'Kuin Nerahaya', '6168d8043d578.jpg', 'Laki-laki', 'Kristen', '0192837510925', 'nera@turtle.jp', '1999-09-09', 'Localhost', 'Kepala Lab', 0),
-(2, 'azhim', '$2y$10$bmBoP1Ml1yx178dxw6Ov5OIUmeD4aBy2gp7C6o2wr8fMh/4E1jauO', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', '61652f126f058.png', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Guru', 0),
+(2, 'azhim', '$2y$10$bmBoP1Ml1yx178dxw6Ov5OIUmeD4aBy2gp7C6o2wr8fMh/4E1jauO', 'Superuser', '6371042701040003', 'Muhammad Azhim Nugroho', 'person-fill.svg', 'Laki-laki', 'Islam', '0895341517385', 'mazhn34@gmail.com', '2004-01-27', 'Jl. HKSN Komplek AMD Permai', 'Guru', 0),
 (3, 'guest', '$2y$10$kk0eQrMq42CmHIqEFd1ePempK8C7HzT1F8aG8x/eoYLQ64crbcz1G', 'Guest', '1028357291509785', 'Cahaya Dhananjaya', 'person-fill.svg', 'Laki-laki', 'Katholik', '0213591759081', 'caydhanan3@yahoo.co.id', '1976-06-24', 'Familiar Street No. 4', 'Guru', 0),
 (4, 'anothersuper', '$2y$10$.TTmYe5vYk/j81F98JrkXOjTL0aqx/e17.lQsCGSLFv7vIcdaAi4a', 'Superuser', '1023957609152345', 'Reil Nathel', 'person-fill.svg', 'Laki-laki', 'Kristen', '0126359864306', 'reinat@rgcorp.org', '1986-07-13', 'St Patrick', 'Wakil Kepala Sekolah', 0),
 (5, 'anotherguest', '$2y$10$/DOOPOtCp7Zy/wBfPddyR.oN1RU6RddwEMqPRmWdl9Wd784X7V56m', 'Guest', '31015704356070', 'Chet Cooker', 'person-fill.svg', 'Laki-laki', 'Kristen', '0543213096123', 'chetcook@bake.ry', '1967-12-23', 'St Saint', 'Kepala Sekolah', 0),
@@ -243,7 +245,7 @@ INSERT INTO `tuser` (`idUser`, `username`, `password`, `role`, `nik`, `nama`, `f
 (7, 'yulian', '$2y$10$7JZNKUFgDkysJPo6zdLEVeT8p/4ixM5HpOc0QyjdMPyf57fWyiDG6', 'Guest', '6371236803460982', 'Yuliani Melati Hermawan', 'person-fill.svg', 'Perempuan', 'Hindu', '0813452352155', 'yulilati59@yahoo.com', '1994-09-23', 'Jl. S Parman', 'Guru', 1),
 (8, 'ratulan', '$2y$10$RHRWkAPq0bZfp1ANdwB7yOSFCetE.F3pJ39M/q7tnoU7/d36JB66e', 'Superuser', '6371109847509252', 'Ratu Wulansari', 'person-fill.svg', 'Perempuan', 'Islam', '0821872350198', 'wulansariwulan74@gmail.com', '1989-05-24', 'Jl. Kebun Jeruk', 'Wakil Kepala Sekolah', 0),
 (9, 'luthfi', '$2y$10$ji6MqWE6hFroaJWoOQYaSOgWvT4TpENFa0XeDzNIBGMehRepfA8vm', 'Superuser', '6371052406040002', 'luthfi alredia', 'person-fill.svg', 'Perempuan', 'Islam', '081208120812', 'luthfi@gmail.com', '2004-06-24', 'palsu', 'Kepala Sekolah', 0),
-(10, 'rettou', '$2y$10$htYJHGXhXIJku1Xfi0YPmuN5w6PYajR4kZwMgAxKThC8Or/hZArbW', 'Guest', '2222222232222222', 'rettou', '61652ccd427fc.png', 'Laki-laki', 'Islam', '081208120812', 'rettou@gmail.com', '2021-01-02', 'palsu', 'Kepala Sekolah', 0);
+(10, 'rettou', '$2y$10$htYJHGXhXIJku1Xfi0YPmuN5w6PYajR4kZwMgAxKThC8Or/hZArbW', 'Guest', '2222222232222222', 'rettou', '61652ccd427fc.png', 'Laki-laki', 'Islam', '081208120812', 'rettou@gmail.com', '2021-01-02', 'palsu', 'Kepala Sekolah', 1);
 
 --
 -- Indexes for dumped tables
@@ -315,19 +317,19 @@ ALTER TABLE `tbuku`
 -- AUTO_INCREMENT for table `tloginlog`
 --
 ALTER TABLE `tloginlog`
-  MODIFY `idLoginLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idLoginLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tpdf`
 --
 ALTER TABLE `tpdf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tpemberitahuan`
 --
 ALTER TABLE `tpemberitahuan`
-  MODIFY `idPemberitahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPemberitahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `truangan`
